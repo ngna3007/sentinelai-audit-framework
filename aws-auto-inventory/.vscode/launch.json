@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "args": [
+        "--name",
+        "your-inventory-name"
+      ],
+      "console": "integratedTerminal",
+      "name": "Empty",
+      "program": "scan.py",
+      "request": "launch",
+      "type": "python"
+    },
+    {
+      "args": [
+        "--scan",
+        "scan/sample/services/iam.json"
+      ],
+      "console": "integratedTerminal",
+      "name": "Scan",
+      "program": "scan.py",
+      "request": "launch",
+      "type": "python"
+    }
+  ],
+  "version": "0.2.0"
+}
