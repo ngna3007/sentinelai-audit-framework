@@ -1,0 +1,830 @@
+{
+  "inventories": [
+    {
+      "name": "pci-dss-compliance-inventory",
+      "aws": {
+        "profile": "default",
+        "region": [
+          "us-east-1",
+          "us-west-2",
+          "eu-west-1",
+          "ap-southeast-1",
+          "ap-southeast-2"
+        ],
+        "organization": false,
+        "role_name": "OrganizationAccountAccessRole"
+      },
+      "excel": {
+        "transpose": true,
+        "formatting": {
+          "header_style": {
+            "bold": true,
+            "bg_color": "#4F81BD",
+            "font_color": "#FFFFFF"
+          }
+        }
+      },
+      "sheets": [
+        {
+          "name": "VPC_SecurityGroups",
+          "service": "ec2",
+          "function": "describe_security_groups",
+          "result_key": "SecurityGroups",
+          "comment": "Requirements 1.3, 1.4 - Network Security Controls; Security groups control traffic to/from resources"
+        },
+        {
+          "name": "VPC_NetworkACLs",
+          "service": "ec2",
+          "function": "describe_network_acls",
+          "result_key": "NetworkAcls",
+          "comment": "Requirements 1.3, 1.4 - Network Access Control Lists; Subnet-level network controls"
+        },
+        {
+          "name": "VPC_FlowLogs",
+          "service": "ec2",
+          "function": "describe_flow_logs",
+          "result_key": "FlowLogs",
+          "comment": "Requirements 10.3, 10.4, 10.5 - Network traffic monitoring and logging"
+        },
+        {
+          "name": "VPC_Endpoints",
+          "service": "ec2",
+          "function": "describe_vpc_endpoints",
+          "result_key": "VpcEndpoints",
+          "comment": "Requirements 4.2, 4.2.1 - Private connectivity to AWS services without internet transit"
+        },
+        {
+          "name": "VPC_InternetGateways",
+          "service": "ec2",
+          "function": "describe_internet_gateways",
+          "result_key": "InternetGateways",
+          "comment": "Requirements 1.2.4, 1.3.1 - Internet access control and boundary documentation"
+        },
+        {
+          "name": "VPC_NATGateways",
+          "service": "ec2",
+          "function": "describe_nat_gateways",
+          "result_key": "NatGateways",
+          "comment": "Requirements 1.3.1, 1.4.1 - Controlled outbound internet access from private subnets"
+        },
+        {
+          "name": "VPC_RouteTables",
+          "service": "ec2",
+          "function": "describe_route_tables",
+          "result_key": "RouteTables",
+          "comment": "Requirements 1.2.4, 1.3.1 - Network routing configuration and traffic flow control"
+        },
+        {
+          "name": "EC2_Instances",
+          "service": "ec2",
+          "function": "describe_instances",
+          "result_key": "Reservations",
+          "comment": "Requirements 2.1, 2.2, 2.2.7 - System component inventory and secure configurations"
+        },
+        {
+          "name": "EC2_Volumes",
+          "service": "ec2",
+          "function": "describe_volumes",
+          "result_key": "Volumes",
+          "comment": "Requirements 3.4.1, 3.5.1, 3.5.1.2 - Storage encryption and data protection"
+        },
+        {
+          "name": "EC2_Snapshots",
+          "service": "ec2",
+          "function": "describe_snapshots",
+          "result_key": "Snapshots",
+          "parameters": {
+            "OwnerIds": ["self"]
+          },
+          "comment": "Requirements 3.4.1, 3.5.1 - Backup data encryption and access controls"
+        },
+        {
+          "name": "EC2_KeyPairs",
+          "service": "ec2",
+          "function": "describe_key_pairs",
+          "result_key": "KeyPairs",
+          "comment": "Requirements 8.2.1, 8.3.2 - SSH key management and authentication"
+        },
+        {
+          "name": "S3_Buckets",
+          "service": "s3",
+          "function": "list_buckets",
+          "result_key": "Buckets",
+          "comment": "Requirements 3.1, 3.2, 12.3.3 - Data storage inventory and data retention policies"
+        },
+        {
+          "name": "S3_BucketEncryption",
+          "service": "s3",
+          "function": "get_bucket_encryption",
+          "result_key": "ServerSideEncryptionConfiguration",
+          "comment": "Requirements 3.5.1, 3.5.1.1, 3.6.1 - Server-side encryption at rest with strong cryptography",
+          "per_bucket": true
+        },
+        {
+          "name": "S3_BucketPublicAccess",
+          "service": "s3",
+          "function": "get_public_access_block",
+          "result_key": "PublicAccessBlockConfiguration",
+          "comment": "Requirements 1.3.1, 1.4.1, 7.2.1 - Prevent unauthorized public access to cardholder data",
+          "per_bucket": true
+        },
+        {
+          "name": "S3_BucketLogging",
+          "service": "s3",
+          "function": "get_bucket_logging",
+          "result_key": "LoggingEnabled",
+          "comment": "Requirements 10.2, 10.3, 10.4 - Access logging for data stores containing CHD",
+          "per_bucket": true
+        },
+        {
+          "name": "S3_BucketVersioning",
+          "service": "s3",
+          "function": "get_bucket_versioning",
+          "result_key": "Status",
+          "comment": "Requirements 3.4.1, 10.5.4 - Data integrity protection and log file protection",
+          "per_bucket": true
+        },
+        {
+          "name": "IAM_Users",
+          "service": "iam",
+          "function": "list_users",
+          "result_key": "Users",
+          "comment": "Requirements 8.1.1, 8.1.2, 8.2.1 - User identity management and unique user identification"
+        },
+        {
+          "name": "IAM_Roles",
+          "service": "iam",
+          "function": "list_roles",
+          "result_key": "Roles",
+          "comment": "Requirements 7.2.1, 7.2.2, 7.2.5 - Role-based access control and least privilege principle"
+        },
+        {
+          "name": "IAM_Groups",
+          "service": "iam",
+          "function": "list_groups",
+          "result_key": "Groups",
+          "comment": "Requirements 7.2.1, 7.2.2 - Group-based access control for user access management"
+        },
+        {
+          "name": "IAM_Policies",
+          "service": "iam",
+          "function": "list_policies",
+          "result_key": "Policies",
+          "parameters": {
+            "Scope": "Local"
+          },
+          "comment": "Requirements 7.2.1, 7.2.5, 7.3.1 - Access control policies and privilege restrictions"
+        },
+        {
+          "name": "IAM_PasswordPolicy",
+          "service": "iam",
+          "function": "get_account_password_policy",
+          "result_key": "PasswordPolicy",
+          "comment": "Requirements 8.3.6, 8.3.7, 8.3.8, 8.3.9 - Password complexity, length, and aging requirements"
+        },
+        {
+          "name": "IAM_CredentialReport",
+          "service": "iam",
+          "function": "get_credential_report",
+          "result_key": "Content",
+          "comment": "Requirements 7.2.4, 8.1.4, 8.2.6 - User access reviews and inactive account management"
+        },
+        {
+          "name": "RDS_Instances",
+          "service": "rds",
+          "function": "describe_db_instances",
+          "result_key": "DBInstances",
+          "comment": "Requirements 3.4.1, 3.5.1, 7.2.6 - Database encryption at rest and access controls"
+        },
+        {
+          "name": "RDS_Clusters",
+          "service": "rds",
+          "function": "describe_db_clusters",
+          "result_key": "DBClusters",
+          "comment": "Requirements 3.4.1, 3.5.1, 7.2.6 - Database cluster encryption and access restrictions"
+        },
+        {
+          "name": "RDS_Snapshots",
+          "service": "rds",
+          "function": "describe_db_snapshots",
+          "result_key": "DBSnapshots",
+          "comment": "Requirements 3.4.1, 3.5.1, 10.5.4 - Database backup encryption and integrity protection"
+        },
+        {
+          "name": "RDS_SubnetGroups",
+          "service": "rds",
+          "function": "describe_db_subnet_groups",
+          "result_key": "DBSubnetGroups",
+          "comment": "Requirements 1.3.1, 1.4.1, 7.2.6 - Database network segmentation and private access"
+        },
+        {
+          "name": "Lambda_Functions",
+          "service": "lambda",
+          "function": "list_functions",
+          "result_key": "Functions",
+          "comment": "Requirements 2.2, 2.2.7, 6.2.1 - Serverless function secure configuration and development"
+        },
+        {
+          "name": "CloudTrail_Trails",
+          "service": "cloudtrail",
+          "function": "describe_trails",
+          "result_key": "trailList",
+          "comment": "Requirements 10.2, 10.3, 10.4, 10.5 - Audit logging of all access to system components and CHD"
+        },
+        {
+          "name": "CloudWatch_LogGroups",
+          "service": "logs",
+          "function": "describe_log_groups",
+          "result_key": "logGroups",
+          "comment": "Requirements 10.4, 10.5.1, 10.5.2 - Centralized log management and retention"
+        },
+        {
+          "name": "CloudWatch_Alarms",
+          "service": "cloudwatch",
+          "function": "describe_alarms",
+          "result_key": "MetricAlarms",
+          "comment": "Requirements 10.6, 10.6.1, 10.6.2 - Log monitoring, alerting, and response procedures"
+        },
+        {
+          "name": "KMS_Keys",
+          "service": "kms",
+          "function": "list_keys",
+          "result_key": "Keys",
+          "comment": "Requirements 3.6.1, 3.7.1, 3.7.4 - Cryptographic key generation, management, and rotation"
+        },
+        {
+          "name": "KMS_Aliases",
+          "service": "kms",
+          "function": "list_aliases",
+          "result_key": "Aliases",
+          "comment": "Requirements 3.6.1.1, 3.7.1 - Key alias management and cryptographic key inventory"
+        },
+        {
+          "name": "APIGateway_RestAPIs",
+          "service": "apigateway",
+          "function": "get_rest_apis",
+          "result_key": "items",
+          "comment": "Requirements 1.4, 1.4.1, 1.4.2, 1.4.4, 4.2.1 - API Gateway NSCs between trusted/untrusted networks"
+        },
+        {
+          "name": "APIGatewayV2_APIs",
+          "service": "apigatewayv2",
+          "function": "get_apis",
+          "result_key": "Items",
+          "comment": "Requirements 1.4, 1.4.1, 1.4.2, 1.4.4, 4.2.1 - HTTP API security and encryption in transit"
+        },
+        {
+          "name": "CloudFront_Distributions",
+          "service": "cloudfront",
+          "function": "list_distributions",
+          "result_key": "DistributionList",
+          "comment": "Requirements 4.2.1, 4.2.1.1, 4.2.1.2 - CDN TLS encryption and secure protocols configuration"
+        },
+        {
+          "name": "ELB_LoadBalancers",
+          "service": "elb",
+          "function": "describe_load_balancers",
+          "result_key": "LoadBalancerDescriptions",
+          "comment": "Requirements 4.2.1, 4.2.1.1, 4.2.1.2 - Classic ELB TLS/SSL encryption configuration"
+        },
+        {
+          "name": "ELBv2_LoadBalancers",
+          "service": "elbv2",
+          "function": "describe_load_balancers",
+          "result_key": "LoadBalancers",
+          "comment": "Requirements 4.2.1, 4.2.1.1, 4.2.1.2 - ALB/NLB encryption and secure listener configuration"
+        },
+        {
+          "name": "ELBv2_TargetGroups",
+          "service": "elbv2",
+          "function": "describe_target_groups",
+          "result_key": "TargetGroups",
+          "comment": "Requirements 4.2.1, 1.4.2 - Load balancer target health checks and secure backends"
+        },
+        {
+          "name": "WAF_WebACLs",
+          "service": "waf",
+          "function": "list_web_acls",
+          "result_key": "WebACLs",
+          "comment": "Requirements 6.4.1, 6.4.2, 11.6.1 - Web application firewall for detecting/preventing attacks"
+        },
+        {
+          "name": "WAFv2_WebACLs",
+          "service": "wafv2",
+          "function": "list_web_acls",
+          "result_key": "WebACLs",
+          "parameters": {
+            "Scope": "REGIONAL"
+          },
+          "comment": "Requirements 6.4.1, 6.4.2, 11.6.1 - Regional WAF for web application attack protection"
+        },
+        {
+          "name": "Config_Rules",
+          "service": "config",
+          "function": "describe_config_rules",
+          "result_key": "ConfigRules",
+          "comment": "Requirements 11.1, 11.2, 11.3.1 - Automated security testing and configuration monitoring"
+        },
+        {
+          "name": "Config_ComplianceStatus",
+          "service": "config",
+          "function": "describe_compliance_by_config_rule",
+          "result_key": "ComplianceByConfigRules",
+          "comment": "Requirements 11.1, 11.2, 11.3.1 - Compliance status monitoring and remediation tracking"
+        },
+        {
+          "name": "GuardDuty_Detectors",
+          "service": "guardduty",
+          "function": "list_detectors",
+          "result_key": "DetectorIds",
+          "comment": "Requirements 5.2.1, 5.2.2, 5.3.1 - Anti-malware and threat detection mechanisms"
+        },
+        {
+          "name": "SecretsManager_Secrets",
+          "service": "secretsmanager",
+          "function": "list_secrets",
+          "result_key": "SecretList",
+          "comment": "Requirements 8.2.2, 8.3.2, 8.3.4 - Secure credential storage and shared account management"
+        },
+        {
+          "name": "ACM_Certificates",
+          "service": "acm",
+          "function": "list_certificates",
+          "result_key": "CertificateSummaryList",
+          "comment": "Requirements 4.2.1.1, 12.3.3 - SSL/TLS certificate management and inventory"
+        },
+        {
+          "name": "DynamoDB_Tables",
+          "service": "dynamodb",
+          "function": "list_tables",
+          "result_key": "TableNames",
+          "comment": "Requirements 3.2, 3.4.1, 3.5.1 - NoSQL data storage minimization and encryption"
+        },
+        {
+          "name": "ElastiCache_Clusters",
+          "service": "elasticache",
+          "function": "describe_cache_clusters",
+          "result_key": "CacheClusters",
+          "comment": "Requirements 3.4.1, 4.2.1 - Cache data encryption at rest and in transit"
+        },
+        {
+          "name": "ElastiCache_ReplicationGroups",
+          "service": "elasticache",
+          "function": "describe_replication_groups",
+          "result_key": "ReplicationGroups",
+          "comment": "Requirements 3.4.1, 4.2.1, 1.3.1 - Cache replication encryption and network isolation"
+        },
+        {
+          "name": "Redshift_Clusters",
+          "service": "redshift",
+          "function": "describe_clusters",
+          "result_key": "Clusters",
+          "comment": "Requirements 3.4.1, 3.5.1, 4.2.1 - Data warehouse encryption and secure connections"
+        },
+        {
+          "name": "ECS_Clusters",
+          "service": "ecs",
+          "function": "list_clusters",
+          "result_key": "clusterArns",
+          "comment": "Requirements 2.2, 2.2.7, 10.2 - Container orchestration secure configuration and logging"
+        },
+        {
+          "name": "ECS_Services",
+          "service": "ecs",
+          "function": "list_services",
+          "result_key": "serviceArns",
+          "comment": "Requirements 2.2, 2.2.7, 7.2.1 - Container service secure configuration and access controls"
+        },
+        {
+          "name": "ECS_TaskDefinitions",
+          "service": "ecs",
+          "function": "list_task_definitions",
+          "result_key": "taskDefinitionArns",
+          "comment": "Requirements 2.2, 6.2.1, 8.2.1 - Container task secure configuration and authentication"
+        },
+        {
+          "name": "EKS_Clusters",
+          "service": "eks",
+          "function": "list_clusters",
+          "result_key": "clusters",
+          "comment": "Requirements 2.2, 2.2.7, 10.2 - Kubernetes cluster secure configuration and audit logging"
+        },
+        {
+          "name": "ECR_Repositories",
+          "service": "ecr",
+          "function": "describe_repositories",
+          "result_key": "repositories",
+          "comment": "Requirements 6.3.1, 6.3.2, 11.2.1 - Container image vulnerability scanning and secure storage"
+        },
+        {
+          "name": "Backup_BackupPlans",
+          "service": "backup",
+          "function": "list_backup_plans",
+          "result_key": "BackupPlansList",
+          "comment": "Requirements 3.2, 12.3.3, 10.5.4 - Data backup retention policies and frequency"
+        },
+        {
+          "name": "Backup_BackupVaults",
+          "service": "backup",
+          "function": "list_backup_vaults",
+          "result_key": "BackupVaultList",
+          "comment": "Requirements 3.4.1, 3.5.1, 7.2.1 - Backup vault encryption and access controls"
+        },
+        {
+          "name": "SNS_Topics",
+          "service": "sns",
+          "function": "list_topics",
+          "result_key": "Topics",
+          "comment": "Requirements 10.6.1, 10.6.2, 3.4.1 - Security alert notifications and message encryption"
+        },
+        {
+          "name": "SQS_Queues",
+          "service": "sqs",
+          "function": "list_queues",
+          "result_key": "QueueUrls",
+          "comment": "Requirements 3.4.1, 4.2.1, 7.2.1 - Message queue encryption and access controls"
+        },
+        {
+          "name": "OpenSearch_Domains",
+          "service": "opensearch",
+          "function": "list_domain_names",
+          "result_key": "DomainNames",
+          "comment": "Requirements 3.4.1, 3.5.1, 4.2.1, 1.3.1 - OpenSearch encryption at rest/transit and VPC deployment"
+        },
+        {
+          "name": "Route53_HostedZones",
+          "service": "route53",
+          "function": "list_hosted_zones",
+          "result_key": "HostedZones",
+          "comment": "Requirements 10.2, 10.3 - DNS query logging for monitoring and audit trails"
+        },
+        {
+          "name": "DirectConnect_Connections",
+          "service": "directconnect",
+          "function": "describe_connections",
+          "result_key": "connections",
+          "comment": "Requirements 4.2, 4.2.1.2 - Dedicated network connections and encryption assessment"
+        },
+        {
+          "name": "VPN_Connections",
+          "service": "ec2",
+          "function": "describe_vpn_connections",
+          "result_key": "VpnConnections",
+          "comment": "Requirements 4.2.1, 4.2.1.1, 1.4.1 - VPN encrypted tunnels and network security controls"
+        },
+        {
+          "name": "TransitGateway",
+          "service": "ec2",
+          "function": "describe_transit_gateways",
+          "result_key": "TransitGateways",
+          "comment": "Requirements 1.2.4, 1.3.1, 1.4.1 - Network transit gateway routing and segmentation controls"
+        },
+        {
+          "name": "SecurityHub_Hub",
+          "service": "securityhub",
+          "function": "get_enabled_standards",
+          "result_key": "StandardsSubscriptions",
+          "comment": "Requirements 11.1, 11.2, 11.3.1 - Centralized security findings and compliance monitoring"
+        },
+        {
+          "name": "Inspector_AssessmentTargets",
+          "service": "inspector",
+          "function": "list_assessment_targets",
+          "result_key": "assessmentTargetArns",
+          "comment": "Requirements 11.2.1, 11.2.2, 6.3.1 - Automated vulnerability assessments of EC2 instances"
+        },
+        {
+          "name": "SSM_Parameters",
+          "service": "ssm",
+          "function": "describe_parameters",
+          "result_key": "Parameters",
+          "comment": "Requirements 8.2.2, 8.3.2, 3.4.1 - Secure parameter storage and encrypted configuration data"
+        },
+        {
+          "name": "SSM_PatchBaselines",
+          "service": "ssm",
+          "function": "describe_patch_baselines",
+          "result_key": "BaselineIdentities",
+          "comment": "Requirements 6.3.3, 6.3.3.1 - Critical security patch management and deployment"
+        },
+        {
+          "name": "CloudFormation_Stacks",
+          "service": "cloudformation",
+          "function": "describe_stacks",
+          "result_key": "Stacks",
+          "comment": "Requirements 6.5.1, 6.5.2, 6.5.3 - Infrastructure as code change management and testing"
+        },
+        {
+          "name": "CodeBuild_Projects",
+          "service": "codebuild",
+          "function": "list_projects",
+          "result_key": "projects",
+          "comment": "Requirements 6.2.1, 6.2.4, 6.5.2 - Secure software development and build process controls"
+        },
+        {
+          "name": "CodePipeline_Pipelines",
+          "service": "codepipeline",
+          "function": "list_pipelines",
+          "result_key": "pipelines",
+          "comment": "Requirements 6.5.1, 6.5.2, 6.5.3 - Deployment pipeline change management and approval processes"
+        },
+        {
+          "name": "NetworkFirewall_Firewalls",
+          "service": "network-firewall",
+          "function": "list_firewalls",
+          "result_key": "Firewalls",
+          "comment": "Requirements 1.3, 1.4, 1.2.7.b, 1.2.8 - Network firewall and intrusion detection/prevention"
+        },
+        {
+          "name": "NetworkFirewall_Policies",
+          "service": "network-firewall",
+          "function": "list_firewall_policies",
+          "result_key": "FirewallPolicies",
+          "comment": "Requirements 1.2.7.b, 1.2.8 - Network security control reviews and configurations"
+        },
+        {
+          "name": "ElasticSearch_Domains",
+          "service": "es",
+          "function": "list_domain_names",
+          "result_key": "DomainNames",
+          "comment": "Requirements 3.4.1, 3.5.1, 4.2.1 - Elasticsearch encryption at rest and in transit"
+        },
+        {
+          "name": "ElasticSearch_DomainDetails",
+          "service": "es",
+          "function": "describe_elasticsearch_domains",
+          "result_key": "DomainStatusList",
+          "comment": "Requirements 3.4.1, 3.5.1, 1.3.1 - Elasticsearch domain encryption and VPC configuration"
+        },
+        {
+          "name": "DocumentDB_Clusters",
+          "service": "docdb",
+          "function": "describe_db_clusters",
+          "result_key": "DBClusters",
+          "comment": "Requirements 3.4.1, 3.5.1, 10.2 - DocumentDB encryption and audit logging"
+        },
+        {
+          "name": "Neptune_Clusters",
+          "service": "neptune",
+          "function": "describe_db_clusters",
+          "result_key": "DBClusters",
+          "comment": "Requirements 3.4.1, 3.5.1, 10.2 - Neptune graph database encryption and logging"
+        },
+        {
+          "name": "EFS_FileSystems",
+          "service": "efs",
+          "function": "describe_file_systems",
+          "result_key": "FileSystems",
+          "comment": "Requirements 3.4.1, 3.5.1, 7.2.1 - EFS encryption at rest and access controls"
+        },
+        {
+          "name": "EFS_AccessPoints",
+          "service": "efs",
+          "function": "describe_access_points",
+          "result_key": "AccessPoints",
+          "comment": "Requirements 7.2.1, 7.2.5, 8.1.1 - EFS access point user identity enforcement and root directory controls"
+        },
+        {
+          "name": "MSK_Clusters",
+          "service": "kafka",
+          "function": "list_clusters",
+          "result_key": "ClusterInfoList",
+          "comment": "Requirements 4.2.1, 3.4.1 - Managed Streaming for Kafka encryption in transit and at rest"
+        },
+        {
+          "name": "EMR_Clusters",
+          "service": "emr",
+          "function": "list_clusters",
+          "result_key": "Clusters",
+          "comment": "Requirements 3.4.1, 8.3.1, 1.3.1 - EMR encryption, Kerberos authentication, and public access blocking"
+        },
+        {
+          "name": "Kinesis_Streams",
+          "service": "kinesis",
+          "function": "list_streams",
+          "result_key": "StreamNames",
+          "comment": "Requirements 3.4.1, 4.2.1 - Kinesis stream server-side encryption"
+        },
+        {
+          "name": "WorkSpaces",
+          "service": "workspaces",
+          "function": "describe_workspaces",
+          "result_key": "Workspaces",
+          "comment": "Requirements 2.2, 2.2.7, 8.2.1 - Virtual desktop secure configuration and user authentication"
+        },
+        {
+          "name": "SageMaker_NotebookInstances",
+          "service": "sagemaker",
+          "function": "list_notebook_instances",
+          "result_key": "NotebookInstances",
+          "comment": "Requirements 1.3.1, 3.4.1, 2.2.7 - SageMaker VPC deployment, encryption, and secure configuration"
+        },
+        {
+          "name": "Transfer_Servers",
+          "service": "transfer",
+          "function": "list_servers",
+          "result_key": "Servers",
+          "comment": "Requirements 4.2.1, 2.2.4 - SFTP/FTPS secure protocols and no FTP usage"
+        },
+        {
+          "name": "DMS_ReplicationInstances",
+          "service": "dms",
+          "function": "describe_replication_instances",
+          "result_key": "ReplicationInstances",
+          "comment": "Requirements 1.3.1, 4.2.1, 10.2 - DMS private deployment, SSL/TLS, and target database logging"
+        },
+        {
+          "name": "Athena_WorkGroups",
+          "service": "athena",
+          "function": "list_work_groups",
+          "result_key": "WorkGroups",
+          "comment": "Requirements 3.4.1, 3.5.1 - Athena query results encryption at rest"
+        },
+        {
+          "name": "MQ_Brokers",
+          "service": "mq",
+          "function": "list_brokers",
+          "result_key": "BrokerSummaries",
+          "comment": "Requirements 10.2, 10.3 - Amazon MQ audit logging to CloudWatch"
+        },
+        {
+          "name": "Shield_Subscriptions",
+          "service": "shield",
+          "function": "get_subscription_state",
+          "result_key": "SubscriptionState",
+          "comment": "Requirements 1.4.3, 10.7.2 - DDoS protection and anti-spoofing measures"
+        },
+        {
+          "name": "Shield_Protections",
+          "service": "shield",
+          "function": "list_protections",
+          "result_key": "Protections",
+          "comment": "Requirements 1.4.3, 11.5.1 - DDoS protection for critical resources"
+        },
+        {
+          "name": "Systems_Manager_Sessions",
+          "service": "ssm",
+          "function": "describe_sessions",
+          "result_key": "Sessions",
+          "parameters": {
+            "State": "Active"
+          },
+          "comment": "Requirements 2.2.7, 8.2.7, 10.2.1.2 - Non-console administrative access with encryption"
+        },
+        {
+          "name": "WorkSpaces_Workspaces",
+          "service": "workspaces",
+          "function": "describe_workspaces",
+          "result_key": "Workspaces",
+          "comment": "Requirements 1.5.1, 2.2, 8.2.1 - Computing devices with security controls for CDE access"
+        },
+        {
+          "name": "AppStream_Fleets",
+          "service": "appstream",
+          "function": "describe_fleets",
+          "result_key": "Fleets",
+          "comment": "Requirements 1.5.1, 2.2.7 - Application streaming with security controls"
+        },
+        {
+          "name": "Macie_Sessions",
+          "service": "macie2",
+          "function": "get_macie_session",
+          "result_key": "Status",
+          "comment": "Requirements 3.1, 3.2.1, 11.3.1 - Data discovery and classification for CHD"
+        },
+        {
+          "name": "Organizations_Accounts",
+          "service": "organizations",
+          "function": "list_accounts",
+          "result_key": "Accounts",
+          "comment": "Requirements A1.1.2, A1.1.3, 12.4 - Multi-tenant customer segregation and governance"
+        },
+        {
+          "name": "Organizations_Policies",
+          "service": "organizations",
+          "function": "list_policies",
+          "result_key": "Policies",
+          "parameters": {
+            "Filter": "SERVICE_CONTROL_POLICY"
+          },
+          "comment": "Requirements A1.1.2, 7.2.1, 12.4 - Service control policies for access restrictions"
+        },
+        {
+          "name": "Control_Tower_Landing_Zone",
+          "service": "controltower",
+          "function": "get_landing_zone",
+          "result_key": "LandingZone",
+          "comment": "Requirements A1.1.2, 12.4, 11.3.1 - Multi-account governance and compliance"
+        },
+        {
+          "name": "CloudHSM_Clusters",
+          "service": "cloudhsmv2",
+          "function": "describe_clusters",
+          "result_key": "Clusters",
+          "comment": "Requirements 3.6.1.2, 3.7.1, 3.7.6 - Hardware security modules for key management"
+        },
+        {
+          "name": "ACM_PCA_Authorities",
+          "service": "acm-pca",
+          "function": "list_certificate_authorities",
+          "result_key": "CertificateAuthorities",
+          "comment": "Requirements 4.2.1.1, 12.3.3 - Private certificate authority for internal PKI"
+        },
+        {
+          "name": "Service_Catalog_Portfolios",
+          "service": "servicecatalog",
+          "function": "list_portfolios",
+          "result_key": "PortfolioDetails",
+          "comment": "Requirements 6.5.1, 12.4 - Approved service configurations and change management"
+        },
+        {
+          "name": "Trusted_Advisor_Checks",
+          "service": "support",
+          "function": "describe_trusted_advisor_checks",
+          "result_key": "Checks",
+          "parameters": {
+            "Language": "en"
+          },
+          "comment": "Requirements 11.1, 11.3.1, 12.4 - Automated security recommendations and monitoring"
+        },
+        {
+          "name": "Resource_Access_Manager_Shares",
+          "service": "ram",
+          "function": "get_resource_shares",
+          "result_key": "ResourceShares",
+          "comment": "Requirements A1.1.3, 7.2.1 - Cross-account resource access controls"
+        },
+        {
+          "name": "Detective_Graphs",
+          "service": "detective",
+          "function": "list_graphs",
+          "result_key": "GraphList",
+          "comment": "Requirements 10.4.1, 11.5.1, 12.10.5 - Security investigation and incident response"
+        },
+        {
+          "name": "SES_Configuration_Sets",
+          "service": "ses",
+          "function": "list_configuration_sets",
+          "result_key": "ConfigurationSets",
+          "comment": "Requirements 5.4, 10.2, 12.6 - Email security and anti-phishing measures"
+        },
+        {
+          "name": "WorkMail_Organizations",
+          "service": "workmail",
+          "function": "list_organizations",
+          "result_key": "OrganizationSummaries",
+          "comment": "Requirements 5.4, 8.2.1, 10.2 - Secure email with anti-phishing protection"
+        },
+        {
+          "name": "TimeSyncService_Configurations",
+          "service": "ec2",
+          "function": "describe_instance_attribute",
+          "result_key": "InstanceAttribute",
+          "comment": "Requirements 10.6, 10.6.3 - Time synchronization for audit log integrity"
+        },
+        {
+          "name": "HealthLake_DataStores",
+          "service": "healthlake",
+          "function": "list_fhir_datastores",
+          "result_key": "DatastorePropertiesList",
+          "comment": "Requirements 3.4.1, 3.5.1, 7.2.6 - Healthcare data encryption and access controls"
+        },
+        {
+          "name": "Connect_Instances",
+          "service": "connect",
+          "function": "list_instances",
+          "result_key": "InstanceSummaryList",
+          "comment": "Requirements 10.2, 10.3, 8.2.1 - Contact center logging and user authentication"
+        },
+        {
+          "name": "AppConfig_Applications",
+          "service": "appconfig",
+          "function": "list_applications",
+          "result_key": "Items",
+          "comment": "Requirements 6.5.1, 6.5.3, 10.2 - Configuration management and change tracking"
+        },
+        {
+          "name": "FIS_Experiments",
+          "service": "fis",
+          "function": "list_experiments",
+          "result_key": "Experiments",
+          "comment": "Requirements 11.4, 12.10 - Chaos engineering and incident response testing"
+        },
+        {
+          "name": "DevOps_Guru_Insights",
+          "service": "devops-guru",
+          "function": "list_insights",
+          "result_key": "ProactiveInsights",
+          "comment": "Requirements 10.6, 10.7.2, 11.5.1 - Proactive anomaly detection and alerting"
+        },
+        {
+          "name": "EventBridge_Rules",
+          "service": "events",
+          "function": "list_rules",
+          "result_key": "Rules",
+          "comment": "Requirements 10.6.1, 10.7.2, 12.10.5 - Event-driven security monitoring and response"
+        }
+      ]
+    }
+  ]
+} 

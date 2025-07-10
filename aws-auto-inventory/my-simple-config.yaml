@@ -1,0 +1,29 @@
+inventories:
+  - name: simple-aws-scan
+    aws:
+      profile: default
+      region:
+        - us-east-1  # Change to your preferred region
+      organization: false
+    
+    excel:
+      transpose: true
+    
+    sheets:
+      # S3 Buckets (usually works without special permissions)
+      - name: S3Buckets
+        service: s3
+        function: list_buckets
+        result_key: Buckets
+      
+      # IAM Roles (if you have IAM permissions)
+      - name: IAMRoles
+        service: iam
+        function: list_roles
+        result_key: Roles
+      
+      # EC2 Instances in your region
+      - name: EC2Instances
+        service: ec2
+        function: describe_instances
+        result_key: Reservations 

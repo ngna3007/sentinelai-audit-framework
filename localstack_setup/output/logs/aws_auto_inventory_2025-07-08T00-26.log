@@ -1,0 +1,6 @@
+2025-07-08 00:26:20,757 - aws_auto_inventory - INFO - Logging initialized at level INFO
+2025-07-08 00:26:20,757 - aws_auto_inventory - INFO - Log file: output\logs\aws_auto_inventory_2025-07-08T00-26.log
+2025-07-08 00:26:20,757 - aws_auto_inventory - INFO - Loading configuration from examples/config_example.yaml
+2025-07-08 00:26:20,763 - aws_auto_inventory - INFO - Validating configuration
+2025-07-08 00:26:22,573 - aws_auto_inventory - ERROR - Configuration validation failed:
+2025-07-08 00:26:22,573 - aws_auto_inventory - ERROR -   - Inventory 'my-aws-inventory': Invalid AWS profile 'default': The config profile (default) could not be found
