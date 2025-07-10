@@ -1,0 +1,994 @@
+2025-07-09 23:40:40,949 - aws_auto_inventory - INFO - Logging initialized at level INFO
+2025-07-09 23:40:40,949 - aws_auto_inventory - INFO - Log file: output\logs\aws_auto_inventory_2025-07-09T23-40.log
+2025-07-09 23:40:40,950 - aws_auto_inventory - INFO - Loading configuration from config_pci_dss_compliance_localstack.json
+2025-07-09 23:40:40,974 - aws_auto_inventory - INFO - Validating configuration
+2025-07-09 23:40:41,066 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:40:41,349 - botocore.configprovider - INFO - Found endpoint for sts via: environment_global.
+2025-07-09 23:40:41,493 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:41,814 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:41,932 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:42,317 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:42,432 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:42,721 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:42,838 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:43,212 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:43,331 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:43,648 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:43,787 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:44,219 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:44,347 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:44,770 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:44,896 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:45,246 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:45,370 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:45,825 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:45,940 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:46,247 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:46,362 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:46,766 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:40:46,895 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:47,221 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:40:47,347 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:47,639 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:40:47,750 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:48,069 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:40:48,188 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:48,460 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:40:48,575 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:48,831 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:40:48,959 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:49,287 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:40:49,400 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:49,646 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:40:49,763 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:49,999 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:40:50,121 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:50,370 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:40:50,495 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:51,279 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:40:51,412 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:51,678 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:40:51,815 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:52,084 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:40:52,225 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:52,541 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:40:52,691 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:53,146 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:40:53,265 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:53,549 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:40:53,694 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:53,980 - botocore.configprovider - INFO - Found endpoint for lambda via: environment_global.
+2025-07-09 23:40:54,104 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:54,384 - botocore.configprovider - INFO - Found endpoint for cloudtrail via: environment_global.
+2025-07-09 23:40:54,528 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:54,982 - botocore.configprovider - INFO - Found endpoint for logs via: environment_global.
+2025-07-09 23:40:55,105 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:55,365 - botocore.configprovider - INFO - Found endpoint for cloudwatch via: environment_global.
+2025-07-09 23:40:55,494 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:55,741 - botocore.configprovider - INFO - Found endpoint for kms via: environment_global.
+2025-07-09 23:40:55,866 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:56,133 - botocore.configprovider - INFO - Found endpoint for kms via: environment_global.
+2025-07-09 23:40:56,258 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:56,535 - botocore.configprovider - INFO - Found endpoint for apigateway via: environment_global.
+2025-07-09 23:40:56,664 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:57,132 - botocore.configprovider - INFO - Found endpoint for apigatewayv2 via: environment_global.
+2025-07-09 23:40:57,255 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:57,588 - botocore.configprovider - INFO - Found endpoint for cloudfront via: environment_global.
+2025-07-09 23:40:57,730 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:57,999 - botocore.configprovider - INFO - Found endpoint for elb via: environment_global.
+2025-07-09 23:40:58,113 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:58,513 - botocore.configprovider - INFO - Found endpoint for elbv2 via: environment_global.
+2025-07-09 23:40:58,661 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:58,952 - botocore.configprovider - INFO - Found endpoint for elbv2 via: environment_global.
+2025-07-09 23:40:59,092 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:59,614 - botocore.configprovider - INFO - Found endpoint for waf via: environment_global.
+2025-07-09 23:40:59,735 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:40:59,990 - botocore.configprovider - INFO - Found endpoint for wafv2 via: environment_global.
+2025-07-09 23:41:00,125 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:00,387 - botocore.configprovider - INFO - Found endpoint for config via: environment_global.
+2025-07-09 23:41:00,519 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:00,770 - botocore.configprovider - INFO - Found endpoint for config via: environment_global.
+2025-07-09 23:41:00,899 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:01,241 - botocore.configprovider - INFO - Found endpoint for guardduty via: environment_global.
+2025-07-09 23:41:01,364 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:01,795 - botocore.configprovider - INFO - Found endpoint for secretsmanager via: environment_global.
+2025-07-09 23:41:01,920 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:02,173 - botocore.configprovider - INFO - Found endpoint for acm via: environment_global.
+2025-07-09 23:41:02,302 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:02,565 - botocore.configprovider - INFO - Found endpoint for dynamodb via: environment_global.
+2025-07-09 23:41:02,692 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:03,007 - botocore.configprovider - INFO - Found endpoint for elasticache via: environment_global.
+2025-07-09 23:41:03,137 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:03,392 - botocore.configprovider - INFO - Found endpoint for elasticache via: environment_global.
+2025-07-09 23:41:03,716 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:04,004 - botocore.configprovider - INFO - Found endpoint for redshift via: environment_global.
+2025-07-09 23:41:04,149 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:04,411 - botocore.configprovider - INFO - Found endpoint for ecs via: environment_global.
+2025-07-09 23:41:04,584 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:04,888 - botocore.configprovider - INFO - Found endpoint for ecs via: environment_global.
+2025-07-09 23:41:05,022 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:05,280 - botocore.configprovider - INFO - Found endpoint for ecs via: environment_global.
+2025-07-09 23:41:05,551 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:05,832 - botocore.configprovider - INFO - Found endpoint for eks via: environment_global.
+2025-07-09 23:41:05,963 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:06,212 - botocore.configprovider - INFO - Found endpoint for ecr via: environment_global.
+2025-07-09 23:41:06,337 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:06,619 - botocore.configprovider - INFO - Found endpoint for backup via: environment_global.
+2025-07-09 23:41:06,737 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:07,000 - botocore.configprovider - INFO - Found endpoint for backup via: environment_global.
+2025-07-09 23:41:07,125 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:07,541 - botocore.configprovider - INFO - Found endpoint for sns via: environment_global.
+2025-07-09 23:41:07,683 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:07,950 - botocore.configprovider - INFO - Found endpoint for sqs via: environment_global.
+2025-07-09 23:41:08,083 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:08,326 - botocore.configprovider - INFO - Found endpoint for opensearch via: environment_global.
+2025-07-09 23:41:08,441 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:08,671 - botocore.configprovider - INFO - Found endpoint for route53 via: environment_global.
+2025-07-09 23:41:08,793 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:09,045 - botocore.configprovider - INFO - Found endpoint for directconnect via: environment_global.
+2025-07-09 23:41:09,155 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:09,690 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:09,859 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:10,234 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:10,343 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:10,644 - botocore.configprovider - INFO - Found endpoint for securityhub via: environment_global.
+2025-07-09 23:41:10,870 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:11,112 - botocore.configprovider - INFO - Found endpoint for inspector via: environment_global.
+2025-07-09 23:41:11,239 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:11,495 - botocore.configprovider - INFO - Found endpoint for ssm via: environment_global.
+2025-07-09 23:41:11,622 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:11,875 - botocore.configprovider - INFO - Found endpoint for ssm via: environment_global.
+2025-07-09 23:41:11,975 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:12,226 - botocore.configprovider - INFO - Found endpoint for cloudformation via: environment_global.
+2025-07-09 23:41:12,342 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:13,183 - botocore.configprovider - INFO - Found endpoint for codebuild via: environment_global.
+2025-07-09 23:41:13,326 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:13,595 - botocore.configprovider - INFO - Found endpoint for codepipeline via: environment_global.
+2025-07-09 23:41:13,706 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:13,937 - botocore.configprovider - INFO - Found endpoint for network-firewall via: environment_global.
+2025-07-09 23:41:14,048 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:14,291 - botocore.configprovider - INFO - Found endpoint for network-firewall via: environment_global.
+2025-07-09 23:41:14,407 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:14,751 - botocore.configprovider - INFO - Found endpoint for es via: environment_global.
+2025-07-09 23:41:14,871 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:15,098 - botocore.configprovider - INFO - Found endpoint for es via: environment_global.
+2025-07-09 23:41:15,231 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:15,695 - botocore.configprovider - INFO - Found endpoint for docdb via: environment_global.
+2025-07-09 23:41:15,794 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:16,034 - botocore.configprovider - INFO - Found endpoint for neptune via: environment_global.
+2025-07-09 23:41:16,143 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:16,374 - botocore.configprovider - INFO - Found endpoint for efs via: environment_global.
+2025-07-09 23:41:16,482 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:16,851 - botocore.configprovider - INFO - Found endpoint for efs via: environment_global.
+2025-07-09 23:41:16,945 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:17,182 - botocore.configprovider - INFO - Found endpoint for kafka via: environment_global.
+2025-07-09 23:41:17,307 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:17,770 - botocore.configprovider - INFO - Found endpoint for emr via: environment_global.
+2025-07-09 23:41:17,945 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:18,167 - botocore.configprovider - INFO - Found endpoint for kinesis via: environment_global.
+2025-07-09 23:41:18,279 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:18,502 - botocore.configprovider - INFO - Found endpoint for workspaces via: environment_global.
+2025-07-09 23:41:18,637 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:18,914 - botocore.configprovider - INFO - Found endpoint for sagemaker via: environment_global.
+2025-07-09 23:41:19,027 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:19,243 - botocore.configprovider - INFO - Found endpoint for transfer via: environment_global.
+2025-07-09 23:41:19,519 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:19,781 - botocore.configprovider - INFO - Found endpoint for dms via: environment_global.
+2025-07-09 23:41:19,889 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:20,113 - botocore.configprovider - INFO - Found endpoint for athena via: environment_global.
+2025-07-09 23:41:20,232 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:20,482 - botocore.configprovider - INFO - Found endpoint for mq via: environment_global.
+2025-07-09 23:41:20,593 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:20,840 - botocore.configprovider - INFO - Found endpoint for shield via: environment_global.
+2025-07-09 23:41:20,956 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:21,209 - botocore.configprovider - INFO - Found endpoint for shield via: environment_global.
+2025-07-09 23:41:21,315 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:21,779 - botocore.configprovider - INFO - Found endpoint for ssm via: environment_global.
+2025-07-09 23:41:21,904 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:22,136 - botocore.configprovider - INFO - Found endpoint for workspaces via: environment_global.
+2025-07-09 23:41:22,246 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:22,476 - botocore.configprovider - INFO - Found endpoint for appstream via: environment_global.
+2025-07-09 23:41:22,589 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:22,889 - botocore.configprovider - INFO - Found endpoint for macie2 via: environment_global.
+2025-07-09 23:41:23,004 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:23,386 - botocore.configprovider - INFO - Found endpoint for organizations via: environment_global.
+2025-07-09 23:41:23,527 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:23,785 - botocore.configprovider - INFO - Found endpoint for organizations via: environment_global.
+2025-07-09 23:41:23,923 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:24,186 - botocore.configprovider - INFO - Found endpoint for controltower via: environment_global.
+2025-07-09 23:41:24,332 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:24,782 - botocore.configprovider - INFO - Found endpoint for cloudhsmv2 via: environment_global.
+2025-07-09 23:41:24,929 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:25,200 - botocore.configprovider - INFO - Found endpoint for acm-pca via: environment_global.
+2025-07-09 23:41:25,321 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:25,604 - botocore.configprovider - INFO - Found endpoint for servicecatalog via: environment_global.
+2025-07-09 23:41:25,962 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:26,222 - botocore.configprovider - INFO - Found endpoint for support via: environment_global.
+2025-07-09 23:41:26,324 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:26,561 - botocore.configprovider - INFO - Found endpoint for ram via: environment_global.
+2025-07-09 23:41:26,673 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:26,953 - botocore.configprovider - INFO - Found endpoint for detective via: environment_global.
+2025-07-09 23:41:27,140 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:27,421 - botocore.configprovider - INFO - Found endpoint for ses via: environment_global.
+2025-07-09 23:41:27,561 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:27,838 - botocore.configprovider - INFO - Found endpoint for workmail via: environment_global.
+2025-07-09 23:41:27,993 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:28,661 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:28,789 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:29,072 - botocore.configprovider - INFO - Found endpoint for healthlake via: environment_global.
+2025-07-09 23:41:29,187 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:29,492 - botocore.configprovider - INFO - Found endpoint for connect via: environment_global.
+2025-07-09 23:41:29,624 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:29,879 - botocore.configprovider - INFO - Found endpoint for appconfig via: environment_global.
+2025-07-09 23:41:30,135 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:30,427 - botocore.configprovider - INFO - Found endpoint for fis via: environment_global.
+2025-07-09 23:41:30,545 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:30,828 - botocore.configprovider - INFO - Found endpoint for devops-guru via: environment_global.
+2025-07-09 23:41:30,971 - botocore.credentials - INFO - Found credentials in environment variables.
+2025-07-09 23:41:31,234 - botocore.configprovider - INFO - Found endpoint for events via: environment_global.
+2025-07-09 23:41:31,253 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,564 - botocore.configprovider - INFO - Found endpoint for sts via: environment_global.
+2025-07-09 23:41:31,629 - aws_auto_inventory - INFO - Starting scan
+2025-07-09 23:41:31,630 - aws_auto_inventory.core.scan_engine - INFO - Starting scan for inventory: pci-dss-compliance-inventory-localstack
+2025-07-09 23:41:31,630 - aws_auto_inventory.core.scan_engine - INFO - Starting account scan for inventory: pci-dss-compliance-inventory-localstack
+2025-07-09 23:41:31,643 - aws_auto_inventory.core.region - INFO - Scanning region us-east-1
+2025-07-09 23:41:31,644 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_security_groups in region us-east-1
+2025-07-09 23:41:31,645 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_network_acls in region us-east-1
+2025-07-09 23:41:31,645 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_flow_logs in region us-east-1
+2025-07-09 23:41:31,646 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_vpc_endpoints in region us-east-1
+2025-07-09 23:41:31,646 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_internet_gateways in region us-east-1
+2025-07-09 23:41:31,648 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_nat_gateways in region us-east-1
+2025-07-09 23:41:31,651 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_route_tables in region us-east-1
+2025-07-09 23:41:31,654 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_instances in region us-east-1
+2025-07-09 23:41:31,654 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,655 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,655 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,655 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_volumes in region us-east-1
+2025-07-09 23:41:31,657 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,657 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,657 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_snapshots in region us-east-1
+2025-07-09 23:41:31,659 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,659 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_key_pairs in region us-east-1
+2025-07-09 23:41:31,659 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,660 - aws_auto_inventory.core.service - INFO - Scanning service s3 with function list_buckets in region us-east-1
+2025-07-09 23:41:31,661 - botocore.credentials - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-07-09 23:41:31,661 - aws_auto_inventory.core.service - INFO - Scanning service s3 with function get_bucket_encryption in region us-east-1
+2025-07-09 23:41:31,662 - aws_auto_inventory.core.service - INFO - Scanning service s3 with function get_public_access_block in region us-east-1
+2025-07-09 23:41:31,664 - aws_auto_inventory.core.service - INFO - Scanning service s3 with function get_bucket_logging in region us-east-1
+2025-07-09 23:41:31,716 - aws_auto_inventory.core.service - INFO - Scanning service s3 with function get_bucket_versioning in region us-east-1
+2025-07-09 23:41:31,898 - aws_auto_inventory.core.service - INFO - Scanning service iam with function list_users in region us-east-1
+2025-07-09 23:41:31,929 - aws_auto_inventory.core.service - INFO - Scanning service iam with function list_roles in region us-east-1
+2025-07-09 23:41:31,958 - aws_auto_inventory.core.service - INFO - Scanning service iam with function list_groups in region us-east-1
+2025-07-09 23:41:32,005 - aws_auto_inventory.core.service - INFO - Scanning service iam with function list_policies in region us-east-1
+2025-07-09 23:41:34,191 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:41:34,387 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:34,409 - aws_auto_inventory.core.service - INFO - Successfully scanned service iam with function list_users in region us-east-1
+2025-07-09 23:41:34,416 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:34,417 - aws_auto_inventory.core.service - INFO - Scanning service iam with function get_account_password_policy in region us-east-1
+2025-07-09 23:41:34,418 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:41:34,419 - aws_auto_inventory.core.region - INFO - Successfully scanned service iam with function list_users in region us-east-1
+2025-07-09 23:41:34,424 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:41:34,448 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_network_acls in region us-east-1
+2025-07-09 23:41:34,451 - aws_auto_inventory.core.service - INFO - Scanning service iam with function get_credential_report in region us-east-1
+2025-07-09 23:41:34,454 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:41:34,454 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_network_acls in region us-east-1
+2025-07-09 23:41:34,480 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:41:35,198 - aws_auto_inventory.core.service - INFO - Successfully scanned service s3 with function list_buckets in region us-east-1
+2025-07-09 23:41:35,199 - aws_auto_inventory.core.service - INFO - Scanning service rds with function describe_db_instances in region us-east-1
+2025-07-09 23:41:35,201 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_vpc_endpoints in region us-east-1
+2025-07-09 23:41:35,201 - aws_auto_inventory.core.region - INFO - Successfully scanned service s3 with function list_buckets in region us-east-1
+2025-07-09 23:41:35,205 - aws_auto_inventory.core.service - INFO - Successfully scanned service iam with function get_account_password_policy in region us-east-1
+2025-07-09 23:41:35,209 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:41:35,216 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,217 - aws_auto_inventory.core.service - INFO - Scanning service rds with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:35,219 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_vpc_endpoints in region us-east-1
+2025-07-09 23:41:35,220 - aws_auto_inventory.core.service - INFO - Scanning service rds with function describe_db_snapshots in region us-east-1
+2025-07-09 23:41:35,230 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,234 - aws_auto_inventory.core.service - INFO - Successfully scanned service iam with function list_roles in region us-east-1
+2025-07-09 23:41:35,237 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for iam.get_credential_report: An error occurred (ReportNotPresent) when calling the GetCredentialReport operation: Credential report not present
+2025-07-09 23:41:35,251 - aws_auto_inventory.core.region - INFO - Successfully scanned service iam with function get_account_password_policy in region us-east-1
+2025-07-09 23:41:35,261 - aws_auto_inventory.core.service - INFO - Scanning service rds with function describe_db_subnet_groups in region us-east-1
+2025-07-09 23:41:35,267 - aws_auto_inventory.core.service - ERROR - Error scanning service iam with function get_credential_report in region us-east-1: AWS API error: An error occurred (ReportNotPresent) when calling the GetCredentialReport operation: Credential report not present
+2025-07-09 23:41:35,270 - aws_auto_inventory.core.region - INFO - Successfully scanned service iam with function list_roles in region us-east-1
+2025-07-09 23:41:35,290 - aws_auto_inventory.core.service - INFO - Scanning service lambda with function list_functions in region us-east-1
+2025-07-09 23:41:35,309 - aws_auto_inventory.core.region - WARNING - Failed to scan service iam with function get_credential_report in region us-east-1: AWS API error: An error occurred (ReportNotPresent) when calling the GetCredentialReport operation: Credential report not present
+2025-07-09 23:41:35,357 - aws_auto_inventory.core.service - INFO - Successfully scanned service iam with function list_groups in region us-east-1
+2025-07-09 23:41:35,359 - aws_auto_inventory.core.service - INFO - Scanning service cloudtrail with function describe_trails in region us-east-1
+2025-07-09 23:41:35,360 - aws_auto_inventory.core.region - INFO - Successfully scanned service iam with function list_groups in region us-east-1
+2025-07-09 23:41:35,372 - botocore.configprovider - INFO - Found endpoint for iam via: environment_global.
+2025-07-09 23:41:35,404 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:41:35,412 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:41:35,416 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:41:35,436 - botocore.configprovider - INFO - Found endpoint for rds via: environment_global.
+2025-07-09 23:41:35,451 - botocore.configprovider - INFO - Found endpoint for cloudtrail via: environment_global.
+2025-07-09 23:41:35,461 - botocore.configprovider - INFO - Found endpoint for lambda via: environment_global.
+2025-07-09 23:41:35,494 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,527 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,550 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,567 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:41:35,575 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_bucket_versioning, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:35,582 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:41:35,601 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_bucket_logging, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:35,615 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,666 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,706 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,719 - aws_auto_inventory.core.service - INFO - Successfully scanned service cloudtrail with function describe_trails in region us-east-1
+2025-07-09 23:41:35,721 - aws_auto_inventory.core.service - INFO - Scanning service logs with function describe_log_groups in region us-east-1
+2025-07-09 23:41:35,721 - aws_auto_inventory.core.region - INFO - Successfully scanned service cloudtrail with function describe_trails in region us-east-1
+2025-07-09 23:41:35,742 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:35,761 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:41:35,774 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_public_access_block, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:35,777 - botocore.configprovider - INFO - Found endpoint for logs via: environment_global.
+2025-07-09 23:41:35,792 - botocore.configprovider - INFO - Found endpoint for s3 via: environment_global.
+2025-07-09 23:41:35,800 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_bucket_encryption, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:35,947 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_security_groups in region us-east-1
+2025-07-09 23:41:35,947 - aws_auto_inventory.core.service - INFO - Scanning service cloudwatch with function describe_alarms in region us-east-1
+2025-07-09 23:41:35,947 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_security_groups in region us-east-1
+2025-07-09 23:41:35,956 - botocore.configprovider - INFO - Found endpoint for cloudwatch via: environment_global.
+2025-07-09 23:41:36,014 - aws_auto_inventory.core.service - INFO - Successfully scanned service lambda with function list_functions in region us-east-1
+2025-07-09 23:41:36,016 - aws_auto_inventory.core.service - INFO - Scanning service kms with function list_keys in region us-east-1
+2025-07-09 23:41:36,016 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_flow_logs in region us-east-1
+2025-07-09 23:41:36,017 - aws_auto_inventory.core.region - INFO - Successfully scanned service lambda with function list_functions in region us-east-1
+2025-07-09 23:41:36,017 - aws_auto_inventory.core.service - INFO - Scanning service kms with function list_aliases in region us-east-1
+2025-07-09 23:41:36,018 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_flow_logs in region us-east-1
+2025-07-09 23:41:36,036 - botocore.configprovider - INFO - Found endpoint for kms via: environment_global.
+2025-07-09 23:41:36,037 - botocore.configprovider - INFO - Found endpoint for kms via: environment_global.
+2025-07-09 23:41:36,093 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_key_pairs in region us-east-1
+2025-07-09 23:41:36,094 - aws_auto_inventory.core.service - INFO - Scanning service apigateway with function get_rest_apis in region us-east-1
+2025-07-09 23:41:36,094 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_key_pairs in region us-east-1
+2025-07-09 23:41:36,126 - botocore.configprovider - INFO - Found endpoint for apigateway via: environment_global.
+2025-07-09 23:41:36,226 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_internet_gateways in region us-east-1
+2025-07-09 23:41:36,226 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_snapshots in region us-east-1
+2025-07-09 23:41:36,226 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_nat_gateways in region us-east-1
+2025-07-09 23:41:36,227 - aws_auto_inventory.core.service - INFO - Scanning service apigatewayv2 with function get_apis in region us-east-1
+2025-07-09 23:41:36,232 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_internet_gateways in region us-east-1
+2025-07-09 23:41:36,233 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_instances in region us-east-1
+2025-07-09 23:41:36,233 - aws_auto_inventory.core.service - INFO - Scanning service cloudfront with function list_distributions in region us-east-1
+2025-07-09 23:41:36,233 - aws_auto_inventory.core.service - INFO - Scanning service elb with function describe_load_balancers in region us-east-1
+2025-07-09 23:41:36,234 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_snapshots in region us-east-1
+2025-07-09 23:41:36,234 - aws_auto_inventory.core.service - INFO - Scanning service elbv2 with function describe_load_balancers in region us-east-1
+2025-07-09 23:41:36,235 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_nat_gateways in region us-east-1
+2025-07-09 23:41:36,239 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_instances in region us-east-1
+2025-07-09 23:41:36,239 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_route_tables in region us-east-1
+2025-07-09 23:41:36,244 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_volumes in region us-east-1
+2025-07-09 23:41:36,245 - aws_auto_inventory.core.service - INFO - Scanning service elbv2 with function describe_target_groups in region us-east-1
+2025-07-09 23:41:36,245 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_route_tables in region us-east-1
+2025-07-09 23:41:36,245 - aws_auto_inventory.core.service - INFO - Scanning service waf with function list_web_acls in region us-east-1
+2025-07-09 23:41:36,247 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_volumes in region us-east-1
+2025-07-09 23:41:36,272 - botocore.configprovider - INFO - Found endpoint for elb via: environment_global.
+2025-07-09 23:41:36,273 - botocore.configprovider - INFO - Found endpoint for apigatewayv2 via: environment_global.
+2025-07-09 23:41:36,284 - botocore.configprovider - INFO - Found endpoint for elbv2 via: environment_global.
+2025-07-09 23:41:36,288 - botocore.configprovider - INFO - Found endpoint for elbv2 via: environment_global.
+2025-07-09 23:41:36,299 - aws_auto_inventory.core.service - INFO - Successfully scanned service kms with function list_keys in region us-east-1
+2025-07-09 23:41:36,299 - aws_auto_inventory.core.service - INFO - Scanning service wafv2 with function list_web_acls in region us-east-1
+2025-07-09 23:41:36,300 - aws_auto_inventory.core.region - INFO - Successfully scanned service kms with function list_keys in region us-east-1
+2025-07-09 23:41:36,304 - aws_auto_inventory.core.service - INFO - Successfully scanned service cloudwatch with function describe_alarms in region us-east-1
+2025-07-09 23:41:36,305 - aws_auto_inventory.core.service - INFO - Scanning service config with function describe_config_rules in region us-east-1
+2025-07-09 23:41:36,305 - aws_auto_inventory.core.region - INFO - Successfully scanned service cloudwatch with function describe_alarms in region us-east-1
+2025-07-09 23:41:36,322 - botocore.configprovider - INFO - Found endpoint for waf via: environment_global.
+2025-07-09 23:41:36,347 - botocore.configprovider - INFO - Found endpoint for wafv2 via: environment_global.
+2025-07-09 23:41:36,366 - botocore.configprovider - INFO - Found endpoint for config via: environment_global.
+2025-07-09 23:41:36,367 - aws_auto_inventory.core.service - INFO - Successfully scanned service kms with function list_aliases in region us-east-1
+2025-07-09 23:41:36,372 - aws_auto_inventory.core.service - INFO - Scanning service config with function describe_compliance_by_config_rule in region us-east-1
+2025-07-09 23:41:36,372 - aws_auto_inventory.core.region - INFO - Successfully scanned service kms with function list_aliases in region us-east-1
+2025-07-09 23:41:36,374 - botocore.configprovider - INFO - Found endpoint for config via: environment_global.
+2025-07-09 23:41:36,384 - botocore.configprovider - INFO - Found endpoint for cloudfront via: environment_global.
+2025-07-09 23:41:36,399 - aws_auto_inventory.core.service - INFO - Successfully scanned service iam with function list_policies in region us-east-1
+2025-07-09 23:41:36,400 - aws_auto_inventory.core.service - INFO - Scanning service guardduty with function list_detectors in region us-east-1
+2025-07-09 23:41:36,400 - aws_auto_inventory.core.region - INFO - Successfully scanned service iam with function list_policies in region us-east-1
+2025-07-09 23:41:36,413 - botocore.configprovider - INFO - Found endpoint for guardduty via: environment_global.
+2025-07-09 23:41:36,577 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_bucket_versioning, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:36,602 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_bucket_logging, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:36,702 - aws_auto_inventory.core.service - INFO - Successfully scanned service config with function describe_config_rules in region us-east-1
+2025-07-09 23:41:36,702 - aws_auto_inventory.core.service - INFO - Scanning service secretsmanager with function list_secrets in region us-east-1
+2025-07-09 23:41:36,702 - aws_auto_inventory.core.region - INFO - Successfully scanned service config with function describe_config_rules in region us-east-1
+2025-07-09 23:41:36,709 - botocore.configprovider - INFO - Found endpoint for secretsmanager via: environment_global.
+2025-07-09 23:41:36,722 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for config.describe_compliance_by_config_rule: An error occurred (InternalFailure) when calling the DescribeComplianceByConfigRule operation: The describe_compliance_by_config_rule action has not been implemented
+2025-07-09 23:41:36,723 - aws_auto_inventory.core.service - ERROR - Error scanning service config with function describe_compliance_by_config_rule in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeComplianceByConfigRule operation: The describe_compliance_by_config_rule action has not been implemented
+2025-07-09 23:41:36,724 - aws_auto_inventory.core.service - INFO - Scanning service acm with function list_certificates in region us-east-1
+2025-07-09 23:41:36,726 - aws_auto_inventory.core.region - WARNING - Failed to scan service config with function describe_compliance_by_config_rule in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeComplianceByConfigRule operation: The describe_compliance_by_config_rule action has not been implemented
+2025-07-09 23:41:36,731 - botocore.configprovider - INFO - Found endpoint for acm via: environment_global.
+2025-07-09 23:41:36,745 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for guardduty.list_detectors: An error occurred (InternalFailure) when calling the ListDetectors operation: The API for service 'guardduty' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:36,746 - aws_auto_inventory.core.service - ERROR - Error scanning service guardduty with function list_detectors in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListDetectors operation: The API for service 'guardduty' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:36,747 - aws_auto_inventory.core.service - INFO - Scanning service dynamodb with function list_tables in region us-east-1
+2025-07-09 23:41:36,747 - aws_auto_inventory.core.region - WARNING - Failed to scan service guardduty with function list_detectors in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListDetectors operation: The API for service 'guardduty' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:36,762 - botocore.configprovider - INFO - Found endpoint for dynamodb via: environment_global.
+2025-07-09 23:41:36,775 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_public_access_block, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:36,797 - aws_auto_inventory.core.service - INFO - Successfully scanned service logs with function describe_log_groups in region us-east-1
+2025-07-09 23:41:36,798 - aws_auto_inventory.core.service - INFO - Scanning service elasticache with function describe_cache_clusters in region us-east-1
+2025-07-09 23:41:36,798 - aws_auto_inventory.core.region - INFO - Successfully scanned service logs with function describe_log_groups in region us-east-1
+2025-07-09 23:41:36,801 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for s3.get_bucket_encryption, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:36,812 - botocore.configprovider - INFO - Found endpoint for elasticache via: environment_global.
+2025-07-09 23:41:36,845 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for waf.list_web_acls: An error occurred (InternalFailure) when calling the ListWebACLs operation: The API for service 'waf' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:36,845 - aws_auto_inventory.core.service - ERROR - Error scanning service waf with function list_web_acls in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListWebACLs operation: The API for service 'waf' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:36,846 - aws_auto_inventory.core.service - INFO - Scanning service elasticache with function describe_replication_groups in region us-east-1
+2025-07-09 23:41:36,846 - aws_auto_inventory.core.region - WARNING - Failed to scan service waf with function list_web_acls in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListWebACLs operation: The API for service 'waf' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:36,848 - botocore.configprovider - INFO - Found endpoint for elasticache via: environment_global.
+2025-07-09 23:41:36,897 - aws_auto_inventory.core.service - INFO - Successfully scanned service acm with function list_certificates in region us-east-1
+2025-07-09 23:41:36,897 - aws_auto_inventory.core.service - INFO - Successfully scanned service dynamodb with function list_tables in region us-east-1
+2025-07-09 23:41:36,898 - aws_auto_inventory.core.service - INFO - Scanning service redshift with function describe_clusters in region us-east-1
+2025-07-09 23:41:36,898 - aws_auto_inventory.core.region - INFO - Successfully scanned service acm with function list_certificates in region us-east-1
+2025-07-09 23:41:36,898 - aws_auto_inventory.core.service - INFO - Scanning service ecs with function list_clusters in region us-east-1
+2025-07-09 23:41:36,899 - aws_auto_inventory.core.region - INFO - Successfully scanned service dynamodb with function list_tables in region us-east-1
+2025-07-09 23:41:36,928 - aws_auto_inventory.core.service - INFO - Successfully scanned service elasticache with function describe_cache_clusters in region us-east-1
+2025-07-09 23:41:36,929 - aws_auto_inventory.core.service - INFO - Successfully scanned service elasticache with function describe_replication_groups in region us-east-1
+2025-07-09 23:41:36,929 - aws_auto_inventory.core.service - INFO - Scanning service ecs with function list_services in region us-east-1
+2025-07-09 23:41:36,930 - aws_auto_inventory.core.region - INFO - Successfully scanned service elasticache with function describe_cache_clusters in region us-east-1
+2025-07-09 23:41:36,930 - aws_auto_inventory.core.service - INFO - Scanning service ecs with function list_task_definitions in region us-east-1
+2025-07-09 23:41:36,931 - aws_auto_inventory.core.region - INFO - Successfully scanned service elasticache with function describe_replication_groups in region us-east-1
+2025-07-09 23:41:36,936 - botocore.configprovider - INFO - Found endpoint for redshift via: environment_global.
+2025-07-09 23:41:36,960 - botocore.configprovider - INFO - Found endpoint for ecs via: environment_global.
+2025-07-09 23:41:36,967 - botocore.configprovider - INFO - Found endpoint for ecs via: environment_global.
+2025-07-09 23:41:36,971 - botocore.configprovider - INFO - Found endpoint for ecs via: environment_global.
+2025-07-09 23:41:37,062 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for ecs.list_services: An error occurred (ClusterNotFoundException) when calling the ListServices operation: Cluster not found.
+2025-07-09 23:41:37,062 - aws_auto_inventory.core.service - INFO - Successfully scanned service ecs with function list_clusters in region us-east-1
+2025-07-09 23:41:37,065 - aws_auto_inventory.core.service - INFO - Successfully scanned service secretsmanager with function list_secrets in region us-east-1
+2025-07-09 23:41:37,066 - aws_auto_inventory.core.service - INFO - Successfully scanned service ecs with function list_task_definitions in region us-east-1
+2025-07-09 23:41:37,066 - aws_auto_inventory.core.service - ERROR - Error scanning service ecs with function list_services in region us-east-1: AWS API error: An error occurred (ClusterNotFoundException) when calling the ListServices operation: Cluster not found.
+2025-07-09 23:41:37,067 - aws_auto_inventory.core.service - INFO - Scanning service eks with function list_clusters in region us-east-1
+2025-07-09 23:41:37,067 - aws_auto_inventory.core.region - INFO - Successfully scanned service ecs with function list_clusters in region us-east-1
+2025-07-09 23:41:37,067 - aws_auto_inventory.core.service - INFO - Scanning service ecr with function describe_repositories in region us-east-1
+2025-07-09 23:41:37,067 - aws_auto_inventory.core.service - INFO - Scanning service backup with function list_backup_plans in region us-east-1
+2025-07-09 23:41:37,068 - aws_auto_inventory.core.service - INFO - Scanning service backup with function list_backup_vaults in region us-east-1
+2025-07-09 23:41:37,069 - aws_auto_inventory.core.region - INFO - Successfully scanned service secretsmanager with function list_secrets in region us-east-1
+2025-07-09 23:41:37,071 - aws_auto_inventory.core.region - INFO - Successfully scanned service ecs with function list_task_definitions in region us-east-1
+2025-07-09 23:41:37,071 - aws_auto_inventory.core.region - WARNING - Failed to scan service ecs with function list_services in region us-east-1: AWS API error: An error occurred (ClusterNotFoundException) when calling the ListServices operation: Cluster not found.
+2025-07-09 23:41:37,110 - botocore.configprovider - INFO - Found endpoint for ecr via: environment_global.
+2025-07-09 23:41:37,114 - botocore.configprovider - INFO - Found endpoint for backup via: environment_global.
+2025-07-09 23:41:37,116 - botocore.configprovider - INFO - Found endpoint for eks via: environment_global.
+2025-07-09 23:41:37,121 - botocore.configprovider - INFO - Found endpoint for backup via: environment_global.
+2025-07-09 23:41:37,302 - aws_auto_inventory.core.service - INFO - Successfully scanned service backup with function list_backup_vaults in region us-east-1
+2025-07-09 23:41:37,303 - aws_auto_inventory.core.service - INFO - Scanning service sns with function list_topics in region us-east-1
+2025-07-09 23:41:37,303 - aws_auto_inventory.core.region - INFO - Successfully scanned service backup with function list_backup_vaults in region us-east-1
+2025-07-09 23:41:37,310 - aws_auto_inventory.core.service - INFO - Successfully scanned service backup with function list_backup_plans in region us-east-1
+2025-07-09 23:41:37,311 - aws_auto_inventory.core.service - INFO - Scanning service sqs with function list_queues in region us-east-1
+2025-07-09 23:41:37,311 - aws_auto_inventory.core.region - INFO - Successfully scanned service backup with function list_backup_plans in region us-east-1
+2025-07-09 23:41:37,315 - botocore.configprovider - INFO - Found endpoint for sns via: environment_global.
+2025-07-09 23:41:37,327 - botocore.configprovider - INFO - Found endpoint for sqs via: environment_global.
+2025-07-09 23:41:37,391 - aws_auto_inventory.core.service - INFO - Successfully scanned service sns with function list_topics in region us-east-1
+2025-07-09 23:41:37,391 - aws_auto_inventory.core.service - INFO - Scanning service opensearch with function list_domain_names in region us-east-1
+2025-07-09 23:41:37,391 - aws_auto_inventory.core.region - INFO - Successfully scanned service sns with function list_topics in region us-east-1
+2025-07-09 23:41:37,404 - botocore.configprovider - INFO - Found endpoint for opensearch via: environment_global.
+2025-07-09 23:41:37,526 - aws_auto_inventory.core.service - INFO - Successfully scanned service ecr with function describe_repositories in region us-east-1
+2025-07-09 23:41:37,526 - aws_auto_inventory.core.service - INFO - Scanning service route53 with function list_hosted_zones in region us-east-1
+2025-07-09 23:41:37,526 - aws_auto_inventory.core.region - INFO - Successfully scanned service ecr with function describe_repositories in region us-east-1
+2025-07-09 23:41:37,539 - botocore.configprovider - INFO - Found endpoint for route53 via: environment_global.
+2025-07-09 23:41:37,663 - aws_auto_inventory.core.service - INFO - Successfully scanned service route53 with function list_hosted_zones in region us-east-1
+2025-07-09 23:41:37,663 - aws_auto_inventory.core.service - INFO - Scanning service directconnect with function describe_connections in region us-east-1
+2025-07-09 23:41:37,663 - aws_auto_inventory.core.region - INFO - Successfully scanned service route53 with function list_hosted_zones in region us-east-1
+2025-07-09 23:41:37,669 - botocore.configprovider - INFO - Found endpoint for directconnect via: environment_global.
+2025-07-09 23:41:37,764 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for directconnect.describe_connections: An error occurred (InternalFailure) when calling the DescribeConnections operation: The API for service 'directconnect' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:37,764 - aws_auto_inventory.core.service - ERROR - Error scanning service directconnect with function describe_connections in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeConnections operation: The API for service 'directconnect' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:37,765 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_vpn_connections in region us-east-1
+2025-07-09 23:41:37,766 - aws_auto_inventory.core.region - WARNING - Failed to scan service directconnect with function describe_connections in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeConnections operation: The API for service 'directconnect' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:37,774 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:37,909 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_vpn_connections in region us-east-1
+2025-07-09 23:41:37,909 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_transit_gateways in region us-east-1
+2025-07-09 23:41:37,909 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_vpn_connections in region us-east-1
+2025-07-09 23:41:37,918 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:38,578 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for s3.get_bucket_versioning: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,578 - aws_auto_inventory.core.service - ERROR - Error scanning service s3 with function get_bucket_versioning in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,579 - aws_auto_inventory.core.service - INFO - Scanning service securityhub with function get_enabled_standards in region us-east-1
+2025-07-09 23:41:38,579 - aws_auto_inventory.core.region - WARNING - Failed to scan service s3 with function get_bucket_versioning in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,605 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for s3.get_bucket_logging: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,605 - aws_auto_inventory.core.service - ERROR - Error scanning service s3 with function get_bucket_logging in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,606 - aws_auto_inventory.core.service - INFO - Scanning service inspector with function list_assessment_targets in region us-east-1
+2025-07-09 23:41:38,606 - aws_auto_inventory.core.region - WARNING - Failed to scan service s3 with function get_bucket_logging in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,611 - botocore.configprovider - INFO - Found endpoint for securityhub via: environment_global.
+2025-07-09 23:41:38,626 - botocore.configprovider - INFO - Found endpoint for inspector via: environment_global.
+2025-07-09 23:41:38,776 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for s3.get_public_access_block: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,777 - aws_auto_inventory.core.service - ERROR - Error scanning service s3 with function get_public_access_block in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,777 - aws_auto_inventory.core.service - INFO - Scanning service ssm with function describe_parameters in region us-east-1
+2025-07-09 23:41:38,778 - aws_auto_inventory.core.region - WARNING - Failed to scan service s3 with function get_public_access_block in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,802 - botocore.configprovider - INFO - Found endpoint for ssm via: environment_global.
+2025-07-09 23:41:38,802 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for s3.get_bucket_encryption: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,819 - aws_auto_inventory.core.service - ERROR - Error scanning service s3 with function get_bucket_encryption in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,820 - aws_auto_inventory.core.service - INFO - Scanning service ssm with function describe_patch_baselines in region us-east-1
+2025-07-09 23:41:38,820 - aws_auto_inventory.core.region - WARNING - Failed to scan service s3 with function get_bucket_encryption in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "Bucket"
+2025-07-09 23:41:38,826 - botocore.configprovider - INFO - Found endpoint for ssm via: environment_global.
+2025-07-09 23:41:38,986 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for securityhub.get_enabled_standards: An error occurred (InternalFailure) when calling the GetEnabledStandards operation: The API for service 'securityhub' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:38,988 - aws_auto_inventory.core.service - INFO - Successfully scanned service ssm with function describe_patch_baselines in region us-east-1
+2025-07-09 23:41:38,989 - aws_auto_inventory.core.service - ERROR - Error scanning service securityhub with function get_enabled_standards in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the GetEnabledStandards operation: The API for service 'securityhub' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:38,989 - aws_auto_inventory.core.service - INFO - Scanning service cloudformation with function describe_stacks in region us-east-1
+2025-07-09 23:41:38,990 - aws_auto_inventory.core.region - INFO - Successfully scanned service ssm with function describe_patch_baselines in region us-east-1
+2025-07-09 23:41:38,991 - aws_auto_inventory.core.service - INFO - Scanning service codebuild with function list_projects in region us-east-1
+2025-07-09 23:41:38,992 - aws_auto_inventory.core.region - WARNING - Failed to scan service securityhub with function get_enabled_standards in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the GetEnabledStandards operation: The API for service 'securityhub' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,026 - botocore.configprovider - INFO - Found endpoint for codebuild via: environment_global.
+2025-07-09 23:41:39,037 - botocore.configprovider - INFO - Found endpoint for cloudformation via: environment_global.
+2025-07-09 23:41:39,127 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for inspector.list_assessment_targets: An error occurred (InternalFailure) when calling the ListAssessmentTargets operation: The API for service 'inspector' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,128 - aws_auto_inventory.core.service - ERROR - Error scanning service inspector with function list_assessment_targets in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListAssessmentTargets operation: The API for service 'inspector' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,128 - aws_auto_inventory.core.service - INFO - Scanning service codepipeline with function list_pipelines in region us-east-1
+2025-07-09 23:41:39,129 - aws_auto_inventory.core.region - WARNING - Failed to scan service inspector with function list_assessment_targets in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListAssessmentTargets operation: The API for service 'inspector' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,132 - aws_auto_inventory.core.service - INFO - Successfully scanned service cloudformation with function describe_stacks in region us-east-1
+2025-07-09 23:41:39,132 - aws_auto_inventory.core.service - INFO - Scanning service network-firewall with function list_firewalls in region us-east-1
+2025-07-09 23:41:39,132 - aws_auto_inventory.core.region - INFO - Successfully scanned service cloudformation with function describe_stacks in region us-east-1
+2025-07-09 23:41:39,152 - botocore.configprovider - INFO - Found endpoint for codepipeline via: environment_global.
+2025-07-09 23:41:39,156 - botocore.configprovider - INFO - Found endpoint for network-firewall via: environment_global.
+2025-07-09 23:41:39,227 - aws_auto_inventory.core.service - INFO - Successfully scanned service codepipeline with function list_pipelines in region us-east-1
+2025-07-09 23:41:39,228 - aws_auto_inventory.core.service - INFO - Scanning service network-firewall with function list_firewall_policies in region us-east-1
+2025-07-09 23:41:39,228 - aws_auto_inventory.core.region - INFO - Successfully scanned service codepipeline with function list_pipelines in region us-east-1
+2025-07-09 23:41:39,229 - botocore.configprovider - INFO - Found endpoint for network-firewall via: environment_global.
+2025-07-09 23:41:39,265 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for network-firewall.list_firewalls: An error occurred (InternalFailure) when calling the ListFirewalls operation: The API for service 'network-firewall' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,266 - aws_auto_inventory.core.service - ERROR - Error scanning service network-firewall with function list_firewalls in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListFirewalls operation: The API for service 'network-firewall' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,267 - aws_auto_inventory.core.service - INFO - Scanning service es with function list_domain_names in region us-east-1
+2025-07-09 23:41:39,267 - aws_auto_inventory.core.region - WARNING - Failed to scan service network-firewall with function list_firewalls in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListFirewalls operation: The API for service 'network-firewall' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,275 - botocore.configprovider - INFO - Found endpoint for es via: environment_global.
+2025-07-09 23:41:39,413 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for network-firewall.list_firewall_policies: An error occurred (InternalFailure) when calling the ListFirewallPolicies operation: The API for service 'network-firewall' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,414 - aws_auto_inventory.core.service - ERROR - Error scanning service network-firewall with function list_firewall_policies in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListFirewallPolicies operation: The API for service 'network-firewall' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,415 - aws_auto_inventory.core.service - INFO - Scanning service es with function describe_elasticsearch_domains in region us-east-1
+2025-07-09 23:41:39,415 - aws_auto_inventory.core.region - WARNING - Failed to scan service network-firewall with function list_firewall_policies in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListFirewallPolicies operation: The API for service 'network-firewall' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:39,416 - botocore.configprovider - INFO - Found endpoint for es via: environment_global.
+2025-07-09 23:41:39,420 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for es.describe_elasticsearch_domains, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:40,421 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for es.describe_elasticsearch_domains, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:42,422 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for es.describe_elasticsearch_domains: Parameter validation failed:
+Missing required parameter in input: "DomainNames"
+2025-07-09 23:41:42,423 - aws_auto_inventory.core.service - ERROR - Error scanning service es with function describe_elasticsearch_domains in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "DomainNames"
+2025-07-09 23:41:42,423 - aws_auto_inventory.core.service - INFO - Scanning service docdb with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:42,424 - aws_auto_inventory.core.region - WARNING - Failed to scan service es with function describe_elasticsearch_domains in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "DomainNames"
+2025-07-09 23:41:42,434 - botocore.configprovider - INFO - Found endpoint for docdb via: environment_global.
+2025-07-09 23:41:42,748 - aws_auto_inventory.core.service - INFO - Successfully scanned service sqs with function list_queues in region us-east-1
+2025-07-09 23:41:42,749 - aws_auto_inventory.core.service - INFO - Scanning service neptune with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:42,749 - aws_auto_inventory.core.region - INFO - Successfully scanned service sqs with function list_queues in region us-east-1
+2025-07-09 23:41:42,763 - botocore.configprovider - INFO - Found endpoint for neptune via: environment_global.
+2025-07-09 23:41:42,851 - aws_auto_inventory.core.service - INFO - Successfully scanned service eks with function list_clusters in region us-east-1
+2025-07-09 23:41:42,852 - aws_auto_inventory.core.service - INFO - Scanning service efs with function describe_file_systems in region us-east-1
+2025-07-09 23:41:42,852 - aws_auto_inventory.core.region - INFO - Successfully scanned service eks with function list_clusters in region us-east-1
+2025-07-09 23:41:42,860 - botocore.configprovider - INFO - Found endpoint for efs via: environment_global.
+2025-07-09 23:41:43,347 - aws_auto_inventory.core.service - INFO - Successfully scanned service ec2 with function describe_transit_gateways in region us-east-1
+2025-07-09 23:41:43,348 - aws_auto_inventory.core.service - INFO - Scanning service efs with function describe_access_points in region us-east-1
+2025-07-09 23:41:43,348 - aws_auto_inventory.core.region - INFO - Successfully scanned service ec2 with function describe_transit_gateways in region us-east-1
+2025-07-09 23:41:43,349 - botocore.configprovider - INFO - Found endpoint for efs via: environment_global.
+2025-07-09 23:41:43,892 - aws_auto_inventory.core.service - INFO - Successfully scanned service wafv2 with function list_web_acls in region us-east-1
+2025-07-09 23:41:43,893 - aws_auto_inventory.core.service - INFO - Scanning service kafka with function list_clusters in region us-east-1
+2025-07-09 23:41:43,893 - aws_auto_inventory.core.region - INFO - Successfully scanned service wafv2 with function list_web_acls in region us-east-1
+2025-07-09 23:41:43,923 - botocore.configprovider - INFO - Found endpoint for kafka via: environment_global.
+2025-07-09 23:41:43,929 - aws_auto_inventory.core.service - INFO - Successfully scanned service efs with function describe_file_systems in region us-east-1
+2025-07-09 23:41:43,930 - aws_auto_inventory.core.service - INFO - Scanning service emr with function list_clusters in region us-east-1
+2025-07-09 23:41:43,934 - aws_auto_inventory.core.region - INFO - Successfully scanned service efs with function describe_file_systems in region us-east-1
+2025-07-09 23:41:43,949 - aws_auto_inventory.core.service - INFO - Successfully scanned service redshift with function describe_clusters in region us-east-1
+2025-07-09 23:41:43,950 - aws_auto_inventory.core.service - INFO - Scanning service kinesis with function list_streams in region us-east-1
+2025-07-09 23:41:43,952 - aws_auto_inventory.core.region - INFO - Successfully scanned service redshift with function describe_clusters in region us-east-1
+2025-07-09 23:41:43,955 - botocore.configprovider - INFO - Found endpoint for emr via: environment_global.
+2025-07-09 23:41:43,970 - botocore.configprovider - INFO - Found endpoint for kinesis via: environment_global.
+2025-07-09 23:41:44,176 - aws_auto_inventory.core.service - INFO - Successfully scanned service elbv2 with function describe_load_balancers in region us-east-1
+2025-07-09 23:41:44,177 - aws_auto_inventory.core.service - INFO - Scanning service workspaces with function describe_workspaces in region us-east-1
+2025-07-09 23:41:44,177 - aws_auto_inventory.core.region - INFO - Successfully scanned service elbv2 with function describe_load_balancers in region us-east-1
+2025-07-09 23:41:44,191 - botocore.configprovider - INFO - Found endpoint for workspaces via: environment_global.
+2025-07-09 23:41:44,213 - aws_auto_inventory.core.service - INFO - Successfully scanned service elb with function describe_load_balancers in region us-east-1
+2025-07-09 23:41:44,214 - aws_auto_inventory.core.service - INFO - Scanning service sagemaker with function list_notebook_instances in region us-east-1
+2025-07-09 23:41:44,214 - aws_auto_inventory.core.region - INFO - Successfully scanned service elb with function describe_load_balancers in region us-east-1
+2025-07-09 23:41:44,221 - aws_auto_inventory.core.service - INFO - Successfully scanned service elbv2 with function describe_target_groups in region us-east-1
+2025-07-09 23:41:44,221 - aws_auto_inventory.core.service - INFO - Scanning service transfer with function list_servers in region us-east-1
+2025-07-09 23:41:44,222 - aws_auto_inventory.core.region - INFO - Successfully scanned service elbv2 with function describe_target_groups in region us-east-1
+2025-07-09 23:41:44,270 - botocore.configprovider - INFO - Found endpoint for transfer via: environment_global.
+2025-07-09 23:41:44,285 - botocore.configprovider - INFO - Found endpoint for sagemaker via: environment_global.
+2025-07-09 23:41:44,319 - aws_auto_inventory.core.service - INFO - Successfully scanned service efs with function describe_access_points in region us-east-1
+2025-07-09 23:41:44,320 - aws_auto_inventory.core.service - INFO - Scanning service dms with function describe_replication_instances in region us-east-1
+2025-07-09 23:41:44,320 - aws_auto_inventory.core.region - INFO - Successfully scanned service efs with function describe_access_points in region us-east-1
+2025-07-09 23:41:44,337 - botocore.configprovider - INFO - Found endpoint for dms via: environment_global.
+2025-07-09 23:41:45,435 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for workspaces.describe_workspaces: An error occurred (InternalFailure) when calling the DescribeWorkspaces operation: The API for service 'workspaces' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:45,437 - aws_auto_inventory.core.service - ERROR - Error scanning service workspaces with function describe_workspaces in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeWorkspaces operation: The API for service 'workspaces' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:45,438 - aws_auto_inventory.core.service - INFO - Successfully scanned service sagemaker with function list_notebook_instances in region us-east-1
+2025-07-09 23:41:45,439 - aws_auto_inventory.core.service - INFO - Scanning service athena with function list_work_groups in region us-east-1
+2025-07-09 23:41:45,439 - aws_auto_inventory.core.service - INFO - Scanning service mq with function list_brokers in region us-east-1
+2025-07-09 23:41:45,439 - aws_auto_inventory.core.region - WARNING - Failed to scan service workspaces with function describe_workspaces in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeWorkspaces operation: The API for service 'workspaces' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:45,445 - aws_auto_inventory.core.region - INFO - Successfully scanned service sagemaker with function list_notebook_instances in region us-east-1
+2025-07-09 23:41:45,490 - botocore.configprovider - INFO - Found endpoint for mq via: environment_global.
+2025-07-09 23:41:45,499 - botocore.configprovider - INFO - Found endpoint for athena via: environment_global.
+2025-07-09 23:41:45,973 - aws_auto_inventory.core.service - INFO - Successfully scanned service cloudfront with function list_distributions in region us-east-1
+2025-07-09 23:41:45,973 - aws_auto_inventory.core.service - INFO - Successfully scanned service kinesis with function list_streams in region us-east-1
+2025-07-09 23:41:45,974 - aws_auto_inventory.core.service - INFO - Scanning service shield with function get_subscription_state in region us-east-1
+2025-07-09 23:41:45,974 - aws_auto_inventory.core.region - INFO - Successfully scanned service cloudfront with function list_distributions in region us-east-1
+2025-07-09 23:41:45,974 - aws_auto_inventory.core.service - INFO - Scanning service shield with function list_protections in region us-east-1
+2025-07-09 23:41:45,978 - aws_auto_inventory.core.region - INFO - Successfully scanned service kinesis with function list_streams in region us-east-1
+2025-07-09 23:41:45,989 - botocore.configprovider - INFO - Found endpoint for shield via: environment_global.
+2025-07-09 23:41:45,989 - botocore.configprovider - INFO - Found endpoint for shield via: environment_global.
+2025-07-09 23:41:46,984 - aws_auto_inventory.core.service - INFO - Successfully scanned service apigateway with function get_rest_apis in region us-east-1
+2025-07-09 23:41:46,985 - aws_auto_inventory.core.service - INFO - Scanning service ssm with function describe_sessions in region us-east-1
+2025-07-09 23:41:46,987 - aws_auto_inventory.core.region - INFO - Successfully scanned service apigateway with function get_rest_apis in region us-east-1
+2025-07-09 23:41:46,987 - aws_auto_inventory.core.service - INFO - Successfully scanned service codebuild with function list_projects in region us-east-1
+2025-07-09 23:41:46,989 - botocore.configprovider - INFO - Found endpoint for ssm via: environment_global.
+2025-07-09 23:41:46,990 - aws_auto_inventory.core.service - INFO - Scanning service workspaces with function describe_workspaces in region us-east-1
+2025-07-09 23:41:46,990 - aws_auto_inventory.core.region - INFO - Successfully scanned service codebuild with function list_projects in region us-east-1
+2025-07-09 23:41:46,994 - botocore.configprovider - INFO - Found endpoint for workspaces via: environment_global.
+2025-07-09 23:41:47,081 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for ssm.describe_sessions: An error occurred (InternalFailure) when calling the DescribeSessions operation: The describe_sessions action has not been implemented
+2025-07-09 23:41:47,086 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for workspaces.describe_workspaces: An error occurred (InternalFailure) when calling the DescribeWorkspaces operation: The API for service 'workspaces' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,086 - aws_auto_inventory.core.service - ERROR - Error scanning service ssm with function describe_sessions in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeSessions operation: The describe_sessions action has not been implemented
+2025-07-09 23:41:47,086 - aws_auto_inventory.core.service - ERROR - Error scanning service workspaces with function describe_workspaces in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeWorkspaces operation: The API for service 'workspaces' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,087 - aws_auto_inventory.core.service - INFO - Scanning service appstream with function describe_fleets in region us-east-1
+2025-07-09 23:41:47,087 - aws_auto_inventory.core.region - WARNING - Failed to scan service ssm with function describe_sessions in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeSessions operation: The describe_sessions action has not been implemented
+2025-07-09 23:41:47,088 - aws_auto_inventory.core.service - INFO - Scanning service macie2 with function get_macie_session in region us-east-1
+2025-07-09 23:41:47,089 - aws_auto_inventory.core.region - WARNING - Failed to scan service workspaces with function describe_workspaces in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeWorkspaces operation: The API for service 'workspaces' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,111 - botocore.configprovider - INFO - Found endpoint for appstream via: environment_global.
+2025-07-09 23:41:47,116 - botocore.configprovider - INFO - Found endpoint for macie2 via: environment_global.
+2025-07-09 23:41:47,310 - aws_auto_inventory.core.service - INFO - Successfully scanned service opensearch with function list_domain_names in region us-east-1
+2025-07-09 23:41:47,311 - aws_auto_inventory.core.service - INFO - Scanning service organizations with function list_accounts in region us-east-1
+2025-07-09 23:41:47,311 - aws_auto_inventory.core.region - INFO - Successfully scanned service opensearch with function list_domain_names in region us-east-1
+2025-07-09 23:41:47,320 - botocore.configprovider - INFO - Found endpoint for organizations via: environment_global.
+2025-07-09 23:41:47,359 - aws_auto_inventory.core.service - INFO - Successfully scanned service es with function list_domain_names in region us-east-1
+2025-07-09 23:41:47,359 - aws_auto_inventory.core.service - INFO - Scanning service organizations with function list_policies in region us-east-1
+2025-07-09 23:41:47,360 - aws_auto_inventory.core.region - INFO - Successfully scanned service es with function list_domain_names in region us-east-1
+2025-07-09 23:41:47,361 - botocore.configprovider - INFO - Found endpoint for organizations via: environment_global.
+2025-07-09 23:41:47,553 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for appstream.describe_fleets: An error occurred (InternalFailure) when calling the DescribeFleets operation: The API for service 'appstream' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,553 - aws_auto_inventory.core.service - ERROR - Error scanning service appstream with function describe_fleets in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeFleets operation: The API for service 'appstream' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,554 - aws_auto_inventory.core.service - INFO - Scanning service controltower with function get_landing_zone in region us-east-1
+2025-07-09 23:41:47,557 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for shield.get_subscription_state: An error occurred (InternalFailure) when calling the GetSubscriptionState operation: The get_subscription_state action has not been implemented
+2025-07-09 23:41:47,557 - aws_auto_inventory.core.region - WARNING - Failed to scan service appstream with function describe_fleets in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeFleets operation: The API for service 'appstream' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,557 - aws_auto_inventory.core.service - ERROR - Error scanning service shield with function get_subscription_state in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the GetSubscriptionState operation: The get_subscription_state action has not been implemented
+2025-07-09 23:41:47,559 - aws_auto_inventory.core.service - INFO - Scanning service cloudhsmv2 with function describe_clusters in region us-east-1
+2025-07-09 23:41:47,559 - aws_auto_inventory.core.region - WARNING - Failed to scan service shield with function get_subscription_state in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the GetSubscriptionState operation: The get_subscription_state action has not been implemented
+2025-07-09 23:41:47,567 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for shield.list_protections: An error occurred (InternalFailure) when calling the ListProtections operation: The list_protections action has not been implemented
+2025-07-09 23:41:47,569 - aws_auto_inventory.core.service - ERROR - Error scanning service shield with function list_protections in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListProtections operation: The list_protections action has not been implemented
+2025-07-09 23:41:47,570 - aws_auto_inventory.core.service - INFO - Scanning service acm-pca with function list_certificate_authorities in region us-east-1
+2025-07-09 23:41:47,570 - aws_auto_inventory.core.region - WARNING - Failed to scan service shield with function list_protections in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListProtections operation: The list_protections action has not been implemented
+2025-07-09 23:41:47,574 - botocore.configprovider - INFO - Found endpoint for cloudhsmv2 via: environment_global.
+2025-07-09 23:41:47,578 - botocore.configprovider - INFO - Found endpoint for controltower via: environment_global.
+2025-07-09 23:41:47,589 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for controltower.get_landing_zone, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:47,595 - botocore.configprovider - INFO - Found endpoint for acm-pca via: environment_global.
+2025-07-09 23:41:47,599 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for macie2.get_macie_session: An error occurred (InternalFailure) when calling the GetMacieSession operation: The API for service 'macie2' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,601 - aws_auto_inventory.core.service - ERROR - Error scanning service macie2 with function get_macie_session in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the GetMacieSession operation: The API for service 'macie2' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,602 - aws_auto_inventory.core.service - INFO - Scanning service servicecatalog with function list_portfolios in region us-east-1
+2025-07-09 23:41:47,608 - aws_auto_inventory.core.region - WARNING - Failed to scan service macie2 with function get_macie_session in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the GetMacieSession operation: The API for service 'macie2' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,641 - botocore.configprovider - INFO - Found endpoint for servicecatalog via: environment_global.
+2025-07-09 23:41:47,667 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for cloudhsmv2.describe_clusters: An error occurred (InternalFailure) when calling the DescribeClusters operation: The API for service 'cloudhsmv2' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,667 - aws_auto_inventory.core.service - ERROR - Error scanning service cloudhsmv2 with function describe_clusters in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeClusters operation: The API for service 'cloudhsmv2' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,668 - aws_auto_inventory.core.service - INFO - Scanning service support with function describe_trusted_advisor_checks in region us-east-1
+2025-07-09 23:41:47,668 - aws_auto_inventory.core.region - WARNING - Failed to scan service cloudhsmv2 with function describe_clusters in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the DescribeClusters operation: The API for service 'cloudhsmv2' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,675 - botocore.configprovider - INFO - Found endpoint for support via: environment_global.
+2025-07-09 23:41:47,680 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for support.describe_trusted_advisor_checks, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:47,860 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for servicecatalog.list_portfolios: An error occurred (InternalFailure) when calling the ListPortfolios operation: The API for service 'servicecatalog' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,860 - aws_auto_inventory.core.service - ERROR - Error scanning service servicecatalog with function list_portfolios in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListPortfolios operation: The API for service 'servicecatalog' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,862 - aws_auto_inventory.core.service - INFO - Scanning service ram with function get_resource_shares in region us-east-1
+2025-07-09 23:41:47,862 - aws_auto_inventory.core.region - WARNING - Failed to scan service servicecatalog with function list_portfolios in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListPortfolios operation: The API for service 'servicecatalog' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:47,870 - botocore.configprovider - INFO - Found endpoint for ram via: environment_global.
+2025-07-09 23:41:47,876 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for ram.get_resource_shares, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:48,021 - aws_auto_inventory.core.service - INFO - Successfully scanned service organizations with function list_accounts in region us-east-1
+2025-07-09 23:41:48,021 - aws_auto_inventory.core.service - INFO - Scanning service detective with function list_graphs in region us-east-1
+2025-07-09 23:41:48,022 - aws_auto_inventory.core.region - INFO - Successfully scanned service organizations with function list_accounts in region us-east-1
+2025-07-09 23:41:48,027 - aws_auto_inventory.core.service - INFO - Successfully scanned service organizations with function list_policies in region us-east-1
+2025-07-09 23:41:48,027 - aws_auto_inventory.core.service - INFO - Scanning service ses with function list_configuration_sets in region us-east-1
+2025-07-09 23:41:48,028 - aws_auto_inventory.core.region - INFO - Successfully scanned service organizations with function list_policies in region us-east-1
+2025-07-09 23:41:48,031 - botocore.configprovider - INFO - Found endpoint for detective via: environment_global.
+2025-07-09 23:41:48,043 - botocore.configprovider - INFO - Found endpoint for ses via: environment_global.
+2025-07-09 23:41:48,075 - aws_auto_inventory.core.service - INFO - Successfully scanned service acm-pca with function list_certificate_authorities in region us-east-1
+2025-07-09 23:41:48,076 - aws_auto_inventory.core.service - INFO - Scanning service workmail with function list_organizations in region us-east-1
+2025-07-09 23:41:48,089 - botocore.configprovider - INFO - Found endpoint for workmail via: environment_global.
+2025-07-09 23:41:48,102 - aws_auto_inventory.core.region - INFO - Successfully scanned service acm-pca with function list_certificate_authorities in region us-east-1
+2025-07-09 23:41:48,180 - aws_auto_inventory.core.service - INFO - Successfully scanned service ses with function list_configuration_sets in region us-east-1
+2025-07-09 23:41:48,181 - aws_auto_inventory.core.service - INFO - Scanning service ec2 with function describe_instance_attribute in region us-east-1
+2025-07-09 23:41:48,181 - aws_auto_inventory.core.region - INFO - Successfully scanned service ses with function list_configuration_sets in region us-east-1
+2025-07-09 23:41:48,189 - botocore.configprovider - INFO - Found endpoint for ec2 via: environment_global.
+2025-07-09 23:41:48,193 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for detective.list_graphs: An error occurred (InternalFailure) when calling the ListGraphs operation: The API for service 'detective' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,194 - aws_auto_inventory.core.service - ERROR - Error scanning service detective with function list_graphs in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListGraphs operation: The API for service 'detective' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,197 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for ec2.describe_instance_attribute, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:48,197 - aws_auto_inventory.core.service - INFO - Scanning service healthlake with function list_fhir_datastores in region us-east-1
+2025-07-09 23:41:48,197 - aws_auto_inventory.core.region - WARNING - Failed to scan service detective with function list_graphs in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListGraphs operation: The API for service 'detective' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,203 - botocore.configprovider - INFO - Found endpoint for healthlake via: environment_global.
+2025-07-09 23:41:48,245 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for workmail.list_organizations: An error occurred (InternalFailure) when calling the ListOrganizations operation: The API for service 'workmail' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,246 - aws_auto_inventory.core.service - ERROR - Error scanning service workmail with function list_organizations in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListOrganizations operation: The API for service 'workmail' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,246 - aws_auto_inventory.core.service - INFO - Scanning service connect with function list_instances in region us-east-1
+2025-07-09 23:41:48,247 - aws_auto_inventory.core.region - WARNING - Failed to scan service workmail with function list_organizations in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListOrganizations operation: The API for service 'workmail' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,280 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for healthlake.list_fhir_datastores: An error occurred (InternalFailure) when calling the ListFHIRDatastores operation: The API for service 'healthlake' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,281 - aws_auto_inventory.core.service - ERROR - Error scanning service healthlake with function list_fhir_datastores in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListFHIRDatastores operation: The API for service 'healthlake' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,281 - aws_auto_inventory.core.service - INFO - Scanning service appconfig with function list_applications in region us-east-1
+2025-07-09 23:41:48,282 - aws_auto_inventory.core.region - WARNING - Failed to scan service healthlake with function list_fhir_datastores in region us-east-1: AWS API error: An error occurred (InternalFailure) when calling the ListFHIRDatastores operation: The API for service 'healthlake' is either not included in your current license plan or has not yet been emulated by LocalStack. Please refer to https://docs.localstack.cloud/references/coverage for more details.
+2025-07-09 23:41:48,291 - botocore.configprovider - INFO - Found endpoint for connect via: environment_global.
+2025-07-09 23:41:48,299 - botocore.configprovider - INFO - Found endpoint for appconfig via: environment_global.
+2025-07-09 23:41:48,592 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for controltower.get_landing_zone, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:48,680 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for support.describe_trusted_advisor_checks, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:48,691 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for connect.list_instances: An error occurred (404) when calling the ListInstances operation: <?xml version='1.0' encoding='utf-8'?>
+<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><RequestId>399baf66-ca3f-44db-a491-38187422c940</RequestId><BucketName>instance</BucketName></Error>
+2025-07-09 23:41:48,691 - aws_auto_inventory.core.service - ERROR - Error scanning service connect with function list_instances in region us-east-1: AWS API error: An error occurred (404) when calling the ListInstances operation: <?xml version='1.0' encoding='utf-8'?>
+<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><RequestId>399baf66-ca3f-44db-a491-38187422c940</RequestId><BucketName>instance</BucketName></Error>
+2025-07-09 23:41:48,692 - aws_auto_inventory.core.service - INFO - Scanning service fis with function list_experiments in region us-east-1
+2025-07-09 23:41:48,693 - aws_auto_inventory.core.region - WARNING - Failed to scan service connect with function list_instances in region us-east-1: AWS API error: An error occurred (404) when calling the ListInstances operation: <?xml version='1.0' encoding='utf-8'?>
+<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><RequestId>399baf66-ca3f-44db-a491-38187422c940</RequestId><BucketName>instance</BucketName></Error>
+2025-07-09 23:41:48,700 - botocore.configprovider - INFO - Found endpoint for fis via: environment_global.
+2025-07-09 23:41:48,831 - aws_auto_inventory.core.service - INFO - Successfully scanned service emr with function list_clusters in region us-east-1
+2025-07-09 23:41:48,832 - aws_auto_inventory.core.service - INFO - Scanning service devops-guru with function list_insights in region us-east-1
+2025-07-09 23:41:48,832 - aws_auto_inventory.core.region - INFO - Successfully scanned service emr with function list_clusters in region us-east-1
+2025-07-09 23:41:48,841 - botocore.configprovider - INFO - Found endpoint for devops-guru via: environment_global.
+2025-07-09 23:41:48,846 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for devops-guru.list_insights, retrying in 1s (attempt 1/3)
+2025-07-09 23:41:48,877 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for ram.get_resource_shares, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:49,198 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for ec2.describe_instance_attribute, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:49,304 - aws_auto_inventory.core.service - INFO - Successfully scanned service docdb with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:49,305 - aws_auto_inventory.core.service - INFO - Scanning service events with function list_rules in region us-east-1
+2025-07-09 23:41:49,305 - aws_auto_inventory.core.region - INFO - Successfully scanned service docdb with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:49,316 - aws_auto_inventory.core.service - INFO - Successfully scanned service rds with function describe_db_subnet_groups in region us-east-1
+2025-07-09 23:41:49,317 - aws_auto_inventory.core.service - INFO - Successfully scanned service neptune with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:49,317 - aws_auto_inventory.core.region - INFO - Successfully scanned service rds with function describe_db_subnet_groups in region us-east-1
+2025-07-09 23:41:49,320 - aws_auto_inventory.core.service - INFO - Successfully scanned service rds with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:49,320 - aws_auto_inventory.core.region - INFO - Successfully scanned service neptune with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:49,321 - aws_auto_inventory.core.region - INFO - Successfully scanned service rds with function describe_db_clusters in region us-east-1
+2025-07-09 23:41:49,324 - botocore.configprovider - INFO - Found endpoint for events via: environment_global.
+2025-07-09 23:41:49,327 - aws_auto_inventory.core.service - INFO - Successfully scanned service rds with function describe_db_instances in region us-east-1
+2025-07-09 23:41:49,328 - aws_auto_inventory.core.service - INFO - Successfully scanned service rds with function describe_db_snapshots in region us-east-1
+2025-07-09 23:41:49,329 - aws_auto_inventory.core.region - INFO - Successfully scanned service rds with function describe_db_instances in region us-east-1
+2025-07-09 23:41:49,330 - aws_auto_inventory.core.region - INFO - Successfully scanned service rds with function describe_db_snapshots in region us-east-1
+2025-07-09 23:41:49,430 - aws_auto_inventory.core.service - INFO - Successfully scanned service events with function list_rules in region us-east-1
+2025-07-09 23:41:49,430 - aws_auto_inventory.core.region - INFO - Successfully scanned service events with function list_rules in region us-east-1
+2025-07-09 23:41:49,847 - aws_auto_inventory.core.aws_client - WARNING - BotoCore error for devops-guru.list_insights, retrying in 2s (attempt 2/3)
+2025-07-09 23:41:50,372 - aws_auto_inventory.core.service - INFO - Successfully scanned service kafka with function list_clusters in region us-east-1
+2025-07-09 23:41:50,372 - aws_auto_inventory.core.region - INFO - Successfully scanned service kafka with function list_clusters in region us-east-1
+2025-07-09 23:41:50,444 - aws_auto_inventory.core.service - INFO - Successfully scanned service apigatewayv2 with function get_apis in region us-east-1
+2025-07-09 23:41:50,445 - aws_auto_inventory.core.region - INFO - Successfully scanned service apigatewayv2 with function get_apis in region us-east-1
+2025-07-09 23:41:50,594 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for controltower.get_landing_zone: Parameter validation failed:
+Missing required parameter in input: "landingZoneIdentifier"
+2025-07-09 23:41:50,594 - aws_auto_inventory.core.service - ERROR - Error scanning service controltower with function get_landing_zone in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "landingZoneIdentifier"
+2025-07-09 23:41:50,595 - aws_auto_inventory.core.region - WARNING - Failed to scan service controltower with function get_landing_zone in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "landingZoneIdentifier"
+2025-07-09 23:41:50,681 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for support.describe_trusted_advisor_checks: Parameter validation failed:
+Missing required parameter in input: "language"
+Unknown parameter in input: "Language", must be one of: language
+2025-07-09 23:41:50,682 - aws_auto_inventory.core.service - ERROR - Error scanning service support with function describe_trusted_advisor_checks in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "language"
+Unknown parameter in input: "Language", must be one of: language
+2025-07-09 23:41:50,682 - aws_auto_inventory.core.region - WARNING - Failed to scan service support with function describe_trusted_advisor_checks in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "language"
+Unknown parameter in input: "Language", must be one of: language
+2025-07-09 23:41:50,878 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for ram.get_resource_shares: Parameter validation failed:
+Missing required parameter in input: "resourceOwner"
+2025-07-09 23:41:50,878 - aws_auto_inventory.core.service - ERROR - Error scanning service ram with function get_resource_shares in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "resourceOwner"
+2025-07-09 23:41:50,879 - aws_auto_inventory.core.region - WARNING - Failed to scan service ram with function get_resource_shares in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "resourceOwner"
+2025-07-09 23:41:51,199 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for ec2.describe_instance_attribute: Parameter validation failed:
+Missing required parameter in input: "InstanceId"
+Missing required parameter in input: "Attribute"
+2025-07-09 23:41:51,200 - aws_auto_inventory.core.service - ERROR - Error scanning service ec2 with function describe_instance_attribute in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "InstanceId"
+Missing required parameter in input: "Attribute"
+2025-07-09 23:41:51,200 - aws_auto_inventory.core.region - WARNING - Failed to scan service ec2 with function describe_instance_attribute in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "InstanceId"
+Missing required parameter in input: "Attribute"
+2025-07-09 23:41:51,849 - aws_auto_inventory.core.aws_client - ERROR - BotoCore error for devops-guru.list_insights: Parameter validation failed:
+Missing required parameter in input: "StatusFilter"
+2025-07-09 23:41:51,849 - aws_auto_inventory.core.service - ERROR - Error scanning service devops-guru with function list_insights in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "StatusFilter"
+2025-07-09 23:41:51,850 - aws_auto_inventory.core.region - WARNING - Failed to scan service devops-guru with function list_insights in region us-east-1: BotoCore error: Parameter validation failed:
+Missing required parameter in input: "StatusFilter"
+2025-07-09 23:41:51,895 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for dms.describe_replication_instances: An error occurred (InternalError) when calling the DescribeReplicationInstances operation (reached max retries: 4): exception while calling dms.DescribeReplicationInstances: Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/rolo/gateway/chain.py", line 166, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service_plugin.py", line 36, in __call__
+    return self.require_service(chain, context, response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service_plugin.py", line 56, in require_service
+    service_plugin: Service = self.service_manager.require(service_name)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/utils/bootstrap.py", line 144, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 285, in require
+    container = self.get_service_container(name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 556, in get_service_container
+    plugin = self._load_service_plugin(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/utils/bootstrap.py", line 144, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 605, in _load_service_plugin
+    plugin = self.plugin_manager.load(plugin_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/plux/runtime/manager.py", line 220, in load
+    raise PluginDisabled(container.plugin_spec.namespace, name, container.disabled_reason)
+plux.core.plugin.PluginDisabled: plugin localstack.aws.provider:dms:pro is disabled, reason: Load condition for plugin was false
+
+2025-07-09 23:41:51,896 - aws_auto_inventory.core.service - ERROR - Error scanning service dms with function describe_replication_instances in region us-east-1: AWS API error: An error occurred (InternalError) when calling the DescribeReplicationInstances operation (reached max retries: 4): exception while calling dms.DescribeReplicationInstances: Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/rolo/gateway/chain.py", line 166, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service_plugin.py", line 36, in __call__
+    return self.require_service(chain, context, response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service_plugin.py", line 56, in require_service
+    service_plugin: Service = self.service_manager.require(service_name)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/utils/bootstrap.py", line 144, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 285, in require
+    container = self.get_service_container(name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 556, in get_service_container
+    plugin = self._load_service_plugin(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/utils/bootstrap.py", line 144, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 605, in _load_service_plugin
+    plugin = self.plugin_manager.load(plugin_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/plux/runtime/manager.py", line 220, in load
+    raise PluginDisabled(container.plugin_spec.namespace, name, container.disabled_reason)
+plux.core.plugin.PluginDisabled: plugin localstack.aws.provider:dms:pro is disabled, reason: Load condition for plugin was false
+
+2025-07-09 23:41:51,897 - aws_auto_inventory.core.region - WARNING - Failed to scan service dms with function describe_replication_instances in region us-east-1: AWS API error: An error occurred (InternalError) when calling the DescribeReplicationInstances operation (reached max retries: 4): exception while calling dms.DescribeReplicationInstances: Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/rolo/gateway/chain.py", line 166, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service_plugin.py", line 36, in __call__
+    return self.require_service(chain, context, response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service_plugin.py", line 56, in require_service
+    service_plugin: Service = self.service_manager.require(service_name)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/utils/bootstrap.py", line 144, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 285, in require
+    container = self.get_service_container(name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 556, in get_service_container
+    plugin = self._load_service_plugin(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/utils/bootstrap.py", line 144, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/plugins.py", line 605, in _load_service_plugin
+    plugin = self.plugin_manager.load(plugin_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/plux/runtime/manager.py", line 220, in load
+    raise PluginDisabled(container.plugin_spec.namespace, name, container.disabled_reason)
+plux.core.plugin.PluginDisabled: plugin localstack.aws.provider:dms:pro is disabled, reason: Load condition for plugin was false
+
+2025-07-09 23:41:51,931 - aws_auto_inventory.core.service - INFO - Successfully scanned service transfer with function list_servers in region us-east-1
+2025-07-09 23:41:51,932 - aws_auto_inventory.core.region - INFO - Successfully scanned service transfer with function list_servers in region us-east-1
+2025-07-09 23:41:51,979 - aws_auto_inventory.core.service - INFO - Successfully scanned service mq with function list_brokers in region us-east-1
+2025-07-09 23:41:51,980 - aws_auto_inventory.core.region - INFO - Successfully scanned service mq with function list_brokers in region us-east-1
+2025-07-09 23:41:52,099 - aws_auto_inventory.core.service - INFO - Successfully scanned service appconfig with function list_applications in region us-east-1
+2025-07-09 23:41:52,100 - aws_auto_inventory.core.region - INFO - Successfully scanned service appconfig with function list_applications in region us-east-1
+2025-07-09 23:41:52,127 - aws_auto_inventory.core.service - INFO - Successfully scanned service fis with function list_experiments in region us-east-1
+2025-07-09 23:41:52,129 - aws_auto_inventory.core.region - INFO - Successfully scanned service fis with function list_experiments in region us-east-1
+2025-07-09 23:41:52,144 - aws_auto_inventory.core.service - INFO - Successfully scanned service athena with function list_work_groups in region us-east-1
+2025-07-09 23:41:52,145 - aws_auto_inventory.core.region - INFO - Successfully scanned service athena with function list_work_groups in region us-east-1
+2025-07-09 23:41:53,604 - aws_auto_inventory.core.aws_client - ERROR - AWS API error for ssm.describe_parameters: An error occurred (InternalError) when calling the DescribeParameters operation (reached max retries: 4): exception while calling ssm.DescribeParameters: Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/rolo/gateway/chain.py", line 166, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service.py", line 113, in __call__
+    handler(chain, context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service.py", line 83, in __call__
+    skeleton_response = self.skeleton.invoke(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/skeleton.py", line 154, in invoke
+    return self.dispatch_request(serializer, context, instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/skeleton.py", line 168, in dispatch_request
+    result = handler(context, instance) or {}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/forwarder.py", line 140, in _call
+    return fallthrough_handler(context, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 87, in _proxy_moto
+    return call_moto(context)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 48, in call_moto
+    return dispatch_to_backend(context, dispatch_to_moto, include_response_metadata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/forwarder.py", line 185, in dispatch_to_backend
+    http_response = http_request_dispatcher(context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 123, in dispatch_to_moto
+    response = dispatch(request, raw_url, request.headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 316, in dispatch
+    return cls()._dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 528, in _dispatch
+    return self.call_action()
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 628, in call_action
+    response = method()
+               ^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/ssm/responses.py", line 257, in describe_parameters
+    response["Parameters"].append(parameter.describe_response_object(False))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'describe_response_object'
+
+2025-07-09 23:41:53,604 - aws_auto_inventory.core.service - ERROR - Error scanning service ssm with function describe_parameters in region us-east-1: AWS API error: An error occurred (InternalError) when calling the DescribeParameters operation (reached max retries: 4): exception while calling ssm.DescribeParameters: Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/rolo/gateway/chain.py", line 166, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service.py", line 113, in __call__
+    handler(chain, context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service.py", line 83, in __call__
+    skeleton_response = self.skeleton.invoke(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/skeleton.py", line 154, in invoke
+    return self.dispatch_request(serializer, context, instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/skeleton.py", line 168, in dispatch_request
+    result = handler(context, instance) or {}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/forwarder.py", line 140, in _call
+    return fallthrough_handler(context, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 87, in _proxy_moto
+    return call_moto(context)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 48, in call_moto
+    return dispatch_to_backend(context, dispatch_to_moto, include_response_metadata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/forwarder.py", line 185, in dispatch_to_backend
+    http_response = http_request_dispatcher(context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 123, in dispatch_to_moto
+    response = dispatch(request, raw_url, request.headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 316, in dispatch
+    return cls()._dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 528, in _dispatch
+    return self.call_action()
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 628, in call_action
+    response = method()
+               ^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/ssm/responses.py", line 257, in describe_parameters
+    response["Parameters"].append(parameter.describe_response_object(False))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'describe_response_object'
+
+2025-07-09 23:41:53,606 - aws_auto_inventory.core.region - WARNING - Failed to scan service ssm with function describe_parameters in region us-east-1: AWS API error: An error occurred (InternalError) when calling the DescribeParameters operation (reached max retries: 4): exception while calling ssm.DescribeParameters: Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/rolo/gateway/chain.py", line 166, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service.py", line 113, in __call__
+    handler(chain, context, response)
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/handlers/service.py", line 83, in __call__
+    skeleton_response = self.skeleton.invoke(context)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/skeleton.py", line 154, in invoke
+    return self.dispatch_request(serializer, context, instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/skeleton.py", line 168, in dispatch_request
+    result = handler(context, instance) or {}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/forwarder.py", line 140, in _call
+    return fallthrough_handler(context, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 87, in _proxy_moto
+    return call_moto(context)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 48, in call_moto
+    return dispatch_to_backend(context, dispatch_to_moto, include_response_metadata)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/aws/forwarder.py", line 185, in dispatch_to_backend
+    http_response = http_request_dispatcher(context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/localstack/services/moto.py", line 123, in dispatch_to_moto
+    response = dispatch(request, raw_url, request.headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 316, in dispatch
+    return cls()._dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 528, in _dispatch
+    return self.call_action()
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/core/responses.py", line 628, in call_action
+    response = method()
+               ^^^^^^^^
+  File "/opt/code/localstack/.venv/lib/python3.11/site-packages/moto/ssm/responses.py", line 257, in describe_parameters
+    response["Parameters"].append(parameter.describe_response_object(False))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'describe_response_object'
+
+2025-07-09 23:41:53,608 - aws_auto_inventory.core.region - INFO - Completed scanning region us-east-1
+2025-07-09 23:41:53,609 - aws_auto_inventory.core.scan_engine - INFO - Successfully scanned region us-east-1
+2025-07-09 23:41:53,609 - aws_auto_inventory.core.scan_engine - INFO - Completed account scan for inventory: pci-dss-compliance-inventory-localstack
+2025-07-09 23:41:53,610 - aws_auto_inventory.core.scan_engine - INFO - Completed scan for inventory: pci-dss-compliance-inventory-localstack
+2025-07-09 23:41:53,610 - aws_auto_inventory - INFO - Processing output
+2025-07-09 23:41:53,646 - aws_auto_inventory.output.processor - INFO - JSON output saved to output\json\scan_results_2025-07-09T23-41.json
+2025-07-09 23:41:53,647 - aws_auto_inventory - INFO - Scan completed successfully
