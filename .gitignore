@@ -1,0 +1,48 @@
+# SentinelAI Audit Framework - Root .gitignore
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large PDF files (download separately)
+*.pdf
+
+# Python cache (project-wide)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE files (project-wide)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.venv
+env/
+venv/
+
+# Generated data directories at root level
+data/
+extracted_controls/
+ingest/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+.coverage
+htmlcov/ 
