@@ -1,0 +1,15 @@
+{
+  "timestamp": "20250711_005455",
+  "total_chunks": 303,
+  "quality_score": 85.82508250825082,
+  "verdict": "EXCELLENT \u2705",
+  "metrics": {
+    "optimal_percentage": 59.73597359735974,
+    "very_short_percentage": 0.0,
+    "very_long_percentage": 2.9702970297029703,
+    "max_length": 6857,
+    "mean_length": 1832.805280528053,
+    "median_length": 1616.0
+  },
+  "recommendations": "Ready for Bedrock upload!"
+}
