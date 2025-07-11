@@ -45,4 +45,6 @@ logs/
 
 # Coverage reports
 .coverage
-htmlcov/ 
+htmlcov/ **/outputs/
+**/extracted_controls/
+shared_data/outputs/

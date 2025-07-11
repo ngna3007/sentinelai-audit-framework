@@ -2,8 +2,6 @@
 PCI DSS Control Extractor - Core Components
 
 This module contains the refactored core components for extracting PCI DSS controls.
-The original 853-line extractor has been broken down into focused modules for better
-maintainability and testing.
 
 Modules:
     extractor: Main control extraction logic and table parsing
@@ -18,6 +16,7 @@ from .text_processors import TextProcessor, ControlIDDetector, SectionExtractor
 from .content_builders import ControlContentBuilder, MarkdownFormatter
 from .metadata_generators import ValidationMetadataGenerator, ProductionMetadataGenerator
 from .bedrock_csv_generator import BedrockCSVGenerator
+from .pdf_converter import PDFToMarkdownConverter, convert_pdf_to_markdown
 
 __all__ = [
     'ControlExtractor',
@@ -28,5 +27,7 @@ __all__ = [
     'MarkdownFormatter',
     'ValidationMetadataGenerator',
     'ProductionMetadataGenerator',
-    'BedrockCSVGenerator'
+    'BedrockCSVGenerator',
+    'PDFToMarkdownConverter',
+    'convert_pdf_to_markdown'
 ] 

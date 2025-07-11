@@ -32,22 +32,25 @@ def setup_cli() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python main.py extract                    # Extract controls only
+  python main.py convert                    # Convert PDF to Markdown
+  python main.py extract                    # Extract controls from Markdown
   python main.py csv                        # Generate CSV only (requires extracted controls)
-  python main.py all                        # Complete workflow
+  python main.py all                        # Complete workflow (extract + csv)
+  python main.py convert --pdf-file custom.pdf --input-file custom.md
   python main.py extract --output-dir /tmp # Custom output directory
   python main.py csv --chunk-size 400      # Custom token chunk size
 
 Workflow:
-  1. extract: Parses data/PCI-DSS-v4_0_1-FULL.md and extracts individual controls
-  2. csv:     Processes extracted controls and generates CSV for Bedrock
-  3. all:     Runs both extract and csv steps
+  1. convert: Converts PDF to Markdown using pymupdf4llm (LLM-optimized)
+  2. extract: Parses Markdown and extracts individual controls
+  3. csv:     Processes extracted controls and generates CSV for Bedrock
+  4. all:     Runs both extract and csv steps (requires existing Markdown)
         """
     )
     
     parser.add_argument(
         'command',
-        choices=['extract', 'csv', 'all'],
+        choices=['convert', 'extract', 'csv', 'all'],
         help='Command to execute'
     )
     
@@ -55,7 +58,14 @@ Workflow:
         '--input-file',
         type=str,
         default='PCI-DSS-v4_0_1-FULL.md',
-        help='Input markdown file (default: PCI-DSS-v4_0_1-FULL.md)'
+        help='Input markdown file for extract/csv commands (default: PCI-DSS-v4_0_1-FULL.md)'
+    )
+    
+    parser.add_argument(
+        '--pdf-file',
+        type=str,
+        default='shared_data/documents/PCI-DSS-v4_0_1.pdf',
+        help='Input PDF file for convert command (default: shared_data/documents/PCI-DSS-v4_0_1.pdf)'
     )
     
     parser.add_argument(
@@ -111,6 +121,59 @@ def validate_environment() -> bool:
         return False
     
     return True
+
+def run_pdf_conversion(pdf_file: str, output_file: str, verbose: bool = False) -> bool:
+    """Run PDF to Markdown conversion using pymupdf4llm."""
+    try:
+        from .core.pdf_converter import PDFToMarkdownConverter
+        
+        print("🔄 Starting PDF to Markdown Conversion")
+        print("=" * 60)
+        
+        if verbose:
+            print(f"📄 PDF file: {pdf_file}")
+            print(f"📝 Output file: {output_file}")
+        
+        # Check if pymupdf4llm is available
+        converter = PDFToMarkdownConverter()
+        
+        # Resolve paths relative to rag_service root
+        rag_service_root = Path(__file__).parent.parent.parent
+        if not Path(pdf_file).is_absolute():
+            pdf_file = str(rag_service_root / pdf_file)
+        if not Path(output_file).is_absolute():
+            output_file = str(rag_service_root / "data" / output_file)
+        
+        # Convert PDF to Markdown
+        md_content = converter.convert_pdf_to_markdown(pdf_file, output_file)
+        
+        # Validate conversion quality
+        quality_metrics = converter.validate_conversion_quality(md_content)
+        
+        if verbose:
+            print(f"\n📊 Conversion Quality Metrics:")
+            print(f"   Total lines: {quality_metrics['total_lines']:,}")
+            print(f"   Non-empty lines: {quality_metrics['non_empty_lines']:,}")
+            print(f"   Headers detected: {quality_metrics['headers_detected']}")
+            print(f"   Table markers: {quality_metrics['table_markers']}")
+            print(f"   Quality assessment: {quality_metrics['estimated_quality']}")
+        
+        print("✅ PDF to Markdown conversion completed successfully!")
+        print(f"📝 Markdown saved to: {output_file}")
+        
+        return True
+        
+    except ImportError as e:
+        print(f"❌ Conversion failed: {str(e)}")
+        print("💡 Install pymupdf4llm with: pip install pymupdf4llm")
+        return False
+    except Exception as e:
+        print(f"❌ Conversion failed: {str(e)}")
+        if verbose:
+            import traceback
+            traceback.print_exc()
+        return False
+
 
 def run_extraction(input_file: str, output_dir: str, verbose: bool = False) -> bool:
     """Run the control extraction process."""
@@ -191,7 +254,13 @@ def main():
     success = True
     
     # Execute requested command
-    if args.command in ['extract', 'all']:
+    if args.command == 'convert':
+        success = run_pdf_conversion(
+            pdf_file=args.pdf_file,
+            output_file=args.input_file,
+            verbose=args.verbose
+        )
+    elif args.command in ['extract', 'all']:
         success = run_extraction(
             input_file=args.input_file,
             output_dir=args.output_dir,

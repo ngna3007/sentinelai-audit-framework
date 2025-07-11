@@ -1,26 +1,13 @@
-# Testing (includes modular component testing)
+# Development Dependencies - Compatibility Layer
+# ==============================================
+# Minimal development dependencies for the compatibility layer
+
+# Basic testing (for symlink validation)
 pytest>=7.4.0
-pytest-asyncio>=0.21.0
-pytest-cov>=4.1.0
-pytest-mock>=3.11.0
 
-# Type checking for modular components
-mypy>=1.6.0
-types-PyYAML>=6.0.0
-types-requests>=2.31.0
-
-# Code formatting and quality
+# Code quality (minimal)
 black>=23.9.0
 isort>=5.12.0
-flake8>=6.1.0
 
-# Jupyter for analysis notebooks
-jupyter>=1.0.0
-ipykernel>=6.25.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-pandas>=2.1.0
-
-# Documentation (for modular architecture docs)
-sphinx>=7.2.0
-sphinx-rtd-theme>=1.3.0 
+# Note: Full development dependencies are managed by the centralized
+# data_pipeline at ../../data_pipeline/requirements-dev.txt 
