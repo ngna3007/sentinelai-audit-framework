@@ -284,14 +284,14 @@ class ControlExtractor:
         for control_id, control_data in self.controls.items():
             sections = self.section_extractor.analyze_control_sections(control_data)
             control_data['sections'] = sections
-            control_data['content'] = self.content_builder.build_control_content(control_data)
+            control_data['content'], control_data['requirement'] = self.content_builder.build_control_content(control_data)
         
         return self.controls
     
     def save_controls(self, output_dir: str = "extracted_controls"):
         """Save individual control files with both validation and production metadata."""
         output_path = Path(output_dir)
-        output_path.mkdir(exist_ok=True)
+        output_path.mkdir(parents=True, exist_ok=True)
         
         print(f"💾 Saving controls to {output_path}/")
         
@@ -319,7 +319,8 @@ class ControlExtractor:
             file_manager.save_validation_metadata(control_id, validation_metadata, output_path)
             
             # Generate and save production metadata
-            production_metadata = production_generator.generate_production_metadata(control_id, content)
+            requirement = control_data.get('requirement', '')
+            production_metadata = production_generator.generate_production_metadata(control_id, content, requirement)
             file_manager.save_production_metadata(control_id, production_metadata, output_path)
         
         print(f"✅ Saved {len(self.controls)} controls with validation and production metadata")

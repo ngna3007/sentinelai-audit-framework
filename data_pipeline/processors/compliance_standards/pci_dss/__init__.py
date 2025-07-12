@@ -11,7 +11,7 @@ Key Components:
 - core.text_processors: Text cleaning and parsing utilities
 - core.content_builders: Content assembly and formatting
 - core.metadata_generators: Quality scoring and metadata generation
-- core.bedrock_csv_generator: CSV generation for Bedrock Knowledge Base
+- core.csv_generator: CSV generation for database import (PostgreSQL bulk import)
 
 Usage:
     # Use the CLI interface (recommended)
@@ -29,14 +29,14 @@ Architecture Benefits:
 
 # Import core components for programmatic access
 from .core.extractor import ControlExtractor
-from .core.bedrock_csv_generator import BedrockCSVGenerator
+from .core.csv_generator import CSVGenerator
 from .core.text_processors import TextProcessor, ControlIDDetector
 from .core.content_builders import ControlContentBuilder
 from .core.metadata_generators import ValidationMetadataGenerator, ProductionMetadataGenerator
 
 __all__ = [
     'ControlExtractor',
-    'BedrockCSVGenerator', 
+    'CSVGenerator', 
     'TextProcessor',
     'ControlIDDetector',
     'ControlContentBuilder',

@@ -19,15 +19,19 @@ class ControlContentBuilder:
         self.text_processor = TextProcessor()
         self.section_extractor = SectionExtractor()
     
-    def build_control_content(self, control_data: Dict) -> str:
-        """Build the complete content for a control in paragraph format optimized for vector embeddings."""
+    def build_control_content(self, control_data: Dict) -> tuple[str, str]:
+        """Build the complete content for a control in paragraph format optimized for vector embeddings.
+        
+        Returns:
+            tuple: (complete_content, requirement_text) where requirement_text is just the extracted requirements
+        """
         control_id = control_data['control_id']
         rows = control_data['rows']
         
         # Extract and organize content by type
         testing_procedures = set()  # Use set to avoid duplicates
         guidance_sections = {}
-        defined_approach_requirements = []  # Main requirement text under "Defined Approach Requirements"
+        defined_approach_requirements = set()  # Use set to avoid duplicates
         
         # Process rows and handle separate header/content rows for guidance sections
         guidance_headers = {}  # Track section headers
@@ -40,7 +44,7 @@ class ControlContentBuilder:
             
             # Extract Defined Approach Requirements content
             requirements = self.section_extractor.extract_defined_approach_requirements(row, control_id)
-            defined_approach_requirements.extend(requirements)
+            defined_approach_requirements.update(requirements)  # Use update to add to set
             
             # Extract testing procedures
             self.section_extractor.extract_testing_procedures(col1, col2, control_id, testing_procedures)
@@ -55,12 +59,17 @@ class ControlContentBuilder:
         self._process_standalone_sections(rows, guidance_headers, guidance_sections)
         
         # Build the structured content
-        return self._assemble_final_content(
+        complete_content = self._assemble_final_content(
             control_id, 
-            defined_approach_requirements, 
+            list(defined_approach_requirements),  # Convert set back to list for _assemble_final_content
             guidance_sections, 
             testing_procedures
         )
+        
+        # Extract just the requirement text (without the "Defined Approach Requirements:" header)
+        requirement_text = " ".join(defined_approach_requirements) if defined_approach_requirements else ""
+        
+        return complete_content, requirement_text
     
     def _extract_standalone_headers(self, col1: str, col2: str, col3: str, guidance_headers: Dict, row_index: int):
         """Extract standalone section headers that span all columns."""
@@ -102,7 +111,7 @@ class ControlContentBuilder:
         content_parts = []
         
         # Control ID and basic info
-        content_parts.append(f"Control {control_id}")
+        content_parts.append(f"PCI DSS 4_0_1 Requirement Control {control_id}")
         content_parts.append("")
         
         # Defined Approach Requirements

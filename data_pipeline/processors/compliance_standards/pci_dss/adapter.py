@@ -16,11 +16,11 @@ sys.path.append(str(current_dir))
 
 # Import original extractor (preserved functionality)
 from core.extractor import ControlExtractor
-from core.bedrock_csv_generator import BedrockCSVGenerator
+from core.csv_generator import CSVGenerator
 from core.pdf_converter import PDFToMarkdownConverter
 
 # Import shared schemas
-sys.path.append(str(Path(__file__).parent.parent.parent.parent))
+sys.path.append(str(Path(__file__).parent.parent.parent.parent.parent))
 from schemas.compliance import (
     ControlExtractionResult, 
     ComplianceFramework, 
@@ -140,42 +140,24 @@ class PCIDSSPipelineAdapter:
         """
         Generate CSV files using original CSV generator.
         
-        Uses the EXACT SAME BedrockCSVGenerator logic that produces 306 CSV files.
+        Uses the EXACT SAME CSVGenerator logic that produces 306 CSV files.
         """
         try:
             # Use original CSV generator - NO CHANGES to core logic
-            generator = BedrockCSVGenerator(controls_dir=controls_dir)
-            generator.generate_bedrock_files()
+            generator = CSVGenerator(controls_dir=controls_dir, output_dir=output_dir)
+            generator.generate_csv_files()
             
-            # The original CSV generator creates files in its own ingest directory
-            # Count files from the actual generated location
-            generator_output_path = Path(__file__).parent.parent.parent.parent / "extractors" / "ingest" / "bedrock" / "pci_dss_4.0"
-            csv_files = list(generator_output_path.glob("*.csv")) if generator_output_path.exists() else []
-            
-            # Copy files to the centralized location if they don't exist there
-            centralized_output = Path(output_dir)
-            centralized_output.mkdir(parents=True, exist_ok=True)
-            
-            if csv_files and not list(centralized_output.glob("*.csv")):
-                import shutil
-                for csv_file in csv_files:
-                    shutil.copy2(csv_file, centralized_output / csv_file.name)
-                
-                # Also copy metadata template if it exists
-                template_file = generator_output_path / "csv_metadata_template.json"
-                if template_file.exists():
-                    shutil.copy2(template_file, centralized_output / "csv_metadata_template.json")
-            
-            # Count files in the final location
-            final_csv_files = list(centralized_output.glob("*.csv"))
+            # Files are now generated directly in the correct output directory
+            output_path = Path(output_dir)
+            csv_files = list(output_path.glob("*.csv")) if output_path.exists() else []
             
             return CSVGenerationResult(
                 success=True,
-                total_files=len(final_csv_files),
+                total_files=len(csv_files),
                 output_directory=output_dir,
                 chunk_strategy="control_based",
                 target_token_size=chunk_size,
-                metadata_template_path=str(centralized_output / "csv_metadata_template.json") if (centralized_output / "csv_metadata_template.json").exists() else None
+                metadata_template_path=str(output_path / "csv_metadata_template.json") if (output_path / "csv_metadata_template.json").exists() else None
             )
             
         except Exception as e:

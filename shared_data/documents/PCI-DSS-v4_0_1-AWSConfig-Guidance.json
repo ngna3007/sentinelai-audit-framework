@@ -1,0 +1,16 @@
+{
+  "source_file": "/Users/skadi2910/projects/sentinelai-audit-framework/shared_data/documents/PCI-DSS-v4_0_1-AWSConfig-Guidance.pdf",
+  "source_format": "PDF",
+  "document_type": "AWS Config Guidance",
+  "conversion_tool": "pymupdf4llm",
+  "processor": "aws_guidance",
+  "total_characters": 388744,
+  "total_lines": 2153,
+  "pages_processed": "all",
+  "optimized_for": "AWS Config rule mapping and compliance guidance",
+  "processing_features": [
+    "config_rule_detection",
+    "compliance_mapping",
+    "implementation_guidance"
+  ]
+}

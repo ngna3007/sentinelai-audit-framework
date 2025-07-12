@@ -10,12 +10,23 @@ import click
 from pathlib import Path
 import sys
 import time
+import json
+import shutil
+import traceback
+from typing import Dict, List, Optional
 
 # Add current directory to path for imports
 sys.path.append(str(Path(__file__).parent))
 
 from pipelines.compliance_pipeline import CompliancePipeline
 from schemas.compliance import ComplianceFramework
+from processors.compliance_standards.pci_dss.core.pdf_converter import PDFToMarkdownConverter
+from processors.compliance_standards.pci_dss.main import (
+    run_pdf_conversion,
+    run_extraction,
+    run_csv_generation
+)
+from processors.aws_guidance.adapter import AWSGuidancePipelineAdapter
 
 @click.group()
 def cli():
@@ -26,6 +37,197 @@ def cli():
 def extract():
     """Extract data from compliance documents."""
     pass
+
+@cli.group()
+def pci_dss():
+    """Direct PCI DSS processor commands."""
+    pass
+
+@pci_dss.command(name='convert')
+@click.option('--pdf-file', default='shared_data/documents/PCI-DSS-v4_0_1.pdf', help='Input PDF file')
+@click.option('--output-file', default='PCI-DSS-v4_0_1-FULL.md', help='Output markdown file')
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+def pci_dss_convert(pdf_file, output_file, verbose):
+    """Convert PCI DSS PDF to Markdown using the PCI DSS processor."""
+    
+    try:
+        success = run_pdf_conversion(pdf_file, output_file, verbose)
+        if success:
+            click.echo("🎉 PCI DSS PDF conversion completed!")
+        else:
+            click.echo("❌ PCI DSS PDF conversion failed!")
+            
+    except Exception as e:
+        click.echo(f"❌ Error: {str(e)}")
+        if verbose:
+            traceback.print_exc()
+
+@pci_dss.command(name='extract')
+@click.option('--input-file', default='PCI-DSS-v4_0_1-FULL.md', help='Input markdown file')
+@click.option('--output-dir', default='shared_data/outputs/pci_dss_v4/controls', help='Output directory for extracted controls')
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+def pci_dss_extract(input_file, output_dir, verbose):
+    """Extract PCI DSS controls from markdown using the PCI DSS processor."""
+    
+    try:
+        success = run_extraction(input_file, output_dir, verbose)
+        if success:
+            click.echo("🎉 PCI DSS control extraction completed!")
+        else:
+            click.echo("❌ PCI DSS control extraction failed!")
+            
+    except Exception as e:
+        click.echo(f"❌ Error: {str(e)}")
+        if verbose:
+            traceback.print_exc()
+
+@pci_dss.command(name='csv')
+@click.option('--input-dir', default='shared_data/outputs/pci_dss_v4/controls', help='Input directory with extracted controls')
+@click.option('--output-dir', default='shared_data/outputs/pci_dss_v4/bedrock', help='CSV output directory')
+@click.option('--chunk-size', type=int, default=300, help='Target chunk size in tokens')
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+def pci_dss_csv(input_dir, output_dir, chunk_size, verbose):
+    """Generate CSV files for Bedrock using the PCI DSS processor."""
+    
+    try:
+        success = run_csv_generation(input_dir, output_dir, chunk_size, verbose)
+        if success:
+            click.echo("🎉 PCI DSS CSV generation completed!")
+        else:
+            click.echo("❌ PCI DSS CSV generation failed!")
+            
+    except Exception as e:
+        click.echo(f"❌ Error: {str(e)}")
+        if verbose:
+            traceback.print_exc()
+
+@pci_dss.command(name='all')
+@click.option('--pdf-file', help='Input PDF file (optional - if provided, will convert first)')
+@click.option('--input-file', default='PCI-DSS-v4_0_1-FULL.md', help='Input markdown file')
+@click.option('--output-dir', default='shared_data/outputs/pci_dss_v4/controls', help='Output directory for extracted controls')
+@click.option('--csv-output', default='shared_data/outputs/pci_dss_v4/bedrock', help='CSV output directory')
+@click.option('--chunk-size', type=int, default=300, help='Target chunk size in tokens')
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+def pci_dss_all(pdf_file, input_file, output_dir, csv_output, chunk_size, verbose):
+    """Run complete PCI DSS workflow: convert (optional), extract, and generate CSV."""
+    
+    try:
+        success = True
+        
+        # Convert PDF if provided
+        if pdf_file:
+            if verbose:
+                click.echo("🔄 Step 1: Converting PDF to Markdown...")
+            success = run_pdf_conversion(pdf_file, input_file, verbose)
+            if not success:
+                click.echo("❌ PDF conversion failed!")
+                return
+        
+        # Extract controls
+        if verbose:
+            click.echo("🔄 Step 2: Extracting controls...")
+        success = run_extraction(input_file, output_dir, verbose)
+        if not success:
+            click.echo("❌ Control extraction failed!")
+            return
+            
+        # Generate CSV
+        if verbose:
+            click.echo("🔄 Step 3: Generating CSV files...")
+        success = run_csv_generation(output_dir, csv_output, chunk_size, verbose)
+        if not success:
+            click.echo("❌ CSV generation failed!")
+            return
+            
+        click.echo("🎉 Complete PCI DSS workflow completed successfully!")
+        click.echo(f"📁 Controls: {output_dir}/")
+        click.echo(f"📊 CSV files: {csv_output}/")
+            
+    except Exception as e:
+        click.echo(f"❌ Error: {str(e)}")
+        if verbose:
+            traceback.print_exc()
+
+@cli.group()
+def convert():
+    """Convert documents between formats."""
+    pass
+
+@convert.command(name='pdf-to-md')
+@click.option('--pdf-file', required=True, help='Input PDF file path')
+@click.option('--output-file', help='Output markdown file path (optional)')
+@click.option('--pages', help='Comma-separated list of page numbers to convert (optional)')
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+def convert_pdf_to_markdown(pdf_file, output_file, pages, verbose):
+    """
+    Convert PDF to Markdown using pymupdf4llm.
+    
+    This command uses pymupdf4llm to convert PDF documents to high-quality
+    Markdown optimized for LLM and RAG applications.
+    
+    Examples:
+        python cli.py convert pdf-to-md --pdf-file shared_data/documents/PCI-DSS-v4_0_1.pdf
+        python cli.py convert pdf-to-md --pdf-file input.pdf --output-file output.md --verbose
+        python cli.py convert pdf-to-md --pdf-file input.pdf --pages 1,2,3
+    """
+    
+    try:
+        if verbose:
+            print("🔄 PDF to Markdown Conversion")
+            print("=" * 50)
+            print(f"📄 Input PDF: {pdf_file}")
+            if output_file:
+                print(f"📝 Output MD: {output_file}")
+            if pages:
+                print(f"📄 Pages: {pages}")
+        
+        # Parse page numbers if provided
+        page_list = None
+        if pages:
+            try:
+                page_list = [int(p.strip()) - 1 for p in pages.split(',')]  # Convert to 0-based
+                if verbose:
+                    print(f"🔢 Processing pages: {[p+1 for p in page_list]}")
+            except ValueError:
+                click.echo("❌ Invalid page numbers. Use format: 1,2,3")
+                return
+        
+        # Initialize converter
+        converter = PDFToMarkdownConverter()
+        
+        # Convert PDF to Markdown
+        md_content = converter.convert_pdf_to_markdown(
+            pdf_path=pdf_file,
+            output_path=output_file,
+            pages=page_list
+        )
+        
+        # Validate conversion quality
+        quality_metrics = converter.validate_conversion_quality(md_content)
+        
+        if verbose:
+            print(f"\n📊 Conversion Quality Metrics:")
+            print(f"   Total lines: {quality_metrics['total_lines']:,}")
+            print(f"   Non-empty lines: {quality_metrics['non_empty_lines']:,}")
+            print(f"   Headers detected: {quality_metrics['headers_detected']}")
+            print(f"   Table markers: {quality_metrics['table_markers']}")
+            print(f"   Quality assessment: {quality_metrics['estimated_quality']}")
+        
+        click.echo("✅ PDF to Markdown conversion completed successfully!")
+        click.echo(f"📊 Generated {len(md_content):,} characters of markdown")
+        
+        if output_file:
+            click.echo(f"📝 Saved to: {output_file}")
+        else:
+            click.echo("💡 Use --output-file to save the markdown to a file")
+                
+    except ImportError as e:
+        click.echo(f"❌ Conversion failed: {str(e)}")
+        click.echo("💡 Install pymupdf4llm with: pip install pymupdf4llm")
+    except Exception as e:
+        click.echo(f"❌ Conversion failed: {str(e)}")
+        if verbose:
+            traceback.print_exc()
 
 @extract.command(name='pci-dss')
 @click.option('--pdf-file', help='Input PDF file path')
@@ -80,7 +282,6 @@ def extract_pci_dss(pdf_file, markdown_file, verbose):
     except Exception as e:
         click.echo(f"❌ Pipeline error: {str(e)}")
         if verbose:
-            import traceback
             traceback.print_exc()
 
 @cli.group()
@@ -138,7 +339,6 @@ def generate_csv(framework, chunk_size, verbose):
     except Exception as e:
         click.echo(f"❌ Pipeline error: {str(e)}")
         if verbose:
-            import traceback
             traceback.print_exc()
 
 @cli.command()
@@ -202,7 +402,6 @@ def workflow(framework, pdf_file, markdown_file, chunk_size, verbose):
     except Exception as e:
         click.echo(f"❌ Workflow error: {str(e)}")
         if verbose:
-            import traceback
             traceback.print_exc()
 
 @cli.command()
@@ -239,6 +438,111 @@ def validate(framework):
             
     except Exception as e:
         click.echo(f"❌ Validation error: {str(e)}")
+
+@cli.group()
+def aws_guidance():
+    """AWS Config Rules guidance processor commands."""
+    pass
+
+@aws_guidance.command(name='process')
+@click.option('--input-file', default='shared_data/outputs/aws_config_guidance/aws_config_rule_full_mapping.csv', help='Input CSV file with AWS Config rules')
+@click.option('--output-dir', default='shared_data/outputs/aws_config_guidance/database_import', help='Output directory for processed files')
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+def process_aws_guidance(input_file, output_dir, verbose):
+    """
+    Process AWS Config Rules guidance data for database import.
+    
+    This command processes the AWS Config rules mapping data and generates
+    database-friendly CSV files with metadata for import.
+    
+    Examples:
+        python cli.py aws-guidance process --verbose
+        python cli.py aws-guidance process --input-file custom.csv
+    """
+    
+    start_time = time.time()
+    
+    try:
+        adapter = AWSGuidancePipelineAdapter()
+        
+        if verbose:
+            print("🎯 AWS Config Rules Guidance Processing")
+            print("=" * 60)
+        
+        result = adapter.process_config_rules(
+            input_file=input_file,
+            output_dir=output_dir
+        )
+        
+        if result.success:
+            processing_time = time.time() - start_time
+            
+            click.echo(f"✅ Successfully processed AWS Config rules")
+            click.echo(f"📁 Output saved to: {output_dir}")
+            click.echo(f"📊 Generated files: {result.total_files}")
+            click.echo(f"⏱️ Processing time: {processing_time:.2f} seconds")
+            
+            if verbose and result.metadata_template_path:
+                click.echo(f"\n📋 Schema file: {result.metadata_template_path}")
+        else:
+            click.echo("❌ Processing failed:")
+            for error in result.errors:
+                click.echo(f"   {error}")
+                
+    except Exception as e:
+        click.echo(f"❌ Processing error: {str(e)}")
+        if verbose:
+            traceback.print_exc()
+
+@aws_guidance.command(name='pci-mappings')
+@click.option('--input-file', help='Input JSON file with PCI controls (optional)')
+@click.option('--output-dir', help='Output directory for processed files (optional)')
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+def process_pci_mappings(input_file, output_dir, verbose):
+    """
+    Process PCI DSS to AWS Config rule mappings.
+    
+    This command processes the PCI DSS control to AWS Config rule mappings and generates
+    database-friendly CSV files with metadata for import.
+    
+    Examples:
+        python cli.py aws-guidance pci-mappings --verbose
+        python cli.py aws-guidance pci-mappings --input-file custom.json --output-dir custom/output
+    """
+    
+    start_time = time.time()
+    
+    try:
+        adapter = AWSGuidancePipelineAdapter()
+        
+        if verbose:
+            print("🎯 PCI DSS to AWS Config Rule Mapping Processing")
+            print("=" * 60)
+        
+        result = adapter.process_pci_mappings(
+            input_file=input_file,
+            output_dir=output_dir
+        )
+        
+        if result.success:
+            processing_time = time.time() - start_time
+            
+            click.echo(f"✅ Successfully processed PCI DSS to AWS Config rule mappings")
+            click.echo(f"📁 Output saved to: {result.output_directory}")
+            click.echo(f"📊 Generated files: {result.total_files}")
+            click.echo(f"⏱️ Processing time: {processing_time:.2f} seconds")
+            
+            if verbose and result.metadata_template_path:
+                click.echo(f"\n📋 Schema file: {result.metadata_template_path}")
+        else:
+            click.echo("❌ Processing failed:")
+            for error in result.errors:
+                click.echo(f"   {error}")
+                
+    except Exception as e:
+        click.echo(f"❌ Processing error: {str(e)}")
+        if verbose:
+            traceback.print_exc()
 
 @cli.command()
 def status():

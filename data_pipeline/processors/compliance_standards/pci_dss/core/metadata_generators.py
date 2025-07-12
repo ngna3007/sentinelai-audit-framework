@@ -9,6 +9,7 @@ This module handles:
 """
 
 import json
+import uuid
 from typing import Dict, Any, List
 from pathlib import Path
 from .content_builders import ProductionContentFormatter
@@ -135,29 +136,38 @@ class ProductionMetadataGenerator:
     """Generates metadata for production use in databases and vector search."""
     
     @staticmethod
-    def generate_production_metadata(control_id: str, content: str) -> Dict[str, Any]:
-        """Generate production metadata for database/vector search storage."""
-        title = ProductionContentFormatter.extract_title_from_requirements(content)
-        status = ProductionContentFormatter.extract_status_from_content(content)
-        testing_procedures = ProductionContentFormatter.extract_testing_procedures_list(content)
+    def generate_production_metadata(control_id: str, content: str, requirement: str = "") -> Dict[str, Any]:
+        """Generate production metadata for database/vector search storage with UUID primary key."""
+        has_testing_procedures = 'Testing Procedures:' in content
+        
+        # Generate UUID for primary key
+        record_id = str(uuid.uuid4())
         
         return {
-            'req_id': control_id,
-            'standard': 'PCI-DSS-v4.0',
-            'title': title,
-            'chunk_type': 'requirement',
-            'status': status,
-            'testing_procedures': testing_procedures,
-            'source': 'PCI_DSS_PDF_v4.0',
-            'text': content,
+            'id': record_id,  # UUID primary key
+            'control_id': control_id,
+            'chunk': content,
+            'requirement': requirement,  # New field for extracted requirement text
             'metadata': {
-                'token_count': ProductionContentFormatter.count_tokens(content),
-                'content_length': len(content),
-                'has_testing_procedures': len(testing_procedures) > 0,
+                'control_id': control_id,
+                'standard': 'PCI-DSS-v4.0',
+                'source': 'PCI_DSS_PDF_v4.0',
                 'control_category': ProductionMetadataGenerator._categorize_control(control_id),
-                'requirement_level': ProductionMetadataGenerator._determine_requirement_level(control_id)
+                'has_testing_procedures': has_testing_procedures,
+                'requirements_id': ProductionMetadataGenerator._extract_requirements_id(control_id)
             }
         }
+    
+    @staticmethod
+    def _extract_requirements_id(control_id: str) -> str:
+        """Extract the requirements ID from control ID."""
+        if control_id.startswith('A'):
+            # Handle appendix controls like A1.1.1 -> A1, A2.1.1 -> A2
+            return control_id[:2]  # A1, A2, A3, etc.
+        else:
+            # Handle regular controls like 1.1.1 -> 1, 11.1.1 -> 11
+            major = control_id.split('.')[0]
+            return major
     
     @staticmethod
     def _categorize_control(control_id: str) -> str:

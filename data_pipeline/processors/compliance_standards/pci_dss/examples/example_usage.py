@@ -10,20 +10,25 @@ Updated for the new modular architecture with separate components for:
 - Content building  
 - Metadata generation
 - CSV generation
+
+Key features demonstrated:
+- Requirement text extraction
+- Deduplication of content
+- New CSV format with requirement column
 """
 
 import sys
 from pathlib import Path
 
-# Add the rag_service root to Python path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+# Add the project root to Python path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent.parent))
 
 def example_basic_extraction():
     """Example 1: Basic control extraction using the main orchestrator."""
     print("🚀 Example 1: Basic Control Extraction")
     print("=" * 50)
     
-    from core.extractor import ControlExtractor
+    from compliance_standards.pci_dss.core.extractor import ControlExtractor
     
     # Initialize extractor
     extractor = ControlExtractor("PCI-DSS-v4_0_1-FULL.md")
@@ -51,9 +56,9 @@ def example_component_usage():
     print("\n🧩 Example 2: Individual Component Usage")
     print("=" * 50)
     
-    from core.text_processors import TextProcessor, ControlIDDetector
-    from core.content_builders import ControlContentBuilder
-    from core.metadata_generators import ValidationMetadataGenerator
+    from compliance_standards.pci_dss.core.text_processors import TextProcessor, ControlIDDetector
+    from compliance_standards.pci_dss.core.content_builders import ControlContentBuilder
+    from compliance_standards.pci_dss.core.metadata_generators import ValidationMetadataGenerator
     
     # Sample table row data (would normally come from extraction)
     sample_row = {
@@ -92,37 +97,39 @@ def example_component_usage():
         }
     }
     
-    # Build content
+    # Build content - now returns (content, requirement) tuple
     builder = ControlContentBuilder()
-    content = builder.build_control_content(sample_control_data)
+    content, requirement = builder.build_control_content(sample_control_data)
     print(f"   Built content ({len(content)} chars):")
     print(f"   {content[:150]}...")
+    print(f"   Requirement ({len(requirement)} chars): {requirement[:100]}...")
     
     print("\n📊 Metadata Generation:")
     
-    # Generate validation metadata
+    # Generate validation metadata - now includes requirement field
     validator = ValidationMetadataGenerator()
-    metadata = validator.generate_validation_metadata('1.2.8', sample_control_data, content)
+    metadata = validator.generate_validation_metadata('1.2.8', sample_control_data, content, requirement)
     print(f"   Token count: {metadata['token_count']}")
     print(f"   Has requirements: {metadata['has_requirements']}")
     print(f"   Has procedures: {metadata['has_testing_procedures']}")
+    print(f"   Requirement length: {len(metadata['requirement'])}")
     
     # Analyze quality
     quality = validator.analyze_extraction_quality(metadata)
     print(f"   Quality score: {quality['quality_score']}/100")
 
 def example_csv_generation():
-    """Example 3: CSV generation for Bedrock."""
+    """Example 3: CSV generation with new requirement column."""
     print("\n📊 Example 3: CSV Generation")
     print("=" * 50)
     
-    from core.bedrock_csv_generator import BedrockCSVGenerator
+    from compliance_standards.pci_dss.core.csv_generator import CSVGenerator
     
     # Create sample extracted controls directory structure
     sample_dir = Path("temp_sample_controls")
     sample_dir.mkdir(exist_ok=True)
     
-    # Create sample control files
+    # Create sample control files with requirement text
     sample_control = """Control 1.2.8
 
 Defined Approach Requirements:
@@ -142,7 +149,8 @@ Purpose: This requirement ensures that malware protection is implemented across 
         "status": "required",
         "testing_procedures": ["Examine anti-malware solution configurations"],
         "source": "PCI_DSS_PDF_v4.0",
-        "text": sample_control
+        "text": sample_control,
+        "requirement": "All system components must be protected from malware through the use of anti-malware solutions."
     }
     
     # Write sample files
@@ -154,8 +162,8 @@ Purpose: This requirement ensures that malware protection is implemented across 
         json.dump(sample_metadata, f, indent=2)
     
     try:
-        # Generate CSV
-        generator = BedrockCSVGenerator()
+        # Generate CSV with new format
+        generator = CSVGenerator()
         generator.load_extracted_controls(str(sample_dir))
         
         output_dir = Path("temp_csv_output")
@@ -163,7 +171,7 @@ Purpose: This requirement ensures that malware protection is implemented across 
         
         print(f"✅ Generated CSV in {output_dir}/")
         
-        # Show CSV content
+        # Show CSV content - now includes requirement column
         csv_file = output_dir / "pci_dss_controls.csv"
         if csv_file.exists():
             with open(csv_file, 'r') as f:
@@ -185,13 +193,13 @@ Purpose: This requirement ensures that malware protection is implemented across 
         shutil.rmtree(sample_dir, ignore_errors=True)
 
 def example_quality_analysis():
-    """Example 4: Quality analysis and validation."""
+    """Example 4: Quality analysis and validation with requirement checks."""
     print("\n📈 Example 4: Quality Analysis")
     print("=" * 50)
     
-    from core.metadata_generators import ValidationMetadataGenerator, MetadataFileManager
+    from compliance_standards.pci_dss.core.metadata_generators import ValidationMetadataGenerator
     
-    # Sample validation metadata
+    # Sample validation metadata with requirement
     sample_metadata = {
         'control_id': '1.2.8',
         'sections': {
@@ -207,10 +215,12 @@ def example_quality_analysis():
         'token_count': 212,
         'has_requirements': True,
         'has_testing_procedures': True,
-        'has_guidance': True
+        'has_guidance': True,
+        'requirement': 'All system components must be protected from malware.',
+        'requirement_length': 55
     }
     
-    # Analyze quality
+    # Analyze quality - now includes requirement analysis
     validator = ValidationMetadataGenerator()
     quality = validator.analyze_extraction_quality(sample_metadata)
     
@@ -226,13 +236,13 @@ def example_quality_analysis():
         print(f"     💡 {rec}")
 
 def example_advanced_workflow():
-    """Example 5: Advanced workflow with custom processing."""
+    """Example 5: Advanced workflow with requirement extraction."""
     print("\n🔬 Example 5: Advanced Custom Workflow")
     print("=" * 50)
     
-    from core.extractor import ControlExtractor
-    from core.text_processors import SectionExtractor
-    from core.content_builders import MarkdownFormatter
+    from compliance_standards.pci_dss.core.extractor import ControlExtractor
+    from compliance_standards.pci_dss.core.text_processors import SectionExtractor
+    from compliance_standards.pci_dss.core.content_builders import MarkdownFormatter
     
     # Custom extraction with filtering
     extractor = ControlExtractor("PCI-DSS-v4_0_1-FULL.md")
@@ -267,16 +277,18 @@ def example_advanced_workflow():
                 status = "✅" if present else "❌"
                 print(f"     {status} {section.replace('_', ' ').title()}")
             
-            # Build and format content
-            from core.content_builders import ControlContentBuilder
+            # Build and format content - now includes requirement
+            from compliance_standards.pci_dss.core.content_builders import ControlContentBuilder
             builder = ControlContentBuilder()
-            content = builder.build_control_content(control_data)
+            content, requirement = builder.build_control_content(control_data)
             
             # Format for markdown
-            formatted = MarkdownFormatter.format_for_markdown(content, '1.2.8')
+            formatted = MarkdownFormatter.format_for_markdown(content, '1.2.8', requirement)
             
             print(f"\n📝 Content preview ({len(content)} chars):")
             print(formatted[:300] + "..." if len(formatted) > 300 else formatted)
+            print(f"\n📝 Requirement preview ({len(requirement)} chars):")
+            print(requirement[:200] + "..." if len(requirement) > 200 else requirement)
         
     except FileNotFoundError:
         print("❌ PCI-DSS-v4_0_1-FULL.md not found")
@@ -289,6 +301,7 @@ def main():
     print("🎯 PCI DSS Control Extractor - Example Usage")
     print("=" * 60)
     print("Demonstrating the modular architecture components")
+    print("Updated for new requirement extraction and deduplication")
     
     try:
         # Run examples that don't require the full file
@@ -306,7 +319,7 @@ def main():
         
         print("\n✅ All examples completed!")
         print("\n💡 Next steps:")
-        print("   1. Try running: python main.py extract --help")
+        print("   1. Try running: python -m compliance_standards.pci_dss.main extract --help")
         print("   2. Check the README.md for detailed documentation")
         print("   3. Explore the core/ modules for implementation details")
         

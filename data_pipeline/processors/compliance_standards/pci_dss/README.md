@@ -7,16 +7,19 @@ A modular, well-structured system for extracting PCI DSS controls from markdown 
 This extractor has been refactored from a monolithic 853-line file into a clean, modular architecture:
 
 ```
-pci_dss_v4_0_1/
-├── main.py                     # 🚀 Primary entry point with CLI
-├── core/                       # 📦 Core extraction modules
+pci_dss/                        
+├── __init__.py                # Module exports
+├── adapter.py                 # Adapter to integrate PCI DSS extractor with centralized pipeline.
+├── main.py                    # Primary entry point with CLI
+├── core/                      # Core extraction modules
 │   ├── __init__.py            # Module exports
 │   ├── extractor.py           # Main orchestration logic (~350 lines)
-│   ├── text_processors.py    # Text cleaning and parsing utilities
-│   ├── content_builders.py   # Content assembly and formatting
+│   ├── text_processors.py     # Text cleaning and parsing utilities
+│   ├── content_builders.py    # Content assembly and formatting
 │   ├── metadata_generators.py # Validation and production metadata
-│   └── bedrock_csv_generator.py # CSV generation for Bedrock
-├── example_usage.py           # Usage examples (needs update)
+│   ├── csv_generator.py       # CSV generation for database import
+│   └── pdf_converter.py       # PDF to markdown conversion
+├── examples/example_usage.py  # Usage examples (needs update)
 └── README.md                  # This file
 ```
 
@@ -33,22 +36,32 @@ pci_dss_v4_0_1/
 ### For End Users
 
 ```bash
-# Navigate to rag_service directory
-cd /path/to/sentinelai-audit-framework/services/rag_service
+# Option 1: Run from project root directory (recommended)
+cd /path/to/sentinelai-audit-framework
 
 # Run complete workflow (extract + CSV generation)
-python -m extractors.pci_dss_v4_0_1.main all
+python -m data_pipeline.processors.compliance_standards.pci_dss.main all
 
 # Or run individual steps
-python -m extractors.pci_dss_v4_0_1.main extract    # Extract controls only
-python -m extractors.pci_dss_v4_0_1.main csv        # Generate CSV only
+python -m data_pipeline.processors.compliance_standards.pci_dss.main extract    # Extract controls only
+python -m data_pipeline.processors.compliance_standards.pci_dss.main csv        # Generate CSV only
+
+# Option 2: Run from pci_dss directory
+cd /path/to/sentinelai-audit-framework/data_pipeline/processors/compliance_standards/pci_dss
+
+# Run complete workflow (extract + CSV generation)
+python main.py all
+
+# Or run individual steps
+python main.py extract    # Extract controls only
+python main.py csv        # Generate CSV only
 ```
 
 ### For Development
 
 ```bash
-# Navigate to the extractor directory
-cd extractors/pci_dss_v4_0_1
+# Navigate to the pci_dss directory
+cd data_pipeline/processors/compliance_standards/pci_dss
 
 # Run with development options
 python main.py all --verbose                         # Detailed output
@@ -66,19 +79,22 @@ The extraction process follows these steps:
 4. **🔗 Build Content**: Assemble complete control content
 5. **📝 Generate Metadata**: Create validation and production metadata
 6. **💾 Save Files**: Output markdown, JSON, and CSV files
+7. **📊 Generate Database Files**: Create single CSV and PostgreSQL schema
 
 ### Output Structure
 
 ```
-extracted_controls/
+shared_data/outputs/pci_dss_v4/controls/
 ├── control_1.1.1.md                    # Human-readable markdown
 ├── control_1.1.1_validate.json         # Debugging metadata
 ├── control_1.1.1_production.json       # Database-ready metadata
 └── ... (one set per control)
 
-ingest/bedrock/pci_dss_4.0/
-├── pci_dss_controls.csv                # Bedrock-ready CSV
-└── metadata_template.json              # Column definitions
+shared_data/outputs/pci_dss_v4/database_import/
+├── pci_dss_controls.csv                # Single CSV for PostgreSQL bulk import
+├── database_schema.json                # PostgreSQL table schema & sample queries
+├── control_*.csv                       # Optional individual files
+└── ... (306 individual CSV files - optional)
 ```
 
 ## 🧩 Module Details
@@ -111,9 +127,9 @@ ingest/bedrock/pci_dss_4.0/
 - **ProductionMetadataGenerator**: Database-ready metadata
 - **MetadataFileManager**: File I/O operations
 
-### `core/bedrock_csv_generator.py` - CSV Export
-- **BedrockCSVGenerator**: Generate CSV for Bedrock Knowledge Base
-- **Features**: Token-aware chunking, metadata inclusion
+### `core/csv_generator.py` - CSV Export
+- **CSVGenerator**: Generate CSV for PostgreSQL database import
+- **Features**: Single CSV for bulk import, individual files optional, PostgreSQL schema
 
 ## 👥 For Teammates - Contributing
 
@@ -128,23 +144,23 @@ ingest/bedrock/pci_dss_4.0/
 
 ```bash
 # 1. Set up environment
-cd /path/to/rag_service
+cd /path/to/sentinelai-audit-framework
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
 # 2. Run extraction to establish baseline
-python -m extractors.pci_dss_v4_0_1.main all --verbose
+python -m data_pipeline.processors.compliance_standards.pci_dss.main all --verbose
 
 # 3. Make your changes
-# Edit the relevant module in core/
+# Edit the relevant module in data_pipeline/processors/compliance_standards/pci_dss/core/
 
 # 4. Test your changes
-python -m extractors.pci_dss_v4_0_1.main extract --verbose
+python -m data_pipeline.processors.compliance_standards.pci_dss.main extract --verbose
 # Check validation metadata for quality scores
 
 # 5. Verify CSV generation still works
-python -m extractors.pci_dss_v4_0_1.main csv --verbose
+python -m data_pipeline.processors.compliance_standards.pci_dss.main csv --verbose
 ```
 
 ### Common Tasks
@@ -165,7 +181,7 @@ python -m extractors.pci_dss_v4_0_1.main csv --verbose
 
 1. Update `content_builders.py` for content formatting
 2. Modify `metadata_generators.py` for metadata structure
-3. Update `bedrock_csv_generator.py` for CSV format
+3. Update `csv_generator.py` for CSV format
 
 ## 🔧 Configuration Options
 
@@ -182,7 +198,7 @@ Commands:
 Options:
   --input-file PATH       Input markdown file (default: PCI-DSS-v4_0_1-FULL.md)
   --output-dir PATH       Output directory (default: extracted_controls)
-  --csv-output PATH       CSV output directory (default: ingest/bedrock/pci_dss_4.0)
+  --csv-output PATH       CSV output directory (default: shared_data/outputs/pci_dss_v4/database_import)
   --chunk-size INT        Target chunk size in tokens (default: 300)
   --verbose, -v           Enable detailed output
   --help, -h              Show help message
@@ -274,12 +290,65 @@ python -m pytest tests/integration/test_extraction_workflow.py
 ```bash
 # Test with sample controls
 python -c "
-from extractors.pci_dss_v4_0_1.core.extractor import ControlExtractor
-extractor = ControlExtractor('PCI-DSS-v4_0_1-FULL.md')
+from data_pipeline.processors.compliance_standards.pci_dss.core.extractor import ControlExtractor
+extractor = ControlExtractor('shared_data/documents/PCI-DSS-v4_0_1-FULL.md')
 extractor.load_markdown()
 controls = extractor.extract_all_controls()
 print(f'Extracted {len(controls)} controls')
 "
+```
+
+## 🗃️ PostgreSQL Database Setup
+
+### Table Creation
+```sql
+-- Create the main table
+CREATE TABLE pci_dss_controls (
+    id UUID PRIMARY KEY NOT NULL,
+    control_id VARCHAR(20) UNIQUE NOT NULL,
+    chunk TEXT NOT NULL,
+    metadata JSONB NOT NULL
+);
+
+-- Create GIN index for efficient JSON queries
+CREATE INDEX idx_metadata_gin ON pci_dss_controls USING GIN (metadata);
+
+-- Create index for control_id lookups
+CREATE INDEX idx_control_id ON pci_dss_controls (control_id);
+```
+
+### Data Import
+```bash
+# Copy CSV data into PostgreSQL
+psql -d your_database -c "
+COPY pci_dss_controls FROM '/path/to/pci_dss_controls.csv' 
+CSV HEADER;
+"
+```
+
+### Sample Queries
+```sql
+-- Get all controls for requirement 1
+SELECT id, control_id, chunk FROM pci_dss_controls 
+WHERE (metadata->>'requirements_id') = '1';
+
+-- Search for controls with testing procedures
+SELECT id, control_id, metadata->>'control_category' 
+FROM pci_dss_controls 
+WHERE (metadata->>'has_testing_procedures')::boolean = true;
+
+-- Full text search in control content
+SELECT id, control_id FROM pci_dss_controls 
+WHERE chunk ILIKE '%network security%';
+
+-- Get controls by category
+SELECT id, control_id, metadata->>'requirements_id'
+FROM pci_dss_controls 
+WHERE metadata->>'control_category' = 'network_security';
+
+-- Get a specific control by control_id
+SELECT * FROM pci_dss_controls 
+WHERE control_id = '1.1.1';
 ```
 
 ## 📈 Performance Considerations
@@ -296,17 +365,22 @@ print(f'Extracted {len(controls)} controls')
 - **Accuracy**: Install `tiktoken` for precise token counts
 - **Fallback**: Character-based estimation (chars/4) if tiktoken unavailable
 
+### Database Performance
+- **Bulk Import**: Single CSV file optimized for PostgreSQL COPY command
+- **JSONB Indexing**: GIN index enables fast metadata queries
+- **Query Optimization**: Use JSONB operators for efficient filtering
+
 ## 🔗 Integration Points
 
-### With RAG Service
-- **Input**: Extracted controls in `extracted_controls/`
-- **CSV Output**: Ready for Bedrock upload in `ingest/bedrock/`
-- **Metadata**: Production metadata for database storage
+### With PostgreSQL Database
+- **Input**: Extracted controls in `shared_data/outputs/pci_dss_v4/controls/`
+- **CSV Output**: Ready for bulk import in `shared_data/outputs/pci_dss_v4/database_import/`
+- **Import Command**: `COPY pci_dss_controls FROM 'pci_dss_controls.csv' CSV HEADER;`
 
-### With Vector Database
-- **Text Field**: Use `text` from production metadata
-- **Metadata Fields**: `req_id`, `standard`, `title`, `status`
-- **Chunking**: Pre-chunked based on token limits
+### With Database Applications
+- **Text Field**: Use `chunk` column for content
+- **Metadata Fields**: JSONB `metadata` column with `control_id`, `standard`, `source`, etc.
+- **Queries**: Use JSONB operators for flexible metadata filtering
 
 ### With Testing Framework
 - **Validation Metadata**: Use for quality assessment

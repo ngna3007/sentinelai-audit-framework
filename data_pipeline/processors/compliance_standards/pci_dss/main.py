@@ -12,7 +12,7 @@ Usage:
     python main.py --help     # Show detailed help
 
 For teammates:
-    1. Ensure PCI-DSS-v4_0_1-FULL.md is in the rag_service/data/ directory
+    1. Ensure PCI-DSS-v4_0_1-FULL.md is in the shared_data/documents directory
     2. Run: python -m extractors.pci_dss_v4_0_1.main extract
     3. Check output in extracted_controls/ and ingest/bedrock/
 """
@@ -71,15 +71,15 @@ Workflow:
     parser.add_argument(
         '--output-dir',
         type=str,
-        default='extracted_controls',
-        help='Output directory for extracted controls (default: extracted_controls)'
+        default='shared_data/outputs/pci_dss_v4/controls',
+        help='Output directory for extracted controls (default: shared_data/outputs/pci_dss_v4/controls)'
     )
     
     parser.add_argument(
         '--csv-output',
         type=str,
-        default='ingest/bedrock/pci_dss_4.0',
-        help='CSV output directory for Bedrock (default: ingest/bedrock/pci_dss_4.0)'
+        default='shared_data/outputs/pci_dss_v4/database_import',
+        help='CSV output directory for database import (default: shared_data/outputs/pci_dss_v4/database_import)'
     )
     
     parser.add_argument(
@@ -103,10 +103,11 @@ def validate_environment() -> bool:
     
     # Check if we're in the right directory structure
     current_dir = Path.cwd()
-    rag_service_root = Path(__file__).parent.parent.parent
+    # Navigate to project root from data_pipeline/processors/compliance_standards/pci_dss/
+    project_root = Path(__file__).parent.parent.parent.parent.parent
     
-    # Check if input file exists (look in rag_service data folder)
-    input_file = rag_service_root / "data" / "PCI-DSS-v4_0_1-FULL.md"
+    # Check if input file exists (look in shared_data/documents folder)
+    input_file = project_root / "shared_data" / "documents" / "PCI-DSS-v4_0_1-FULL.md"
     if not input_file.exists():
         errors.append(f"❌ PCI-DSS-v4_0_1-FULL.md not found at {input_file}")
     
@@ -115,9 +116,8 @@ def validate_environment() -> bool:
         for error in errors:
             print(f"   {error}")
         print("\n💡 Setup instructions:")
-        print("   1. Navigate to the rag_service directory")
-        print("   2. Ensure PCI-DSS-v4_0_1-FULL.md is in the data/ folder")
-        print("   3. Run: python -m extractors.pci_dss_v4_0_1.main extract")
+        print("   1. Ensure PCI-DSS-v4_0_1-FULL.md is in shared_data/documents/")
+        print("   2. Run from project root: python -m data_pipeline.processors.compliance_standards.pci_dss.main extract")
         return False
     
     return True
@@ -137,12 +137,12 @@ def run_pdf_conversion(pdf_file: str, output_file: str, verbose: bool = False) -
         # Check if pymupdf4llm is available
         converter = PDFToMarkdownConverter()
         
-        # Resolve paths relative to rag_service root
-        rag_service_root = Path(__file__).parent.parent.parent
+        # Resolve paths relative to project root
+        project_root = Path(__file__).parent.parent.parent.parent.parent
         if not Path(pdf_file).is_absolute():
-            pdf_file = str(rag_service_root / pdf_file)
+            pdf_file = str(project_root / pdf_file)
         if not Path(output_file).is_absolute():
-            output_file = str(rag_service_root / "data" / output_file)
+            output_file = str(project_root / "shared_data" / "documents" / output_file)
         
         # Convert PDF to Markdown
         md_content = converter.convert_pdf_to_markdown(pdf_file, output_file)
@@ -187,10 +187,14 @@ def run_extraction(input_file: str, output_dir: str, verbose: bool = False) -> b
             print(f"📄 Input file: {input_file}")
             print(f"📁 Output directory: {output_dir}")
         
-        # Resolve input file path relative to rag_service root
-        rag_service_root = Path(__file__).parent.parent.parent
+        # Resolve paths relative to project root
+        project_root = Path(__file__).parent.parent.parent.parent.parent
         if not Path(input_file).is_absolute():
-            input_file = str(rag_service_root / "data" / input_file)
+            input_file = str(project_root / "shared_data" / "documents" / input_file)
+        
+        # Also resolve output directory relative to project root
+        if not Path(output_dir).is_absolute():
+            output_dir = str(project_root / output_dir)
         
         # Initialize and run extractor
         extractor = ControlExtractor(input_file)
@@ -215,7 +219,7 @@ def run_extraction(input_file: str, output_dir: str, verbose: bool = False) -> b
 def run_csv_generation(input_dir: str, output_dir: str, chunk_size: int, verbose: bool = False) -> bool:
     """Run the CSV generation process for Bedrock."""
     try:
-        from .core.bedrock_csv_generator import BedrockCSVGenerator
+        from .core.csv_generator import CSVGenerator
         
         print("\n📊 Starting CSV Generation for Bedrock")
         print("=" * 60)
@@ -225,9 +229,16 @@ def run_csv_generation(input_dir: str, output_dir: str, chunk_size: int, verbose
             print(f"📁 Output directory: {output_dir}")
             print(f"🔤 Target chunk size: {chunk_size} tokens")
         
-        # Initialize and run CSV generator with correct input directory
-        generator = BedrockCSVGenerator(controls_dir=input_dir)
-        generator.generate_bedrock_files()
+        # Resolve paths relative to project root
+        project_root = Path(__file__).parent.parent.parent.parent.parent
+        if not Path(input_dir).is_absolute():
+            input_dir = str(project_root / input_dir)
+        if not Path(output_dir).is_absolute():
+            output_dir = str(project_root / output_dir)
+        
+        # Initialize and run CSV generator with correct input and output directories
+        generator = CSVGenerator(controls_dir=input_dir, output_dir=output_dir)
+        generator.generate_csv_files()
         
         print("✅ CSV generation completed successfully!")
         return True
