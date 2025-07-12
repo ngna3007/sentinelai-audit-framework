@@ -1,0 +1,14 @@
+{
+  "id": "870a565c-3db2-407b-8514-81aaa453f927",
+  "control_id": "8.1.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.1.1\n\nDefined Approach Requirements:\nAll security policies and operational procedures that are identified in Requirement 8 are: Documented. Kept up to date. In use. Known to all affected parties.\n\nCustomized Approach Objective:\nExpectations, controls, and oversight for meeting activities within Requirement 8 are defined and adhered to by affected personnel. All supporting activities are repeatable, consistently applied, and conform to management\u2019s intent.",
+  "requirement": "All security policies and operational procedures that are identified in Requirement 8 are: Documented. Kept up to date. In use. Known to all affected parties.",
+  "metadata": {
+    "control_id": "8.1.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": false,
+    "requirements_id": "8"
+  }
+}

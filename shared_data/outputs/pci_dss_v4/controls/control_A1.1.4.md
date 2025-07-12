@@ -1,0 +1,16 @@
+PCI DSS 4_0_1 Requirement Control A1.1.4
+
+Defined Approach Requirements:
+The effectiveness of logical separation controls used to separate customer environments is confirmed at least once every six months via penetration testing.
+
+Customized Approach Objective:
+Segmentation of customer environments from other environments is periodically validated to be effective.
+
+Applicability Notes:
+The testing of adequate separation between customers in a multi-tenant service provider environment is in addition to the penetration tests specified in Requirement 11.4.6. _This requirement is a best practice until 31_ _March 2025, after which it will be required and_ _must be fully considered during a PCI DSS_ _assessment._
+
+Testing Procedures:
+Testing Procedure A1.1.4: Examine the results from the most recent penetration test to verify that testing confirmed the effectiveness of logical separation controls used to separate customer environments.
+
+Guidance:
+Purpose: Multi-tenant services providers are responsible for managing the segmentation between their customers. without technical assurance that segmentation controls are effective, it is possible that changes to the service provider’s technology would inadvertently create a vulnerability that could be exploited across all the service provider’s customers. Good Practice: Effectiveness of separation techniques can be confirmed by using service-provider-created temporary (mock-up) environments that represent customer environments and attempting to 1) access one temporary environment from another environment, and 2) access a temporary environment from the internet.

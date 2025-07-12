@@ -1,0 +1,14 @@
+{
+  "id": "c950d3bf-d923-4b29-889e-998cd4c1b081",
+  "control_id": "10.2.1.7",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.2.1.7\n\nDefined Approach Requirements:\nAudit logs capture all creation and deletion of system-level objects.\n\nCustomized Approach Objective:\nRecords of alterations that indicate a system has been modified from its intended functionality are captured.\n\nTesting Procedures:\nTesting Procedure 10.2.1.7: Examine audit log configurations and log data to verify that creation and deletion of system level objects is captured.\n\nGuidance:\nPurpose: By recording these details for the auditable events at 10.2.1.1 through 10.2.1.7, a potential compromise can be quickly identified, with sufficient detail to facilitate following up on suspicious activities.",
+  "requirement": "Audit logs capture all creation and deletion of system-level objects.",
+  "metadata": {
+    "control_id": "10.2.1.7",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

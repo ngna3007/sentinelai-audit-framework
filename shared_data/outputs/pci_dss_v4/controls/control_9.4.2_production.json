@@ -1,0 +1,14 @@
+{
+  "id": "42b50648-778e-44ec-b511-bd744ed101aa",
+  "control_id": "9.4.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.4.2\n\nDefined Approach Requirements:\nAll media with cardholder data is classified in accordance with the sensitivity of the data.\n\nCustomized Approach Objective:\nMedia are classified and protected appropriately.\n\nTesting Procedures:\nTesting Procedure 9.4.2.a: Examine documentation to verify that procedures are defined for classifying media with cardholder data in accordance with the sensitivity of the data.\nTesting Procedure 9.4.2.b: Examine media logs or other documentation to verify that all media is classified in accordance with the sensitivity of the data.",
+  "requirement": "All media with cardholder data is classified in accordance with the sensitivity of the data.",
+  "metadata": {
+    "control_id": "9.4.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control A2.1.2
+
+Defined Approach Requirements:
+Additional requirement for service_ _providers only:_ All service providers with existing connection points to POS POI terminals that use SSL and/or early TLS as defined in A2.1 have a formal Risk Mitigation and Migration Plan in place that includes: Description of usage, including what data is being transmitted, types and number of systems that use and/or support SSL/early TLS, and type of environment. Risk-assessment results and risk-reduction controls in place. Description of processes to monitor for new vulnerabilities associated with SSL/early TLS. Description of change control processes that are implemented to ensure SSL/early TLS is not implemented into new environments. Overview of migration project plan to replace SSL/early TLS at a future date.
+
+Customized Approach Objective:
+This requirement is not eligible for the customized approach.
+
+Applicability Notes:
+This requirement applies only when the entity being assessed is a service provider.
+
+Guidance:
+Purpose: Customers must be able to choose to upgrade their pois to eliminate the vulnerability in using ssl and early tls. in many cases, customers will need to take a phased or gradual approach to migrate their pos poi estate from the insecure protocol to a secure protocol and so will require the service provider to support a secure offering. Good Practice: Service providers should communicate to all customers using ssl/early tls about the risks associated with its use and the need to migrate to a secure protocol. Definitions: The risk mitigation and migration plan is a document prepared by the entity that details its plans for migrating to a secure protocol and describes controls the entity has in place to reduce the risk associated with ssl/early tls until the migration is complete. Further Information: Refer to the current pci ssc information supplements on ssl/early tls for further guidance.

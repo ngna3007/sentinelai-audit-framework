@@ -1,0 +1,14 @@
+{
+  "id": "5c866e90-50e7-41ec-bce3-419f64ad2bb6",
+  "control_id": "12.8.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.8.4\n\nDefined Approach Requirements:\nA program is implemented to monitor TPSPs\u2019 PCI DSS compliance status at least once every 12 months.\n\nCustomized Approach Objective:\nThe PCI DSS compliance status of TPSPs is verified periodically.\n\nTesting Procedures:\nTesting Procedure 12.8.4.a: Examine policies and procedures to verify that processes are defined to monitor TPSPs\u2019 PCI DSS compliance status at least once every 12 months.\nTesting Procedure 12.8.4.b: Examine documentation and interview responsible personnel to verify that the PCI DSS compliance status of each TPSP is monitored at least once every 12 months.\n\nGuidance:\nPurpose: Knowing the pci dss compliance status of all engaged tpsps provides assurance and awareness about whether they comply with the requirements applicable to the services they offer to the organization. Good Practice: If the tpsp offers a variety of services, the compliance status the entity monitors should be specific to those services delivered to the entity and those services in scope for the entity\u2019s pci dss assessment. _(continued on next page)_. Further Information: For more information about third-party service providers, refer to: pci dss section: use of third-party service providers. _information supplement: third-party security_ _assurance_.",
+  "requirement": "A program is implemented to monitor TPSPs\u2019 PCI DSS compliance status at least once every 12 months.",
+  "metadata": {
+    "control_id": "12.8.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": true,
+    "requirements_id": "12"
+  }
+}

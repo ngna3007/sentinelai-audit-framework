@@ -1,0 +1,14 @@
+{
+  "id": "9ec3447d-270b-4387-aa6d-572fc39efa5b",
+  "control_id": "A3.3.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control A3.3.2\n\nDefined Approach Requirements:\nHardware and software technologies are reviewed at least once every 12 months to confirm whether they continue to meet the organization\u2019s PCI DSS requirements. PCI DSS Reference: _Requirements 2, 6, 12._\n\nCustomized Approach Objective:\nThis requirement is not eligible for the customized approach.\n\nApplicability Notes:\nThe process includes a plan for remediating technologies that no longer meet the organization\u2019s PCI DSS requirements, up to and including replacement of the technology, as appropriate.\n\nTesting Procedures:\nTesting Procedure A3.3.2.a: Examine documented policies and procedures and interview personnel to verify processes are defined and implemented to review hardware and software technologies to confirm whether they continue to meet the organization\u2019s PCI DSS requirements.\nTesting Procedure A3.3.2.b: Review the results of the recent reviews of hardware and software technologies to verify reviews are performed at least once every 12 months.\nTesting Procedure A3.3.2.c: Review documentation to verify that, for any technologies that have been determined to no longer meet the organization\u2019s PCI DSS requirements, a plan is in place to remediate the technology.\n\nGuidance:\nPurpose: Hardware and software technologies are constantly evolving, and organizations need to be aware of changes to the technologies they use, as well as the evolving threats to those technologies. conducting appropriate reviews of these technologies ensures that they can prepare for, and manage, vulnerabilities in hardware and software that will not be remediated by the vendor or developer. Good Practice: Organizations should also consider reviewing firmware versions to ensure they remain current and supported by the vendors. organizations also need to be aware of changes made by technology vendors to their products or processes to understand how such changes may impact the organization\u2019s use of the technology. regular reviews of technologies that impact or influence pci dss controls can assist with purchasing, usage, and deployment strategies and ensure controls that rely on those technologies remain effective. these reviews include, but are not limited to, reviewing technologies that are no longer supported by the vendor and/or no longer meet the security needs of the organization.",
+  "requirement": "Hardware and software technologies are reviewed at least once every 12 months to confirm whether they continue to meet the organization\u2019s PCI DSS requirements. PCI DSS Reference: _Requirements 2, 6, 12._",
+  "metadata": {
+    "control_id": "A3.3.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "appendix",
+    "has_testing_procedures": true,
+    "requirements_id": "A3"
+  }
+}

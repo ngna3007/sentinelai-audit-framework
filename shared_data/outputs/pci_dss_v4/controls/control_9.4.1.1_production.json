@@ -1,0 +1,14 @@
+{
+  "id": "acebd8e3-4db5-4ee5-ad64-84c793281edf",
+  "control_id": "9.4.1.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.4.1.1\n\nDefined Approach Requirements:\nOffline media backups with cardholder data are stored in a secure location.\n\nCustomized Approach Objective:\nOffline backups cannot be accessed by unauthorized personnel.\n\nTesting Procedures:\nTesting Procedure 9.4.1.1.a: Examine documentation to verify that procedures are defined for physically securing offline media backups with cardholder data in a secure location.\nTesting Procedure 9.4.1.1.b: Examine logs or other documentation and interview responsible personnel at the storage location to verify that offline media backups are stored in a secure location.",
+  "requirement": "Offline media backups with cardholder data are stored in a secure location.",
+  "metadata": {
+    "control_id": "9.4.1.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

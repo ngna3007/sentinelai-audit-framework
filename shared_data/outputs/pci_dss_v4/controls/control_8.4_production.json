@@ -1,0 +1,14 @@
+{
+  "id": "c2c1fb6c-3774-4dc5-b1b2-f432cde3ca78",
+  "control_id": "8.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.4\n\nDefined Approach Requirements:\nMulti-factor authentication (MFA) is implemented to secure access into the CDE.\n\nGuidance:\nPurpose: Requiring more than one type of authentication factor reduces the probability that an attacker can gain access to a system by masquerading as a legitimate user, because the attacker would need to compromise multiple authentication factors. this is especially true in environments where traditionally the single authentication factor employed was something a user knows such as a password or passphrase. Good Practice: Implementing mfa for non-console administrative access to in-scope system components that are not part of the cde will help prevent unauthorized users from using a single factor to gain access and compromise in-scope system components. Definitions: Using one factor twice (for example, using two separate passwords) is not considered multi- factor authentication.",
+  "requirement": "Multi-factor authentication (MFA) is implemented to secure access into the CDE.",
+  "metadata": {
+    "control_id": "8.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": false,
+    "requirements_id": "8"
+  }
+}

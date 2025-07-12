@@ -1,0 +1,14 @@
+{
+  "id": "41ae72f3-38db-4d6c-b6a8-18affc110be4",
+  "control_id": "1.4.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 1.4.3\n\nDefined Approach Requirements:\nAnti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network.\n\nCustomized Approach Objective:\nPackets with forged IP source addresses cannot enter a trusted network.\n\nTesting Procedures:\nTesting Procedure 1.4.3: Examine vendor documentation and configurations for NSCs to verify that anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network.\n\nGuidance:\nPurpose: Filtering packets coming into the trusted network helps to, among other things, ensure packets are not \u201cspoofed\u201d to appear as if they are coming from an organization\u2019s own internal network. for example, anti-spoofing measures prevent internal addresses originating from the internet from passing into the dmz. Examples: Normally, a packet contains the ip address of the computer that originally sent it so other computers in the network know where the packet originated. malicious individuals will often try to spoof (or imitate) the sending ip address to fool the target system into believing the packet is from a trusted source. Good Practice: Products usually come with anti-spoofing set as a default and may not be configurable. entities should consult the vendor's documentation for more information.",
+  "requirement": "Anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network.",
+  "metadata": {
+    "control_id": "1.4.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "network_security",
+    "has_testing_procedures": true,
+    "requirements_id": "1"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "control_id": "2.2.7",
+  "sections": {
+    "purpose": true,
+    "examples": true,
+    "good_practice": true,
+    "requirements": true,
+    "testing_procedures": true,
+    "customized_approach": true,
+    "applicability_notes": true,
+    "definitions": false,
+    "further_information": true
+  },
+  "row_count": 9,
+  "table_count": 1,
+  "spans_multiple_tables": false,
+  "token_count": 637,
+  "content_length_chars": 2551,
+  "content_lines": 19,
+  "has_testing_procedures": true,
+  "has_guidance": true,
+  "has_requirements": true,
+  "table_sources": [
+    {
+      "table_index": 0,
+      "start_line": 2122,
+      "end_line": 2133,
+      "header": "|Requirements and Testing Procedures|Col2|Guidance|",
+      "row_count": 9
+    }
+  ],
+  "quality_analysis": {
+    "quality_score": 99,
+    "max_score": 100,
+    "quality_percentage": 99.0,
+    "issues": [],
+    "recommendations": []
+  }
+}

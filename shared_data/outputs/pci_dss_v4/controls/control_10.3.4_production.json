@@ -1,0 +1,14 @@
+{
+  "id": "d06c2961-6a5d-44ba-b7a3-11d624185591",
+  "control_id": "10.3.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.3.4\n\nDefined Approach Requirements:\nFile integrity monitoring or change-detection mechanisms is used on audit logs to ensure that existing log data cannot be changed without generating alerts.\n\nCustomized Approach Objective:\nStored activity records cannot be modified without an alert being generated.\n\nTesting Procedures:\nTesting Procedure 10.3.4: Examine system settings, monitored files, and results from monitoring activities to verify the use of file integrity monitoring or change-detection software on audit logs.\n\nGuidance:\nPurpose: File integrity monitoring or change-detection systems check for changes to critical files and notify when such changes are identified. for file integrity monitoring purposes, an entity usually monitors files that do not regularly change, but when changed, indicate a possible compromise. Good Practice: Software used to monitor changes to audit logs should be configured to provide alerts when existing log data or files are changed or deleted. however, new log data being added to an audit log should not generate an alert.",
+  "requirement": "File integrity monitoring or change-detection mechanisms is used on audit logs to ensure that existing log data cannot be changed without generating alerts.",
+  "metadata": {
+    "control_id": "10.3.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

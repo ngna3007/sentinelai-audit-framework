@@ -1,0 +1,14 @@
+{
+  "id": "8e48cbeb-2db9-4a11-931a-7a57755eeaf1",
+  "control_id": "12.10.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.10.2\n\nDefined Approach Requirements:\nAt least once every 12 months, the security incident response plan is: Reviewed and the content is updated as needed. Tested, including all elements listed in Requirement 12.10.1.\n\nCustomized Approach Objective:\nThe incident response plan is kept current and tested periodically.\n\nTesting Procedures:\nTesting Procedure 12.10.2: Interview personnel and review documentation to verify that, at least once every 12 months, the security incident response plan is: Reviewed and updated as needed. Tested, including all elements listed in Requirement 12.10.1.",
+  "requirement": "At least once every 12 months, the security incident response plan is: Reviewed and the content is updated as needed. Tested, including all elements listed in Requirement 12.10.1.",
+  "metadata": {
+    "control_id": "12.10.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": true,
+    "requirements_id": "12"
+  }
+}

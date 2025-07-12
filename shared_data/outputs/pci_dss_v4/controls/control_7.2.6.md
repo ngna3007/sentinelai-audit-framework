@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 7.2.6
+
+Defined Approach Requirements:
+All user access to query repositories of stored cardholder data is restricted as follows: Via applications or other programmatic methods, with access and allowed actions based on user roles and least privileges. Only the responsible administrator(s) can directly access or query repositories of stored CHD.
+
+Customized Approach Objective:
+Direct unfiltered (ad hoc) query access to cardholder data repositories is prohibited, unless performed by an authorized administrator.
+
+Applicability Notes:
+This requirement applies to controls for user access to query repositories of stored cardholder data. See Requirements 7.2.5 and 7.2.5.1 and 8.6.1 through 8.6.3 for controls for application and system accounts.
+
+Testing Procedures:
+Testing Procedure 7.2.6.a: Examine policies and procedures and interview personnel to verify processes are defined for granting user access to query repositories of stored cardholder data, in accordance with all elements specified in this requirement.
+Testing Procedure 7.2.6.b: Examine configuration settings for querying repositories of stored cardholder data to verify they are in accordance with all elements specified in this requirement.
+
+Guidance:
+Purpose: The misuse of query access to repositories of cardholder data has been a regular cause of data breaches. limiting such access to administrators reduces the risk of such access being abused by unauthorized users. Good Practice: Typical user actions include moving, copying, and deleting data. also consider the scope of privilege needed when granting access. for example, access can be granted to specific objects such as data elements, files, tables, indexes, views, and stored routines. granting access to repositories of cardholder data should follow the same process as all other granted access, meaning that it is based on roles, with only the privileges assigned to each user that are needed to perform their job functions. Definitions: “programmatic methods” means granting access through means such as database stored procedures that allow users to perform controlled actions to data in a table, rather than via direct, unfiltered access to the data repository by end users (except for the responsible administrator(s), who need direct access to the database for their administrative duties).

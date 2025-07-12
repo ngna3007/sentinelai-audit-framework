@@ -1,0 +1,14 @@
+{
+  "id": "2792ddb5-5dd6-45fa-9109-7de2dff5f47e",
+  "control_id": "3.3.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 3.3.2\n\nDefined Approach Requirements:\nSAD that is stored electronically prior to completion of authorization is encrypted using strong cryptography.\n\nCustomized Approach Objective:\nThis requirement is not eligible for the customized approach. _(continued on next page)_\n\nTesting Procedures:\nTesting Procedure 3.3.2: Examine data stores, system configurations, and/or vendor documentation to verify that all SAD that is stored electronically prior to completion of authorization is encrypted using strong cryptography.\n\nGuidance:\nPurpose: Sad can be used by malicious individuals to increase the probability of successfully generating counterfeit payment cards and creating fraudulent transactions. Good Practice: Entities should consider encrypting sad with a different cryptographic key than is used to encrypt pan. note that this does not mean that pan present in sad (as part of track data) would need to be separately encrypted. Definitions: The authorization process is completed when a merchant receives a transaction response (for example, an approval or decline) . refer to_appendix g_ for the definition of \u201cauthorization.\u201d.",
+  "requirement": "SAD that is stored electronically prior to completion of authorization is encrypted using strong cryptography.",
+  "metadata": {
+    "control_id": "3.3.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "data_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "3"
+  }
+}

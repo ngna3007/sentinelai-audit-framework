@@ -1,0 +1,14 @@
+{
+  "id": "5e2ce00a-0cc9-4d3b-bee9-bead0cfc98b2",
+  "control_id": "A3.1.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control A3.1.3\n\nDefined Approach Requirements:\nPCI DSS compliance roles and responsibilities are specifically defined and formally assigned to one or more personnel, including: Managing PCI DSS business-as-usual activities. Managing annual PCI DSS assessments. Managing continuous validation of PCI DSS requirements (for example, daily, weekly, every three months, as applicable per the requirement). Managing business-impact analysis to determine potential PCI DSS impacts for strategic business decisions. PCI DSS Reference: _Requirement 12_\n\nCustomized Approach Objective:\nThis requirement is not eligible for the customized approach.\n\nTesting Procedures:\nTesting Procedure A3.1.3.a: Examine information security policies and procedures and interview personnel to verify that PCI DSS compliance roles and responsibilities are specifically defined and formally assigned to one or more personnel in accordance with all elements of this requirement.\nTesting Procedure A3.1.3.b: Interview responsible personnel and verify they are familiar with and performing their designated PCI DSS compliance responsibilities.\n\nGuidance:\nPurpose: The formal definition of specific pci dss compliance roles and responsibilities helps to ensure accountability and monitoring of ongoing pci dss compliance efforts. Good Practice: Ownership should be assigned to individuals with the authority to make risk-based decisions, and upon whom accountability rests for the specific function. duties should be formally defined, and owners should be able to demonstrate an understanding of their responsibilities and accountability. compliance roles may be assigned to a single owner or multiple owners for different requirement elements.",
+  "requirement": "PCI DSS compliance roles and responsibilities are specifically defined and formally assigned to one or more personnel, including: Managing PCI DSS business-as-usual activities. Managing annual PCI DSS assessments. Managing continuous validation of PCI DSS requirements (for example, daily, weekly, every three months, as applicable per the requirement). Managing business-impact analysis to determine potential PCI DSS impacts for strategic business decisions. PCI DSS Reference: _Requirement 12_",
+  "metadata": {
+    "control_id": "A3.1.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "appendix",
+    "has_testing_procedures": true,
+    "requirements_id": "A3"
+  }
+}

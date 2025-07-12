@@ -1,0 +1,10 @@
+PCI DSS 4_0_1 Requirement Control 10.2.1.6
+
+Defined Approach Requirements:
+Audit logs capture the following: All initialization of new audit logs, and All starting, stopping, or pausing of the existing audit logs.
+
+Customized Approach Objective:
+Records of all changes to audit log activity status are captured.
+
+Testing Procedures:
+Testing Procedure 10.2.1.6: Examine audit log configurations and log data to verify that all elements specified in this requirement are captured.

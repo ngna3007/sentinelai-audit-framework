@@ -1,0 +1,14 @@
+{
+  "id": "e0cf1f63-0a20-4925-b914-355e0975c36b",
+  "control_id": "12.6.3.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.6.3.2\n\nDefined Approach Requirements:\nSecurity awareness training includes awareness about the acceptable use of end-user technologies in accordance with Requirement 12.2.1.\n\nCustomized Approach Objective:\nPersonnel are knowledgeable about their responsibility for the security and operation of end- user technologies and are able to access assistance and guidance when required.\n\nApplicability Notes:\n_This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._\n\nTesting Procedures:\nTesting Procedure 12.6.3.2: Examine security awareness training content to verify it includes awareness about acceptable use of end-user technologies in accordance with Requirement 12.2.1.\n\nGuidance:\nPurpose: By including the key points of the acceptable use policy in regular training and the related context, personnel will understand their responsibilities and how these impact the security of an organization\u2019s systems.",
+  "requirement": "Security awareness training includes awareness about the acceptable use of end-user technologies in accordance with Requirement 12.2.1.",
+  "metadata": {
+    "control_id": "12.6.3.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": true,
+    "requirements_id": "12"
+  }
+}

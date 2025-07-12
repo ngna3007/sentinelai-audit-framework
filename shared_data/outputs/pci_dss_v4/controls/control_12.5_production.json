@@ -1,0 +1,14 @@
+{
+  "id": "e4bcd520-7c1a-4acd-bfb7-32f0bc88b2d6",
+  "control_id": "12.5",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.5\n\nDefined Approach Requirements:\nPCI DSS scope is documented and validated.\n\nGuidance:\nPurpose: Maintaining a current list of all system components will enable an organization to define the scope of its environment and implement pci dss requirements accurately and efficiently. without an inventory, some system components could be overlooked and be inadvertently excluded from the organization\u2019s configuration standards. Examples: Methods to maintain an inventory include as a database, as a series of files, or in an inventory- management tool. Good Practice: If an entity keeps an inventory of all assets, those system components in scope for pci dss should be clearly identifiable among the other assets. inventories should include containers or images that may be instantiated. assigning an owner to the inventory helps to ensure the inventory stays current.",
+  "requirement": "PCI DSS scope is documented and validated.",
+  "metadata": {
+    "control_id": "12.5",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": false,
+    "requirements_id": "12"
+  }
+}

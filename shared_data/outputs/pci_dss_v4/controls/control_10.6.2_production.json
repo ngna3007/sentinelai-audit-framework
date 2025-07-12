@@ -1,0 +1,14 @@
+{
+  "id": "57c72871-c82d-4eb2-a2db-abbf484239b5",
+  "control_id": "10.6.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.6.2\n\nDefined Approach Requirements:\nSystems are configured to the correct and consistent time as follows: One or more designated time servers are in use. Only the designated central time server(s) receives time from external sources. Time received from external sources is based on International Atomic Time or Coordinated Universal Time (UTC). The designated time server(s) accept time updates only from specific industry-accepted external sources. Where there is more than one designated time server, the time servers peer with one another to keep accurate time. Internal systems receive time information only from designated central time server(s).\n\nCustomized Approach Objective:\nThe time on all systems is accurate and consistent.\n\nTesting Procedures:\nTesting Procedure 10.6.2: Examine system configuration settings for acquiring, distributing, and storing the correct time to verify the settings are configured in accordance with all elements specified in this requirement.\n\nGuidance:\nPurpose: Using reputable time servers is a critical component of the time synchronization process. accepting time updates from specific, industry- accepted external sources helps prevent a malicious individual from changing time settings on systems. Good Practice: Another option to prevent unauthorized use of internal time servers is to encrypt updates with a symmetric key and create access control lists that specify the ip addresses of client machines that will be provided with the time updates.",
+  "requirement": "Systems are configured to the correct and consistent time as follows: One or more designated time servers are in use. Only the designated central time server(s) receives time from external sources. Time received from external sources is based on International Atomic Time or Coordinated Universal Time (UTC). The designated time server(s) accept time updates only from specific industry-accepted external sources. Where there is more than one designated time server, the time servers peer with one another to keep accurate time. Internal systems receive time information only from designated central time server(s).",
+  "metadata": {
+    "control_id": "10.6.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

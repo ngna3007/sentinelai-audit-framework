@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 12.1.4
+
+Defined Approach Requirements:
+Responsibility for information security is formally assigned to a Chief Information Security Officer or other information security knowledgeable member of executive management. .
+
+Customized Approach Objective:
+A designated member of executive management is responsible for information security.
+
+Testing Procedures:
+Testing Procedure 12.1.4: Examine the information security policy to verify that information security is formally assigned to a Chief Information Security Officer or other information security-knowledgeable member of executive management.
+
+Guidance:
+Purpose: To ensure someone with sufficient authority and responsibility is actively managing and championing the organization’s information security program, accountability and responsibility for information security needs to be assigned at the executive level within an organization. Good Practice: These executive management positions are often at the most senior level of management and are part of the chief executive level or c-level, typically reporting to the chief executive officer or the board of directors. information security knowledge for this executive management role can be indicated by work experience, education, and/or relevant professional certifications. the expectation is that this individual can provide assurance about the implementation of an effective security program and ensure the right technical experts are employed. entities should also consider transition and/or succession plans for these key personnel to avoid potential gaps in critical security activities.

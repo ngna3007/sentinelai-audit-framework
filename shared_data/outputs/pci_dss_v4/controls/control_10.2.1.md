@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 10.2.1
+
+Defined Approach Requirements:
+Audit logs are enabled and active for all system components and cardholder data.
+
+Customized Approach Objective:
+Records of all activities affecting system components and cardholder data are captured.
+
+Testing Procedures:
+Testing Procedure 10.2.1: Interview the system administrator and examine system configurations to verify that audit logs are enabled and active for all system components.
+
+Guidance:
+Purpose: It is critical to have a process or system that links user access to system components accessed. malicious individuals could obtain knowledge of a user account with access to systems in the cde, or they could create a new, unauthorized account to access cardholder data. Good Practice: A record of all individual access to cardholder data can identify which accounts may have been compromised or misused.

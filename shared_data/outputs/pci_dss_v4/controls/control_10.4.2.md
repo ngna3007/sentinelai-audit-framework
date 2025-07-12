@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 10.4.2
+
+Defined Approach Requirements:
+Logs of all other system components (those not specified in Requirement 10.4.1) are reviewed periodically.
+
+Customized Approach Objective:
+Potentially suspicious or anomalous activities for other system components (not included in 10.4.1) are reviewed in accordance with the entity’s identified risk.
+
+Applicability Notes:
+This requirement is applicable to all other in-scope system components not included in Requirement 10.4.1.
+
+Testing Procedures:
+Testing Procedure 10.4.2.a: Examine security policies and procedures to verify that processes are defined for reviewing logs of all other system components periodically.
+Testing Procedure 10.4.2.b: Examine documented results of log reviews and interview personnel to verify that log reviews are performed periodically.
+
+Guidance:
+Purpose: Periodic review of logs for all other system components (not specified in requirement 10.4.1) helps to identify indications of potential issues or attempts to access critical systems via less-critical systems.

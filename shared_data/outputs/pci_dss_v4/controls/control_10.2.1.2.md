@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 10.2.1.2
+
+Defined Approach Requirements:
+Audit logs capture all actions taken by any individual with administrative access, including any interactive use of application or system accounts.
+
+Customized Approach Objective:
+Records of all actions performed by individuals with elevated privileges are captured.
+
+Testing Procedures:
+Testing Procedure 10.2.1.2: Examine audit log configurations and log data to verify that all actions taken by any individual with administrative access, including any interactive use of application or system accounts, are logged.
+
+Guidance:
+Purpose: Malicious users often attempt to alter audit logs to hide their actions. a record of access allows an organization to trace any inconsistencies or potential tampering of the logs to an individual account. having logs identify changes, additions, and deletions to the audit logs can help retrace steps made by unauthorized personnel. Definitions: The functions or activities considered to be administrative are beyond those performed by regular users as part of routine business functions. refer to_appendix g_ for the definition of “administrative access.”.

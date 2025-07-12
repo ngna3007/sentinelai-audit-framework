@@ -1,0 +1,14 @@
+{
+  "id": "ef0ca7fa-f559-42ed-8ddc-51641d25d931",
+  "control_id": "12.9.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.9.1\n\nDefined Approach Requirements:\nAdditional requirement for service_ _providers only:_ TPSPs provide written agreements to customers that include acknowledgments that TPSPs are responsible for the security of account data the TPSP possesses or otherwise stores, processes, or transmits on behalf of the customer, or to the extent that the TPSP could impact the security of the customer\u2019s cardholder data and/or sensitive authentication data.\n\nCustomized Approach Objective:\nTPSPs formally acknowledge their security responsibilities to their customers. _(continued on next page)_",
+  "requirement": "Additional requirement for service_ _providers only:_ TPSPs provide written agreements to customers that include acknowledgments that TPSPs are responsible for the security of account data the TPSP possesses or otherwise stores, processes, or transmits on behalf of the customer, or to the extent that the TPSP could impact the security of the customer\u2019s cardholder data and/or sensitive authentication data.",
+  "metadata": {
+    "control_id": "12.9.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": false,
+    "requirements_id": "12"
+  }
+}

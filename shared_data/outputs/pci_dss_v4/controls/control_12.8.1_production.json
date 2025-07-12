@@ -1,0 +1,14 @@
+{
+  "id": "a288b0a9-5c91-4936-aae1-f6e02e5bfd2b",
+  "control_id": "12.8.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.8.1\n\nDefined Approach Requirements:\nA list of all third-party service providers (TPSPs) with which account data is shared or that could affect the security of account data is maintained, including a description for each of the services provided.\n\nCustomized Approach Objective:\nRecords are maintained of TPSPs and the services provided.\n\nApplicability Notes:\nThe use of a PCI DSS compliant TPSP does not make an entity PCI DSS compliant, nor does it remove the entity\u2019s responsibility for its own PCI DSS compliance.\n\nTesting Procedures:\nTesting Procedure 12.8.1.a: Examine policies and procedures to verify that processes are defined to maintain a list of TPSPs, including a description for each of the services provided, for all TPSPs with whom account data is shared or that could affect the security of account data.\nTesting Procedure 12.8.1.b: Examine documentation to verify that a list of all TPSPs is maintained that includes a description of the services provided.",
+  "requirement": "A list of all third-party service providers (TPSPs) with which account data is shared or that could affect the security of account data is maintained, including a description for each of the services provided.",
+  "metadata": {
+    "control_id": "12.8.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": true,
+    "requirements_id": "12"
+  }
+}

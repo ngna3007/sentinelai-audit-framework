@@ -1,0 +1,14 @@
+{
+  "id": "36429cda-a90d-4210-958f-4acf648b597f",
+  "control_id": "8.2.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.2.4\n\nDefined Approach Requirements:\nAddition, deletion, and modification of user IDs, authentication factors, and other identifier objects are managed as follows: Authorized with the appropriate approval. Implemented with only the privileges specified on the documented approval.\n\nCustomized Approach Objective:\nLifecycle events for user IDs and authentication factors cannot occur without appropriate authorization.\n\nApplicability Notes:\nThis requirement applies to all user accounts, including employees, contractors, consultants, temporary workers, and third-party vendors.\n\nTesting Procedures:\nTesting Procedure 8.2.4: Examine documented authorizations across various phases of the account lifecycle (additions, modifications, and deletions) and examine system settings to verify the activity has been managed in accordance with all elements specified in this requirement.\n\nGuidance:\nPurpose: If an employee or third party/vendor has left the company and still has access to the network via their user account, unnecessary or malicious access to cardholder data could occur\u2014either by the former employee or by a malicious user who exploits the old and/or unused account.",
+  "requirement": "Addition, deletion, and modification of user IDs, authentication factors, and other identifier objects are managed as follows: Authorized with the appropriate approval. Implemented with only the privileges specified on the documented approval.",
+  "metadata": {
+    "control_id": "8.2.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

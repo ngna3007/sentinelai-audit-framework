@@ -1,0 +1,14 @@
+{
+  "id": "93806c67-5421-4fde-a5d9-7b400f1fae42",
+  "control_id": "11.3.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 11.3.1\n\nDefined Approach Requirements:\nInternal vulnerability scans are performed as follows: At least once every three months. Vulnerabilities that are either high-risk or critical (according to the entity\u2019s vulnerability risk rankings defined at Requirement 6.3.1) are resolved. Rescans are performed that confirm all high-risk and all critical vulnerabilities (as noted above) have been resolved. Scan tool is kept up to date with latest vulnerability information. Scans are performed by qualified personnel and organizational independence of the tester exists.\n\nTesting Procedures:\nTesting Procedure 11.3.1.a: Examine internal scan report results from the last 12 months to verify that internal scans occurred at least once every three months in the most recent 12-month period.\nTesting Procedure 11.3.1.b: Examine internal scan report results from each scan and rescan run in the last 12 months to verify that all high-risk vulnerabilities and all critical vulnerabilities (defined in PCI DSS Requirement 6.3.1) are resolved.\nTesting Procedure 11.3.1.c: Examine scan tool configurations and interview personnel to verify that the scan tool is kept up to date with the latest vulnerability information.\nTesting Procedure 11.3.1.d: Interview responsible personnel to verify that the scan was performed by a qualified internal resource(s) or qualified external third party and that organizational independence of the tester exists.\n\nGuidance:\nDefinitions: A vulnerability scan is a combination of automated tools, techniques, and/or methods run against external and internal devices and servers, designed to expose potential vulnerabilities in applications, operating systems, and network devices that could be found and exploited by malicious individuals.",
+  "requirement": "Internal vulnerability scans are performed as follows: At least once every three months. Vulnerabilities that are either high-risk or critical (according to the entity\u2019s vulnerability risk rankings defined at Requirement 6.3.1) are resolved. Rescans are performed that confirm all high-risk and all critical vulnerabilities (as noted above) have been resolved. Scan tool is kept up to date with latest vulnerability information. Scans are performed by qualified personnel and organizational independence of the tester exists.",
+  "metadata": {
+    "control_id": "11.3.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "security_testing",
+    "has_testing_procedures": true,
+    "requirements_id": "11"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "1f5c257d-6b71-465f-bd67-cf7b8013ec0a",
+  "control_id": "3.6.1.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 3.6.1.3\n\nDefined Approach Requirements:\nAccess to cleartext cryptographic key components is restricted to the fewest number of custodians necessary.\n\nCustomized Approach Objective:\nAccess to cleartext cryptographic key components is restricted to necessary personnel.\n\nTesting Procedures:\nTesting Procedure 3.6.1.3: Examine user access lists to verify that access to cleartext cryptographic key components is restricted to the fewest number of custodians necessary.\n\nGuidance:\nPurpose: Restricting the number of people who have access to cleartext cryptographic key components reduces the risk of stored account data being retrieved or rendered visible by unauthorized parties. Good Practice: Only personnel with defined key custodian responsibilities (creating, altering, rotating, distributing, or otherwise maintaining encryption keys) should be granted access to key components. ideally this will be a very small number of people.",
+  "requirement": "Access to cleartext cryptographic key components is restricted to the fewest number of custodians necessary.",
+  "metadata": {
+    "control_id": "3.6.1.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "data_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "3"
+  }
+}

@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control A3.2.6.1
+
+Defined Approach Requirements:
+Response procedures are implemented to be initiated upon the detection of attempts to remove cleartext PAN from the CDE via an unauthorized channel, method, or process. Response procedures include: Procedures for the prompt investigation of alerts by responsible personnel. Procedures for remediating data leaks or process gaps, as necessary, to prevent any data loss. PCI DSS Reference: _Requirement 12_
+
+Customized Approach Objective:
+This requirement is not eligible for the customized approach.
+
+Testing Procedures:
+Testing Procedure A3.2.6.1.a: Examine documented response procedures to verify that procedures for responding to the attempted removal of cleartext PAN from the CDE via an unauthorized channel, method, or process include all elements specified in this requirement: Procedures for the prompt investigation of alerts by responsible personnel. Procedures for remediating data leaks or process gaps, as necessary, to prevent any data loss.
+Testing Procedure A3.2.6.1.b: Interview personnel and examine records of actions taken when cleartext PAN is detected leaving the CDE via an unauthorized channel, method, or process and verify that remediation activities were performed.
+
+Guidance:
+Purpose: Attempts to remove cleartext pan via an unauthorized channel, method, or process may indicate malicious intent to steal data, or may be the actions of an authorized employee who is unaware of or simply not following the proper methods. prompt investigation of these occurrences can identify where remediation needs to be applied and provides valuable information to help understand from where the threats are coming.

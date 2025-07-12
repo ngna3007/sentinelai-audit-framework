@@ -1,0 +1,14 @@
+{
+  "id": "537746d2-34ac-483f-8364-b2e46d1bcd1d",
+  "control_id": "8.3.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.3.4\n\nDefined Approach Requirements:\nInvalid authentication attempts are limited by: Locking out the user ID after not more than 10 attempts. Setting the lockout duration to a minimum of 30 minutes or until the user\u2019s identity is confirmed.\n\nCustomized Approach Objective:\nAn authentication factor cannot be guessed in a brute force, online attack.\n\nApplicability Notes:\nThis requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction.\n\nTesting Procedures:\nTesting Procedure 8.3.4.a: Examine system configuration settings to verify that authentication parameters are set to require that user accounts be locked out after not more than 10 invalid logon attempts.\nTesting Procedure 8.3.4.b: Examine system configuration settings to verify that password parameters are set to require that once a user account is locked out, it remains locked for a minimum of 30 minutes or until the user\u2019s identity is confirmed.\n\nGuidance:\nPurpose: If the same password/passphrase is used for every new user, an internal user, former employee, or malicious individual may know or easily discover the value and use it to gain access to accounts before the authorized user attempts to use the password. Good Practice: Before reactivating a locked account, the user\u2019s identity should be confirmed. for example, the administrator or help desk personnel can validate that the actual account owner is requesting reactivation, or there may be password reset self- service mechanisms that the account owner uses to verify their identity.",
+  "requirement": "Invalid authentication attempts are limited by: Locking out the user ID after not more than 10 attempts. Setting the lockout duration to a minimum of 30 minutes or until the user\u2019s identity is confirmed.",
+  "metadata": {
+    "control_id": "8.3.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

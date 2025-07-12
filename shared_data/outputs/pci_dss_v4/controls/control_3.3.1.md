@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 3.3.1
+
+Defined Approach Requirements:
+SAD is not stored after authorization, even if encrypted. All sensitive authentication data received is rendered unrecoverable upon completion of the authorization process.
+
+Customized Approach Objective:
+This requirement is not eligible for the customized approach.
+
+Applicability Notes:
+Issuers and companies that support issuing services, where there is a legitimate and documented business need to store SAD, are not required to meet this requirement. A legitimate business need is one that is necessary for the performance of the function being provided by or for the issuer. Refer to Requirement 3.3.3 for additional requirements specifically for these entities. Sensitive authentication data includes the data cited in Requirements 3.3.1.1 through 3.3.1.3.
+
+Testing Procedures:
+Testing Procedure 3.3.1.a: If SAD is received, examine documented policies, procedures, and system configurations to verify the data is not stored after authorization.
+Testing Procedure 3.3.1.b: If SAD is received, examine the documented procedures and observe the secure data deletion processes to verify the data is rendered unrecoverable upon completion of the authorization process.
+
+Guidance:
+Purpose: Sad is very valuable to malicious individuals as it allows them to generate counterfeit payment cards and create fraudulent transactions. therefore, the storage of sad upon completion of the authorization process is prohibited. Good Practice: It may be acceptable for an entity to store sad in non- persistent memory for a short time after authorization is complete, if following conditions are met: there is a legitimate business need to access sad in memory after authorization is complete. sad is only ever stored in non-persistent memory (for example, ram, volatile memory). controls are in place to ensure that memory maintains a non-persistent state. sad is removed as soon as the business purpose is complete. it is not permissible to store sad in persistent memory. Definitions: The authorization process completes when a merchant receives a transaction response (for example, an approval or decline). refer to_appendix g_ for the definition of “authorization.”.

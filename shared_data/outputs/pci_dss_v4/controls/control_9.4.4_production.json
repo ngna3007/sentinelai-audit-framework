@@ -1,0 +1,14 @@
+{
+  "id": "c415242a-f347-4cf4-8dc6-12ea8d659bc3",
+  "control_id": "9.4.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.4.4\n\nDefined Approach Requirements:\nManagement approves all media with cardholder data that is moved outside the facility (including when media is distributed to individuals).\n\nCustomized Approach Objective:\nMedia cannot leave a facility without the approval of accountable personnel.\n\nApplicability Notes:\nIndividuals approving media movements should have the appropriate level of management authority to grant this approval. However, it is not specifically required that such individuals have \u201cmanager\u201d as part of their title.\n\nTesting Procedures:\nTesting Procedure 9.4.4.a: Examine documentation to verify that procedures are defined to ensure that media moved outside the facility is approved by management.\nTesting Procedure 9.4.4.b: Examine offsite media tracking logs and interview responsible personnel to verify that proper management authorization is obtained for all media moved outside the facility (including media distributed to individuals).\n\nGuidance:\nPurpose: Without careful inventory methods and storage controls, stolen or missing electronic media could go unnoticed for an indefinite amount of time.",
+  "requirement": "Management approves all media with cardholder data that is moved outside the facility (including when media is distributed to individuals).",
+  "metadata": {
+    "control_id": "9.4.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

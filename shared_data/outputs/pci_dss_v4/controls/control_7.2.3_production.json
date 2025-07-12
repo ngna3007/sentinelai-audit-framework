@@ -1,0 +1,14 @@
+{
+  "id": "ececa319-40f2-4fa5-8cae-f938daf7e586",
+  "control_id": "7.2.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 7.2.3\n\nDefined Approach Requirements:\nRequired privileges are approved by authorized personnel.\n\nCustomized Approach Objective:\nAccess privileges cannot be granted to users without appropriate, documented authorization.\n\nTesting Procedures:\nTesting Procedure 7.2.3.a: Examine policies and procedures to verify they define processes for approval of all privileges by authorized personnel.\nTesting Procedure 7.2.3.b: Examine user IDs and assigned privileges, and compare with documented approvals to verify that: Documented approval exists for the assigned privileges. The approval was by authorized personnel. Specified privileges match the roles assigned to the individual.\n\nGuidance:\nPurpose: Documented approval (for example, in writing or electronically) assures that those with access and privileges are known and authorized by management, and that their access is necessary for their job function.",
+  "requirement": "Required privileges are approved by authorized personnel.",
+  "metadata": {
+    "control_id": "7.2.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "access_control_general",
+    "has_testing_procedures": true,
+    "requirements_id": "7"
+  }
+}

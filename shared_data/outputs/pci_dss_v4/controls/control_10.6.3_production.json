@@ -1,0 +1,14 @@
+{
+  "id": "74241ab5-9f92-485e-bf65-f7b104fbeee5",
+  "control_id": "10.6.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.6.3\n\nDefined Approach Requirements:\nTime synchronization settings and data are protected as follows: Access to time data is restricted to only personnel with a business need. Any changes to time settings on critical systems are logged, monitored, and reviewed.\n\nCustomized Approach Objective:\nSystem time settings cannot be modified by unauthorized personnel.\n\nTesting Procedures:\nTesting Procedure 10.6.3.a: Examine system configurations and time- synchronization settings to verify that access to time data is restricted to only personnel with a business need.\nTesting Procedure 10.6.3.b: Examine system configurations and time synchronization settings and logs and observe processes to verify that any changes to time settings on critical systems are logged, monitored, and reviewed.\n\nGuidance:\nPurpose: Attackers will try to change time configurations to hide their activity. therefore, restricting the ability to change or modify time synchronization configurations or the system time to administrators will lessen the probability of an attacker successfully changing time configurations.",
+  "requirement": "Time synchronization settings and data are protected as follows: Access to time data is restricted to only personnel with a business need. Any changes to time settings on critical systems are logged, monitored, and reviewed.",
+  "metadata": {
+    "control_id": "10.6.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

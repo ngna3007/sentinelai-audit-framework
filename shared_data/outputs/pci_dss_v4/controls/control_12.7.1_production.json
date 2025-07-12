@@ -1,0 +1,14 @@
+{
+  "id": "db021056-33f2-42dc-9bbd-01c3b66dd4f9",
+  "control_id": "12.7.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.7.1\n\nDefined Approach Requirements:\nPotential personnel who will have access to the CDE are screened, within the constraints of local laws, prior to hire to minimize the risk of attacks from internal sources.\n\nCustomized Approach Objective:\nThe risk related to allowing new members of staff access to the CDE is understood and managed.\n\nApplicability Notes:\nFor those potential personnel to be hired for positions such as store cashiers, who only have access to one card number at a time when facilitating a transaction, this requirement is a recommendation only.\n\nTesting Procedures:\nTesting Procedure 12.7.1: Interview responsible Human Resource department management to verify that screening is conducted, within the constraints of local laws, prior to hiring potential personnel who will have access to the CDE.",
+  "requirement": "Potential personnel who will have access to the CDE are screened, within the constraints of local laws, prior to hire to minimize the risk of attacks from internal sources.",
+  "metadata": {
+    "control_id": "12.7.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": true,
+    "requirements_id": "12"
+  }
+}

@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 12.1.2
+
+Defined Approach Requirements:
+The information security policy is: Reviewed at least once every 12 months. Updated as needed to reflect changes to business objectives or risks to the environment.
+
+Customized Approach Objective:
+The information security policy continues to reflect the organization’s strategic objectives and principles.
+
+Testing Procedures:
+Testing Procedure 12.1.2: Examine the information security policy and interview responsible personnel to verify the policy is managed in accordance with all elements specified in this requirement.
+
+Guidance:
+Purpose: Without clearly defined security roles and responsibilities assigned, there could be misuse of the organization’s information assets or inconsistent interaction with information security personnel, leading to insecure implementation of technologies or use of outdated or insecure technologies.

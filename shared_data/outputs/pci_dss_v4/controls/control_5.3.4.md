@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 5.3.4
+
+Defined Approach Requirements:
+Audit logs for the anti-malware solution(s) are enabled and retained in accordance with Requirement 10.5.1.
+
+Customized Approach Objective:
+Historical records of anti-malware actions are immediately available and retained for at least 12 months.
+
+Testing Procedures:
+Testing Procedure 5.3.4: Examine anti-malware solution(s) configurations to verify logs are enabled and retained in accordance with Requirement 10.5.1.
+
+Guidance:
+Purpose: It is important to track the effectiveness of the anti- malware mechanisms—for example, by confirming that updates and scans are being performed as expected, and that malware is identified and addressed. audit logs also allow an entity to determine how malware entered the environment and track its activity when inside the entity’s network.

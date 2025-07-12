@@ -1,0 +1,14 @@
+{
+  "id": "722ac74b-9172-4c63-a286-48049cf9176c",
+  "control_id": "10.2.1.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.2.1.4\n\nTesting Procedures:\nTesting Procedure 10.2.1.4: Examine audit log configurations and log data to verify that invalid logical access attempts are captured.",
+  "requirement": "",
+  "metadata": {
+    "control_id": "10.2.1.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

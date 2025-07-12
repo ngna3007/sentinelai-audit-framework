@@ -1,0 +1,14 @@
+{
+  "id": "cf9c53d4-2a25-48de-a7a7-6f5bcbc610d4",
+  "control_id": "12.2.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.2.1\n\nDefined Approach Requirements:\nAcceptable use policies for end-user technologies are documented and implemented, including: Explicit approval by authorized parties. Acceptable uses of the technology. List of products approved by the company for employee use, including hardware and software.\n\nCustomized Approach Objective:\nThe use of end-user technologies is defined and managed to ensure authorized usage.\n\nApplicability Notes:\nExamples of end-user technologies for which acceptable use policies are expected include, but are not limited to, remote access and wireless technologies, laptops, tablets, mobile phones, and removable electronic media, email usage, and Internet usage.\n\nTesting Procedures:\nTesting Procedure 12.2.1: Examine the acceptable use policies for end-user technologies and interview responsible personnel to verify processes are documented and implemented in accordance with all elements specified in this requirement.",
+  "requirement": "Acceptable use policies for end-user technologies are documented and implemented, including: Explicit approval by authorized parties. Acceptable uses of the technology. List of products approved by the company for employee use, including hardware and software.",
+  "metadata": {
+    "control_id": "12.2.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": true,
+    "requirements_id": "12"
+  }
+}

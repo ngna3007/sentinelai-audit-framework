@@ -1,0 +1,14 @@
+{
+  "id": "5862b3cb-439d-485b-b358-6c740576e274",
+  "control_id": "A3.1.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control A3.1.1\n\nDefined Approach Requirements:\nResponsibility is established by executive management for the protection of account data and a PCI DSS compliance program that includes: Overall accountability for maintaining PCI DSS compliance. Defining a charter for a PCI DSS compliance program. Providing updates to executive management and board of directors on PCI DSS compliance initiatives and issues, including remediation activities, at least once every 12 months. PCI DSS Reference: _Requirement 12_\n\nCustomized Approach Objective:\nThis requirement is not eligible for the customized approach\n\nTesting Procedures:\nTesting Procedure A3.1.1.a: Examine documentation to verify executive management has assigned overall accountability for maintaining the entity\u2019s PCI DSS compliance.\nTesting Procedure A3.1.1.b: Examine the company\u2019s PCI DSS charter to verify it outlines the conditions under which the PCI DSS compliance program is organized.\nTesting Procedure A3.1.1.c: Examine executive management and board of directors meeting minutes and/or presentations to ensure PCI DSS compliance initiatives and remediation activities are communicated at least once every 12 months.",
+  "requirement": "Responsibility is established by executive management for the protection of account data and a PCI DSS compliance program that includes: Overall accountability for maintaining PCI DSS compliance. Defining a charter for a PCI DSS compliance program. Providing updates to executive management and board of directors on PCI DSS compliance initiatives and issues, including remediation activities, at least once every 12 months. PCI DSS Reference: _Requirement 12_",
+  "metadata": {
+    "control_id": "A3.1.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "appendix",
+    "has_testing_procedures": true,
+    "requirements_id": "A3"
+  }
+}

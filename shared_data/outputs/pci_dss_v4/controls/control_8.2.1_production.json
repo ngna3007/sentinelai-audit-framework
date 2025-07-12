@@ -1,0 +1,14 @@
+{
+  "id": "7d1db8c4-f4e0-4b67-8293-f873a2a791e1",
+  "control_id": "8.2.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.2.1\n\nDefined Approach Requirements:\nAll users are assigned a unique ID before access to system components or cardholder data is allowed.\n\nCustomized Approach Objective:\nAll actions by all users are attributable to an individual.\n\nApplicability Notes:\nThis requirement is not intended to apply to user accounts within point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction\n\nTesting Procedures:\nTesting Procedure 8.2.1.a: Interview responsible personnel to verify that all users are assigned a unique ID for access to system components and cardholder data.\nTesting Procedure 8.2.1.b: Examine audit logs and other evidence to verify that access to system components and cardholder data can be uniquely identified and associated with individuals.\n\nGuidance:\nPurpose: The ability to trace actions performed on a computer system to an individual establishes accountability and traceability and is fundamental to establishing effective access controls. by ensuring each user is uniquely identified, instead of using one id for several employees, an organization can maintain individual responsibility for actions and an effective record in the audit log per employee. in addition, this will assist with issue resolution and containment when misuse or malicious intent occurs.",
+  "requirement": "All users are assigned a unique ID before access to system components or cardholder data is allowed.",
+  "metadata": {
+    "control_id": "8.2.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

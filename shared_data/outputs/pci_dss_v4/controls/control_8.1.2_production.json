@@ -1,0 +1,14 @@
+{
+  "id": "c8f0182c-0531-4880-b117-9545af22a835",
+  "control_id": "8.1.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.1.2\n\nDefined Approach Requirements:\nRoles and responsibilities for performing activities in Requirement 8 are documented, assigned, and understood.\n\nCustomized Approach Objective:\nDay-to-day responsibilities for performing all the activities in Requirement 8 are allocated. Personnel are accountable for successful, continuous operation of these requirements.\n\nTesting Procedures:\nTesting Procedure 8.1.2.a: Examine documentation to verify that descriptions of roles and responsibilities for performing activities in Requirement 8 are documented and assigned.\nTesting Procedure 8.1.2.b: Interview personnel with responsibility for performing activities in Requirement 8 to verify that roles and responsibilities are assigned as documented and are understood.\n\nGuidance:\nPurpose: If roles and responsibilities are not formally assigned, personnel may not be aware of their day-to-day responsibilities and critical activities may not occur. Examples: A method to document roles and responsibilities is a responsibility assignment matrix that includes who is responsible, accountable, consulted, and informed (also called a raci matrix). Good Practice: Roles and responsibilities may be documented within policies and procedures or maintained within separate documents. as part of communicating roles and responsibilities, entities can consider having personnel acknowledge their acceptance and understanding of their assigned roles and responsibilities.",
+  "requirement": "Roles and responsibilities for performing activities in Requirement 8 are documented, assigned, and understood.",
+  "metadata": {
+    "control_id": "8.1.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "f82f1f3d-52cc-4139-b609-3b190c390c76",
+  "control_id": "A1.1.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control A1.1.3\n\nDefined Approach Requirements:\nControls are implemented such that each customer can only access resources allocated to them.\n\nCustomized Approach Objective:\nCustomers cannot impact resources allocated to other customers.\n\nTesting Procedures:\nTesting Procedure A1.1.3: Examine customer privileges to verify each customer can only access resources allocated to them.",
+  "requirement": "Controls are implemented such that each customer can only access resources allocated to them.",
+  "metadata": {
+    "control_id": "A1.1.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "appendix",
+    "has_testing_procedures": true,
+    "requirements_id": "A1"
+  }
+}

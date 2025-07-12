@@ -1,0 +1,14 @@
+{
+  "id": "79745c24-0c4f-49bb-8a81-8386a5cb843d",
+  "control_id": "A3.2.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control A3.2.3\n\nDefined Approach Requirements:\nChanges to organizational structure result in a formal (internal) review of the impact to PCI DSS scope and applicability of controls. PCI DSS Reference: _Requirement 12_\n\nCustomized Approach Objective:\nThis requirement is not eligible for the customized approach.\n\nTesting Procedures:\nTesting Procedure A3.2.3: Examine policies and procedures to verify that a change to organizational structure results in formal a review of the impact on PCI DSS scope and applicability of controls.\n\nGuidance:\nPurpose: An organization\u2019s structure and management define the requirements and protocol for effective and secure operations. changes to this structure could have negative effects to existing controls and frameworks by reallocating or removing resources that once supported pci dss controls or inheriting new responsibilities that may not have established controls in place. therefore, it is important to revisit pci dss scope and controls when there are changes to an organization\u2019s structure and management to ensure controls are in place and active. Examples: Changes to organizational structure include, but are not limited to, company mergers or acquisitions, and significant changes or reassignments of personnel with responsibility for security control.",
+  "requirement": "Changes to organizational structure result in a formal (internal) review of the impact to PCI DSS scope and applicability of controls. PCI DSS Reference: _Requirement 12_",
+  "metadata": {
+    "control_id": "A3.2.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "appendix",
+    "has_testing_procedures": true,
+    "requirements_id": "A3"
+  }
+}

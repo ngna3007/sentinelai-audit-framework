@@ -1,0 +1,14 @@
+{
+  "id": "2dedc424-f458-4fd6-9a6e-855b9cde82ce",
+  "control_id": "10.5",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.5\n\nDefined Approach Requirements:\nAudit log history is retained and available for analysis.\n\nGuidance:\nPurpose: Retaining historical audit logs for at least 12 months is necessary because compromises often go unnoticed for significant lengths of time. having centrally stored log history allows investigators to better determine the length of time a potential breach was occurring, and the possible system(s) impacted. by having three months of logs immediately available, an entity can quickly identify and minimize impact of a data breach. Examples: Methods that allow logs to be immediately available include storing logs online, archiving logs, or restoring logs quickly from backups.",
+  "requirement": "Audit log history is retained and available for analysis.",
+  "metadata": {
+    "control_id": "10.5",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": false,
+    "requirements_id": "10"
+  }
+}

@@ -1,0 +1,16 @@
+PCI DSS 4_0_1 Requirement Control 9.5.1.2
+
+Defined Approach Requirements:
+(continued)_
+POI device surfaces are periodically inspected to detect tampering and unauthorized substitution.
+
+Customized Approach Objective:
+Point of interaction devices cannot be tampered with, substituted without authorization, or have skimming attachments installed without timely detection.
+
+Testing Procedures:
+Testing Procedure 9.5.1.2.a: Examine documented procedures to verify processes are defined for periodic inspections of POI device surfaces to detect tampering and unauthorized substitution.
+Testing Procedure 9.5.1.2.b: Interview responsible personnel and observe inspection processes to verify: Personnel are aware of procedures for inspecting devices. All devices are periodically inspected for evidence of tampering and unauthorized substitution.
+Testing Procedure 9.5.1.2: POI device surfaces are periodically inspected to detect tampering and unauthorized substitution.
+
+Guidance:
+Purpose: Regular inspections of devices will help organizations detect tampering more quickly via external evidence—for example, the addition of a card skimmer—or replacement of a device, thereby minimizing the potential impact of using fraudulent devices. Examples: The type of inspection will depend on the device. for instance, photographs of devices known to be secure can be used to compare a device’s current appearance with its original appearance to see whether it has changed. another option may be to use a secure marker pen, such as a uv light marker, to mark device surfaces and device openings so any tampering or replacement will be apparent. criminals will often replace the outer casing of a device to hide their tampering, and these methods may help to detect such activities. device vendors may also provide security guidance and “how to” guides to help determine whether the device has been subject to tampering. signs that a device might have been tampered with or substituted include: unexpected attachments or cables plugged into the device. missing or changed security labels. broken or differently colored casing. changes to the serial number or other external markings. Good Practice: Methods for periodic inspection include checking the serial number or other device characteristics and comparing the information to the list of poi devices to verify the device has not been swapped with a fraudulent device. _(continued on next page)_.

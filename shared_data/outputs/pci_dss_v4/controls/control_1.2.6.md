@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control 1.2.6
+
+Defined Approach Requirements:
+Security features are defined and implemented for all services, protocols, and ports that are in use and considered to be insecure, such that the risk is mitigated.
+
+Customized Approach Objective:
+The specific risks associated with the use of insecure services, protocols, and ports are understood, assessed, and appropriately mitigated.
+
+Testing Procedures:
+Testing Procedure 1.2.6.a: Examine documentation that identifies all insecure services, protocols, and ports in use to verify that for each, security features are defined to mitigate the risk.
+Testing Procedure 1.2.6.b: Examine configuration settings for NSCs to verify that the defined security features are implemented for each identified insecure service, protocol, and port.
+
+Guidance:
+Purpose: Compromises take advantage of insecure network configurations. Good Practice: If insecure services, protocols, or ports are necessary for business, the risk posed by these services, protocols, and ports should be clearly understood and accepted by the organization, the use of the service, protocol, or port should be justified, and the security features that mitigate the risk of using these services, protocols, and ports should be defined and implemented by the entity. Further Information: For guidance on services, protocols, or ports considered to be insecure, refer to industry standards and guidance (for example, from nist, enisa, owasp).

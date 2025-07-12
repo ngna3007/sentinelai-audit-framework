@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control 2.2.4
+
+Defined Approach Requirements:
+Only necessary services, protocols, daemons, and functions are enabled, and all unnecessary functionality is removed or disabled.
+
+Customized Approach Objective:
+System components cannot be compromised by exploiting unnecessary functionality present in the system component.
+
+Testing Procedures:
+Testing Procedure 2.2.4.a: Examine system configuration standards to verify necessary services, protocols, daemons, and functions are identified and documented.
+Testing Procedure 2.2.4.b: Examine system configurations to verify the following: All unnecessary functionality is removed or disabled. Only required functionality, as documented in the configuration standards, is enabled.
+
+Guidance:
+Purpose: Unnecessary services and functions can provide additional opportunities for malicious individuals to gain access to a system. by removing or disabling all unnecessary services, protocols, daemons, and functions, organizations can focus on securing the functions that are required and reduce the risk that unknown or unnecessary functions will be exploited. Examples: Unnecessary functionality may include, but is not limited to scripts, drivers, features, subsystems, file systems, interfaces (usb and bluetooth), and unnecessary web servers. Good Practice: There are many protocols that could be enabled by default that are commonly used by malicious individuals to compromise a network. disabling or removing all services, functions, and protocols that are not used minimizes the potential attack surface—for example, by removing or disabling an unused ftp or web server.

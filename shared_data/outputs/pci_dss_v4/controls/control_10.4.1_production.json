@@ -1,0 +1,14 @@
+{
+  "id": "61585315-c4d4-4c5e-9145-205c4c2890fe",
+  "control_id": "10.4.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.4.1\n\nDefined Approach Requirements:\nThe following audit logs are reviewed at least once daily: All security events. Logs of all system components that store, process, or transmit CHD and/or SAD. Logs of all critical system components. Logs of all servers and system components that perform security functions (for example, network security controls, intrusion-detection systems/intrusion-prevention systems (IDS/IPS), authentication servers).\n\nCustomized Approach Objective:\nPotentially suspicious or anomalous activities are quickly identified to minimize impact.\n\nTesting Procedures:\nTesting Procedure 10.4.1.a: Examine security policies and procedures to verify that processes are defined for reviewing all elements specified in this requirement at least once daily.\nTesting Procedure 10.4.1.b: Observe processes and interview personnel to verify that all elements specified in this requirement are reviewed at least once daily",
+  "requirement": "The following audit logs are reviewed at least once daily: All security events. Logs of all system components that store, process, or transmit CHD and/or SAD. Logs of all critical system components. Logs of all servers and system components that perform security functions (for example, network security controls, intrusion-detection systems/intrusion-prevention systems (IDS/IPS), authentication servers).",
+  "metadata": {
+    "control_id": "10.4.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

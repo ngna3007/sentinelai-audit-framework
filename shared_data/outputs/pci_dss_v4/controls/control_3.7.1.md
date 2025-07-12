@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control 3.7.1
+
+Defined Approach Requirements:
+Key-management policies and procedures are implemented to include generation of strong cryptographic keys used to protect stored account data.
+
+Customized Approach Objective:
+Strong cryptographic keys are generated.
+
+Testing Procedures:
+Testing Procedure 3.7.1.a: Examine the documented key-management policies and procedures for keys used for protection of stored account data to verify that they define generation of strong cryptographic keys.
+Testing Procedure 3.7.1.b: Observe the method for generating keys to verify that strong keys are generated.
+
+Guidance:
+Purpose: Secure distribution or conveyance of secret or private cryptographic keys means that keys are distributed only to authorized custodians, as identified in requirement 3.6.1.2, and are never distributed insecurely. Further Information: See the sources referenced at cryptographic key generation in_appendix g_.

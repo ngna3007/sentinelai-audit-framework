@@ -1,0 +1,14 @@
+{
+  "id": "94364b7b-d622-4aa2-9da1-e10518dffe9d",
+  "control_id": "3.7.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 3.7.2\n\nDefined Approach Requirements:\nKey-management policies and procedures are implemented to include secure distribution of cryptographic keys used to protect stored account data.\n\nCustomized Approach Objective:\nCryptographic keys are secured during distribution.\n\nTesting Procedures:\nTesting Procedure 3.7.2.a: Examine the documented key-management policies and procedures for keys used for protection of stored account data to verify that they define secure distribution of cryptographic keys.\nTesting Procedure 3.7.2.b: Observe the method for distributing keys to verify that keys are distributed securely.",
+  "requirement": "Key-management policies and procedures are implemented to include secure distribution of cryptographic keys used to protect stored account data.",
+  "metadata": {
+    "control_id": "3.7.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "data_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "3"
+  }
+}

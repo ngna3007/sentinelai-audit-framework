@@ -1,0 +1,14 @@
+{
+  "id": "ed363efb-8a87-4554-b60a-783bf10e3adc",
+  "control_id": "8.6.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.6.1\n\nDefined Approach Requirements:\nIf accounts used by systems or applications can be used for interactive login, they are managed as follows: Interactive use is prevented unless needed for an exceptional circumstance. Interactive use is limited to the time needed for the exceptional circumstance. Business justification for interactive use is documented. Interactive use is explicitly approved by management. Individual user identity is confirmed before access to account is granted. Every action taken is attributable to an individual user.\n\nCustomized Approach Objective:\nWhen used interactively, all actions with accounts designated as system or application accounts are authorized and attributable to an individual person.\n\nApplicability Notes:\n_This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._\n\nTesting Procedures:\nTesting Procedure 8.6.1: Examine application and system accounts that can be used interactively and interview administrative personnel to verify that application and system accounts are managed in accordance with all elements specified in this requirement.",
+  "requirement": "If accounts used by systems or applications can be used for interactive login, they are managed as follows: Interactive use is prevented unless needed for an exceptional circumstance. Interactive use is limited to the time needed for the exceptional circumstance. Business justification for interactive use is documented. Interactive use is explicitly approved by management. Individual user identity is confirmed before access to account is granted. Every action taken is attributable to an individual user.",
+  "metadata": {
+    "control_id": "8.6.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

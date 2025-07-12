@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 4.2.1.2
+
+Defined Approach Requirements:
+Wireless networks transmitting PAN or connected to the CDE use industry best practices to implement strong cryptography for authentication and transmission.
+
+Customized Approach Objective:
+Cleartext PAN cannot be read or intercepted from wireless network transmissions.
+
+Testing Procedures:
+Testing Procedure 4.2.1.2: Examine system configurations to verify that wireless networks transmitting PAN or connected to the CDE use industry best practices to implement strong cryptography for authentication and transmission.
+
+Guidance:
+Purpose: Since wireless networks do not require physical media to connect, it is important to establish controls limiting who can connect and what transmission protocols will be used. malicious users use free and widely available tools to eavesdrop on wireless communications. use of strong cryptography can help limit disclosure of sensitive information across wireless networks. wireless networks present unique risks to an organization; therefore, they must be identified and protected according to industry requirements. strong cryptography for authentication and transmission of pan is required to prevent malicious users from gaining access to the wireless network or utilizing wireless networks to access other internal networks or data. Good Practice: Wireless networks should not permit fallback or downgrade to an insecure protocol or lower encryption strength that does not meet the intent of strong cryptography. Further Information: Review the vendor’s specific documentation for more details on the choice of protocols, configurations, and settings related to cryptography.

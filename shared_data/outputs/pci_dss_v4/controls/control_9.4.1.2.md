@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control 9.4.1.2
+
+Defined Approach Requirements:
+The security of the offline media backup location(s) with cardholder data is reviewed at least once every 12 months.
+
+Customized Approach Objective:
+The security controls protecting offline backups are verified periodically by inspection.
+
+Testing Procedures:
+Testing Procedure 9.4.1.2.a: Examine documentation to verify that procedures are defined for reviewing the security of the offline media backup location(s) with cardholder data at least once every 12 months.
+Testing Procedure 9.4.1.2.b: Examine documented procedures, logs, or other documentation, and interview responsible personnel at the storage location(s) to verify that the storage location’s security is reviewed at least once every 12 months.
+
+Guidance:
+Purpose: Media not identified as confidential may not be adequately protected or may be lost or stolen. Good Practice: It is important that media be identified such that its classification status is apparent. this does not mean however that the media needs to have a “confidential” label.

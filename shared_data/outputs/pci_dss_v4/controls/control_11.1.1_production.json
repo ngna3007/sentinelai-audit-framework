@@ -1,0 +1,14 @@
+{
+  "id": "6477f4df-0aca-42ae-b680-55f34df9288d",
+  "control_id": "11.1.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 11.1.1\n\nDefined Approach Requirements:\nAll security policies and operational procedures that are identified in Requirement 11 are: Documented. Kept up to date. In use. Known to all affected parties.\n\nCustomized Approach Objective:\nExpectations, controls, and oversight for meeting activities within Requirement 11 are defined and adhered to by affected personnel. All supporting activities are repeatable, consistently applied, and conform to management\u2019s intent.\n\nTesting Procedures:\nTesting Procedure 11.1.1: Examine documentation and interview personnel to verify that security policies and operational procedures are managed in accordance with all elements specified in this requirement.",
+  "requirement": "All security policies and operational procedures that are identified in Requirement 11 are: Documented. Kept up to date. In use. Known to all affected parties.",
+  "metadata": {
+    "control_id": "11.1.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "security_testing",
+    "has_testing_procedures": true,
+    "requirements_id": "11"
+  }
+}

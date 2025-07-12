@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 1.4.4
+
+Defined Approach Requirements:
+System components that store cardholder data are not directly accessible from untrusted networks.
+
+Customized Approach Objective:
+Stored cardholder data cannot be accessed from untrusted networks.
+
+Applicability Notes:
+This requirement is not intended to apply to storage of account data in volatile memory but does apply where memory is being treated as persistent storage (for example, RAM disk). Account data can only be stored in volatile memory during the time necessary to support the associated business process (for example, until completion of the related payment card transaction).
+
+Testing Procedures:
+Testing Procedure 1.4.4.a: Examine the data-flow diagram and network diagram to verify that it is documented that system components storing cardholder data are not directly accessible from the untrusted networks.
+Testing Procedure 1.4.4.b: Examine configurations of NSCs to verify that controls are implemented such that system components storing cardholder data are not directly accessible from untrusted networks.
+
+Guidance:
+Purpose: Cardholder data that is directly accessible from an untrusted network, for example, because it is stored on a system within the dmz or in a cloud database service, is easier for an external attacker to access because there are fewer defensive layers to penetrate. using nscs to ensure that system components that store cardholder data (such as a database or a file) can only be directly accessed from trusted networks can prevent unauthorized network traffic from reaching the system component.

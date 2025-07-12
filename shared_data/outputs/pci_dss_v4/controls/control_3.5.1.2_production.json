@@ -1,0 +1,14 @@
+{
+  "id": "3791782f-0023-4f19-8345-bbb016ebb6eb",
+  "control_id": "3.5.1.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 3.5.1.2\n\nDefined Approach Requirements:\nIf disk-level or partition-level encryption (rather than file-, column-, or field-level database encryption) is used to render PAN unreadable, it is implemented only as follows: On removable electronic media OR If used for non-removable electronic media, PAN is also rendered unreadable via another mechanism that meets Requirement 3.5.1.\n\nCustomized Approach Objective:\nEncrypted PAN is only decrypted when there is a legitimate business need to access that PAN. _(continued on next page)_\n\nTesting Procedures:\nTesting Procedure 3.5.1.2.a: Examine encryption processes to verify that, if disk-level or partition-level encryption is used to render PAN unreadable, it is implemented only as follows: On removable electronic media,\nTesting Procedure 3.5.1.2.b: Examine configurations and/or vendor documentation and observe encryption processes to verify the system is configured according to vendor documentation the result is that the disk or the partition is rendered unreadable.\n\nGuidance:\nPurpose: Disk-level and partition-level encryption typically encrypts the entire disk or partition using the same key, with all data automatically decrypted when the system runs or when an authorized user requests it. for this reason, disk-level encryption is not appropriate to protect stored pan on computers, laptops, servers, storage arrays, or any other system that provides transparent decryption upon user authentication. Further Information: Where available, following vendors\u2019 hardening and industry best practice guidelines can assist in securing pan on these devices.",
+  "requirement": "If disk-level or partition-level encryption (rather than file-, column-, or field-level database encryption) is used to render PAN unreadable, it is implemented only as follows: On removable electronic media OR If used for non-removable electronic media, PAN is also rendered unreadable via another mechanism that meets Requirement 3.5.1.",
+  "metadata": {
+    "control_id": "3.5.1.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "data_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "3"
+  }
+}

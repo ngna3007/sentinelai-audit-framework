@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 7.3.1
+
+Defined Approach Requirements:
+An access control system(s) is in place that restricts access based on a user’s need to know and covers all system components.
+
+Customized Approach Objective:
+Access rights and privileges are managed via mechanisms intended for that purpose.
+
+Testing Procedures:
+Testing Procedure 7.3.1: Examine vendor documentation and system settings to verify that access is managed for each system component via an access control system(s) that restricts access based on a user’s need to know and covers all system components.
+
+Guidance:
+Purpose: Restricting privileged access with an access control system reduces the opportunity for errors in the assignment of permissions to individuals, applications, and systems.

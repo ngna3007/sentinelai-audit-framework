@@ -1,0 +1,14 @@
+{
+  "id": "af5ab41d-7e05-4c89-a4cb-40fbb75d7327",
+  "control_id": "8.2.5",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.2.5\n\nDefined Approach Requirements:\nAccess for terminated users is immediately revoked.\n\nCustomized Approach Objective:\nThe accounts of terminated users cannot be used.\n\nTesting Procedures:\nTesting Procedure 8.2.5.a: Examine information sources for terminated users and review current user access lists\u2014for both local and remote access\u2014to verify that terminated user IDs have been deactivated or removed from the access lists.\nTesting Procedure 8.2.5.b: Interview responsible personnel to verify that all physical authentication factors\u2014such as, smart cards, tokens, etc.\u2014have been returned or deactivated for terminated users.",
+  "requirement": "Access for terminated users is immediately revoked.",
+  "metadata": {
+    "control_id": "8.2.5",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

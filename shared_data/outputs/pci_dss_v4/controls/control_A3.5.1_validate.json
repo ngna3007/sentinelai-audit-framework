@@ -1,0 +1,43 @@
+{
+  "control_id": "A3.5.1",
+  "sections": {
+    "purpose": false,
+    "examples": false,
+    "good_practice": false,
+    "requirements": true,
+    "testing_procedures": false,
+    "customized_approach": true,
+    "applicability_notes": false,
+    "definitions": false,
+    "further_information": false
+  },
+  "row_count": 4,
+  "table_count": 1,
+  "spans_multiple_tables": false,
+  "token_count": 271,
+  "content_length_chars": 1085,
+  "content_lines": 11,
+  "has_testing_procedures": true,
+  "has_guidance": false,
+  "has_requirements": true,
+  "table_sources": [
+    {
+      "table_index": 0,
+      "start_line": 6664,
+      "end_line": 6670,
+      "header": "|Defined Approach Requirements|Defined Approach Testing Procedures|Purpose<br>The ability to identify attack patterns and<br>undesirable behavior across systems\u2014for<br>example, using centrally managed or automated<br>log-correlation tools\u2014 is critical in preventing,<br>detecting, or minimizing the impact of a data<br>compromise. The presence of logs in all<br>environments allows thorough tracking, alerting,<br>and analysis when something goes wrong.<br>Determining the cause of a compromise is very<br>difficult, if not impossible, without a process to<br>corroborate information from critical system<br>components and systems that perform security<br>functions, such as network security controls,<br>IDS/IPS, and file integrity monitoring (FIM)<br>systems. Thus, logs for all critical system<br>components and systems that perform security<br>functions need to be collected, correlated, and<br>maintained. This could include using software<br>products and service methodologies to provide<br>real-time analysis, alerting, and reporting, such as<br>security information and event management<br>(SIEM), FIM, or change detection.|",
+      "row_count": 4
+    }
+  ],
+  "quality_analysis": {
+    "quality_score": 75,
+    "max_score": 100,
+    "quality_percentage": 75.0,
+    "issues": [
+      "Missing required section: testing_procedures"
+    ],
+    "recommendations": [
+      "Check testing procedures extraction logic for this control"
+    ]
+  }
+}

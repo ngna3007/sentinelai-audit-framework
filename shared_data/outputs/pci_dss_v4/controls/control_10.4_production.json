@@ -1,0 +1,14 @@
+{
+  "id": "5f0d73ed-11e7-458b-a1a6-166c2fac33dc",
+  "control_id": "10.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.4\n\nDefined Approach Requirements:\nAudit logs are reviewed to identify anomalies or suspicious activity.\n\nGuidance:\nPurpose: Many breaches occur months before being detected. regular log reviews mean incidents can be quickly identified and proactively addressed. Good Practice: Checking logs daily (7 days a week, 365 days a year, including holidays) minimizes the amount of time and exposure of a potential breach. log harvesting, parsing, and alerting tools, centralized log management systems, event log analyzers, and security information and event management (siem) solutions are examples of automated tools that can be used to meet this requirement. daily review of security events\u2014for example, notifications or alerts that identify suspicious or anomalous activities\u2014as well as logs from critical system components, and logs from systems that perform security functions, such as firewalls, ids/ips, file integrity monitoring (fim) systems, etc., is necessary to identify potential issues. the determination of \u201csecurity event\u201d will vary for each organization and may include consideration for the type of technology, location, and function of the device. organizations may also wish to maintain a baseline of \u201cnormal\u201d traffic to help identify anomalous behavior. an entity that uses third-party service providers to perform log review services is responsible to provide context about the entity\u2019s environment to the service providers, so it understands the entity\u2019s environment, has a baseline of \u201cnormal\u201d traffic for the entity, and can detect potential security issues and provide accurate exceptions and anomaly notifications.",
+  "requirement": "Audit logs are reviewed to identify anomalies or suspicious activity.",
+  "metadata": {
+    "control_id": "10.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": false,
+    "requirements_id": "10"
+  }
+}

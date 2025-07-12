@@ -1,0 +1,14 @@
+{
+  "id": "66264c2a-9e92-4ee8-ae1f-a312db4bc8ee",
+  "control_id": "12.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.4\n\nDefined Approach Requirements:\nPCI DSS compliance is managed.\n\nGuidance:\nPurpose: Executive management assignment of pci dss compliance responsibilities ensures executive- level visibility into the pci dss compliance program and allows for the opportunity to ask appropriate questions to determine the effectiveness of the program and influence strategic priorities.",
+  "requirement": "PCI DSS compliance is managed.",
+  "metadata": {
+    "control_id": "12.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": false,
+    "requirements_id": "12"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "6d7fbc5f-122b-4923-ae0d-e2f7d4e72484",
+  "control_id": "5.3.2.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 5.3.2.1\n\nDefined Approach Requirements:\nIf periodic malware scans are performed to meet Requirement 5.3.2, the frequency of scans is defined in the entity\u2019s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1.\n\nCustomized Approach Objective:\nScans by the malware solution are performed at a frequency that addresses the entity\u2019s risk.\n\nApplicability Notes:\nThis requirement applies to entities conducting periodic malware scans to meet Requirement 5.3.2. _This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._\n\nTesting Procedures:\nTesting Procedure 5.3.2.1.a: Examine the entity\u2019s targeted risk analysis for the frequency of periodic malware scans to verify the risk analysis was performed in accordance with all elements specified in Requirement 12.3.1.\nTesting Procedure 5.3.2.1.b: Examine documented results of periodic malware scans and interview personnel to verify scans are performed at the frequency defined in the entity\u2019s targeted risk analysis performed for this requirement.\n\nGuidance:\nPurpose: Entities can determine the optimum period to undertake periodic scans based on their own assessment of the risks posed to their environments.",
+  "requirement": "If periodic malware scans are performed to meet Requirement 5.3.2, the frequency of scans is defined in the entity\u2019s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1.",
+  "metadata": {
+    "control_id": "5.3.2.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "malware_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "5"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "control_id": "10.6.1",
+  "sections": {
+    "purpose": false,
+    "examples": false,
+    "good_practice": false,
+    "requirements": true,
+    "testing_procedures": false,
+    "customized_approach": true,
+    "applicability_notes": true,
+    "definitions": false,
+    "further_information": false
+  },
+  "row_count": 5,
+  "table_count": 1,
+  "spans_multiple_tables": false,
+  "token_count": 144,
+  "content_length_chars": 578,
+  "content_lines": 13,
+  "has_testing_procedures": true,
+  "has_guidance": false,
+  "has_requirements": true,
+  "table_sources": [
+    {
+      "table_index": 0,
+      "start_line": 4885,
+      "end_line": 4894,
+      "header": "|Requirements and Testing Procedures|Col2|Guidance|",
+      "row_count": 7
+    }
+  ],
+  "quality_analysis": {
+    "quality_score": 75,
+    "max_score": 100,
+    "quality_percentage": 75.0,
+    "issues": [
+      "Missing required section: testing_procedures"
+    ],
+    "recommendations": [
+      "Check testing procedures extraction logic for this control"
+    ]
+  }
+}

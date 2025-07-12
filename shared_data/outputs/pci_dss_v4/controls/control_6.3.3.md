@@ -1,0 +1,15 @@
+PCI DSS 4_0_1 Requirement Control 6.3.3
+
+Defined Approach Requirements:
+(continued)_
+All system components are protected from known vulnerabilities by installing applicable security patches/updates as follows: Patches/updates for critical vulnerabilities (identified according to the risk ranking process at Requirement 6.3.1) are installed within one month of release. All other applicable security patches/updates are installed within an appropriate time frame as determined by the entity’s assessment of the criticality of the risk to the environment as identified according to the risk ranking process at Requirement 6.3.1.
+
+Customized Approach Objective:
+System components cannot be compromised via the exploitation of a known vulnerability.
+
+Testing Procedures:
+Testing Procedure 6.3.3.a: Examine policies and procedures to verify processes are defined for addressing vulnerabilities by installing applicable security patches/updates in accordance with all elements specified in this requirement.
+Testing Procedure 6.3.3.b: Examine system components and related software and compare the list of installed security patches/updates to the most recent security patch/update information to verify vulnerabilities are addressed in accordance with all elements specified in this requirement.
+
+Guidance:
+Purpose: New exploits are constantly being discovered, and these can permit attacks against systems that have previously been considered secure. if the most recent security patches/updates are not implemented on critical systems as soon as possible, a malicious actor can use these exploits to attack or disable a system or gain access to sensitive data. Examples: An example time frame for installation of patches/updates could be 60 days for high-risk vulnerabilities and 90 days for others, as determined by the entity’s assessment of risk. Good Practice: Prioritizing security patches/updates for critical infrastructure ensures that high-priority systems and devices are protected from vulnerabilities as soon as possible after a patch is released. an entity’s patching cadence should factor in any re- evaluation of vulnerabilities and subsequent changes in the criticality of a vulnerability per requirement 6.3.1. for example, a vulnerability initially identified as low risk could become a higher risk later. additionally, vulnerabilities individually considered to be low or medium risk could collectively pose a high or critical risk if present on the same system, or if exploited on a low-risk system that could result in access to the cde. _(continued on next page)_.

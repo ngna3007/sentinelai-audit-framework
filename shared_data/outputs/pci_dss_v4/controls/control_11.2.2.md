@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 11.2.2
+
+Defined Approach Requirements:
+An inventory of authorized wireless access points is maintained, including a documented business justification.
+
+Customized Approach Objective:
+Unauthorized wireless access points are not mistaken for authorized wireless access points.
+
+Testing Procedures:
+Testing Procedure 11.2.2: Examine documentation to verify that an inventory of authorized wireless access points is maintained, and a business justification is documented for all authorized wireless access points.
+
+Guidance:
+Purpose: An inventory of authorized wireless access points can help administrators quickly respond when unauthorized wireless access points are detected. this helps to proactively minimize the exposure of cde to malicious individuals. Good Practice: If using a wireless scanner, it is equally important to have a defined list of known access points which, while not attached to the company’s network, will usually be detected during a scan. these non-company devices are often found in multi-tenant buildings or businesses located near one another. however, it is important to verify that these devices are not connected to the entity’s network port or through another network- connected device and given an ssid resembling a nearby business. scan results should note such devices and how it was determined that these devices could be “ignored.” in addition, detection of any unauthorized wireless access points that are determined to be a threat to the cde should be managed following the entity’s incident response plan per requirement 12.10.1.

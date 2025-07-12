@@ -1,0 +1,14 @@
+{
+  "id": "61e9652d-1f5d-4e4b-b43f-cf782eadf51e",
+  "control_id": "6.5.5",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 6.5.5\n\nDefined Approach Requirements:\nLive PANs are not used in pre-production environments, except where those environments are included in the CDE and protected in accordance with all applicable PCI DSS requirements.\n\nCustomized Approach Objective:\nLive PANs cannot be present in pre-production environments outside the CDE.\n\nTesting Procedures:\nTesting Procedure 6.5.5.a: Examine policies and procedures to verify that processes are defined for not using live PANs in pre-production environments, except where those environments are in a CDE and protected in accordance with all applicable PCI DSS requirements.\nTesting Procedure 6.5.5.b: Observe testing processes and interview personnel to verify procedures are in place to ensure live PANs are not used in pre-production environments, except where those environments are in a CDE and protected in accordance with all applicable PCI DSS requirements.\nTesting Procedure 6.5.5.c: Examine pre-production test data to verify live PANs are not used in pre-production environments, except where those environments are in a CDE and protected in accordance with all applicable PCI DSS requirements.\n\nGuidance:\nPurpose: Use of live pans outside of protected cdes provides malicious individuals with the opportunity to gain unauthorized access to cardholder data. Definitions: Live pans refer to valid pans (not test pans) issued by, or on behalf of, a payment brand. additionally, when payment cards expire, the same pan is often reused with a different expiry date. all pans must be verified as being unable to conduct payment transactions or pose fraud risk to the payment system before they are excluded from pci dss scope. it is the responsibility of the entity to confirm that pans are not live.",
+  "requirement": "Live PANs are not used in pre-production environments, except where those environments are included in the CDE and protected in accordance with all applicable PCI DSS requirements.",
+  "metadata": {
+    "control_id": "6.5.5",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "secure_development",
+    "has_testing_procedures": true,
+    "requirements_id": "6"
+  }
+}

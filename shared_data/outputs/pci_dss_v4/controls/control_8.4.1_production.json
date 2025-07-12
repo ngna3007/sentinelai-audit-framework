@@ -1,0 +1,14 @@
+{
+  "id": "4f8af175-5289-490a-b89a-3563b6b65793",
+  "control_id": "8.4.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.4.1\n\nDefined Approach Requirements:\nMFA is implemented for all non-console access into the CDE for personnel with administrative access.\n\nCustomized Approach Objective:\nAdministrative access to the CDE cannot be obtained by the use of a single authentication factor.\n\nApplicability Notes:\nThe requirement for MFA for non-console administrative access applies to all personnel with elevated or increased privileges accessing the CDE via a non-console connection\u2014that is, via logical access occurring over a network interface rather than via a direct, physical connection.\n\nTesting Procedures:\nTesting Procedure 8.4.1.a: Examine network and/or system configurations to verify MFA is required for all non- console into the CDE for personnel with administrative access.\nTesting Procedure 8.4.1.b: Observe administrator personnel logging into the CDE and verify that MFA is required.",
+  "requirement": "MFA is implemented for all non-console access into the CDE for personnel with administrative access.",
+  "metadata": {
+    "control_id": "8.4.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

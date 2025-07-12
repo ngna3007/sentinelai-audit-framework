@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 3.7.5
+
+Defined Approach Requirements:
+Key management policies procedures are implemented to include the retirement, replacement, or destruction of keys used to protect stored account data, as deemed necessary when: The key has reached the end of its defined cryptoperiod. The integrity of the key has been weakened, including when personnel with knowledge of a cleartext key component leaves the company, or the role for which the key component was known. The key is suspected of or known to be compromised. Retired or replaced keys are not used for encryption operations.
+
+Customized Approach Objective:
+Keys are removed from active use when it is suspected or known that the integrity of the key is weakened.
+
+Applicability Notes:
+If retired or replaced cryptographic keys need to be retained, these keys must be securely archived (for example, by using a key-encryption key).
+
+Testing Procedures:
+Testing Procedure 3.7.5.a: Examine the documented key-management policies and procedures for keys used for protection of stored account data and verify that they define retirement, replacement, or destruction of keys in accordance with all elements specified in this requirement.
+Testing Procedure 3.7.5.b: Interview personnel to verify that processes are implemented in accordance with all elements specified in this requirement.
+
+Guidance:
+Purpose: Keys that are no longer required, keys with weakened integrity, and keys that are known or suspected to be compromised, should be archived, revoked, and/or destroyed to ensure that the keys can no longer be used. if such keys need to be kept (for example, to support archived encrypted data), they should be strongly protected. Good Practice: Archived cryptographic keys should be used only for decryption/verification purposes. the encryption solution should provide for and facilitate a process to replace keys that are due for replacement or that are known to be, or suspected of being, compromised. in addition, any keys that are known to be, or suspected of being, compromised should be managed in accordance with the entity’s incident response plan per requirement 12.10.1. Further Information: Industry best practices for archiving retired keys are outlined in_nist sp 800-57 part 1, revision 5, section_ _8.3.1_, and includes maintaining the archive with a trusted third party and storing archived key information separately from operational data.

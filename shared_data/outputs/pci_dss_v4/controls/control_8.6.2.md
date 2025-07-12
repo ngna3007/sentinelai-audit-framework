@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 8.6.2
+
+Defined Approach Requirements:
+Passwords/passphrases for any application and system accounts that can be used for interactive login are not hard coded in scripts, configuration/property files, or bespoke and custom source code.
+
+Customized Approach Objective:
+Passwords/passphrases used by application and system accounts cannot be used by unauthorized personnel.
+
+Applicability Notes:
+Stored passwords/passphrases are required to be encrypted in accordance with PCI DSS Requirement 8.3.2. _This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._
+
+Testing Procedures:
+Testing Procedure 8.6.2.a: Interview personnel and examine system development procedures to verify that processes are defined for application and system accounts that can be used for interactive login, specifying that passwords/passphrases are not hard coded in scripts, configuration/property files, or bespoke and custom source code.
+Testing Procedure 8.6.2.b: Examine scripts, configuration/property files, and bespoke and custom source code for application and system accounts that can be used for interactive login, to verify passwords/passphrases for those accounts are not present.
+
+Guidance:
+Purpose: Not properly protecting passwords/passphrases used by application and system accounts, especially if those accounts can be used for interactive login, increases the risk and success of unauthorized use of those privileged accounts. Good Practice: Changing these values due to suspected or confirmed disclosure can be particularly difficult to implement. tools can facilitate both management and security of authentication factors for application and system accounts. for example, consider password vaults or other system-managed controls.

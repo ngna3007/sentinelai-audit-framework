@@ -1,0 +1,10 @@
+PCI DSS 4_0_1 Requirement Control 11.4.7
+
+Defined Approach Requirements:
+Additional requirement for multi-tenant_ _service providers only:_ Multi-tenant service providers support their customers for external penetration testing per Requirement 11.4.3 and 11.4.4.
+
+Customized Approach Objective:
+Multi-tenant service providers support their customers’ need for technical testing either by providing access or evidence that comparable technical testing has been undertaken. _(continued on next page)_
+
+Guidance:
+Purpose: Entities need to conduct penetration tests in accordance with pci dss to simulate attacker behavior and discover vulnerabilities in their environment. in shared and cloud environments, the multi-tenant service provider may be concerned about the activities of a penetration tester affecting other customers’ systems. multi-tenant service providers cannot forbid penetration testing because this would leave their customers’ systems open to exploitation. therefore, multi-tenant service providers must support customer requests to conduct penetration testing or for penetration testing results.

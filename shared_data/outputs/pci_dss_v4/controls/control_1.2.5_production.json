@@ -1,0 +1,14 @@
+{
+  "id": "71b952f7-46b9-492e-a45e-f420ce2dcc9a",
+  "control_id": "1.2.5",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 1.2.5\n\nDefined Approach Requirements:\nAll services, protocols, and ports allowed are identified, approved, and have a defined business need.\n\nCustomized Approach Objective:\nUnauthorized network traffic (services, protocols, or packets destined for specific ports) cannot enter or leave the network.\n\nTesting Procedures:\nTesting Procedure 1.2.5.a: Examine documentation to verify that a list exists of all allowed services, protocols, and ports, including business justification and approval for each.\nTesting Procedure 1.2.5.b: Examine configuration settings for NSCs to verify that only approved services, protocols, and ports are in use.\n\nGuidance:\nPurpose: Compromises often happen due to unused or insecure services (for example, telnet and ftp), protocols, and ports, since these can lead to unnecessary points of access being opened into the cde. additionally, services, protocols, and ports that are enabled but not in use are often overlooked and left unsecured and unpatched. by identifying the services, protocols, and ports necessary for business, entities can ensure that all other services, protocols, and ports are disabled or removed. Good Practice: The security risk associated with each service, protocol, and port allowed should be understood. approvals should be granted by personnel independent of those managing the configuration. approving personnel should possess knowledge and accountability appropriate for making approval decisions.",
+  "requirement": "All services, protocols, and ports allowed are identified, approved, and have a defined business need.",
+  "metadata": {
+    "control_id": "1.2.5",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "network_security",
+    "has_testing_procedures": true,
+    "requirements_id": "1"
+  }
+}

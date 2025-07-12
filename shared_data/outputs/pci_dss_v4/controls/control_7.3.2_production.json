@@ -1,0 +1,14 @@
+{
+  "id": "da9ae5b3-1ea9-4ba9-a32f-e81e81bf9cda",
+  "control_id": "7.3.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 7.3.2\n\nDefined Approach Requirements:\nThe access control system(s) is configured to enforce permissions assigned to individuals, applications, and systems based on job classification and function.\n\nCustomized Approach Objective:\nIndividual account access rights and privileges to systems, applications, and data are only inherited from group membership.\n\nTesting Procedures:\nTesting Procedure 7.3.2: Examine vendor documentation and system settings to verify that the access control system(s) is configured to enforce permissions assigned to individuals, applications, and systems based on job classification and function.",
+  "requirement": "The access control system(s) is configured to enforce permissions assigned to individuals, applications, and systems based on job classification and function.",
+  "metadata": {
+    "control_id": "7.3.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "access_control_general",
+    "has_testing_procedures": true,
+    "requirements_id": "7"
+  }
+}

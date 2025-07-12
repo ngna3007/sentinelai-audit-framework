@@ -1,0 +1,14 @@
+{
+  "id": "72f135c4-22bd-44c8-ba55-daacf31627f0",
+  "control_id": "5.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 5.2\n\nDefined Approach Requirements:\nMalicious software (malware) is prevented, or detected and addressed.\n\nGuidance:\nPurpose: There is a constant stream of attacks targeting newly discovered vulnerabilities in systems previously regarded as secure. without an anti- malware solution that is updated regularly, new forms of malware can be used to attack systems, disable a network, or compromise data. Good Practice: It is beneficial for entities to be aware of \"zero-day\" attacks (those that exploit a previously unknown vulnerability) and consider solutions that focus on behavioral characteristics and will alert and react to unexpected behavior. Definitions: System components known to be affected by malware have active malware exploits available in the real world (not only theoretical exploits).",
+  "requirement": "Malicious software (malware) is prevented, or detected and addressed.",
+  "metadata": {
+    "control_id": "5.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "malware_protection",
+    "has_testing_procedures": false,
+    "requirements_id": "5"
+  }
+}

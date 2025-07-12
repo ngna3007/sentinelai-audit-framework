@@ -1,0 +1,14 @@
+{
+  "id": "96c8deb2-1e65-41a4-9930-ac34f122d284",
+  "control_id": "12.8",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.8\n\nDefined Approach Requirements:\nRisk to information assets associated with third-party service provider (TPSP) relationships is managed.\n\nGuidance:\nPurpose: Maintaining a list of all tpsps identifies where potential risk extends outside the organization and defines the organization\u2019s extended attack surface. Examples: Different types of tpsps include those that: store, process, or transmit account data on the entity\u2019s behalf (such as payment gateways, payment processors, payment service providers (psps), and off-site storage providers). manage system components included in the entity\u2019s pci dss assessment (such as providers of network security control services, anti-malware services, and security incident and event management (siem); contact and call centers; web-hosting companies; and iaas, paas, saas, and faas cloud providers). could impact the security of the entity\u2019s cardholder data and/or sensitive authentication data (such as vendors providing support via remote access, and bespoke software developers).",
+  "requirement": "Risk to information assets associated with third-party service provider (TPSP) relationships is managed.",
+  "metadata": {
+    "control_id": "12.8",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": false,
+    "requirements_id": "12"
+  }
+}

@@ -1,0 +1,15 @@
+PCI DSS 4_0_1 Requirement Control 8.3.11
+
+Defined Approach Requirements:
+Where authentication factors such as physical or logical security tokens, smart cards, or certificates are used: Factors are assigned to an individual user and not shared among multiple users. Physical and/or logical controls ensure only the intended user can use that factor to gain access.
+
+Customized Approach Objective:
+An authentication factor cannot be used by anyone other than the user to which it is assigned.
+
+Testing Procedures:
+Testing Procedure 8.3.11.a: Examine authentication policies and procedures to verify that procedures for using authentication factors such as physical security tokens, smart cards, and certificates are defined and include all elements specified in this requirement.
+Testing Procedure 8.3.11.b: Interview security personnel to verify authentication factors are assigned to an individual user and not shared among multiple users.
+Testing Procedure 8.3.11.c: Examine system configuration settings and/or observe physical controls, as applicable, to verify that controls are implemented to ensure only the intended user can use that factor to gain access.
+
+Guidance:
+Purpose: If multiple users can use authentication factors such as tokens, smart cards, and certificates, it may be impossible to identify the individual using the authentication mechanism. Good Practice: Having physical and/or logical controls (for example, a pin, biometric data, or a password) to uniquely authenticate the user of the account will prevent unauthorized users from gaining access to the user account through use of a shared authentication factor.

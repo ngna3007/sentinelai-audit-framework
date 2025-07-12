@@ -1,0 +1,14 @@
+{
+  "id": "7327b21f-9821-49cf-863d-f9fb67c006de",
+  "control_id": "9.2.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.2.4\n\nDefined Approach Requirements:\nAccess to consoles in sensitive areas is restricted via locking when not in use.\n\nCustomized Approach Objective:\nPhysical consoles within sensitive areas cannot be used by unauthorized personnel.\n\nTesting Procedures:\nTesting Procedure 9.2.4: Observe a system administrator\u2019s attempt to log into consoles in sensitive areas and verify that they are \u201clocked\u201d to prevent unauthorized use.\n\nGuidance:\nPurpose: Locking console login screens prevents unauthorized persons from gaining access to sensitive information, altering system configurations, introducing vulnerabilities into the network, or destroying records.",
+  "requirement": "Access to consoles in sensitive areas is restricted via locking when not in use.",
+  "metadata": {
+    "control_id": "9.2.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

@@ -1,0 +1,3353 @@
+{
+  "document_type": "aws_config_guidance",
+  "summary": {
+    "total_mappings": 771,
+    "unique_pci_controls": 98,
+    "unique_config_rules": 127
+  },
+  "compliance_statistics": {
+    "has_non_compliance_only": {
+      "count": 690,
+      "entries": [
+        {
+          "control_id": "1.2.5",
+          "aws_config_rule": "cloudfront-security-policy-check"
+        },
+        {
+          "control_id": "1.2.5",
+          "aws_config_rule": "cloudfront-sni-enabled"
+        },
+        {
+          "control_id": "1.2.5",
+          "aws_config_rule": "transfer-family-server-no-ftp"
+        },
+        {
+          "control_id": "1.2.5",
+          "aws_config_rule": "cloudfront-no-deprecated-ssl-protocols"
+        },
+        {
+          "control_id": "1.2.5",
+          "aws_config_rule": "cloudfront-traﬃc-to-origin-encrypted"
+        },
+        {
+          "control_id": "1.2.5",
+          "aws_config_rule": "cloudfront-viewer-policy-https"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "rds-db-security-group-not-allowed"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "ec2-transit-gateway-auto-vpc-attach-disabled"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "eks-endpoint-no-public-access"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "restricted-ssh"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "codebuild-project-source-repo-url-check"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "nacl-no-unrestricted-ssh-rdp"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "ec2-client-vpn-not-authorize-all"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "rds-db-security-group-not-allowed"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "redshift-enhanced-vpc-routing-enabled"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "ec2-transit-gateway-auto-vpc-attach-disabled"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "eks-endpoint-no-public-access"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "restricted-ssh"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "codebuild-project-source-repo-url-check"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "nacl-no-unrestricted-ssh-rdp"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "ec2-client-vpn-not-authorize-all"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "rds-db-security-group-not-allowed"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "redshift-enhanced-vpc-routing-enabled"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "ec2-transit-gateway-auto-vpc-attach-disabled"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "eks-endpoint-no-public-access"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "restricted-ssh"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "codebuild-project-source-repo-url-check"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "nacl-no-unrestricted-ssh-rdp"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "ec2-client-vpn-not-authorize-all"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "1.4.1",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "1.4.1",
+          "aws_config_rule": "redshift-enhanced-vpc-routing-enabled"
+        },
+        {
+          "control_id": "1.4.1",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "rds-db-security-group-not-allowed"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "redshift-enhanced-vpc-routing-enabled"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "ec2-transit-gateway-auto-vpc-attach-disabled"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "eks-endpoint-no-public-access"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "restricted-ssh"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "codebuild-project-source-repo-url-check"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "nacl-no-unrestricted-ssh-rdp"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "ec2-client-vpn-not-authorize-all"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "1.4.3",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "1.4.3",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "1.4.3",
+          "aws_config_rule": "netfw-policy-default-action-full-packets"
+        },
+        {
+          "control_id": "1.4.4",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "1.4.4",
+          "aws_config_rule": "redshift-enhanced-vpc-routing-enabled"
+        },
+        {
+          "control_id": "1.4.4",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "1.4.5",
+          "aws_config_rule": "ecs-task-deﬁnition-pid-mode-check"
+        },
+        {
+          "control_id": "1.4.5",
+          "aws_config_rule": "ec2-launch-template-public-ip-disabled"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "rds-db-security-group-not-allowed"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "ec2-transit-gateway-auto-vpc-attach-disabled"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "eks-endpoint-no-public-access"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "restricted-ssh"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "codebuild-project-source-repo-url-check"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "nacl-no-unrestricted-ssh-rdp"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "ec2-client-vpn-not-authorize-all"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.2",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.3",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.4",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.5",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.6",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.1.7",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.2.2",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.3.1",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "neptune-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "s3-bucket-mfa-delete-enabled"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "aurora-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "dynamodb-in-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "dynamodb-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "ebs-in-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "ebs-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "ec2-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "efs-in-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "efs-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "elasticache-redis-cluster-automatic-backup-check"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "fsx-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "neptune-cluster-backup-retention-check"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "rds-in-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "rds-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "redshift-backup-enabled"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "s3-resources-protected-by-backup-plan"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "dynamodb-pitr-enabled"
+        },
+        {
+          "control_id": "10.3.4",
+          "aws_config_rule": "cloudfront-origin-access-identity-enabled"
+        },
+        {
+          "control_id": "10.3.4",
+          "aws_config_rule": "cloudfront-s3-origin-access-control-enabled"
+        },
+        {
+          "control_id": "10.3.4",
+          "aws_config_rule": "s3-bucket-default-lock-enabled"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "10.4.3",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.5.1",
+          "aws_config_rule": "ecr-private-lifecycle-policy-conﬁgured"
+        },
+        {
+          "control_id": "10.5.1",
+          "aws_config_rule": "dynamodb-pitr-enabled"
+        },
+        {
+          "control_id": "10.5.1",
+          "aws_config_rule": "cw-loggroup-retention-period-check"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "cloudformation-stack-notiﬁcation-check"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "cloudformation-stack-notiﬁcation-check"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "11.5.2",
+          "aws_config_rule": "cloudformation-stack-notiﬁcation-check"
+        },
+        {
+          "control_id": "11.5.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "11.5.2",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "11.5.2",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "11.6.1",
+          "aws_config_rule": "cloudformation-stack-notiﬁcation-check"
+        },
+        {
+          "control_id": "11.6.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "11.6.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "11.6.1",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "12.10.5",
+          "aws_config_rule": "cloudformation-stack-notiﬁcation-check"
+        },
+        {
+          "control_id": "12.10.5",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "12.10.5",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "12.10.5",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "12.4.2.1",
+          "aws_config_rule": "service-catalog-shared-within-organization"
+        },
+        {
+          "control_id": "2.2.5",
+          "aws_config_rule": "cloudfront-security-policy-check"
+        },
+        {
+          "control_id": "2.2.5",
+          "aws_config_rule": "cloudfront-sni-enabled"
+        },
+        {
+          "control_id": "2.2.5",
+          "aws_config_rule": "transfer-family-server-no-ftp"
+        },
+        {
+          "control_id": "2.2.5",
+          "aws_config_rule": "cloudfront-no-deprecated-ssl-protocols"
+        },
+        {
+          "control_id": "2.2.5",
+          "aws_config_rule": "cloudfront-traﬃc-to-origin-encrypted"
+        },
+        {
+          "control_id": "2.2.5",
+          "aws_config_rule": "cloudfront-viewer-policy-https"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "dms-redis-tls-enabled"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "cloudfront-no-deprecated-ssl-protocols"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "cloudfront-traﬃc-to-origin-encrypted"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "cloudfront-viewer-policy-https"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "dax-tls-endpoint-encryption"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "msk-in-cluster-node-require-tls"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "dms-endpoint-ssl-conﬁgured"
+        },
+        {
+          "control_id": "3.2.1",
+          "aws_config_rule": "ecr-private-lifecycle-policy-conﬁgured"
+        },
+        {
+          "control_id": "3.2.1",
+          "aws_config_rule": "dynamodb-pitr-enabled"
+        },
+        {
+          "control_id": "3.2.1",
+          "aws_config_rule": "cw-loggroup-retention-period-check"
+        },
+        {
+          "control_id": "3.3.1.1",
+          "aws_config_rule": "ecr-private-lifecycle-policy-conﬁgured"
+        },
+        {
+          "control_id": "3.3.1.1",
+          "aws_config_rule": "dynamodb-pitr-enabled"
+        },
+        {
+          "control_id": "3.3.1.1",
+          "aws_config_rule": "cw-loggroup-retention-period-check"
+        },
+        {
+          "control_id": "3.3.1.3",
+          "aws_config_rule": "ecr-private-lifecycle-policy-conﬁgured"
+        },
+        {
+          "control_id": "3.3.1.3",
+          "aws_config_rule": "dynamodb-pitr-enabled"
+        },
+        {
+          "control_id": "3.3.1.3",
+          "aws_config_rule": "cw-loggroup-retention-period-check"
+        },
+        {
+          "control_id": "3.3.2",
+          "aws_config_rule": "ecr-private-lifecycle-policy-conﬁgured"
+        },
+        {
+          "control_id": "3.3.2",
+          "aws_config_rule": "dynamodb-pitr-enabled"
+        },
+        {
+          "control_id": "3.3.2",
+          "aws_config_rule": "cw-loggroup-retention-period-check"
+        },
+        {
+          "control_id": "3.3.3",
+          "aws_config_rule": "ecr-private-lifecycle-policy-conﬁgured"
+        },
+        {
+          "control_id": "3.3.3",
+          "aws_config_rule": "dynamodb-pitr-enabled"
+        },
+        {
+          "control_id": "3.3.3",
+          "aws_config_rule": "cw-loggroup-retention-period-check"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "athena-workgroup-encrypted-at-rest"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "neptune-cluster-snapshot-encrypted"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "redshift-cluster-kms-enabled"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "codebuild-project-artifact-encryption"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "codebuild-project-s3-logs-encrypted"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "dax-encryption-enabled"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "api-gw-cache-enabled-and-encrypted"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "docdb-cluster-encrypted"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "dynamodb-table-encrypted-kms"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "codebuild-project-envvar-awscred-check"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "eks-cluster-secrets-encrypted"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "kinesis-stream-encrypted"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "neptune-cluster-encrypted"
+        },
+        {
+          "control_id": "3.5.1.1",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.5.1.1",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "neptune-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "s3-bucket-mfa-delete-enabled"
+        },
+        {
+          "control_id": "3.6.1",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.6.1",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.6.1.2",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.6.1.2",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.6.1.3",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.6.1.3",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.6.1.4",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.6.1.4",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.7.1",
+          "aws_config_rule": "acm-certiﬁcate-rsa-check"
+        },
+        {
+          "control_id": "3.7.1",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.7.1",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.7.2",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.7.2",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.7.4",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.7.4",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.7.6",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.7.6",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "3.7.7",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "3.7.7",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "dms-redis-tls-enabled"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "cloudfront-no-deprecated-ssl-protocols"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "cloudfront-traﬃc-to-origin-encrypted"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "cloudfront-viewer-policy-https"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "dax-tls-endpoint-encryption"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "msk-in-cluster-node-require-tls"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "dms-endpoint-ssl-conﬁgured"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "acm-pca-root-ca-disabled"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "dms-redis-tls-enabled"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "cloudfront-no-deprecated-ssl-protocols"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "cloudfront-traﬃc-to-origin-encrypted"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "cloudfront-viewer-policy-https"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "dax-tls-endpoint-encryption"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "msk-in-cluster-node-require-tls"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "dms-endpoint-ssl-conﬁgured"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "cw-loggroup-retention-period-check"
+        },
+        {
+          "control_id": "6.3.3",
+          "aws_config_rule": "lambda-function-settings-check"
+        },
+        {
+          "control_id": "6.3.3",
+          "aws_config_rule": "eks-cluster-oldest-supported-version"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "wafv2-webacl-not-empty"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "wafv2-rulegroup-not-empty"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "6.4.1",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "wafv2-webacl-not-empty"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "wafv2-rulegroup-not-empty"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "6.4.2",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "6.5.5",
+          "aws_config_rule": "codedeploy-lambda-allatonce-traﬃc-shift-disabled"
+        },
+        {
+          "control_id": "6.5.6",
+          "aws_config_rule": "codedeploy-lambda-allatonce-traﬃc-shift-disabled"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.2.4",
+          "aws_config_rule": "secretsmanager-secret-unused"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.2.5.1",
+          "aws_config_rule": "secretsmanager-secret-unused"
+        },
+        {
+          "control_id": "7.2.6",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "8.2.1",
+          "aws_config_rule": "ec2-no-amazon-key-pair"
+        },
+        {
+          "control_id": "8.2.2",
+          "aws_config_rule": "ec2-no-amazon-key-pair"
+        },
+        {
+          "control_id": "8.2.2",
+          "aws_config_rule": "codebuild-project-envvar-awscred-check"
+        },
+        {
+          "control_id": "8.2.2",
+          "aws_config_rule": "secretsmanager-scheduled-rotation-success-check"
+        },
+        {
+          "control_id": "8.2.2",
+          "aws_config_rule": "secretsmanager-secret-periodic-rotation"
+        },
+        {
+          "control_id": "8.2.2",
+          "aws_config_rule": "secretsmanager-secret-unused"
+        },
+        {
+          "control_id": "8.2.4",
+          "aws_config_rule": "ec2-no-amazon-key-pair"
+        },
+        {
+          "control_id": "8.2.5",
+          "aws_config_rule": "ec2-no-amazon-key-pair"
+        },
+        {
+          "control_id": "8.2.6",
+          "aws_config_rule": "secretsmanager-secret-unused"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "ec2-imdsv2-check"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "autoscaling-launchconﬁg-requires-imdsv2"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "8.3.10.1",
+          "aws_config_rule": "access-keys-rotated"
+        },
+        {
+          "control_id": "8.3.10.1",
+          "aws_config_rule": "secretsmanager-scheduled-rotation-success-check"
+        },
+        {
+          "control_id": "8.3.10.1",
+          "aws_config_rule": "secretsmanager-secret-periodic-rotation"
+        },
+        {
+          "control_id": "8.3.11",
+          "aws_config_rule": "ec2-no-amazon-key-pair"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "athena-workgroup-encrypted-at-rest"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "neptune-cluster-snapshot-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "redshift-cluster-kms-enabled"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "codebuild-project-artifact-encryption"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "codebuild-project-s3-logs-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "dax-encryption-enabled"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "dms-redis-tls-enabled"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "api-gw-cache-enabled-and-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "docdb-cluster-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "dynamodb-table-encrypted-kms"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "cloudfront-no-deprecated-ssl-protocols"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "cloudfront-traﬃc-to-origin-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "cloudfront-viewer-policy-https"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "codebuild-project-envvar-awscred-check"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "dax-tls-endpoint-encryption"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "eks-cluster-secrets-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "kinesis-stream-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "msk-in-cluster-node-require-tls"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "neptune-cluster-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "dms-endpoint-ssl-conﬁgured"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "s3-bucket-blacklisted-actions-prohibited"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "shield-drt-access"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "neptune-cluster-iam-database-authentication"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "rds-cluster-iam-authentication-enabled"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "ec2-instance-proﬁle-attached"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "rds-instance-iam-authentication-enabled"
+        },
+        {
+          "control_id": "8.3.5",
+          "aws_config_rule": "access-keys-rotated"
+        },
+        {
+          "control_id": "8.3.5",
+          "aws_config_rule": "secretsmanager-scheduled-rotation-success-check"
+        },
+        {
+          "control_id": "8.3.5",
+          "aws_config_rule": "secretsmanager-secret-periodic-rotation"
+        },
+        {
+          "control_id": "8.3.7",
+          "aws_config_rule": "access-keys-rotated"
+        },
+        {
+          "control_id": "8.3.7",
+          "aws_config_rule": "secretsmanager-scheduled-rotation-success-check"
+        },
+        {
+          "control_id": "8.3.7",
+          "aws_config_rule": "secretsmanager-secret-periodic-rotation"
+        },
+        {
+          "control_id": "8.3.9",
+          "aws_config_rule": "access-keys-rotated"
+        },
+        {
+          "control_id": "8.3.9",
+          "aws_config_rule": "secretsmanager-scheduled-rotation-success-check"
+        },
+        {
+          "control_id": "8.3.9",
+          "aws_config_rule": "secretsmanager-secret-periodic-rotation"
+        },
+        {
+          "control_id": "8.4.1",
+          "aws_config_rule": "s3-bucket-mfa-delete-enabled"
+        },
+        {
+          "control_id": "8.4.2",
+          "aws_config_rule": "s3-bucket-mfa-delete-enabled"
+        },
+        {
+          "control_id": "8.4.3",
+          "aws_config_rule": "s3-bucket-mfa-delete-enabled"
+        },
+        {
+          "control_id": "8.6.3",
+          "aws_config_rule": "access-keys-rotated"
+        },
+        {
+          "control_id": "8.6.3",
+          "aws_config_rule": "secretsmanager-scheduled-rotation-success-check"
+        },
+        {
+          "control_id": "8.6.3",
+          "aws_config_rule": "secretsmanager-secret-periodic-rotation"
+        },
+        {
+          "control_id": "A1.1.2",
+          "aws_config_rule": "neptune-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "A1.1.2",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "A1.1.2",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "A1.1.2",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "A1.1.2",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "A1.1.2",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "A1.1.2",
+          "aws_config_rule": "s3-bucket-mfa-delete-enabled"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "api-gw-endpoint-type-check"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "cloudfront-associated-with-waf"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "cloudfront-custom-ssl-certiﬁcate"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "netfw-policy-default-action-fragment-packets"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "rds-db-security-group-not-allowed"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "ec2-transit-gateway-auto-vpc-attach-disabled"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "eks-endpoint-no-public-access"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "restricted-ssh"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "appsync-associated-with-waf"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "codebuild-project-source-repo-url-check"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "nacl-no-unrestricted-ssh-rdp"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "waf-global-webacl-not-empty"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "waf-global-rulegroup-not-empty"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "waf-global-rule-not-empty"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "ec2-client-vpn-not-authorize-all"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "internet-gateway-authorized-vpc-only"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "api-gwv2-access-logs-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "cloudfront-accesslogs-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "neptune-cluster-cloudwatch-log-export-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "ecs-task-deﬁnition-log-conﬁguration"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "cloudtrail-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "multi-region-cloudtrail-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "appsync-logging-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "waf-classic-logging-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "mq-cloudwatch-audit-logging-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "mq-cloudwatch-audit-log-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "eks-cluster-logging-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "elastic-beanstalk-logs-to-cloudwatch"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "step-functions-state-machine-logging-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "netfw-logging-enabled"
+        },
+        {
+          "control_id": "A1.2.3",
+          "aws_config_rule": "security-account-information-provided"
+        },
+        {
+          "control_id": "A3.2.5.1",
+          "aws_config_rule": "macie-auto-sensitive-data-discovery-check"
+        },
+        {
+          "control_id": "A3.2.5.1",
+          "aws_config_rule": "macie-status-check"
+        },
+        {
+          "control_id": "A3.2.5.2",
+          "aws_config_rule": "macie-auto-sensitive-data-discovery-check"
+        },
+        {
+          "control_id": "A3.2.5.2",
+          "aws_config_rule": "macie-status-check"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "cloudformation-stack-notiﬁcation-check"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "neptune-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "docdb-cluster-snapshot-public-prohibited"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "backup-recovery-point-manual-deletion-disabled"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "emr-block-public-access"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "secretsmanager-secret-unused"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "s3-access-point-public-access-blocks"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "s3-account-level-public-access-blocks"
+        },
+        {
+          "control_id": "A3.4.1",
+          "aws_config_rule": "s3-bucket-mfa-delete-enabled"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "api-gw-xray-enabled"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "cloudformation-stack-notiﬁcation-check"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "ec2-instance-detailed-monitoring-enabled"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "cloudwatch-alarm-action-check"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "wafv2-rulegroup-logging-enabled"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "sns-topic-message-delivery-notiﬁcation-enabled"
+        }
+      ]
+    },
+    "has_compliance_only": {
+      "count": 17,
+      "entries": [
+        {
+          "control_id": "10.2.1.1",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "10.3.2",
+          "aws_config_rule": "cloudtrail-security-trail-enabled"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "cloudtrail-security-trail-enabled"
+        },
+        {
+          "control_id": "10.3.4",
+          "aws_config_rule": "cloudtrail-security-trail-enabled"
+        },
+        {
+          "control_id": "10.4.1",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "10.4.1.1",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "10.4.2",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "10.5.1",
+          "aws_config_rule": "cloudtrail-security-trail-enabled"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "10.7.1",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "10.7.2",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "dynamodb-table-encryption-enabled"
+        },
+        {
+          "control_id": "5.3.4",
+          "aws_config_rule": "cloudtrail-security-trail-enabled"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "dynamodb-table-encryption-enabled"
+        },
+        {
+          "control_id": "A1.2.1",
+          "aws_config_rule": "cloudtrail-security-trail-enabled"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "cloudwatch-alarm-resource-check"
+        }
+      ]
+    },
+    "has_both_compliance_types": {
+      "count": 0,
+      "entries": []
+    },
+    "has_no_compliance_info": {
+      "count": 64,
+      "entries": [
+        {
+          "control_id": "1.2.8",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "1.3.1",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "1.3.2",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "1.4.2",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "1.5.1",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "db-instance-backup-enabled"
+        },
+        {
+          "control_id": "10.3.3",
+          "aws_config_rule": "db-instance-backup-enabled"
+        },
+        {
+          "control_id": "10.3.4",
+          "aws_config_rule": "s3-bucket-versioning-enabled"
+        },
+        {
+          "control_id": "10.5.1",
+          "aws_config_rule": "ec2-volume-inuse-check"
+        },
+        {
+          "control_id": "10.6.3",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "11.5.2",
+          "aws_config_rule": "cloudwatch-alarm-settings-check"
+        },
+        {
+          "control_id": "11.6.1",
+          "aws_config_rule": "cloudwatch-alarm-settings-check"
+        },
+        {
+          "control_id": "12.10.5",
+          "aws_config_rule": "cloudwatch-alarm-settings-check"
+        },
+        {
+          "control_id": "2.2.7",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.2.1",
+          "aws_config_rule": "ec2-volume-inuse-check"
+        },
+        {
+          "control_id": "3.3.1.1",
+          "aws_config_rule": "ec2-volume-inuse-check"
+        },
+        {
+          "control_id": "3.3.1.3",
+          "aws_config_rule": "ec2-volume-inuse-check"
+        },
+        {
+          "control_id": "3.3.2",
+          "aws_config_rule": "ec2-volume-inuse-check"
+        },
+        {
+          "control_id": "3.3.3",
+          "aws_config_rule": "ec2-volume-inuse-check"
+        },
+        {
+          "control_id": "3.5.1",
+          "aws_config_rule": "eks-secrets-encrypted"
+        },
+        {
+          "control_id": "3.5.1.1",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.5.1.3",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.6.1",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.6.1.2",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.6.1.3",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.6.1.4",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.7.1",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.7.2",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.7.4",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.7.6",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "3.7.7",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "4.2.1",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "4.2.1.1",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "6.5.5",
+          "aws_config_rule": "codepipeline-deployment-count-check"
+        },
+        {
+          "control_id": "6.5.6",
+          "aws_config_rule": "codepipeline-deployment-count-check"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "7.2.1",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "7.2.2",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "7.2.5",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "7.2.6",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "7.3.1",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "7.3.2",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "7.3.3",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.2.1",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.2.2",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.2.4",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.2.5",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "8.2.7",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "8.2.8",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.3.11",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "eks-secrets-encrypted"
+        },
+        {
+          "control_id": "8.3.2",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "s3-bucket-policy-not-more-permissive"
+        },
+        {
+          "control_id": "8.3.4",
+          "aws_config_rule": "iam-policy-in-use"
+        },
+        {
+          "control_id": "A1.1.3",
+          "aws_config_rule": "elb-acm-certiﬁcate-required"
+        },
+        {
+          "control_id": "A3.3.1",
+          "aws_config_rule": "cloudwatch-alarm-settings-check"
+        },
+        {
+          "control_id": "A3.5.1",
+          "aws_config_rule": "cloudwatch-alarm-settings-check"
+        }
+      ]
+    },
+    "summary": {
+      "total_with_non_compliance": 690,
+      "total_with_compliance": 17,
+      "total_with_any_compliance_info": 707,
+      "total_without_compliance_info": 64
+    }
+  },
+  "pci_controls": [
+    "1.2.5",
+    "1.2.8",
+    "1.3.1",
+    "1.3.2",
+    "1.4.1",
+    "1.4.2",
+    "1.4.3",
+    "1.4.4",
+    "1.4.5",
+    "1.5.1",
+    "10.2.1",
+    "10.2.1.1",
+    "10.2.1.2",
+    "10.2.1.3",
+    "10.2.1.4",
+    "10.2.1.5",
+    "10.2.1.6",
+    "10.2.1.7",
+    "10.2.2",
+    "10.3.1",
+    "10.3.2",
+    "10.3.3",
+    "10.3.4",
+    "10.4.1",
+    "10.4.1.1",
+    "10.4.2",
+    "10.4.3",
+    "10.5.1",
+    "10.6.3",
+    "10.7.1",
+    "10.7.2",
+    "11.5.2",
+    "11.6.1",
+    "12.10.5",
+    "12.4.2.1",
+    "2.2.5",
+    "2.2.7",
+    "3.2.1",
+    "3.3.1.1",
+    "3.3.1.3",
+    "3.3.2",
+    "3.3.3",
+    "3.5.1",
+    "3.5.1.1",
+    "3.5.1.3",
+    "3.6.1",
+    "3.6.1.2",
+    "3.6.1.3",
+    "3.6.1.4",
+    "3.7.1",
+    "3.7.2",
+    "3.7.4",
+    "3.7.6",
+    "3.7.7",
+    "4.2.1",
+    "4.2.1.1",
+    "5.3.4",
+    "6.3.3",
+    "6.4.1",
+    "6.4.2",
+    "6.5.5",
+    "6.5.6",
+    "7.2.1",
+    "7.2.2",
+    "7.2.4",
+    "7.2.5",
+    "7.2.5.1",
+    "7.2.6",
+    "7.3.1",
+    "7.3.2",
+    "7.3.3",
+    "8.2.1",
+    "8.2.2",
+    "8.2.4",
+    "8.2.5",
+    "8.2.6",
+    "8.2.7",
+    "8.2.8",
+    "8.3.10.1",
+    "8.3.11",
+    "8.3.2",
+    "8.3.4",
+    "8.3.5",
+    "8.3.7",
+    "8.3.9",
+    "8.4.1",
+    "8.4.2",
+    "8.4.3",
+    "8.6.3",
+    "A1.1.2",
+    "A1.1.3",
+    "A1.2.1",
+    "A1.2.3",
+    "A3.2.5.1",
+    "A3.2.5.2",
+    "A3.3.1",
+    "A3.4.1",
+    "A3.5.1"
+  ],
+  "config_rules": [
+    "access-keys-rotated",
+    "acm-certiﬁcate-rsa-check",
+    "acm-pca-root-ca-disabled",
+    "api-gw-cache-enabled-and-encrypted",
+    "api-gw-endpoint-type-check",
+    "api-gw-xray-enabled",
+    "api-gwv2-access-logs-enabled",
+    "appsync-associated-with-waf",
+    "appsync-logging-enabled",
+    "athena-workgroup-encrypted-at-rest",
+    "aurora-resources-protected-by-backup-plan",
+    "autoscaling-launchconﬁg-requires-imdsv2",
+    "backup-recovery-point-manual-deletion-disabled",
+    "cloudformation-stack-notiﬁcation-check",
+    "cloudfront-accesslogs-enabled",
+    "cloudfront-associated-with-waf",
+    "cloudfront-custom-ssl-certiﬁcate",
+    "cloudfront-no-deprecated-ssl-protocols",
+    "cloudfront-origin-access-identity-enabled",
+    "cloudfront-s3-origin-access-control-enabled",
+    "cloudfront-security-policy-check",
+    "cloudfront-sni-enabled",
+    "cloudfront-traﬃc-to-origin-encrypted",
+    "cloudfront-viewer-policy-https",
+    "cloudtrail-enabled",
+    "cloudtrail-security-trail-enabled",
+    "cloudwatch-alarm-action-check",
+    "cloudwatch-alarm-resource-check",
+    "cloudwatch-alarm-settings-check",
+    "codebuild-project-artifact-encryption",
+    "codebuild-project-envvar-awscred-check",
+    "codebuild-project-s3-logs-encrypted",
+    "codebuild-project-source-repo-url-check",
+    "codedeploy-lambda-allatonce-traﬃc-shift-disabled",
+    "codepipeline-deployment-count-check",
+    "cw-loggroup-retention-period-check",
+    "dax-encryption-enabled",
+    "dax-tls-endpoint-encryption",
+    "db-instance-backup-enabled",
+    "dms-endpoint-ssl-conﬁgured",
+    "dms-redis-tls-enabled",
+    "docdb-cluster-encrypted",
+    "docdb-cluster-snapshot-public-prohibited",
+    "dynamodb-in-backup-plan",
+    "dynamodb-pitr-enabled",
+    "dynamodb-resources-protected-by-backup-plan",
+    "dynamodb-table-encrypted-kms",
+    "dynamodb-table-encryption-enabled",
+    "ebs-in-backup-plan",
+    "ebs-resources-protected-by-backup-plan",
+    "ec2-client-vpn-not-authorize-all",
+    "ec2-imdsv2-check",
+    "ec2-instance-detailed-monitoring-enabled",
+    "ec2-instance-proﬁle-attached",
+    "ec2-launch-template-public-ip-disabled",
+    "ec2-no-amazon-key-pair",
+    "ec2-resources-protected-by-backup-plan",
+    "ec2-transit-gateway-auto-vpc-attach-disabled",
+    "ec2-volume-inuse-check",
+    "ecr-private-lifecycle-policy-conﬁgured",
+    "ecs-task-deﬁnition-log-conﬁguration",
+    "ecs-task-deﬁnition-pid-mode-check",
+    "efs-in-backup-plan",
+    "efs-resources-protected-by-backup-plan",
+    "eks-cluster-logging-enabled",
+    "eks-cluster-oldest-supported-version",
+    "eks-cluster-secrets-encrypted",
+    "eks-endpoint-no-public-access",
+    "eks-secrets-encrypted",
+    "elastic-beanstalk-logs-to-cloudwatch",
+    "elasticache-redis-cluster-automatic-backup-check",
+    "elb-acm-certiﬁcate-required",
+    "emr-block-public-access",
+    "fsx-resources-protected-by-backup-plan",
+    "iam-policy-in-use",
+    "internet-gateway-authorized-vpc-only",
+    "kinesis-stream-encrypted",
+    "lambda-function-settings-check",
+    "macie-auto-sensitive-data-discovery-check",
+    "macie-status-check",
+    "mq-cloudwatch-audit-log-enabled",
+    "mq-cloudwatch-audit-logging-enabled",
+    "msk-in-cluster-node-require-tls",
+    "multi-region-cloudtrail-enabled",
+    "nacl-no-unrestricted-ssh-rdp",
+    "neptune-cluster-backup-retention-check",
+    "neptune-cluster-cloudwatch-log-export-enabled",
+    "neptune-cluster-encrypted",
+    "neptune-cluster-iam-database-authentication",
+    "neptune-cluster-snapshot-encrypted",
+    "neptune-cluster-snapshot-public-prohibited",
+    "netfw-logging-enabled",
+    "netfw-policy-default-action-fragment-packets",
+    "netfw-policy-default-action-full-packets",
+    "rds-cluster-iam-authentication-enabled",
+    "rds-db-security-group-not-allowed",
+    "rds-in-backup-plan",
+    "rds-instance-iam-authentication-enabled",
+    "rds-resources-protected-by-backup-plan",
+    "redshift-backup-enabled",
+    "redshift-cluster-kms-enabled",
+    "redshift-enhanced-vpc-routing-enabled",
+    "restricted-ssh",
+    "s3-access-point-public-access-blocks",
+    "s3-account-level-public-access-blocks",
+    "s3-bucket-blacklisted-actions-prohibited",
+    "s3-bucket-default-lock-enabled",
+    "s3-bucket-mfa-delete-enabled",
+    "s3-bucket-policy-not-more-permissive",
+    "s3-bucket-versioning-enabled",
+    "s3-resources-protected-by-backup-plan",
+    "secretsmanager-scheduled-rotation-success-check",
+    "secretsmanager-secret-periodic-rotation",
+    "secretsmanager-secret-unused",
+    "security-account-information-provided",
+    "service-catalog-shared-within-organization",
+    "shield-drt-access",
+    "sns-topic-message-delivery-notiﬁcation-enabled",
+    "step-functions-state-machine-logging-enabled",
+    "transfer-family-server-no-ftp",
+    "waf-classic-logging-enabled",
+    "waf-global-rule-not-empty",
+    "waf-global-rulegroup-not-empty",
+    "waf-global-webacl-not-empty",
+    "wafv2-rulegroup-logging-enabled",
+    "wafv2-rulegroup-not-empty",
+    "wafv2-webacl-not-empty"
+  ],
+  "processing_metadata": {
+    "total_characters": 388744,
+    "total_lines": 2153,
+    "cleaned_lines": 1137
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "6c1edf8b-2f10-4592-95fe-71d22341aa63",
+  "control_id": "3.3.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 3.3.3\n\nDefined Approach Requirements:\nAdditional requirement for issuers and_ _companies that support issuing services and store_ _sensitive authentication data:_Any storage of sensitive authentication data is: Limited to that which is needed for a legitimate issuing business need and is secured. Encrypted using strong cryptography._This bullet is a_ _best practice until its effective date; refer to_ _Applicability Notes below for details._\n\nCustomized Approach Objective:\nSensitive authentication data is retained only as required to support issuing functions and is secured from unauthorized access. _(continued on next page)_\n\nTesting Procedures:\nTesting Procedure 3.3.3.a: **_Additional testing procedure for issuers_** **_and companies that support issuing services_** **_and store sensitive authentication data:_** Examine documented policies and interview personnel to verify there is a documented business justification for the storage of sensitive authentication data.\nTesting Procedure 3.3.3.b: **_Additional testing procedure for issuers_** **_and companies that support issuing services_** **_and store sensitive authentication data:_** Examine data stores and system configurations to verify that the sensitive authentication data is stored securely.\n\nGuidance:\nPurpose: Sad can be used by malicious individuals to increase the probability of successfully generating counterfeit payment cards and creating fraudulent transactions**. **. Good Practice: Entities should consider encrypting sad with a different cryptographic key than is used to encrypt pan. note that this does not mean that pan present in sad (as part of track data) would need to be separately encrypted.",
+  "requirement": "Additional requirement for issuers and_ _companies that support issuing services and store_ _sensitive authentication data:_Any storage of sensitive authentication data is: Limited to that which is needed for a legitimate issuing business need and is secured. Encrypted using strong cryptography._This bullet is a_ _best practice until its effective date; refer to_ _Applicability Notes below for details._",
+  "metadata": {
+    "control_id": "3.3.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "data_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "3"
+  }
+}

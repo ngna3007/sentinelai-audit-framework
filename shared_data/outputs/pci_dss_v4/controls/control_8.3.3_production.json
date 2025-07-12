@@ -1,0 +1,14 @@
+{
+  "id": "5ebdd53c-5c50-477b-a283-5d2f23892e87",
+  "control_id": "8.3.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.3.3\n\nDefined Approach Requirements:\nUser identity is verified before modifying any authentication factor.\n\nCustomized Approach Objective:\nUnauthorized individuals cannot gain system access by impersonating the identity of an authorized user.\n\nTesting Procedures:\nTesting Procedure 8.3.3: Examine procedures for modifying authentication factors and observe security personnel to verify that when a user requests a modification of an authentication factor, the user\u2019s identity is verified before the authentication factor is modified.\n\nGuidance:\nPurpose: Malicious individuals use \"social engineering\u201d techniques to impersonate a user of a system \u2014 for example, calling a help desk and acting as a legitimate user\u2014to have an authentication factor changed so they can use a valid user id. requiring positive identification of a user reduces the probability of this type of attack succeeding. Examples: Methods to verify a user\u2019s identity include a secret question/answer, knowledge-based information, and calling the user back at a known and previously established phone number. Good Practice: Modifications to authentication factors for which user identity should be verified include but are not limited to performing password resets, provisioning new hardware or software tokens, and generating new keys.",
+  "requirement": "User identity is verified before modifying any authentication factor.",
+  "metadata": {
+    "control_id": "8.3.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

@@ -1,0 +1,15 @@
+PCI DSS 4_0_1 Requirement Control 2.2.6
+
+Defined Approach Requirements:
+System security parameters are configured to prevent misuse.
+
+Customized Approach Objective:
+System components cannot be compromised because of incorrect security parameter configuration.
+
+Testing Procedures:
+Testing Procedure 2.2.6.a: Examine system configuration standards to verify they include configuring system security parameters to prevent misuse.
+Testing Procedure 2.2.6.b: Interview system administrators and/or security managers to verify they have knowledge of common security parameter settings for system components.
+Testing Procedure 2.2.6.c: Examine system configurations to verify that common security parameters are set appropriately and in accordance with the system configuration standards.
+
+Guidance:
+Purpose: Correctly configuring security parameters provided in system components takes advantage of the capabilities of the system component to defeat malicious attacks. Good Practice: System configuration standards and related processes should specifically address security settings and parameters that have known security implications for each type of system in use. for systems to be configured securely, personnel responsible for configuration and/or administering systems should be knowledgeable in the specific security parameters and settings that apply to the system. considerations should also include secure settings for parameters used to access cloud portals. Further Information: Refer to vendor documentation and industry references noted in requirement 2.2.1 for information about applicable security parameters for each type of system.

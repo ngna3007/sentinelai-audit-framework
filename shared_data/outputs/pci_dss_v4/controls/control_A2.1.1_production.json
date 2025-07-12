@@ -1,0 +1,14 @@
+{
+  "id": "0ba74b2c-a616-4853-8381-a1dff4e3e2a9",
+  "control_id": "A2.1.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control A2.1.1\n\nDefined Approach Requirements:\nWhere POS POI terminals at the merchant or payment acceptance location use SSL and/or early TLS, the entity confirms the devices are not susceptible to any known exploits for those protocols.\n\nCustomized Approach Objective:\nThis requirement is not eligible for the customized approach.\n\nApplicability Notes:\nThis requirement is intended to apply to the entity with the POS POI terminal, such as a merchant. This requirement is not intended for service providers who serve as the termination or connection point to those POS POI terminals. Requirements A2.1.2 and A2.1.3 apply to POS POI service providers. The allowance for POS POI terminals that are not currently susceptible to exploits is based on currently known risks. If new exploits are introduced to which POS POI terminals are susceptible, the POS POI terminals will need to be updated immediately.",
+  "requirement": "Where POS POI terminals at the merchant or payment acceptance location use SSL and/or early TLS, the entity confirms the devices are not susceptible to any known exploits for those protocols.",
+  "metadata": {
+    "control_id": "A2.1.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "appendix",
+    "has_testing_procedures": false,
+    "requirements_id": "A2"
+  }
+}

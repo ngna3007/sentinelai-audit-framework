@@ -1,0 +1,14 @@
+{
+  "id": "4de1a5ae-493a-4262-9597-2c3b7726cde9",
+  "control_id": "11.4.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 11.4.3\n\nDefined Approach Requirements:\nExternal penetration testing is performed: Per the entity\u2019s defined methodology At least once every 12 months After any significant infrastructure or application upgrade or change By a qualified internal resource or qualified external third party Organizational independence of the tester exists (not required to be a QSA or ASV)\n\nCustomized Approach Objective:\nExternal system defenses are verified by technical testing according to the entity\u2019s defined methodology as frequently as needed to address evolving and new attacks and threats, and to ensure that significant changes do not introduce unknown vulnerabilities.\n\nTesting Procedures:\nTesting Procedure 11.4.3.a: Examine the scope of work and results from the most recent external penetration test to verify that penetration testing is performed according to all elements specified in this requirement.\nTesting Procedure 11.4.3.b: Interview personnel to verify that the external penetration test was performed by a qualified internal resource or qualified external third party and that organizational independence of the tester exists (not required to be a QSA or ASV).\n\nGuidance:\nGood Practice: Some considerations when choosing a qualified resource to perform penetration testing include: specific penetration testing certifications, which may be an indication of the tester\u2019s skill level and competence. prior experience conducting penetration testing\u2014for example, the number of years of experience, and the type and scope of prior engagements can help confirm whether the tester\u2019s experience is appropriate for the needs of the engagement. Further Information: Refer to the_information supplement: penetration_ _testing guidance_ on the pci ssc website for additional guidance.",
+  "requirement": "External penetration testing is performed: Per the entity\u2019s defined methodology At least once every 12 months After any significant infrastructure or application upgrade or change By a qualified internal resource or qualified external third party Organizational independence of the tester exists (not required to be a QSA or ASV)",
+  "metadata": {
+    "control_id": "11.4.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "security_testing",
+    "has_testing_procedures": true,
+    "requirements_id": "11"
+  }
+}

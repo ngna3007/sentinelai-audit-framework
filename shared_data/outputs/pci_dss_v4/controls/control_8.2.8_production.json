@@ -1,0 +1,14 @@
+{
+  "id": "e3c3621c-a719-48c1-9d31-afc1b6ff9fbf",
+  "control_id": "8.2.8",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.2.8\n\nDefined Approach Requirements:\nIf a user session has been idle for more than 15 minutes, the user is required to re-authenticate to re-activate the terminal or session.\n\nCustomized Approach Objective:\nA user session cannot be used except by the authorized user.\n\nApplicability Notes:\nThis requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. This requirement is not meant to prevent legitimate activities from being performed while the console/PC is unattended.\n\nTesting Procedures:\nTesting Procedure 8.2.8: Examine system configuration settings to verify that system/session idle timeout features for user sessions have been set to 15 minutes or less.\n\nGuidance:\nPurpose: When users walk away from an open machine with access to system components or cardholder data, there is a risk that the machine may be used by others in the user\u2019s absence, resulting in unauthorized account access and/or misuse. Examples: One way to meet this requirement is to configure an automated screensaver to launch whenever the console is idle for 15 minutes and requiring the logged-in user to enter their password to unlock the screen. Good Practice: The re-authentication can be applied either at the system level to protect all sessions running on that machine or at the application level. entities may also want to consider staging controls in succession to further restrict the access of an unattended session as time passes. for example, the screensaver may activate after 15 minutes and log off the user after an hour. however, timeout controls must balance the risk of access and exposure with the impact to the user and purpose of the access. if a user needs to run a program from an unattended computer, the user can log in to the computer to initiate the program, and then \u201clock\u201d the computer so that no one else can use the user\u2019s login while the computer is unattended.",
+  "requirement": "If a user session has been idle for more than 15 minutes, the user is required to re-authenticate to re-activate the terminal or session.",
+  "metadata": {
+    "control_id": "8.2.8",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "user_identification",
+    "has_testing_procedures": true,
+    "requirements_id": "8"
+  }
+}

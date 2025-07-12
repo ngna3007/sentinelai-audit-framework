@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control A3.2.2.1
+
+Defined Approach Requirements:
+Upon completion of a change, all relevant PCI DSS requirements are confirmed to be implemented on all new or changed systems and networks, and documentation is updated as applicable. PCI DSS Reference: _Scope of PCI DSS_ _Requirements; Requirement 1-12_
+
+Customized Approach Objective:
+This requirement is not eligible for the customized approach.
+
+Testing Procedures:
+Testing Procedure A3.2.2.1: Examine change records and the affected systems/networks, and interview personnel to verify that all relevant PCI DSS requirements were confirmed to be implemented and documentation updated as part of the change.
+
+Guidance:
+Purpose: It is important to have processes to analyze all changes made to systems or networks, to ensure that all appropriate pci dss controls are applied to any systems or networks added to the in-scope environment due to a change. building this validation into change management processes helps ensure that device inventories and configuration standards are kept up to date, and security controls are applied where needed. Examples: Pci dss requirements that should be verified include, but are not limited to: network diagrams are updated to reflect changes. systems are configured per configuration standards, with all default passwords changed and unnecessary services disabled. systems are protected with required controls—for example, file integrity monitoring, antimalware, patches, and audit logging. sensitive authentication data is not stored, and all account data storage is documented and incorporated into data-retention policy and procedures. new systems are included in the quarterly vulnerability scanning process. Good Practice: A change management process should include supporting evidence that pci dss requirements are implemented or preserved through an iterative process.

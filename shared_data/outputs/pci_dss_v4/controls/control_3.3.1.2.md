@@ -1,0 +1,16 @@
+PCI DSS 4_0_1 Requirement Control 3.3.1.2
+
+Defined Approach Requirements:
+The card verification code is not stored upon completion of the authorization process.
+
+Customized Approach Objective:
+This requirement is not eligible for the customized approach.
+
+Applicability Notes:
+The card verification code is the three- or four-digit number printed on the front or back of a payment card used to verify card-not-present transactions.
+
+Testing Procedures:
+Testing Procedure 3.3.1.2: Examine data sources, to verify that the card verification code is not stored upon completion of the authorization process.
+
+Guidance:
+Purpose: If card verification code data is stolen, malicious individuals can execute fraudulent internet and mail- order/telephone-order (mo/to) transactions. not storing this data reduces the probability of it being compromised. Examples: If card verification codes are stored on paper media prior to completion of authorization, a method of erasing or covering the codes should prevent them from being read after authorization is complete. example methods of rendering the codes unreadable include removing the code with scissors and applying a suitably opaque and un-removable marker over the code. data sources to review to ensure that the card verification code is not retained upon completion of the authorization process include, but are not limited to: incoming transaction data. all logs (for example, transaction, history, debugging, error). history files. trace files. database schemas. contents of databases, and on-premise and cloud data stores. any existing memory/crash dump files.

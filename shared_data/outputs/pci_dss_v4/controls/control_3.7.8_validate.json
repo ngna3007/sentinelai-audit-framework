@@ -1,0 +1,46 @@
+{
+  "control_id": "3.7.8",
+  "sections": {
+    "purpose": true,
+    "examples": false,
+    "good_practice": false,
+    "requirements": true,
+    "testing_procedures": true,
+    "customized_approach": true,
+    "applicability_notes": false,
+    "definitions": false,
+    "further_information": true
+  },
+  "row_count": 6,
+  "table_count": 2,
+  "spans_multiple_tables": true,
+  "token_count": 322,
+  "content_length_chars": 1289,
+  "content_lines": 14,
+  "has_testing_procedures": true,
+  "has_guidance": true,
+  "has_requirements": true,
+  "table_sources": [
+    {
+      "table_index": 0,
+      "start_line": 2662,
+      "end_line": 2669,
+      "header": "|Requirements and Testing Procedures|Col2|Guidance|",
+      "row_count": 5
+    },
+    {
+      "table_index": 1,
+      "start_line": 2675,
+      "end_line": 2683,
+      "header": "|Requirements and Testing Procedures|Col2|Guidance|",
+      "row_count": 6
+    }
+  ],
+  "quality_analysis": {
+    "quality_score": 88,
+    "max_score": 100,
+    "quality_percentage": 88.0,
+    "issues": [],
+    "recommendations": []
+  }
+}

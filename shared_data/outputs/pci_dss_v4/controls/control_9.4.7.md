@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 9.4.7
+
+Defined Approach Requirements:
+Electronic media with cardholder data is destroyed when no longer needed for business or legal reasons via one of the following: The electronic media is destroyed. The cardholder data is rendered unrecoverable so that it cannot be reconstructed.
+
+Customized Approach Objective:
+Cardholder data cannot be recovered from media that has been erased or destroyed.
+
+Applicability Notes:
+These requirements for media destruction when that media is no longer needed for business or legal reasons are separate and distinct from PCI DSS Requirement 3.2.1, which is for securely deleting cardholder data when no longer needed per the entity’s cardholder data retention policies.
+
+Testing Procedures:
+Testing Procedure 9.4.7.a: Examine the media destruction policy to verify that procedures are defined to destroy electronic media when no longer needed for business or legal reasons in accordance with all elements specified in this requirement.
+Testing Procedure 9.4.7.b: Observe the media destruction process and interview responsible personnel to verify that electronic media with cardholder data is destroyed via one of the methods specified in this requirement.
+
+Guidance:
+Purpose: If steps are not taken to destroy information contained on electronic media when no longer needed, malicious individuals may retrieve information from the disposed media, leading to a data compromise. for example, malicious individuals may use a technique known as “dumpster diving,” where they search through trashcans and recycle bins looking for information they can use to launch an attack. Examples: Methods for securely destroying electronic media include secure wiping in accordance with industry-accepted standards for secure deletion, degaussing, or physical destruction (such as grinding or shredding hard disks). Good Practice: The deletion function in most operating systems allows deleted data to be recovered, so instead, a dedicated secure deletion function or application should be used to make data unrecoverable. Further Information: See_nist special publication 800-88, revision 1:_ _guidelines for media sanitization_.

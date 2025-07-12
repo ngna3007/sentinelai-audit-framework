@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 8.3.10
+
+Defined Approach Requirements:
+Additional requirement for service_ _providers only:_ If passwords/passphrases are used as the only authentication factor for customer user access to cardholder data (i.e., in any single- factor authentication implementation), then guidance is provided to customer users including: Guidance for customers to change their user passwords/passphrases periodically. Guidance as to when, and under what circumstances, passwords/passphrases are to be changed.
+
+Customized Approach Objective:
+Passwords/passphrases for service providers’ customers cannot be used indefinitely.
+
+Applicability Notes:
+This requirement applies only when the entity being assessed is a service provider. This requirement does not apply to accounts of consumer users accessing their own payment card information. _This requirement for service providers will be_ _superseded by Requirement 8.3.10.1 once 8.3.10.1_ _becomes effective._
+
+Guidance:
+Purpose: Using a password/passphrase as the only authentication factor provides a single point of failure if compromised. therefore, in these implementations, controls are needed to minimize how long malicious activity could occur via a compromised password/passphrase. Good Practice: Passwords/passphrases that are valid for a long time without a change provide malicious individuals with more time to break the password/phrase. periodically changing passwords offers less time for a malicious individual to crack a password/passphrase and less time to use a compromised password.

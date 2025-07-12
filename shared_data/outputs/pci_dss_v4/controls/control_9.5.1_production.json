@@ -1,0 +1,14 @@
+{
+  "id": "e53326e4-cd56-4497-9b52-76acba856d87",
+  "control_id": "9.5.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.5.1\n\nDefined Approach Requirements:\nPOI devices that capture payment card data via direct physical interaction with the payment card form factor are protected from tampering and unauthorized substitution, including the following: Maintaining a list of POI devices. Periodically inspecting POI devices to look for tampering or unauthorized substitution. Training personnel to be aware of suspicious behavior and to report tampering or unauthorized substitution of devices.\n\nCustomized Approach Objective:\nThe entity has defined procedures to protect and manage point-of-interaction devices. Expectations, controls, and oversight for the management and protection of POI devices are defined and adhered to by affected personnel.\n\nTesting Procedures:\nTesting Procedure 9.5.1: Examine documented policies and procedures to verify that processes are defined that include all elements specified in this requirement.\nTesting Procedure 9.5.1: POI devices that capture payment card data via direct physical interaction with the payment card form factor are protected from tampering and unauthorized substitution, including the following: Maintaining a list of POI devices. Periodically inspecting POI devices to look for tampering or unauthorized substitution. Training personnel to be aware of suspicious behavior and to report tampering or unauthorized substitution of devices.",
+  "requirement": "POI devices that capture payment card data via direct physical interaction with the payment card form factor are protected from tampering and unauthorized substitution, including the following: Maintaining a list of POI devices. Periodically inspecting POI devices to look for tampering or unauthorized substitution. Training personnel to be aware of suspicious behavior and to report tampering or unauthorized substitution of devices.",
+  "metadata": {
+    "control_id": "9.5.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

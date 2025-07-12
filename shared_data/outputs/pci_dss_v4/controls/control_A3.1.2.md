@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control A3.1.2
+
+Defined Approach Requirements:
+A formal PCI DSS compliance program is in place that includes: Definition of activities for maintaining and monitoring overall PCI DSS compliance, including business-as-usual activities. Annual PCI DSS assessment processes. Processes for the continuous validation of PCI DSS requirements (for example, daily, weekly, every three months, as applicable per the requirement). A process for performing business-impact analysis to determine potential PCI DSS impacts for strategic business decisions. PCI DSS Reference: _Requirements 1-12_
+
+Customized Approach Objective:
+This requirement is not eligible for the customized approach.
+
+Testing Procedures:
+Testing Procedure A3.1.2.a: Examine information security policies and procedures to verify that processes are defined for a formal PCI DSS compliance program that includes all elements specified in this requirement.
+Testing Procedure A3.1.2.b: Interview personnel and observe compliance activities to verify that a formal PCI DSS compliance program is implemented in accordance with all elements specified in this requirement.
+
+Guidance:
+Purpose: A formal compliance program allows an organization to monitor the health of its security controls, be proactive if a control fails, and effectively communicate activities and compliance status throughout the organization. Examples: Methodologies that support the management of compliance programs include plan-do-check-act (pdca), iso 27001, cobit, dmaic, and six sigma. Good Practice: The pci dss compliance program can be a dedicated program or part of overarching compliance and/or governance program, and should include a well-defined methodology that demonstrates consistent and effective evaluation. strategic business decisions that should be analyzed for potential pci dss impacts may include mergers and acquisitions, new technology purchases, or new payment-acceptance channels. Definitions: Maintaining and monitoring an organization’s overall pci dss compliance includes identifying activities to be performed daily, weekly, monthly, every three months, or annually, and ensuring these activities are being performed accordingly (for example, using a security self-assessment or pdca methodology).

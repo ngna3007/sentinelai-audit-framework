@@ -1,0 +1,14 @@
+{
+  "id": "2c48d007-ef46-43a1-8e41-eaa7e16bdc86",
+  "control_id": "10.3.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.3.1\n\nDefined Approach Requirements:\nRead access to audit logs files is limited to those with a job-related need.\n\nCustomized Approach Objective:\nStored activity records cannot be accessed by unauthorized personnel.\n\nTesting Procedures:\nTesting Procedure 10.3.1: Interview system administrators and examine system configurations and privileges to verify that only individuals with a job-related need have read access to audit log files.",
+  "requirement": "Read access to audit logs files is limited to those with a job-related need.",
+  "metadata": {
+    "control_id": "10.3.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

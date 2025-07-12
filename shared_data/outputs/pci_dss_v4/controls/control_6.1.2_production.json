@@ -1,0 +1,14 @@
+{
+  "id": "80c81e39-c894-4e96-b6aa-987f3340b011",
+  "control_id": "6.1.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 6.1.2\n\nDefined Approach Requirements:\nRoles and responsibilities for performing activities in Requirement 6 are documented, assigned, and understood.\n\nCustomized Approach Objective:\nDay-to-day responsibilities for performing all the activities in Requirement 6 are allocated. Personnel are accountable for successful, continuous operation of these requirements.\n\nTesting Procedures:\nTesting Procedure 6.1.2.a: Examine documentation to verify that descriptions of roles and responsibilities for performing activities in Requirement 6 are documented and assigned.\nTesting Procedure 6.1.2.b: Interview personnel responsible for performing activities in Requirement 6 to verify that roles and responsibilities are assigned as documented and are understood.\n\nGuidance:\nPurpose: If roles and responsibilities are not formally assigned, systems will not be securely maintained, and their security level will be reduced. Examples: A method to document roles and responsibilities is a responsibility assignment matrix that includes who is responsible, accountable, consulted, and informed (also called a raci matrix). Good Practice: Roles and responsibilities may be documented within policies and procedures or maintained within separate documents. as part of communicating roles and responsibilities, entities can consider having personnel acknowledge their acceptance and understanding of their assigned roles and responsibilities.",
+  "requirement": "Roles and responsibilities for performing activities in Requirement 6 are documented, assigned, and understood.",
+  "metadata": {
+    "control_id": "6.1.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "secure_development",
+    "has_testing_procedures": true,
+    "requirements_id": "6"
+  }
+}

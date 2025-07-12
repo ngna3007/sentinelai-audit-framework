@@ -1,0 +1,14 @@
+{
+  "id": "72f804d6-dc80-4b7a-83a9-ae3997a64dd3",
+  "control_id": "9.2.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.2.1\n\nDefined Approach Requirements:\nAppropriate facility entry controls are in place to restrict physical access to systems in the CDE.\n\nCustomized Approach Objective:\nSystem components in the CDE cannot be physically accessed by unauthorized personnel.\n\nApplicability Notes:\nThis requirement does not apply to locations that are publicly accessible by consumers (cardholders).\n\nTesting Procedures:\nTesting Procedure 9.2.1: Observe entry controls and interview responsible personnel to verify that physical security controls are in place to restrict access to systems in the CDE.\n\nGuidance:\nPurpose: Without physical access controls, unauthorized persons could potentially gain access to the cde and sensitive information, or could alter system configurations, introduce vulnerabilities into the network, or destroy or steal equipment. therefore, the purpose of this requirement is that physical access to the cde is controlled via physical security controls such as badge readers or other mechanisms such as lock and key. Examples: Facility entry controls include physical security controls at each computer room, data center, and other physical areas with systems in the cde. it can also include badge readers or other devices that manage physical access controls, such as lock and key with a current list of all individuals holding the keys. Good Practice: Whichever mechanism meets this requirement, it must be sufficient for the organization to verify that only authorized personnel are granted access.",
+  "requirement": "Appropriate facility entry controls are in place to restrict physical access to systems in the CDE.",
+  "metadata": {
+    "control_id": "9.2.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

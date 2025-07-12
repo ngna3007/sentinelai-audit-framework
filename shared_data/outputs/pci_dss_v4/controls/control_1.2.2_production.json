@@ -1,0 +1,14 @@
+{
+  "id": "6a7698ab-ca08-4748-a74e-a9cd69c956fe",
+  "control_id": "1.2.2",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 1.2.2\n\nDefined Approach Requirements:\nAll changes to network connections and to configurations of NSCs are approved and managed in accordance with the change control process defined at Requirement 6.5.1.\n\nCustomized Approach Objective:\nChanges to network connections and NSCs cannot result in misconfiguration, implementation of insecure services, or unauthorized network connections.\n\nApplicability Notes:\nChanges to network connections include the addition, removal, or modification of a connection. Changes to NSC configurations include those related to the component itself as well as those affecting how it performs its security function.\n\nTesting Procedures:\nTesting Procedure 1.2.2.a: Examine documented procedures to verify that changes to network connections and configurations of NSCs are included in the formal change control process in accordance with Requirement 6.5.1.\nTesting Procedure 1.2.2.b: Examine network configuration settings to identify changes made to network connections. Interview responsible personnel and examine change control records to verify that identified changes to network connections were approved and managed in accordance with Requirement 6.5.1.\nTesting Procedure 1.2.2.c: Examine network configuration settings to identify changes made to configurations of NSCs. Interview responsible personnel and examine change control records to verify that identified changes to configurations of NSCs were approved and managed in accordance with Requirement 6.5.1.\n\nGuidance:\nPurpose: Following a structured change control process for all changes to nscs reduces the risk that a change could introduce a security vulnerability. Good Practice: Changes should be approved by individuals with the appropriate authority and knowledge to understand the impact of the change. verification should provide reasonable assurance that the change did not adversely impact the security of the network and that the change performs as expected. to avoid having to address security issues introduced by a change, all changes should be approved prior to being implemented and verified after the change is implemented. once approved and verified, network documentation should be updated to include the changes to prevent inconsistencies between network documentation and the actual configuration.",
+  "requirement": "All changes to network connections and to configurations of NSCs are approved and managed in accordance with the change control process defined at Requirement 6.5.1.",
+  "metadata": {
+    "control_id": "1.2.2",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "network_security",
+    "has_testing_procedures": true,
+    "requirements_id": "1"
+  }
+}

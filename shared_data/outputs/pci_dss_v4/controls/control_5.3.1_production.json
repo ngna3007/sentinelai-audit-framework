@@ -1,0 +1,14 @@
+{
+  "id": "952dfb61-d7fd-4225-8238-a7e598077fe2",
+  "control_id": "5.3.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 5.3.1\n\nDefined Approach Requirements:\nThe anti-malware solution(s) is kept current via automatic updates.\n\nCustomized Approach Objective:\nAnti-malware mechanisms can detect and address the latest malware threats.\n\nTesting Procedures:\nTesting Procedure 5.3.1.a: Examine anti-malware solution(s) configurations, including any master installation of the software, to verify the solution is configured to perform automatic updates.\nTesting Procedure 5.3.1.b: Examine system components and logs, to verify that the anti-malware solution(s) and definitions are current and have been promptly deployed\n\nGuidance:\nPurpose: For an anti-malware solution to remain effective, it needs to have the latest security updates, signatures, threat analysis engines, and any other malware protections on which the solution relies. having an automated update process avoids burdening end users with responsibility for manually installing updates and provides greater assurance that anti-malware protection mechanisms are updated as quickly as possible after an update is released. Good Practice: Anti-malware mechanisms should be updated via a trusted source as soon as possible after an update is available. using a trusted common source to distribute updates to end-user systems helps ensure the integrity and consistency of the solution architecture. updates may be automatically downloaded to a central location\u2014for example, to allow for testing\u2014 prior to being deployed to individual system components.",
+  "requirement": "The anti-malware solution(s) is kept current via automatic updates.",
+  "metadata": {
+    "control_id": "5.3.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "malware_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "5"
+  }
+}

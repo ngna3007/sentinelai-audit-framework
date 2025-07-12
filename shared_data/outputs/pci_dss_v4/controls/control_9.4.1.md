@@ -1,0 +1,10 @@
+PCI DSS 4_0_1 Requirement Control 9.4.1
+
+Defined Approach Requirements:
+All media with cardholder data is physically secured.
+
+Customized Approach Objective:
+Media with cardholder data cannot be accessed by unauthorized personnel.
+
+Guidance:
+Purpose: If stored in a non-secured facility, backups containing cardholder data may easily be lost, stolen, or copied for malicious intent. Good Practice: For secure storage of backup media, a good practice is to store media in an off-site facility, such as an alternate or backup site or commercial storage facility.

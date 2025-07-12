@@ -1,0 +1,13 @@
+PCI DSS 4_0_1 Requirement Control 11.3.1
+
+Defined Approach Requirements:
+Internal vulnerability scans are performed as follows: At least once every three months. Vulnerabilities that are either high-risk or critical (according to the entity’s vulnerability risk rankings defined at Requirement 6.3.1) are resolved. Rescans are performed that confirm all high-risk and all critical vulnerabilities (as noted above) have been resolved. Scan tool is kept up to date with latest vulnerability information. Scans are performed by qualified personnel and organizational independence of the tester exists.
+
+Testing Procedures:
+Testing Procedure 11.3.1.a: Examine internal scan report results from the last 12 months to verify that internal scans occurred at least once every three months in the most recent 12-month period.
+Testing Procedure 11.3.1.b: Examine internal scan report results from each scan and rescan run in the last 12 months to verify that all high-risk vulnerabilities and all critical vulnerabilities (defined in PCI DSS Requirement 6.3.1) are resolved.
+Testing Procedure 11.3.1.c: Examine scan tool configurations and interview personnel to verify that the scan tool is kept up to date with the latest vulnerability information.
+Testing Procedure 11.3.1.d: Interview responsible personnel to verify that the scan was performed by a qualified internal resource(s) or qualified external third party and that organizational independence of the tester exists.
+
+Guidance:
+Definitions: A vulnerability scan is a combination of automated tools, techniques, and/or methods run against external and internal devices and servers, designed to expose potential vulnerabilities in applications, operating systems, and network devices that could be found and exploited by malicious individuals.

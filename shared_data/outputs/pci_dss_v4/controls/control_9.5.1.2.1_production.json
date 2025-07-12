@@ -1,0 +1,14 @@
+{
+  "id": "dcca511c-4631-4c0e-a734-52dd8cda7d70",
+  "control_id": "9.5.1.2.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.5.1.2.1\n\nDefined Approach Requirements:\nThe frequency of periodic POI device inspections and the type of inspections performed is defined in the entity\u2019s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1.\n\nCustomized Approach Objective:\nPOI devices are inspected at a frequency that addresses the entity\u2019s risk.\n\nApplicability Notes:\n_This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._\n\nTesting Procedures:\nTesting Procedure 9.5.1.2.1.a: Examine the entity\u2019s targeted risk analysis for the frequency of periodic POI device inspections and type of inspections performed to verify the risk analysis was performed in accordance with all elements specified in Requirement 12.3.1.\nTesting Procedure 9.5.1.2.1.b: Examine documented results of periodic device inspections and interview personnel to verify that the frequency and type of POI device inspections performed match what is defined in the entity\u2019s targeted risk analysis conducted for this requirement.\nTesting Procedure 9.5.1.2.1: The frequency of periodic POI device inspections and the type of inspections performed is defined in the entity\u2019s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1.\n\nGuidance:\nPurpose: Entities are best placed to determine the frequency of poi device inspections based on the environment in which the device operates. Good Practice: The frequency of inspections will depend on factors such as the location of a device and whether the device is attended or unattended. for example, devices left in public areas without supervision by the organization\u2019s personnel might have more frequent inspections than devices kept in secure areas or supervised when accessible to the public. in addition, many poi vendors include guidance in their user documentation about how often poi devices should be checked, and for what \u2013 entities should consult their vendors\u2019 documentation and incorporate those recommendations into their periodic inspections.",
+  "requirement": "The frequency of periodic POI device inspections and the type of inspections performed is defined in the entity\u2019s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1.",
+  "metadata": {
+    "control_id": "9.5.1.2.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

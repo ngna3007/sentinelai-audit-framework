@@ -1,0 +1,14 @@
+{
+  "id": "04945f63-ce48-487b-9c7a-c0d9472eb229",
+  "control_id": "A1.1.4",
+  "chunk": "PCI DSS 4_0_1 Requirement Control A1.1.4\n\nDefined Approach Requirements:\nThe effectiveness of logical separation controls used to separate customer environments is confirmed at least once every six months via penetration testing.\n\nCustomized Approach Objective:\nSegmentation of customer environments from other environments is periodically validated to be effective.\n\nApplicability Notes:\nThe testing of adequate separation between customers in a multi-tenant service provider environment is in addition to the penetration tests specified in Requirement 11.4.6. _This requirement is a best practice until 31_ _March 2025, after which it will be required and_ _must be fully considered during a PCI DSS_ _assessment._\n\nTesting Procedures:\nTesting Procedure A1.1.4: Examine the results from the most recent penetration test to verify that testing confirmed the effectiveness of logical separation controls used to separate customer environments.\n\nGuidance:\nPurpose: Multi-tenant services providers are responsible for managing the segmentation between their customers. without technical assurance that segmentation controls are effective, it is possible that changes to the service provider\u2019s technology would inadvertently create a vulnerability that could be exploited across all the service provider\u2019s customers. Good Practice: Effectiveness of separation techniques can be confirmed by using service-provider-created temporary (mock-up) environments that represent customer environments and attempting to 1) access one temporary environment from another environment, and 2) access a temporary environment from the internet.",
+  "requirement": "The effectiveness of logical separation controls used to separate customer environments is confirmed at least once every six months via penetration testing.",
+  "metadata": {
+    "control_id": "A1.1.4",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "appendix",
+    "has_testing_procedures": true,
+    "requirements_id": "A1"
+  }
+}

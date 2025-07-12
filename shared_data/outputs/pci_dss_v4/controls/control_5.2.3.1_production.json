@@ -1,0 +1,14 @@
+{
+  "id": "87cc3a83-1a1a-4c67-b4d4-25a21b6017bd",
+  "control_id": "5.2.3.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 5.2.3.1\n\nDefined Approach Requirements:\nThe frequency of periodic evaluations of system components identified as not at risk for malware is defined in the entity\u2019s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1.\n\nCustomized Approach Objective:\nSystems not known to be at risk from malware are re-evaluated at a frequency that addresses the entity\u2019s risk.\n\nApplicability Notes:\n_This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._\n\nTesting Procedures:\nTesting Procedure 5.2.3.1.a: Examine the entity\u2019s targeted risk analysis for the frequency of periodic evaluations of system components identified as not at risk for malware to verify the risk analysis was performed in accordance with all elements specified in Requirement 12.3.1.\nTesting Procedure 5.2.3.1.b: Examine documented results of periodic evaluations of system components identified as not at risk for malware and interview personnel to verify that evaluations are performed at the frequency defined in the entity\u2019s targeted risk analysis performed for this requirement.\n\nGuidance:\nPurpose: Entities determine the optimum period to undertake the evaluation based on criteria such as the complexity of each entity\u2019s environment and the number of types of systems that are required to be evaluated.",
+  "requirement": "The frequency of periodic evaluations of system components identified as not at risk for malware is defined in the entity\u2019s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1.",
+  "metadata": {
+    "control_id": "5.2.3.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "malware_protection",
+    "has_testing_procedures": true,
+    "requirements_id": "5"
+  }
+}

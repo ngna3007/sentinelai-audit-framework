@@ -1,0 +1,14 @@
+{
+  "id": "05ea172e-38ad-4fd8-994e-4ce519a10ea4",
+  "control_id": "9.2.3",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.2.3\n\nDefined Approach Requirements:\nPhysical access to wireless access points, gateways, networking/communications hardware, and telecommunication lines within the facility is restricted.\n\nCustomized Approach Objective:\nPhysical networking equipment cannot be accessed by unauthorized personnel.\n\nTesting Procedures:\nTesting Procedure 9.2.3: Interview responsible personnel and observe locations of hardware and lines to verify that physical access to wireless access points, gateways, networking/communications hardware, and telecommunication lines within the facility is restricted.",
+  "requirement": "Physical access to wireless access points, gateways, networking/communications hardware, and telecommunication lines within the facility is restricted.",
+  "metadata": {
+    "control_id": "9.2.3",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "physical_access",
+    "has_testing_procedures": true,
+    "requirements_id": "9"
+  }
+}

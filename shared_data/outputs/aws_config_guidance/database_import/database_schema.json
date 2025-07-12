@@ -1,0 +1,74 @@
+{
+  "table_name": "aws_config_rules_guidance",
+  "description": "AWS Config Rules with guidance for compliance management",
+  "columns": [
+    {
+      "name": "id",
+      "type": "UUID",
+      "description": "Unique rule identifier (generated UUID)",
+      "constraints": [
+        "PRIMARY KEY",
+        "NOT NULL"
+      ]
+    },
+    {
+      "name": "config_rule",
+      "type": "VARCHAR(100)",
+      "description": "AWS Config rule name",
+      "constraints": [
+        "NOT NULL"
+      ]
+    },
+    {
+      "name": "chunk",
+      "type": "TEXT",
+      "description": "Combined rule description and guidance",
+      "constraints": [
+        "NOT NULL"
+      ]
+    },
+    {
+      "name": "metadata",
+      "type": "JSONB",
+      "description": "Structured metadata including guidance and service",
+      "constraints": [
+        "NOT NULL"
+      ]
+    }
+  ],
+  "indexes": [
+    {
+      "name": "idx_id",
+      "type": "PRIMARY",
+      "columns": [
+        "id"
+      ]
+    },
+    {
+      "name": "idx_config_rule",
+      "type": "UNIQUE",
+      "columns": [
+        "config_rule"
+      ],
+      "description": "Unique index for config rule lookups"
+    },
+    {
+      "name": "idx_metadata_gin",
+      "type": "GIN",
+      "columns": [
+        "metadata"
+      ],
+      "description": "GIN index for efficient JSON queries"
+    }
+  ],
+  "sample_queries": [
+    "-- Get all rules for a specific service",
+    "SELECT config_rule, metadata->>'guidance' FROM aws_config_rules WHERE metadata->>'service' = 'ec2';",
+    "",
+    "-- Full text search in rule content",
+    "SELECT config_rule FROM aws_config_rules WHERE chunk ILIKE '%encryption%';",
+    "",
+    "-- Get rules with specific guidance patterns",
+    "SELECT config_rule FROM aws_config_rules WHERE metadata->>'guidance' ILIKE '%backup%';"
+  ]
+}

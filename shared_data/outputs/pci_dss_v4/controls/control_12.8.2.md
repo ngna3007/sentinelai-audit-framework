@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control 12.8.2
+
+Defined Approach Requirements:
+Written agreements with TPSPs are maintained as follows: Written agreements are maintained with all TPSPs with which account data is shared or that could affect the security of the CDE. Written agreements include acknowledgments from TPSPs that TPSPs are responsible for the security of account data the TPSPs possess or otherwise store, process, or transmit on behalf of the entity, or to the extent that the TPSP could impact the security of the entity’s cardholder data and/or sensitive authentication data.
+
+Customized Approach Objective:
+Records are maintained of each TPSP’s acknowledgment of its responsibility to protect account data.
+
+Testing Procedures:
+Testing Procedure 12.8.2.a: Examine policies and procedures to verify that processes are defined to maintain written agreements with all TPSPs in accordance with all elements specified in this requirement.
+Testing Procedure 12.8.2.b: Examine written agreements with TPSPs to verify they are maintained in accordance with all elements as specified in this requirement.
+
+Guidance:
+Purpose: The written acknowledgment from a tpsp demonstrates its commitment to maintaining proper security of account data that it obtains from its customers and that the tpsp is fully aware of the assets that could be affected during the provisioning of the tpsp’s service. the extent to which a specific tpsp is responsible for the security of account data will depend on the service provided and the responsibilities agreed between the provider and assessed entity (the customer). in conjunction with requirement 12.9.1, this requirement is intended to promote a consistent level of understanding between parties about their applicable pci dss responsibilities. for example, the agreement may include the applicable pci dss requirements to be maintained as part of the provided service. Good Practice: The entity may also want to consider including in their written agreement with a tpsp that the tpsp will support the entity’s request for information per requirement 12.9.2. entities will also want to understand whether any tpsps have “nested” relationships with other tpsps, meaning the primary tpsp contracts with another tpsp(s) for the purposes of providing a service. it is important to understand whether the primary tpsp is relying on the secondary tpsp(s) to achieve overall compliance of a service, and what types of written agreements the primary tpsp has in place with the secondary tpsps. entities can consider including coverage in their written agreement for any “nested” tpsps a primary tpsp may use. Further Information: Refer to the_information supplement: third-party_ _security assurance_ for further guidance.

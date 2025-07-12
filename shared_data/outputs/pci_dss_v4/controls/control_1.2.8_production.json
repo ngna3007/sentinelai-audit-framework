@@ -1,0 +1,14 @@
+{
+  "id": "73e8bd9d-d459-44eb-9d82-b6787831822d",
+  "control_id": "1.2.8",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 1.2.8\n\nDefined Approach Requirements:\nConfiguration files for NSCs are: Secured from unauthorized access. Kept consistent with active network configurations.\n\nCustomized Approach Objective:\nNSCs cannot be defined or modified using untrusted configuration objects (including files).\n\nApplicability Notes:\nAny file or setting used to configure or synchronize NSCs is considered to be a \u201cconfiguration file.\u201d This includes files, automated and system-based controls, scripts, settings, infrastructure as code, or other parameters that are backed up, archived, or stored remotely.\n\nTesting Procedures:\nTesting Procedure 1.2.8: Examine configuration files for NSCs to verify they are in accordance with all elements specified in this requirement.\n\nGuidance:\nPurpose: To prevent unauthorized configurations from being applied to the network, stored files with configurations for network controls need to be kept up to date and secured against unauthorized changes. keeping configuration information current and secure ensures that the correct settings for nscs are applied whenever the configuration is run. Examples: If the secure configuration for a router is stored in non-volatile memory, when that router is restarted or rebooted, these controls should ensure that its secure configuration is reinstated.",
+  "requirement": "Configuration files for NSCs are: Secured from unauthorized access. Kept consistent with active network configurations.",
+  "metadata": {
+    "control_id": "1.2.8",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "network_security",
+    "has_testing_procedures": true,
+    "requirements_id": "1"
+  }
+}

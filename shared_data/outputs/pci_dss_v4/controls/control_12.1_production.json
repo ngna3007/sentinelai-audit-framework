@@ -1,0 +1,14 @@
+{
+  "id": "288b6954-0156-4de6-a751-f421ed9aab63",
+  "control_id": "12.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.1\n\nDefined Approach Requirements:\nA comprehensive information security policy that governs and provides direction for protection of the entity\u2019s information assets is known and current.\n\nGuidance:\nPurpose: An organization\u2019s overall information security policy ties to and governs all other policies and procedures that define protection of cardholder data. the information security policy communicates management\u2019s intent and objectives regarding the protection of its most valuable assets, including cardholder data. without an information security policy, individuals will make their own value decisions on the controls that are required within the organization which may result in the organization neither meeting its legal, regulatory, and contractual obligations, nor being able to adequately protect its assets in a consistent manner. to ensure the policy is implemented, it is important that all relevant personnel within the organization, as well as relevant third parties, vendors, and business partners are aware of the organization\u2019s information security policy and their responsibilities for protecting information assets. _(continued on next page)_.",
+  "requirement": "A comprehensive information security policy that governs and provides direction for protection of the entity\u2019s information assets is known and current.",
+  "metadata": {
+    "control_id": "12.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": false,
+    "requirements_id": "12"
+  }
+}

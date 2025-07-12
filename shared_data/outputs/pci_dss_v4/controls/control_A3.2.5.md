@@ -1,0 +1,14 @@
+PCI DSS 4_0_1 Requirement Control A3.2.5
+
+Defined Approach Requirements:
+A data-discovery methodology is implemented that: Confirms PCI DSS scope. Locates all sources and locations of cleartext PAN at least once every three months and upon significant changes to the CDE or processes. Addresses the potential for cleartext PAN to reside on systems and networks outside the currently defined CDE. PCI DSS Reference: _Scope of PCI DSS_ _Requirements_
+
+Customized Approach Objective:
+This requirement is not eligible for the customized approach
+
+Testing Procedures:
+Testing Procedure A3.2.5.a: Examine the documented data-discovery methodology to verify it includes all elements specified in this requirement.
+Testing Procedure A3.2.5.b: Examine results from recent data discovery efforts, and interview responsible personnel to verify that data discovery is performed at least once every three months and upon significant changes to the CDE or processes.
+
+Guidance:
+Purpose: Pci dss requires that, as part of the scoping exercise, assessed entities must identify and document the existence of all cleartext pan in their environments. implementing a data- discovery methodology that identifies all sources and locations of cleartext pan and looks for cleartext pan on systems and networks outside the currently defined cde or in unexpected places within the defined cde—for example, in an error log or memory dump file— helps to ensure that previously unknown locations of cleartext pan are detected and properly secured. Examples: A data-discovery process can be performed via a variety of methods, including, but not limited to 1) commercially available data-discovery software, 2) an in-house developed data-discovery program, or 3) a manual search. a combination of methodologies may also be used as needed. regardless of the method used, the goal of the effort is to find all sources and locations of cleartext pan (not just in the defined cde).

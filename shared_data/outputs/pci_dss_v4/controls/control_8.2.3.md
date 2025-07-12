@@ -1,0 +1,10 @@
+PCI DSS 4_0_1 Requirement Control 8.2.3
+
+Defined Approach Requirements:
+Additional requirement for service_ _providers only:_Service providers with remote access to customer premises use unique authentication factors for each customer premises.
+
+Customized Approach Objective:
+A service provider’s credential used for one customer cannot be used for any other customer.
+
+Guidance:
+Examples: Technologies such as multi-factor mechanisms that provide a unique credential for each connection (such as a single-use password) could also meet the intent of this requirement.

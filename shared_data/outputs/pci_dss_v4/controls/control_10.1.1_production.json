@@ -1,0 +1,14 @@
+{
+  "id": "68c8e047-2f13-4e6a-a1be-0db9a5b61e8e",
+  "control_id": "10.1.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.1.1\n\nDefined Approach Requirements:\nAll security policies and operational procedures that are identified in Requirement 10 are: Documented. Kept up to date. In use. Known to all affected parties.\n\nCustomized Approach Objective:\nExpectations, controls, and oversight for meeting activities within Requirement 10 are defined and adhered to by affected personnel. All supporting activities are repeatable, consistently applied, and conform to management\u2019s intent.\n\nTesting Procedures:\nTesting Procedure 10.1.1: Examine documentation and interview personnel to verify that security policies and operational procedures identified in Requirement 10 are managed in accordance with all elements specified in this requirement.",
+  "requirement": "All security policies and operational procedures that are identified in Requirement 10 are: Documented. Kept up to date. In use. Known to all affected parties.",
+  "metadata": {
+    "control_id": "10.1.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "logging_monitoring",
+    "has_testing_procedures": true,
+    "requirements_id": "10"
+  }
+}

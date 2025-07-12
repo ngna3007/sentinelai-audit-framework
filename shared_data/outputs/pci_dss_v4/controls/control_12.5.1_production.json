@@ -1,0 +1,14 @@
+{
+  "id": "0546e12d-fd23-4b02-8df9-0b9d202abefb",
+  "control_id": "12.5.1",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 12.5.1\n\nDefined Approach Requirements:\nAn inventory of system components that are in scope for PCI DSS, including a description of function/use, is maintained and kept current.\n\nCustomized Approach Objective:\nAll system components in scope for PCI DSS are identified and known.\n\nTesting Procedures:\nTesting Procedure 12.5.1.a: Examine the inventory to verify it includes all in-scope system components and a description of function/use for each.\nTesting Procedure 12.5.1.b: Interview personnel to verify the inventory is kept current.",
+  "requirement": "An inventory of system components that are in scope for PCI DSS, including a description of function/use, is maintained and kept current.",
+  "metadata": {
+    "control_id": "12.5.1",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "information_security_policy",
+    "has_testing_procedures": true,
+    "requirements_id": "12"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "16872450-dc56-4072-90ab-e719c7adf65c",
+  "control_id": "6.5.6",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 6.5.6\n\nDefined Approach Requirements:\nTest data and test accounts are removed from system components before the system goes into production.\n\nCustomized Approach Objective:\nTest data and test accounts cannot exist in production environments.\n\nTesting Procedures:\nTesting Procedure 6.5.6.a: Examine policies and procedures to verify that processes are defined for removal of test data and test accounts from system components before the system goes into production.\nTesting Procedure 6.5.6.b: Observe testing processes for both off-the- shelf software and in-house applications, and interview personnel to verify test data and test accounts are removed before a system goes into production.\nTesting Procedure 6.5.6.c: Examine data and accounts for recently installed or updated off-the-shelf software and in- house applications to verify there is no test data or test accounts on systems in production.\n\nGuidance:\nPurpose: This data may give away information about the functioning of an application or system and is an easy target for unauthorized individuals to exploit to gain access to systems. possession of such information could facilitate compromise of the system and related account data.",
+  "requirement": "Test data and test accounts are removed from system components before the system goes into production.",
+  "metadata": {
+    "control_id": "6.5.6",
+    "standard": "PCI-DSS-v4.0",
+    "source": "PCI_DSS_PDF_v4.0",
+    "control_category": "secure_development",
+    "has_testing_procedures": true,
+    "requirements_id": "6"
+  }
+}

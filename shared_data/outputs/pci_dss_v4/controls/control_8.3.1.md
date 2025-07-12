@@ -1,0 +1,17 @@
+PCI DSS 4_0_1 Requirement Control 8.3.1
+
+Defined Approach Requirements:
+All user access to system components for users and administrators is authenticated via at least one of the following authentication factors: Something you know, such as a password or passphrase. Something you have, such as a token device or smart card. Something you are, such as a biometric element.
+
+Customized Approach Objective:
+An account cannot be accessed except with a combination of user identity and an authentication factor.
+
+Applicability Notes:
+This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. This requirement does not supersede multi-factor authentication (MFA) requirements but applies to those in-scope systems not otherwise subject to MFA requirements. A digital certificate is a valid option for “something you have” if it is unique for a particular user.
+
+Testing Procedures:
+Testing Procedure 8.3.1.a: Examine documentation describing the authentication factor(s) used to verify that user access to system components is authenticated via at least one authentication factor specified in this requirement.
+Testing Procedure 8.3.1.b: For each type of authentication factor used with each type of system component, observe an authentication to verify that authentication is functioning consistently with documented authentication factor(s).
+
+Guidance:
+Purpose: When used in addition to unique ids, an authentication factor helps protect user ids from being compromised, since the attacker needs to have the unique id and compromise the associated authentication factor(s). Good Practice: A common approach for a malicious individual to compromise a system is to exploit weak or nonexistent authentication factors (for example, passwords/passphrases). requiring strong authentication factors helps protect against this attack. Further Information: See_fidoalliance.org_for more information about using tokens, smart cards, or biometrics as authentication factors.
