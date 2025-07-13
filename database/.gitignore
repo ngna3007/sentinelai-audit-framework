@@ -1,0 +1,35 @@
+# Database module specific .gitignore
+
+# Environment files - NEVER commit these
+.env
+.env.example
+.env.local
+.env.production
+.env.development
+
+# Database-specific sensitive files
+*.db
+*.sqlite
+*.sqlite3
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
