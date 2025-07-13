@@ -192,7 +192,7 @@ python main.py COMMAND [OPTIONS]
 
 Commands:
   extract     Extract controls from markdown
-  csv         Generate CSV for Bedrock (requires extracted controls)
+  csv         Generate CSV (requires extracted controls)
   all         Run complete workflow
 
 Options:

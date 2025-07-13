@@ -1,16 +1,1 @@
-PCI DSS 4_0_1 Requirement Control A1.2.3
-
-Defined Approach Requirements:
-Processes or mechanisms are implemented for reporting and addressing suspected or confirmed security incidents and vulnerabilities, including: Customers can securely report security incidents and vulnerabilities to the provider. The provider addresses and remediates suspected or confirmed security incidents and vulnerabilities according to Requirement 6.3.1.
-
-Customized Approach Objective:
-Suspected or confirmed security incidents or vulnerabilities are discovered and addressed. Customers are informed where appropriate.
-
-Applicability Notes:
-_This requirement is a best practice until 31_ _March 2025, after which it will be required and_ _must be fully considered during a PCI DSS_ _assessment._
-
-Testing Procedures:
-Testing Procedure A1.2.3: Examine documented procedures and interview personnel to verify that the provider has a mechanism for reporting and addressing suspected or confirmed security incidents and vulnerabilities, in accordance with all elements specified in this requirement.
-
-Guidance:
-Purpose: Security vulnerabilities in the provided services can impact the security of all the service provider’s customers and therefore must be managed in accordance with the service provider’s established processes, with priority given to resolving vulnerabilities that have the highest probability of compromise. customers are likely to notice vulnerabilities and security misconfigurations while using the service. implementing secure methods for customers to report security incidents and vulnerabilities encourages customers to report potential issues and enable the provider to quickly learn about and address potential issues within their environment.
+PCI DSS 4_0_1 Requirement Control A1.2.3 Defined Approach Requirements: Processes or mechanisms are implemented for reporting and addressing suspected or confirmed security incidents and vulnerabilities, including: Customers can securely report security incidents and vulnerabilities to the provider. The provider addresses and remediates suspected or confirmed security incidents and vulnerabilities according to Requirement 6.3.1. Customized Approach Objective: Suspected or confirmed security incidents or vulnerabilities are discovered and addressed. Customers are informed where appropriate. Applicability Notes: _This requirement is a best practice until 31_ _March 2025, after which it will be required and_ _must be fully considered during a PCI DSS_ _assessment._ Testing Procedures: Testing Procedure A1.2.3: Examine documented procedures and interview personnel to verify that the provider has a mechanism for reporting and addressing suspected or confirmed security incidents and vulnerabilities, in accordance with all elements specified in this requirement. Guidance: Purpose: Security vulnerabilities in the provided services can impact the security of all the service provider’s customers and therefore must be managed in accordance with the service provider’s established processes, with priority given to resolving vulnerabilities that have the highest probability of compromise. customers are likely to notice vulnerabilities and security misconfigurations while using the service. implementing secure methods for customers to report security incidents and vulnerabilities encourages customers to report potential issues and enable the provider to quickly learn about and address potential issues within their environment.

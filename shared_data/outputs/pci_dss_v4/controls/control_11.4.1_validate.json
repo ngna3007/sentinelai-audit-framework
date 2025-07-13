@@ -3,20 +3,20 @@
   "sections": {
     "purpose": true,
     "examples": false,
-    "good_practice": false,
+    "good_practice": true,
     "requirements": true,
     "testing_procedures": true,
     "customized_approach": true,
     "applicability_notes": true,
-    "definitions": false,
+    "definitions": true,
     "further_information": true
   },
-  "row_count": 9,
+  "row_count": 10,
   "table_count": 3,
   "spans_multiple_tables": true,
-  "token_count": 727,
-  "content_length_chars": 2911,
-  "content_lines": 14,
+  "token_count": 935,
+  "content_length_chars": 3740,
+  "content_lines": 1,
   "has_testing_procedures": true,
   "has_guidance": true,
   "has_requirements": true,
@@ -44,10 +44,12 @@
     }
   ],
   "quality_analysis": {
-    "quality_score": 88,
+    "quality_score": 81,
     "max_score": 100,
-    "quality_percentage": 88.0,
-    "issues": [],
+    "quality_percentage": 81.0,
+    "issues": [
+      "Content somewhat long (> 3000 chars)"
+    ],
     "recommendations": []
   }
 }

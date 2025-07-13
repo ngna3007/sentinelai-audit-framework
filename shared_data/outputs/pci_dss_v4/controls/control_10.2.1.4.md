@@ -1,4 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 10.2.1.4
-
-Testing Procedures:
-Testing Procedure 10.2.1.4: Examine audit log configurations and log data to verify that invalid logical access attempts are captured.
+PCI DSS 4_0_1 Requirement Control 10.2.1.4 Testing Procedures: Testing Procedure 10.2.1.4: Examine audit log configurations and log data to verify that invalid logical access attempts are captured.

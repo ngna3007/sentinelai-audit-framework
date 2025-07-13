@@ -1,11 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 8.2.5
-
-Defined Approach Requirements:
-Access for terminated users is immediately revoked.
-
-Customized Approach Objective:
-The accounts of terminated users cannot be used.
-
-Testing Procedures:
-Testing Procedure 8.2.5.a: Examine information sources for terminated users and review current user access lists—for both local and remote access—to verify that terminated user IDs have been deactivated or removed from the access lists.
-Testing Procedure 8.2.5.b: Interview responsible personnel to verify that all physical authentication factors—such as, smart cards, tokens, etc.—have been returned or deactivated for terminated users.
+PCI DSS 4_0_1 Requirement Control 8.2.5 Defined Approach Requirements: Access for terminated users is immediately revoked. Customized Approach Objective: The accounts of terminated users cannot be used. Testing Procedures: Testing Procedure 8.2.5.a: Examine information sources for terminated users and review current user access lists—for both local and remote access—to verify that terminated user IDs have been deactivated or removed from the access lists. Testing Procedure 8.2.5.b: Interview responsible personnel to verify that all physical authentication factors—such as, smart cards, tokens, etc.—have been returned or deactivated for terminated users.

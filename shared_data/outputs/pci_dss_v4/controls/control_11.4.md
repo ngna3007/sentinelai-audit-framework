@@ -1,7 +1,0 @@
-PCI DSS 4_0_1 Requirement Control 11.4
-
-Defined Approach Requirements:
-External and internal penetration testing is regularly performed, and exploitable vulnerabilities and security weaknesses are corrected.
-
-Guidance:
-Purpose: Attackers spend a lot of time finding external and internal vulnerabilities to leverage to obtain access to cardholder data and then to exfiltrate that data. as such, entities need to test their networks thoroughly, just as an attacker would do. this testing allows the entity to identify and remediate weakness that might be leveraged to compromise the entity’s network and data, and then to take appropriate actions to protect the network and system components from such attacks. Good Practice: Penetration testing techniques will differ based on an organization’s needs and structure and should be suitable for the tested environment—for example, fuzzing, injection, and forgery tests might be appropriate. the type, depth, and complexity of the testing will depend on the specific environment and the needs of the organization. Definitions: Penetration tests simulate a real-world attack situation intending to identify how far an attacker could penetrate an environment, given differing amounts of information provided to the tester. this allows an entity to better understand its potential exposure and develop a strategy to defend against attacks. a penetration test differs from a vulnerability scan, as a penetration test is an active process that usually includes exploiting identified vulnerabilities. _(continued on next page)_.

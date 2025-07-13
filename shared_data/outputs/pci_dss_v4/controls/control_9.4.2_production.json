@@ -1,7 +1,7 @@
 {
-  "id": "42b50648-778e-44ec-b511-bd744ed101aa",
+  "id": "c7083d04-e622-481b-ac7a-46cde2cbcc54",
   "control_id": "9.4.2",
-  "chunk": "PCI DSS 4_0_1 Requirement Control 9.4.2\n\nDefined Approach Requirements:\nAll media with cardholder data is classified in accordance with the sensitivity of the data.\n\nCustomized Approach Objective:\nMedia are classified and protected appropriately.\n\nTesting Procedures:\nTesting Procedure 9.4.2.a: Examine documentation to verify that procedures are defined for classifying media with cardholder data in accordance with the sensitivity of the data.\nTesting Procedure 9.4.2.b: Examine media logs or other documentation to verify that all media is classified in accordance with the sensitivity of the data.",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.4.2 Defined Approach Requirements: All media with cardholder data is classified in accordance with the sensitivity of the data. Customized Approach Objective: Media are classified and protected appropriately. Testing Procedures: Testing Procedure 9.4.2.a: Examine documentation to verify that procedures are defined for classifying media with cardholder data in accordance with the sensitivity of the data. Testing Procedure 9.4.2.b: Examine media logs or other documentation to verify that all media is classified in accordance with the sensitivity of the data.",
   "requirement": "All media with cardholder data is classified in accordance with the sensitivity of the data.",
   "metadata": {
     "control_id": "9.4.2",

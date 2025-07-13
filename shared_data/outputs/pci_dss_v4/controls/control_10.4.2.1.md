@@ -1,17 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 10.4.2.1
-
-Defined Approach Requirements:
-The frequency of periodic log reviews for all other system components (not defined in Requirement 10.4.1) is defined in the entity’s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1
-
-Customized Approach Objective:
-Log reviews for lower-risk system components are performed at a frequency that addresses the entity’s risk.
-
-Applicability Notes:
-_This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._
-
-Testing Procedures:
-Testing Procedure 10.4.2.1.a: Examine the entity’s targeted risk analysis for the frequency of periodic log reviews for all other system components (not defined in Requirement 10.4.1) to verify the risk analysis was performed in accordance with all elements specified at Requirement 12.3.1.
-Testing Procedure 10.4.2.1.b: Examine documented results of periodic log reviews of all other system components (not defined in Requirement 10.4.1) and interview personnel to verify log reviews are performed at the frequency specified in the entity’s targeted risk analysis performed for this requirement.
-
-Guidance:
-Purpose: Entities can determine the optimum period to review these logs based on criteria such as the complexity of each entity’s environment, the number of types of systems that are required to be evaluated, and the functions of such systems.
+PCI DSS 4_0_1 Requirement Control 10.4.2.1 Defined Approach Requirements: The frequency of periodic log reviews for all other system components (not defined in Requirement 10.4.1) is defined in the entity’s targeted risk analysis, which is performed according to all elements specified in Requirement 12.3.1 Customized Approach Objective: Log reviews for lower-risk system components are performed at a frequency that addresses the entity’s risk. Applicability Notes: _This requirement is a best practice until 31 March_ _2025, after which it will be required and must be_ _fully considered during a PCI DSS assessment._ Testing Procedures: Testing Procedure 10.4.2.1.a: Examine the entity’s targeted risk analysis for the frequency of periodic log reviews for all other system components (not defined in Requirement 10.4.1) to verify the risk analysis was performed in accordance with all elements specified at Requirement 12.3.1. Testing Procedure 10.4.2.1.b: Examine documented results of periodic log reviews of all other system components (not defined in Requirement 10.4.1) and interview personnel to verify log reviews are performed at the frequency specified in the entity’s targeted risk analysis performed for this requirement. Guidance: Purpose: Entities can determine the optimum period to review these logs based on criteria such as the complexity of each entity’s environment, the number of types of systems that are required to be evaluated, and the functions of such systems.

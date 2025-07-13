@@ -1,13 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 1.4.3
-
-Defined Approach Requirements:
-Anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network.
-
-Customized Approach Objective:
-Packets with forged IP source addresses cannot enter a trusted network.
-
-Testing Procedures:
-Testing Procedure 1.4.3: Examine vendor documentation and configurations for NSCs to verify that anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network.
-
-Guidance:
-Purpose: Filtering packets coming into the trusted network helps to, among other things, ensure packets are not “spoofed” to appear as if they are coming from an organization’s own internal network. for example, anti-spoofing measures prevent internal addresses originating from the internet from passing into the dmz. Examples: Normally, a packet contains the ip address of the computer that originally sent it so other computers in the network know where the packet originated. malicious individuals will often try to spoof (or imitate) the sending ip address to fool the target system into believing the packet is from a trusted source. Good Practice: Products usually come with anti-spoofing set as a default and may not be configurable. entities should consult the vendor's documentation for more information.
+PCI DSS 4_0_1 Requirement Control 1.4.3 Defined Approach Requirements: Anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network. Customized Approach Objective: Packets with forged IP source addresses cannot enter a trusted network. Testing Procedures: Testing Procedure 1.4.3: Examine vendor documentation and configurations for NSCs to verify that anti-spoofing measures are implemented to detect and block forged source IP addresses from entering the trusted network. Guidance: Purpose: Filtering packets coming into the trusted network helps to, among other things, ensure packets are not “spoofed” to appear as if they are coming from an organization’s own internal network. for example, anti-spoofing measures prevent internal addresses originating from the internet from passing into the dmz. Examples: Normally, a packet contains the ip address of the computer that originally sent it so other computers in the network know where the packet originated. malicious individuals will often try to spoof (or imitate) the sending ip address to fool the target system into believing the packet is from a trusted source. Good Practice: Products usually come with anti-spoofing set as a default and may not be configurable. entities should consult the vendor's documentation for more information.

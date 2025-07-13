@@ -33,6 +33,24 @@ class TextProcessor:
         return text.strip()
     
     @staticmethod
+    def clean_final_text(text: str) -> str:
+        """Clean final text for output by removing continuation markers and other artifacts."""
+        if not text:
+            return ""
+        
+        # First apply basic cleaning
+        text = TextProcessor.clean_text(text)
+        
+        # Remove continuation markers (only in final output)
+        text = text.replace('_(continued)_', '')
+        text = text.replace('_(continued on next page)_', '')
+        text = text.replace('(continued)_', '')
+        # Clean up any resulting double spaces
+        text = ' '.join(text.split())
+        
+        return text.strip()
+    
+    @staticmethod
     def is_header_footer(line: str) -> bool:
         """Check if a line is a header/footer."""
         return ("_Payment Card Industry Data Security Standard" in line or
@@ -79,21 +97,21 @@ class ControlIDDetector:
     
     @staticmethod
     def extract_control_id(text: str) -> Optional[str]:
-        """Extract control ID from text (e.g., **1.2.8**, **3.3.1.1**, **8.3.10.1**, **A1.1**, **A3.2.1**)."""
+        """Extract control ID from text (e.g., **1.2.8**, **3.3.1.1**, **8.3.10.1**, **A1.1.1**, **A3.2.1**)."""
         # Skip header rows
         if "defined approach requirements" in text.lower():
             return None
             
-        # Look for control IDs in bold format - include appendix controls and 4+ digit controls
-        pattern = r'\*\*([A]?\d+\.\d+(?:\.\d+)*)\*\*'
+        # Look for control IDs in bold format - require minimum 3 segments to avoid section headers
+        pattern = r'\*\*([A]?\d+\.\d+\.\d+(?:\.\d+)*)\*\*'
         matches = re.findall(pattern, text)
         return matches[0] if matches else None
     
     @staticmethod
     def is_control_continuation(text: str) -> Optional[str]:
         """Check if text contains a control continuation marker."""
-        # Look for patterns like **2.2.3**_(continued)_, **9.5.1.2**_(continued)_, or **A1.1**_(continued)_
-        pattern = r'\*\*([A]?\d+\.\d+(?:\.\d+)*)\*\*_\(continued\)_'
+        # Look for patterns like **2.2.3**_(continued)_, **9.5.1.2**_(continued)_, or **A1.1.1**_(continued)_
+        pattern = r'\*\*([A]?\d+\.\d+\.\d+(?:\.\d+)*)\*\*_\(continued\)_'
         matches = re.findall(pattern, text)
         return matches[0] if matches else None
     
@@ -266,4 +284,4 @@ class SectionExtractor:
         if "further information" in all_text:
             sections['further_information'] = True
         
-        return sections 
+        return sections

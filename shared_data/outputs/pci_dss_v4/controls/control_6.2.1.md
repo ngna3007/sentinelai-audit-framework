@@ -1,16 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 6.2.1
-
-Defined Approach Requirements:
-Bespoke and custom software are developed securely, as follows: Based on industry standards and/or best practices for secure development. In accordance with PCI DSS (for example, secure authentication and logging). Incorporating consideration of information security issues during each stage of the software development lifecycle.
-
-Customized Approach Objective:
-Bespoke and custom software is developed in accordance with PCI DSS and secure development processes throughout the software lifecycle.
-
-Applicability Notes:
-This applies to all software developed for or by the entity for the entity’s own use. This includes both bespoke and custom software. This does not apply to third-party software.
-
-Testing Procedures:
-Testing Procedure 6.2.1: Examine documented software development procedures to verify that processes are defined that include all elements specified in this requirement.
-
-Guidance:
-Purpose: Without the inclusion of security during the requirements definition, design, analysis, and testing phases of software development, security vulnerabilities can be inadvertently or maliciously introduced into the production environment. Examples: Secure software lifecycle management methodologies and frameworks include pci software security framework, bsimm, opensamm, and works from nist, iso, and safecode. Good Practice: Understanding how sensitive data is handled by the application—including when stored, transmitted, and in memory—can help identify where data needs to be protected. pci dss requirements must be considered when developing software to meet those requirements by design, rather than trying to retrofit the software later.
+PCI DSS 4_0_1 Requirement Control 6.2.1 Defined Approach Requirements: Bespoke and custom software are developed securely, as follows: Based on industry standards and/or best practices for secure development. In accordance with PCI DSS (for example, secure authentication and logging). Incorporating consideration of information security issues during each stage of the software development lifecycle. Customized Approach Objective: Bespoke and custom software is developed in accordance with PCI DSS and secure development processes throughout the software lifecycle. Applicability Notes: This applies to all software developed for or by the entity for the entity’s own use. This includes both bespoke and custom software. This does not apply to third-party software. Testing Procedures: Testing Procedure 6.2.1: Examine documented software development procedures to verify that processes are defined that include all elements specified in this requirement. Guidance: Purpose: Without the inclusion of security during the requirements definition, design, analysis, and testing phases of software development, security vulnerabilities can be inadvertently or maliciously introduced into the production environment. Examples: Secure software lifecycle management methodologies and frameworks include pci software security framework, bsimm, opensamm, and works from nist, iso, and safecode. Good Practice: Understanding how sensitive data is handled by the application—including when stored, transmitted, and in memory—can help identify where data needs to be protected. pci dss requirements must be considered when developing software to meet those requirements by design, rather than trying to retrofit the software later.

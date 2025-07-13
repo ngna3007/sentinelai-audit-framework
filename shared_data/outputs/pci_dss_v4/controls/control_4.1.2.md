@@ -1,14 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 4.1.2
-
-Defined Approach Requirements:
-Roles and responsibilities for performing activities in Requirement 4 are documented, assigned, and understood.
-
-Customized Approach Objective:
-Day-to-day responsibilities for performing all the activities in Requirement 4 are allocated. Personnel are accountable for successful, continuous operation of these requirements.
-
-Testing Procedures:
-Testing Procedure 4.1.2.a: Examine documentation to verify that descriptions of roles and responsibilities for performing activities in Requirement 4 are documented and assigned.
-Testing Procedure 4.1.2.b: Interview personnel with responsibility for performing activities in Requirement 4 to verify that roles and responsibilities are assigned as documented and are understood.
-
-Guidance:
-Purpose: If roles and responsibilities are not formally assigned, personnel may not be aware of their day-to-day responsibilities and critical activities may not occur. Examples: A method to document roles and responsibilities is a responsibility assignment matrix that includes who is responsible, accountable, consulted, and informed (also called a raci matrix). Good Practice: Roles and responsibilities may be documented within policies and procedures or maintained within separate documents. as part of communicating roles and responsibilities, entities can consider having personnel acknowledge their acceptance and understanding of their assigned roles and responsibilities.
+PCI DSS 4_0_1 Requirement Control 4.1.2 Defined Approach Requirements: Roles and responsibilities for performing activities in Requirement 4 are documented, assigned, and understood. Customized Approach Objective: Day-to-day responsibilities for performing all the activities in Requirement 4 are allocated. Personnel are accountable for successful, continuous operation of these requirements. Testing Procedures: Testing Procedure 4.1.2.a: Examine documentation to verify that descriptions of roles and responsibilities for performing activities in Requirement 4 are documented and assigned. Testing Procedure 4.1.2.b: Interview personnel with responsibility for performing activities in Requirement 4 to verify that roles and responsibilities are assigned as documented and are understood. Guidance: Purpose: If roles and responsibilities are not formally assigned, personnel may not be aware of their day-to-day responsibilities and critical activities may not occur. Examples: A method to document roles and responsibilities is a responsibility assignment matrix that includes who is responsible, accountable, consulted, and informed (also called a raci matrix). Good Practice: Roles and responsibilities may be documented within policies and procedures or maintained within separate documents. as part of communicating roles and responsibilities, entities can consider having personnel acknowledge their acceptance and understanding of their assigned roles and responsibilities.

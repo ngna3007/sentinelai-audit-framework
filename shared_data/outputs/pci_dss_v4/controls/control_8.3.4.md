@@ -1,17 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 8.3.4
-
-Defined Approach Requirements:
-Invalid authentication attempts are limited by: Locking out the user ID after not more than 10 attempts. Setting the lockout duration to a minimum of 30 minutes or until the user’s identity is confirmed.
-
-Customized Approach Objective:
-An authentication factor cannot be guessed in a brute force, online attack.
-
-Applicability Notes:
-This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction.
-
-Testing Procedures:
-Testing Procedure 8.3.4.a: Examine system configuration settings to verify that authentication parameters are set to require that user accounts be locked out after not more than 10 invalid logon attempts.
-Testing Procedure 8.3.4.b: Examine system configuration settings to verify that password parameters are set to require that once a user account is locked out, it remains locked for a minimum of 30 minutes or until the user’s identity is confirmed.
-
-Guidance:
-Purpose: If the same password/passphrase is used for every new user, an internal user, former employee, or malicious individual may know or easily discover the value and use it to gain access to accounts before the authorized user attempts to use the password. Good Practice: Before reactivating a locked account, the user’s identity should be confirmed. for example, the administrator or help desk personnel can validate that the actual account owner is requesting reactivation, or there may be password reset self- service mechanisms that the account owner uses to verify their identity.
+PCI DSS 4_0_1 Requirement Control 8.3.4 Defined Approach Requirements: Invalid authentication attempts are limited by: Locking out the user ID after not more than 10 attempts. Setting the lockout duration to a minimum of 30 minutes or until the user’s identity is confirmed. Customized Approach Objective: An authentication factor cannot be guessed in a brute force, online attack. Applicability Notes: This requirement is not intended to apply to user accounts on point-of-sale terminals that have access to only one card number at a time to facilitate a single transaction. Testing Procedures: Testing Procedure 8.3.4.a: Examine system configuration settings to verify that authentication parameters are set to require that user accounts be locked out after not more than 10 invalid logon attempts. Testing Procedure 8.3.4.b: Examine system configuration settings to verify that password parameters are set to require that once a user account is locked out, it remains locked for a minimum of 30 minutes or until the user’s identity is confirmed. Guidance: Purpose: If the same password/passphrase is used for every new user, an internal user, former employee, or malicious individual may know or easily discover the value and use it to gain access to accounts before the authorized user attempts to use the password. Good Practice: Before reactivating a locked account, the user’s identity should be confirmed. for example, the administrator or help desk personnel can validate that the actual account owner is requesting reactivation, or there may be password reset self- service mechanisms that the account owner uses to verify their identity.

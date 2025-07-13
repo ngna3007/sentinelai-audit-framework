@@ -1,12 +1,1 @@
-PCI DSS 4_0_1 Requirement Control A3.1.1
-
-Defined Approach Requirements:
-Responsibility is established by executive management for the protection of account data and a PCI DSS compliance program that includes: Overall accountability for maintaining PCI DSS compliance. Defining a charter for a PCI DSS compliance program. Providing updates to executive management and board of directors on PCI DSS compliance initiatives and issues, including remediation activities, at least once every 12 months. PCI DSS Reference: _Requirement 12_
-
-Customized Approach Objective:
-This requirement is not eligible for the customized approach
-
-Testing Procedures:
-Testing Procedure A3.1.1.a: Examine documentation to verify executive management has assigned overall accountability for maintaining the entity’s PCI DSS compliance.
-Testing Procedure A3.1.1.b: Examine the company’s PCI DSS charter to verify it outlines the conditions under which the PCI DSS compliance program is organized.
-Testing Procedure A3.1.1.c: Examine executive management and board of directors meeting minutes and/or presentations to ensure PCI DSS compliance initiatives and remediation activities are communicated at least once every 12 months.
+PCI DSS 4_0_1 Requirement Control A3.1.1 Defined Approach Requirements: Responsibility is established by executive management for the protection of account data and a PCI DSS compliance program that includes: Overall accountability for maintaining PCI DSS compliance. Defining a charter for a PCI DSS compliance program. Providing updates to executive management and board of directors on PCI DSS compliance initiatives and issues, including remediation activities, at least once every 12 months. PCI DSS Reference: _Requirement 12_ Customized Approach Objective: This requirement is not eligible for the customized approach Testing Procedures: Testing Procedure A3.1.1.a: Examine documentation to verify executive management has assigned overall accountability for maintaining the entity’s PCI DSS compliance. Testing Procedure A3.1.1.b: Examine the company’s PCI DSS charter to verify it outlines the conditions under which the PCI DSS compliance program is organized. Testing Procedure A3.1.1.c: Examine executive management and board of directors meeting minutes and/or presentations to ensure PCI DSS compliance initiatives and remediation activities are communicated at least once every 12 months.

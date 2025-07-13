@@ -1,7 +1,0 @@
-PCI DSS 4_0_1 Requirement Control 11.3
-
-Defined Approach Requirements:
-External and internal vulnerabilities are regularly identified, prioritized, and addressed.
-
-Guidance:
-Purpose: Identifying and addressing vulnerabilities promptly reduces the likelihood of a vulnerability being exploited and the potential compromise of a system component or cardholder data. vulnerability scans conducted at least every three months provide this detection and identification. Good Practice: Vulnerabilities posing the greatest risk to the environment (for example, ranked high or critical per requirement 6.3.1) should be resolved with the highest priority. vulnerabilities identified during internal vulnerability scans should be part of a vulnerability management process that includes multiple vulnerability sources, as specified in requirement 6.3.1. multiple scan reports can be combined for the quarterly scan process to show that all systems were scanned and all applicable vulnerabilities were resolved as part of the three-month vulnerability scan cycle. however, additional documentation may be required to verify non- remediated vulnerabilities are in the process of being resolved. while scans are required at least once every three months, more frequent scans are recommended depending on the network complexity, frequency of change, and types of devices, software, and operating systems used. _(continued on next page)_.

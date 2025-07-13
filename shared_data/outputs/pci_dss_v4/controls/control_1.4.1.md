@@ -1,14 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 1.4.1
-
-Defined Approach Requirements:
-NSCs are implemented between trusted and untrusted networks.
-
-Customized Approach Objective:
-Unauthorized traffic cannot traverse network boundaries between trusted and untrusted networks.
-
-Testing Procedures:
-Testing Procedure 1.4.1.a: Examine configuration standards and network diagrams to verify that NSCs are defined between trusted and untrusted networks.
-Testing Procedure 1.4.1.b: Examine network configurations to verify that NSCs are in place between trusted and untrusted networks, in accordance with the documented configuration standards and network diagrams.
-
-Guidance:
-Purpose: Implementing nscs at every connection coming into and out of trusted networks allows the entity to monitor and control access and minimizes the chances of a malicious individual obtaining access to the internal network via an unprotected connection. Examples: An entity could implement a dmz, which is a part of the network that manages connections between an untrusted network (for examples of untrusted networks refer to the requirement 1 overview) and services that an organization needs to have available to the public, such as a web server. please note that if an entity’s dmz processes or transmits account data (for example, e-commerce website), it is also considered a cde.
+PCI DSS 4_0_1 Requirement Control 1.4.1 Defined Approach Requirements: NSCs are implemented between trusted and untrusted networks. Customized Approach Objective: Unauthorized traffic cannot traverse network boundaries between trusted and untrusted networks. Testing Procedures: Testing Procedure 1.4.1.a: Examine configuration standards and network diagrams to verify that NSCs are defined between trusted and untrusted networks. Testing Procedure 1.4.1.b: Examine network configurations to verify that NSCs are in place between trusted and untrusted networks, in accordance with the documented configuration standards and network diagrams. Guidance: Purpose: Implementing nscs at every connection coming into and out of trusted networks allows the entity to monitor and control access and minimizes the chances of a malicious individual obtaining access to the internal network via an unprotected connection. Examples: An entity could implement a dmz, which is a part of the network that manages connections between an untrusted network (for examples of untrusted networks refer to the requirement 1 overview) and services that an organization needs to have available to the public, such as a web server. please note that if an entity’s dmz processes or transmits account data (for example, e-commerce website), it is also considered a cde.

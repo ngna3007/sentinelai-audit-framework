@@ -1,15 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 9.4.3
-
-Defined Approach Requirements:
-Media with cardholder data sent outside the facility is secured as follows: Media sent outside the facility is logged. Media is sent by secured courier or other delivery method that can be accurately tracked. Offsite tracking logs include details about media location.
-
-Customized Approach Objective:
-Media is secured and tracked when transported outside the facility.
-
-Testing Procedures:
-Testing Procedure 9.4.3.a: Examine documentation to verify that procedures are defined for securing media sent outside the facility in accordance with all elements specified in this requirement.
-Testing Procedure 9.4.3.b: Interview personnel and examine records to verify that all media sent outside the facility is logged and sent via secured courier or other delivery method that can be tracked.
-Testing Procedure 9.4.3.c: Examine offsite tracking logs for all media to verify tracking details are documented.
-
-Guidance:
-Purpose: Media may be lost or stolen if sent via a non- trackable method such as regular postal mail. the use of secure couriers to deliver any media that contains cardholder data allows organizations to use their tracking systems to maintain inventory and location of shipments.
+PCI DSS 4_0_1 Requirement Control 9.4.3 Defined Approach Requirements: Media with cardholder data sent outside the facility is secured as follows: Media sent outside the facility is logged. Media is sent by secured courier or other delivery method that can be accurately tracked. Offsite tracking logs include details about media location. Customized Approach Objective: Media is secured and tracked when transported outside the facility. Testing Procedures: Testing Procedure 9.4.3.a: Examine documentation to verify that procedures are defined for securing media sent outside the facility in accordance with all elements specified in this requirement. Testing Procedure 9.4.3.b: Interview personnel and examine records to verify that all media sent outside the facility is logged and sent via secured courier or other delivery method that can be tracked. Testing Procedure 9.4.3.c: Examine offsite tracking logs for all media to verify tracking details are documented. Guidance: Purpose: Media may be lost or stolen if sent via a non- trackable method such as regular postal mail. the use of secure couriers to deliver any media that contains cardholder data allows organizations to use their tracking systems to maintain inventory and location of shipments.

@@ -1,10 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 12.10.2
-
-Defined Approach Requirements:
-At least once every 12 months, the security incident response plan is: Reviewed and the content is updated as needed. Tested, including all elements listed in Requirement 12.10.1.
-
-Customized Approach Objective:
-The incident response plan is kept current and tested periodically.
-
-Testing Procedures:
-Testing Procedure 12.10.2: Interview personnel and review documentation to verify that, at least once every 12 months, the security incident response plan is: Reviewed and updated as needed. Tested, including all elements listed in Requirement 12.10.1.
+PCI DSS 4_0_1 Requirement Control 12.10.2 Defined Approach Requirements: At least once every 12 months, the security incident response plan is: Reviewed and the content is updated as needed. Tested, including all elements listed in Requirement 12.10.1. Customized Approach Objective: The incident response plan is kept current and tested periodically. Testing Procedures: Testing Procedure 12.10.2: Interview personnel and review documentation to verify that, at least once every 12 months, the security incident response plan is: Reviewed and updated as needed. Tested, including all elements listed in Requirement 12.10.1.

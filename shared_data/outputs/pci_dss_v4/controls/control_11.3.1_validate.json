@@ -1,22 +1,22 @@
 {
   "control_id": "11.3.1",
   "sections": {
-    "purpose": false,
+    "purpose": true,
     "examples": false,
-    "good_practice": false,
-    "requirements": false,
-    "testing_procedures": false,
+    "good_practice": true,
+    "requirements": true,
+    "testing_procedures": true,
     "customized_approach": false,
     "applicability_notes": true,
     "definitions": true,
     "further_information": false
   },
-  "row_count": 9,
+  "row_count": 10,
   "table_count": 2,
   "spans_multiple_tables": true,
-  "token_count": 448,
-  "content_length_chars": 1792,
-  "content_lines": 13,
+  "token_count": 753,
+  "content_length_chars": 3013,
+  "content_lines": 1,
   "has_testing_procedures": true,
   "has_guidance": true,
   "has_requirements": true,
@@ -37,16 +37,12 @@
     }
   ],
   "quality_analysis": {
-    "quality_score": 55,
+    "quality_score": 81,
     "max_score": 100,
-    "quality_percentage": 55.00000000000001,
+    "quality_percentage": 81.0,
     "issues": [
-      "Missing required section: requirements",
-      "Missing required section: testing_procedures"
+      "Content somewhat long (> 3000 chars)"
     ],
-    "recommendations": [
-      "Verify that Defined Approach Requirements are being properly extracted",
-      "Check testing procedures extraction logic for this control"
-    ]
+    "recommendations": []
   }
 }

@@ -1,7 +1,7 @@
 {
-  "id": "d148f18b-1498-484c-b7c0-547c2c75444b",
+  "id": "229d3e33-f756-4b02-9f13-84895914f601",
   "control_id": "7.3.3",
-  "chunk": "PCI DSS 4_0_1 Requirement Control 7.3.3\n\nDefined Approach Requirements:\nThe access control system(s) is set to \u201cdeny all\u201d by default.\n\nCustomized Approach Objective:\nAccess rights and privileges are prohibited unless expressly permitted.\n\nTesting Procedures:\nTesting Procedure 7.3.3: Examine vendor documentation and system settings to verify that the access control system(s) is set to \u201cdeny all\u201d by default.\n\nGuidance:\nPurpose: A default setting of \u201cdeny all\u201d ensures no one is granted access unless a rule is established specifically granting such access. Good Practice: It is important to check the default configuration of access control systems because some are set by default to \u201callow all,\u201d thereby permitting access unless/until a rule is written to specifically deny it.",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 7.3.3 Defined Approach Requirements: The access control system(s) is set to \u201cdeny all\u201d by default. Customized Approach Objective: Access rights and privileges are prohibited unless expressly permitted. Testing Procedures: Testing Procedure 7.3.3: Examine vendor documentation and system settings to verify that the access control system(s) is set to \u201cdeny all\u201d by default. Guidance: Purpose: A default setting of \u201cdeny all\u201d ensures no one is granted access unless a rule is established specifically granting such access. Good Practice: It is important to check the default configuration of access control systems because some are set by default to \u201callow all,\u201d thereby permitting access unless/until a rule is written to specifically deny it.",
   "requirement": "The access control system(s) is set to \u201cdeny all\u201d by default.",
   "metadata": {
     "control_id": "7.3.3",

@@ -67,7 +67,7 @@ class ControlContentBuilder:
         )
         
         # Extract just the requirement text (without the "Defined Approach Requirements:" header)
-        requirement_text = " ".join(defined_approach_requirements) if defined_approach_requirements else ""
+        requirement_text = TextProcessor.clean_final_text(" ".join(defined_approach_requirements)) if defined_approach_requirements else ""
         
         return complete_content, requirement_text
     
@@ -149,7 +149,9 @@ class ControlContentBuilder:
             guidance_text = self._format_guidance_sections(embedded_guidance)
             content_parts.append(guidance_text)
         
-        return "\n".join(content_parts).strip()
+        # Use clean_final_text to remove continuation markers from final output
+        final_content = "\n".join(content_parts).strip()
+        return TextProcessor.clean_final_text(final_content)
     
     def _format_guidance_sections(self, guidance: Dict[str, str]) -> str:
         """Format guidance sections into readable text."""
@@ -295,4 +297,4 @@ class ProductionContentFormatter:
     def count_tokens(text: str) -> int:
         """Estimate token count for text (rough approximation)."""
         # Simple token estimation: ~4 characters per token for English text
-        return len(text) // 4 
+        return len(text) // 4

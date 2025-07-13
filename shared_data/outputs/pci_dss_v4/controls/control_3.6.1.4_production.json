@@ -1,7 +1,7 @@
 {
-  "id": "74ec342d-451b-48fc-87f1-c64e05cd94fe",
+  "id": "d23e1ffc-5ff6-400d-b5d9-f1cf6808cbe1",
   "control_id": "3.6.1.4",
-  "chunk": "PCI DSS 4_0_1 Requirement Control 3.6.1.4\n\nDefined Approach Requirements:\nCryptographic keys are stored in the fewest possible locations.\n\nCustomized Approach Objective:\nCryptographic keys are retained only where necessary.\n\nTesting Procedures:\nTesting Procedure 3.6.1.4: Examine key storage locations and observe processes to verify that keys are stored in the fewest possible locations.\n\nGuidance:\nPurpose: Use of strong cryptographic keys significantly increases the level of security of encrypted account data. Further Information: See the sources referenced at cryptographic key generation in_appendix g_.",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 3.6.1.4 Defined Approach Requirements: Cryptographic keys are stored in the fewest possible locations. Customized Approach Objective: Cryptographic keys are retained only where necessary. Testing Procedures: Testing Procedure 3.6.1.4: Examine key storage locations and observe processes to verify that keys are stored in the fewest possible locations. Guidance: Purpose: Use of strong cryptographic keys significantly increases the level of security of encrypted account data. Further Information: See the sources referenced at cryptographic key generation in_appendix g_.",
   "requirement": "Cryptographic keys are stored in the fewest possible locations.",
   "metadata": {
     "control_id": "3.6.1.4",

@@ -1,13 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 8.3.3
-
-Defined Approach Requirements:
-User identity is verified before modifying any authentication factor.
-
-Customized Approach Objective:
-Unauthorized individuals cannot gain system access by impersonating the identity of an authorized user.
-
-Testing Procedures:
-Testing Procedure 8.3.3: Examine procedures for modifying authentication factors and observe security personnel to verify that when a user requests a modification of an authentication factor, the user’s identity is verified before the authentication factor is modified.
-
-Guidance:
-Purpose: Malicious individuals use "social engineering” techniques to impersonate a user of a system — for example, calling a help desk and acting as a legitimate user—to have an authentication factor changed so they can use a valid user id. requiring positive identification of a user reduces the probability of this type of attack succeeding. Examples: Methods to verify a user’s identity include a secret question/answer, knowledge-based information, and calling the user back at a known and previously established phone number. Good Practice: Modifications to authentication factors for which user identity should be verified include but are not limited to performing password resets, provisioning new hardware or software tokens, and generating new keys.
+PCI DSS 4_0_1 Requirement Control 8.3.3 Defined Approach Requirements: User identity is verified before modifying any authentication factor. Customized Approach Objective: Unauthorized individuals cannot gain system access by impersonating the identity of an authorized user. Testing Procedures: Testing Procedure 8.3.3: Examine procedures for modifying authentication factors and observe security personnel to verify that when a user requests a modification of an authentication factor, the user’s identity is verified before the authentication factor is modified. Guidance: Purpose: Malicious individuals use "social engineering” techniques to impersonate a user of a system — for example, calling a help desk and acting as a legitimate user—to have an authentication factor changed so they can use a valid user id. requiring positive identification of a user reduces the probability of this type of attack succeeding. Examples: Methods to verify a user’s identity include a secret question/answer, knowledge-based information, and calling the user back at a known and previously established phone number. Good Practice: Modifications to authentication factors for which user identity should be verified include but are not limited to performing password resets, provisioning new hardware or software tokens, and generating new keys.

@@ -1,13 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 3.6.1.4
-
-Defined Approach Requirements:
-Cryptographic keys are stored in the fewest possible locations.
-
-Customized Approach Objective:
-Cryptographic keys are retained only where necessary.
-
-Testing Procedures:
-Testing Procedure 3.6.1.4: Examine key storage locations and observe processes to verify that keys are stored in the fewest possible locations.
-
-Guidance:
-Purpose: Use of strong cryptographic keys significantly increases the level of security of encrypted account data. Further Information: See the sources referenced at cryptographic key generation in_appendix g_.
+PCI DSS 4_0_1 Requirement Control 3.6.1.4 Defined Approach Requirements: Cryptographic keys are stored in the fewest possible locations. Customized Approach Objective: Cryptographic keys are retained only where necessary. Testing Procedures: Testing Procedure 3.6.1.4: Examine key storage locations and observe processes to verify that keys are stored in the fewest possible locations. Guidance: Purpose: Use of strong cryptographic keys significantly increases the level of security of encrypted account data. Further Information: See the sources referenced at cryptographic key generation in_appendix g_.

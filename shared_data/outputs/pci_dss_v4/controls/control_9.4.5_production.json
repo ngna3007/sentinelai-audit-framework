@@ -1,7 +1,7 @@
 {
-  "id": "a9a4b899-20f7-4074-9e84-836963388395",
+  "id": "482981fc-8b53-4ca3-a290-bcaed76a3fe4",
   "control_id": "9.4.5",
-  "chunk": "PCI DSS 4_0_1 Requirement Control 9.4.5\n\nDefined Approach Requirements:\nInventory logs of all electronic media with cardholder data are maintained.\n\nCustomized Approach Objective:\nAccurate inventories of stored electronic media are maintained.\n\nTesting Procedures:\nTesting Procedure 9.4.5.a: Examine documentation to verify that procedures are defined to maintain electronic media inventory logs.\nTesting Procedure 9.4.5.b: Examine electronic media inventory logs and interview responsible personnel to verify that logs are maintained.",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 9.4.5 Defined Approach Requirements: Inventory logs of all electronic media with cardholder data are maintained. Customized Approach Objective: Accurate inventories of stored electronic media are maintained. Testing Procedures: Testing Procedure 9.4.5.a: Examine documentation to verify that procedures are defined to maintain electronic media inventory logs. Testing Procedure 9.4.5.b: Examine electronic media inventory logs and interview responsible personnel to verify that logs are maintained.",
   "requirement": "Inventory logs of all electronic media with cardholder data are maintained.",
   "metadata": {
     "control_id": "9.4.5",

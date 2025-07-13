@@ -1,13 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 12.10.4
-
-Defined Approach Requirements:
-Personnel responsible for responding to suspected and confirmed security incidents are appropriately and periodically trained on their incident response responsibilities.
-
-Customized Approach Objective:
-Personnel are knowledgeable about their role and responsibilities in incident response and are able to access assistance and guidance when required.
-
-Testing Procedures:
-Testing Procedure 12.10.4: Examine training documentation and interview incident response personnel to verify that personnel are appropriately and periodically trained on their incident response responsibilities.
-
-Guidance:
-Purpose: Each entity’s environment and incident response plan are different, and the approach will depend on a number of factors, including the size and complexity of the entity, the degree of change in the environment, the size of the incident response team, and the turnover in personnel. performing a risk analysis will allow the entity to determine the optimum frequency for training personnel with incident response responsibilities. Good Practice: It is important that all personnel involved in incident response are trained and knowledgeable about managing evidence for forensics and investigations.
+PCI DSS 4_0_1 Requirement Control 12.10.4 Defined Approach Requirements: Personnel responsible for responding to suspected and confirmed security incidents are appropriately and periodically trained on their incident response responsibilities. Customized Approach Objective: Personnel are knowledgeable about their role and responsibilities in incident response and are able to access assistance and guidance when required. Testing Procedures: Testing Procedure 12.10.4: Examine training documentation and interview incident response personnel to verify that personnel are appropriately and periodically trained on their incident response responsibilities. Guidance: Purpose: Each entity’s environment and incident response plan are different, and the approach will depend on a number of factors, including the size and complexity of the entity, the degree of change in the environment, the size of the incident response team, and the turnover in personnel. performing a risk analysis will allow the entity to determine the optimum frequency for training personnel with incident response responsibilities. Good Practice: It is important that all personnel involved in incident response are trained and knowledgeable about managing evidence for forensics and investigations.

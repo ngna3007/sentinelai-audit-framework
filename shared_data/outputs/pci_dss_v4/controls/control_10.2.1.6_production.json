@@ -1,7 +1,7 @@
 {
-  "id": "ca759ef5-89af-4d03-9b25-d7cc725bbf1d",
+  "id": "3663c78a-72ad-4548-8725-8a6e31e4d407",
   "control_id": "10.2.1.6",
-  "chunk": "PCI DSS 4_0_1 Requirement Control 10.2.1.6\n\nDefined Approach Requirements:\nAudit logs capture the following: All initialization of new audit logs, and All starting, stopping, or pausing of the existing audit logs.\n\nCustomized Approach Objective:\nRecords of all changes to audit log activity status are captured.\n\nTesting Procedures:\nTesting Procedure 10.2.1.6: Examine audit log configurations and log data to verify that all elements specified in this requirement are captured.",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 10.2.1.6 Defined Approach Requirements: Audit logs capture the following: All initialization of new audit logs, and All starting, stopping, or pausing of the existing audit logs. Customized Approach Objective: Records of all changes to audit log activity status are captured. Testing Procedures: Testing Procedure 10.2.1.6: Examine audit log configurations and log data to verify that all elements specified in this requirement are captured.",
   "requirement": "Audit logs capture the following: All initialization of new audit logs, and All starting, stopping, or pausing of the existing audit logs.",
   "metadata": {
     "control_id": "10.2.1.6",

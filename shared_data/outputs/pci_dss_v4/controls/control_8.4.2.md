@@ -1,14 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 8.4.2
-
-Defined Approach Requirements:
-MFA is implemented for all non-console access into the CDE.
-
-Customized Approach Objective:
-Access into the CDE cannot be obtained by the use of a single authentication factor.
-
-Testing Procedures:
-Testing Procedure 8.4.2.a: Examine network and/or system configurations to verify MFA is implemented for all non-console access into the CDE.
-Testing Procedure 8.4.2.b: Observe personnel logging in to the CDE and examine evidence to verify that MFA is required.
-
-Guidance:
-Purpose: Requiring more than one type of authentication factor reduces the probability that an attacker can gain access to a system by masquerading as a legitimate user, because the attacker would need to compromise multiple authentication factors. this is especially true in environments where traditionally the single authentication factor employed was something a user knows, such as a password or passphrase. Definitions: Multi-factor authentication (mfa) requires an individual to present a minimum of two of the three authentication factors specified in requirement 8.3.1 before access is granted. using one factor twice (for example, using two separate passwords) is not considered multi- factor authentication. _(continued on next page)_.
+PCI DSS 4_0_1 Requirement Control 8.4.2 Defined Approach Requirements: MFA is implemented for all non-console access into the CDE. Customized Approach Objective: Access into the CDE cannot be obtained by the use of a single authentication factor. Testing Procedures: Testing Procedure 8.4.2.a: Examine network and/or system configurations to verify MFA is implemented for all non-console access into the CDE. Testing Procedure 8.4.2.b: Observe personnel logging in to the CDE and examine evidence to verify that MFA is required. Guidance: Purpose: Requiring more than one type of authentication factor reduces the probability that an attacker can gain access to a system by masquerading as a legitimate user, because the attacker would need to compromise multiple authentication factors. this is especially true in environments where traditionally the single authentication factor employed was something a user knows, such as a password or passphrase. Definitions: Multi-factor authentication (mfa) requires an individual to present a minimum of two of the three authentication factors specified in requirement 8.3.1 before access is granted. using one factor twice (for example, using two separate passwords) is not considered multi- factor authentication. .

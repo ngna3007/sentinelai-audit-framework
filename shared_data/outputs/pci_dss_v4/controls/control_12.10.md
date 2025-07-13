@@ -1,7 +1,0 @@
-PCI DSS 4_0_1 Requirement Control 12.10
-
-Defined Approach Requirements:
-Suspected and confirmed security incidents that could impact the CDE are responded to immediately.
-
-Guidance:
-Purpose: Without a comprehensive incident response plan that is properly disseminated, read, and understood by the parties responsible, confusion and lack of a unified response could create further downtime for the business, unnecessary public media exposure, as well as risk of financial and/or reputational loss and legal liabilities. Good Practice: The incident response plan should be thorough and contain all the key elements for stakeholders (for example, legal, communications) to allow the entity to respond effectively in the event of a breach that could impact account data. it is important to keep the plan up to date with current contact information of all individuals designated as having a role in incident response. other relevant parties for notifications may include customers, financial institutions (acquirers and issuers), and business partners. entities should consider how to address all compromises of data within the cde in their incident response plans, including compromises to account data, wireless encryption keys, encryption keys used for transmission and storage or account data or cardholder data, etc. _(continued on next page)_.

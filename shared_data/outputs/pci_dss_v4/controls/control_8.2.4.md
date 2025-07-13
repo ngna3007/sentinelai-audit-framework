@@ -1,16 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 8.2.4
-
-Defined Approach Requirements:
-Addition, deletion, and modification of user IDs, authentication factors, and other identifier objects are managed as follows: Authorized with the appropriate approval. Implemented with only the privileges specified on the documented approval.
-
-Customized Approach Objective:
-Lifecycle events for user IDs and authentication factors cannot occur without appropriate authorization.
-
-Applicability Notes:
-This requirement applies to all user accounts, including employees, contractors, consultants, temporary workers, and third-party vendors.
-
-Testing Procedures:
-Testing Procedure 8.2.4: Examine documented authorizations across various phases of the account lifecycle (additions, modifications, and deletions) and examine system settings to verify the activity has been managed in accordance with all elements specified in this requirement.
-
-Guidance:
-Purpose: If an employee or third party/vendor has left the company and still has access to the network via their user account, unnecessary or malicious access to cardholder data could occur—either by the former employee or by a malicious user who exploits the old and/or unused account.
+PCI DSS 4_0_1 Requirement Control 8.2.4 Defined Approach Requirements: Addition, deletion, and modification of user IDs, authentication factors, and other identifier objects are managed as follows: Authorized with the appropriate approval. Implemented with only the privileges specified on the documented approval. Customized Approach Objective: Lifecycle events for user IDs and authentication factors cannot occur without appropriate authorization. Applicability Notes: This requirement applies to all user accounts, including employees, contractors, consultants, temporary workers, and third-party vendors. Testing Procedures: Testing Procedure 8.2.4: Examine documented authorizations across various phases of the account lifecycle (additions, modifications, and deletions) and examine system settings to verify the activity has been managed in accordance with all elements specified in this requirement. Guidance: Purpose: If an employee or third party/vendor has left the company and still has access to the network via their user account, unnecessary or malicious access to cardholder data could occur—either by the former employee or by a malicious user who exploits the old and/or unused account.

@@ -1,14 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 9.4.5.1
-
-Defined Approach Requirements:
-Inventories of electronic media with cardholder data are conducted at least once every 12 months.
-
-Customized Approach Objective:
-Media inventories are verified periodically.
-
-Testing Procedures:
-Testing Procedure 9.4.5.1.a: Examine documentation to verify that procedures are defined to conduct inventories of electronic media with cardholder data at least once every 12 months.
-Testing Procedure 9.4.5.1.b: Examine electronic media inventory logs and interview personnel to verify that electronic media inventories are performed at least once every 12 months.
-
-Guidance:
-Purpose: Without careful inventory methods and storage controls, stolen or missing electronic media could go unnoticed for an indefinite amount of time.
+PCI DSS 4_0_1 Requirement Control 9.4.5.1 Defined Approach Requirements: Inventories of electronic media with cardholder data are conducted at least once every 12 months. Customized Approach Objective: Media inventories are verified periodically. Testing Procedures: Testing Procedure 9.4.5.1.a: Examine documentation to verify that procedures are defined to conduct inventories of electronic media with cardholder data at least once every 12 months. Testing Procedure 9.4.5.1.b: Examine electronic media inventory logs and interview personnel to verify that electronic media inventories are performed at least once every 12 months. Guidance: Purpose: Without careful inventory methods and storage controls, stolen or missing electronic media could go unnoticed for an indefinite amount of time.

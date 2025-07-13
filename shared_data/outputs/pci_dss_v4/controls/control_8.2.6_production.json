@@ -1,7 +1,7 @@
 {
-  "id": "9c959c98-619d-4a81-86b5-ddfce0e11eea",
+  "id": "7348868a-565c-4d81-be6b-d8f54aa8b86b",
   "control_id": "8.2.6",
-  "chunk": "PCI DSS 4_0_1 Requirement Control 8.2.6\n\nDefined Approach Requirements:\nInactive user accounts are removed or disabled within 90 days of inactivity.\n\nCustomized Approach Objective:\nInactive user accounts cannot be used.\n\nGuidance:\nPurpose: Allowing third parties to have 24/7 access into an entity\u2019s systems and networks in case they need to provide support increases the chances of unauthorized access. this access could result in an unauthorized user in the third party\u2019s environment or a malicious individual using the always-available external entry point into an entity\u2019s network. where third parties do need access 24/7, it should be documented, justified, monitored, and tied to specific service reasons. _(continued on next page)_.",
+  "chunk": "PCI DSS 4_0_1 Requirement Control 8.2.6 Defined Approach Requirements: Inactive user accounts are removed or disabled within 90 days of inactivity. Customized Approach Objective: Inactive user accounts cannot be used. Guidance: Purpose: Allowing third parties to have 24/7 access into an entity\u2019s systems and networks in case they need to provide support increases the chances of unauthorized access. this access could result in an unauthorized user in the third party\u2019s environment or a malicious individual using the always-available external entry point into an entity\u2019s network. where third parties do need access 24/7, it should be documented, justified, monitored, and tied to specific service reasons. .",
   "requirement": "Inactive user accounts are removed or disabled within 90 days of inactivity.",
   "metadata": {
     "control_id": "8.2.6",

@@ -1,16 +1,1 @@
-PCI DSS 4_0_1 Requirement Control 3.3.1.3
-
-Defined Approach Requirements:
-The personal identification number (PIN) and the PIN block are not stored upon completion of the authorization process.
-
-Customized Approach Objective:
-This requirement is not eligible for the customized approach.
-
-Applicability Notes:
-PIN blocks are encrypted during the natural course of transaction processes, but even if an entity encrypts the PIN block again, it is still not allowed to be stored after the completion of the authorization process.
-
-Testing Procedures:
-Testing Procedure 3.3.1.3: Examine data sources, to verify that PINs and PIN blocks are not stored upon completion of the authorization process.
-
-Guidance:
-Purpose: Pin and pin blocks should be known only to the card owner or entity that issued the card. if this data is stolen, malicious individuals can execute fraudulent pin-based transactions (for example, in-store purchases and atm withdrawals). not storing this data reduces the probability of it being compromised. Examples: Data sources to review to ensure that pin and pin blocks are not retained upon completion of the authorization process include, but are not limited to: incoming transaction data. all logs (for example, transaction, history, debugging, error). history files. trace files. database schemas. contents of databases, and on-premise and cloud data stores. any existing memory/crash dump files.
+PCI DSS 4_0_1 Requirement Control 3.3.1.3 Defined Approach Requirements: The personal identification number (PIN) and the PIN block are not stored upon completion of the authorization process. Customized Approach Objective: This requirement is not eligible for the customized approach. Applicability Notes: PIN blocks are encrypted during the natural course of transaction processes, but even if an entity encrypts the PIN block again, it is still not allowed to be stored after the completion of the authorization process. Testing Procedures: Testing Procedure 3.3.1.3: Examine data sources, to verify that PINs and PIN blocks are not stored upon completion of the authorization process. Guidance: Purpose: Pin and pin blocks should be known only to the card owner or entity that issued the card. if this data is stolen, malicious individuals can execute fraudulent pin-based transactions (for example, in-store purchases and atm withdrawals). not storing this data reduces the probability of it being compromised. Examples: Data sources to review to ensure that pin and pin blocks are not retained upon completion of the authorization process include, but are not limited to: incoming transaction data. all logs (for example, transaction, history, debugging, error). history files. trace files. database schemas. contents of databases, and on-premise and cloud data stores. any existing memory/crash dump files.

@@ -1,7 +1,0 @@
-PCI DSS 4_0_1 Requirement Control 12.7
-
-Defined Approach Requirements:
-Personnel are screened to reduce risks from insider threats.
-
-Guidance:
-Purpose: Performing thorough screening prior to hiring potential personnel who are expected to be given access to the cde provides entities with the information necessary to make informed risk decisions regarding personnel they hire that will have access to the cde. other benefits of screening potential personnel include helping to ensure workplace safety and confirming information provided by prospective employees on their resumes. Examples: Screening options can include, as appropriate for the entity’s region, previous employment history, review of public information/social media resources, criminal record, credit history, and reference checks. Good Practice: Entities should consider screening for existing personnel anytime they transfer into roles where they have access to the cde from roles where they did not have this access. to be effective, the level of screening should be appropriate for the position. for example, positions requiring greater responsibility or that have administrative access to critical data or systems may warrant more detailed or more frequent screening than positions with less responsibility and access.
