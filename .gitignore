@@ -26,6 +26,10 @@ __pycache__/
 
 # Environment files
 .env
+.env.example
+.env.local
+.env.production
+.env.development
 .venv
 env/
 venv/
