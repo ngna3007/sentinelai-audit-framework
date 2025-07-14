@@ -1,3 +1,12 @@
-# Additional dependencies specific to this example
+#  Dependencies specific
 anthropic
-openai
+google.genai
+asyncio
+os
+argparse
+re
+json
+shutil
+glob
+dotenv
+boto3
