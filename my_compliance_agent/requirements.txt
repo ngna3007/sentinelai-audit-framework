@@ -1,0 +1,3 @@
+# Additional dependencies specific to this example
+anthropic
+openai
