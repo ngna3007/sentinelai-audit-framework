@@ -1,0 +1,43 @@
+# Core dependencies for modular extractor architecture
+pydantic>=2.0.0
+PyYAML>=6.0
+click>=8.0.0
+
+# PDF processing (legacy support and LLM-optimized conversion)
+pymupdf>=1.23.0
+pymupdf4llm>=0.0.20    # LLM-optimized PDF to Markdown conversion
+docling>=2.41.0        # Advanced PDF understanding with layout analysis
+docling-core>=2.41.0   # Core docling components for hierarchical chunking
+docling[vlm]>=2.41.0   # Docling with Vision Language Model for picture annotation
+pdfplumber>=0.9.0
+tabula-py>=2.7.0
+camelot-py[cv]>=0.10.1
+
+# Text processing and token analysis (core for modular extractors)
+tiktoken>=0.5.0
+spacy>=3.7.0
+nltk>=3.8.0
+chonkie[semantic,st]>=0.1.0   # Chunking library with semantic capabilities and SentenceTransformer embeddings
+
+# Vector storage and embeddings
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# AWS SDK (for Bedrock CSV upload)
+boto3>=1.34.0
+
+# HTTP and async
+httpx>=0.25.0
+aiofiles>=23.0.0
+
+# Utilities for CLI and output formatting
+python-dotenv>=1.0.0
+rich>=13.0.0
+tqdm>=4.66.0 
+
+# Core Python modules (built-in, listed for documentation)
+# argparse - CLI interface
+# pathlib - File operations
+# json - JSON metadata generation
+# re - Control ID pattern matching
+# typing - Type hints for modular components 

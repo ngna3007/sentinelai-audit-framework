@@ -8,7 +8,7 @@ maintainability, testability, and ease of extension.
 Key Components:
 - main: CLI entry point for all extraction operations
 - core.extractor: Central orchestration and control extraction logic
-- core.text_processors: Text cleaning and parsing utilities
+- text_processors.compliance_standards.pci_dss: Text cleaning and parsing utilities
 - core.content_builders: Content assembly and formatting
 - core.metadata_generators: Quality scoring and metadata generation
 - core.csv_generator: CSV generation for database import (PostgreSQL bulk import)
@@ -27,12 +27,12 @@ Architecture Benefits:
 - Ready for production and team collaboration
 """
 
-# Import core components for programmatic access
-from .core.extractor import ControlExtractor
-from .core.csv_generator import CSVGenerator
-from .core.text_processors import TextProcessor, ControlIDDetector
-from .core.content_builders import ControlContentBuilder
-from .core.metadata_generators import ValidationMetadataGenerator, ProductionMetadataGenerator
+# Import components from new modular structure
+from ...chunking.compliance_standards.pci_dss.extractor import ControlExtractor
+from data_pipeline.output_generators.compliance_standards.pci_dss.csv_generator import PCIDSSCSVGenerator as CSVGenerator
+from ...text_processors.compliance_standards.pci_dss.text_processor import TextProcessor, ControlIDDetector
+from ...chunking.compliance_standards.pci_dss.content_builder import ControlContentBuilder
+from ...metadata_generators.compliance_standards.pci_dss.metadata_generator import ValidationMetadataGenerator, ProductionMetadataGenerator
 
 __all__ = [
     'ControlExtractor',

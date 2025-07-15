@@ -14,7 +14,7 @@ import time
 # Add extractors to path
 sys.path.append(str(Path(__file__).parent.parent))
 
-from processors.compliance_standards.pci_dss.adapter import PCIDSSPipelineAdapter
+from processors.adapters.pci_dss_adapter import PCIDSSPipelineAdapter
 from schemas.compliance import (
     ControlExtractionResult, 
     ComplianceFramework, 
