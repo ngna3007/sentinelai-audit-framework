@@ -2,7 +2,6 @@
 import boto3
 import json
 
-
 def test_bedrock_model():
     """Test Bedrock model connectivity with exact model IDs"""
 
@@ -21,7 +20,7 @@ def test_bedrock_model():
         "anthropic.claude-3-5-sonnet-20240620-v1:0",
         "anthropic.claude-3-5-sonnet-20241022-v2:0",
     ]
-
+    
     for model_id in test_models:
         try:
             print(f"\n🧪 Testing model: {model_id}")

@@ -44,6 +44,18 @@ settings = Settings(
                 command="npx",
                 args=["-y", "@modelcontextprotocol/server-filesystem"],
             ),
+            "bedrock_kb": MCPServerSettings(
+                command="uvx",
+                args= ["awslabs.bedrock-kb-retrieval-mcp-server@latest"],
+                env={
+                    "AWS_PROFILE": "my-bedrock-profile",
+                    "AWS_REGION": "ap-southeast-2",
+                    "FASTMCP_LOG_LEVEL": "ERROR",
+                    "BEDROCK_KB_RERANKING_ENABLED": "true"
+                },
+                disabled=False,
+                auto_approve=[]
+            ),
         }
     ),
     bedrock=BedrockSettings(
@@ -150,6 +162,40 @@ def clean_response(response):
         
     except Exception as e:
         return response
+def extract_json_from_response(response):
+    """Extract and parse JSON data from LLM response"""
+    try:
+        # Look for JSON array in the response
+        if '[{' in response and '}]' in response:
+            # Find the JSON array
+            start = response.find('[{')
+            end = response.rfind('}]') + 2
+            json_str = response[start:end]
+            
+            # Clean up escaped characters
+            json_str = json_str.replace('\\"', '"').replace('\\n', '\n')
+            
+            # Try to parse as JSON
+            try:
+                parsed_json = json.loads(json_str)
+                # If it's an array, format it nicely
+                return json.dumps(parsed_json, indent=2)
+            except json.JSONDecodeError:
+                # If parsing fails, return cleaned string
+                return json_str
+        
+        # If no JSON found, try to extract from quotes
+        elif '"' in response:
+            # Look for quoted content
+            lines = response.split('\n')
+            for line in lines:
+                if line.strip().startswith('"') and line.strip().endswith('"'):
+                    return line.strip().strip('"')
+        
+        return clean_response(response)
+        
+    except Exception as e:
+        return clean_response(response)
     
 async def fetch_requirement_data(control_id):
     """Fetch requirement data with clean responses"""
@@ -164,21 +210,28 @@ async def fetch_requirement_data(control_id):
         
         # Create agent with very specific instructions
         data_agent = Agent(
-            name="accurate_data_fetcher",
-            instruction="""You are a precise SQL executor. CRITICAL RULES:
-                        1. Execute the SQL query EXACTLY as provided
-                        2. Return the EXACT data from the database - DO NOT modify, summarize, or interpret
-                        3. If the result is JSON, return the complete JSON exactly as stored
-                        4. If the result is text, return the exact text
-                        5. DO NOT add quotes around the result unless they are in the original data
-                        6. DO NOT translate or simplify complex data
-                        7. Return the raw database value with no changes whatsoever
-                        8. NO commentary, explanations, or descriptions - just the raw data""",
+            name="data_fetcher_and_editor",
+            instruction="""You are a SQL executor and file editor. Your tasks:
+                        1. Execute SQL queries to get data from database
+                        2. When saving to requirement/ directory (filename like 1_2_5.json):
+                        - If file already exists, READ it first and MERGE new data with existing data
+                        - If file doesn't exist, create new file
+                        - NEVER replace/overwrite existing data - always merge/combine
+                        3. The final JSON structure should contain ALL data:
+                        - Keep existing requirement text if already present
+                        - Add config_rules data to the same file
+                        - Merge data so we have ONE complete JSON file with both requirement and config_rules
+                        4. Fix any formatting issues:
+                        - Convert escaped JSON strings to proper JSON objects/arrays
+                        - Remove extra quotes around text values
+                        - Ensure config_rules is a proper JSON array, not a string
+                        5. Save the corrected file with clean, readable JSON formatting
+                        6. Return confirmation when file is properly formatted with ALL data preserved""",
             server_names=["supabase", "filesystem"],
         )
         
         async with data_agent:
-            llm = await data_agent.attach_llm(AnthropicAugmentedLLM)
+            llm = await data_agent.attach_llm(GoogleAugmentedLLM)
             
             # Fetch requirement text
             print("📋 Getting requirement...")
@@ -186,9 +239,10 @@ async def fetch_requirement_data(control_id):
             
             try:
                 req_response = await llm.generate_str(
-                    f"SELECT requirement FROM pci_dss_controls WHERE control_id = '{control_id}';"
+                    f"Execute: SELECT requirement FROM pci_dss_controls WHERE control_id = '{control_id}';"
                 )
                 requirement = clean_response(req_response)
+                # requirement = req_response
             except Exception as e:
                 print(f"❌ Requirement fetch failed: {e}")
                 requirement = f"Error: {str(e)}"
@@ -199,47 +253,19 @@ async def fetch_requirement_data(control_id):
             
             try:
                 rules_response = await llm.generate_str(
-                    f"SELECT config_rules FROM pci_aws_config_rule_mappings WHERE control_id = '{control_id}';"
+                    f"Execute: SELECT config_rules FROM pci_aws_config_rule_mappings WHERE control_id = '{control_id}';"
                 )
-                config_rules = clean_response(rules_response)
+                # config_rules = clean_response(rules_response)
+                # config_rules = extract_json_from_response(rules_response)
+                config_rules = rules_response
             except Exception as e:
                 print(f"❌ Config rules fetch failed: {e}")
                 config_rules = f"Error: {str(e)}"
-            
-            # Create clean data structure
-            data = {
-                "control_id": control_id,
-                "requirement": requirement,
-                "config_rules": config_rules,
-                "timestamp": "2025-07-14",
-                "status": "fetched"
-            }
-            
-            # Save file directly with Python (no LLM needed)
-            print("💾 Saving file...")
-            
-            try:
-                os.makedirs("requirement", exist_ok=True)
-                filename = f"requirement/requirement_{control_id.replace('.', '_')}.json"
-                
-                with open(filename, 'w') as f:
-                    json.dump(data, f, indent=2)
-                
-                print(f"✅ Saved to: {filename}")
-                
-                return {
-                    "success": True,
-                    "data": data,
-                    "filename": filename
-                }
-                
-            except Exception as e:
-                print(f"❌ File save failed: {e}")
-                return {
-                    "success": False,
-                    "data": data,
-                    "error": str(e)
-                }
+            if config_rules and requirement:
+                return {"success": True}
+            else:
+                return {"success": False}
+
 
 async def fetch_evidence_data():
     """Draft function that always returns True - placeholder for evidence fetching"""
@@ -260,25 +286,19 @@ async def check_compliance():
         # Create agent with very specific instructions
         auditor_agent = Agent(
             name="pci_auditor",
-            instruction="""You are a PCI DSS compliance auditor. Your task:
-                        1. READ the requirement file from requirement/ directory to understand what needs to be checked
-                        2. READ the evidence files from evidence/ directory to see the actual AWS config rule results
-                        3. ANALYZE each config rule result against the requirement guidance
-                        4. COUNT how many rules are COMPLIANT vs total rules
-                        5. RETURN ONLY a JSON object with this exact format:
-                        {
-                        "compliant_rules": <number of compliant rules>,
-                        "total_rules": <total number of rules>,
-                        "compliance_rate": <compliant_rules/total_rules as decimal>,
-                        "status": "COMPLIANT" or "NON_COMPLIANT",
-                        "details": ["list of rule names and their status"]
-                        }
-                        NO other text, just the JSON object.""",
-            server_names=["filesystem"],
+            instruction="""You are a PCI DSS compliance auditor with expert knowledge access. Your task:
+                        1. FIRST: Query the bedrock knowledge base for expert guidance on this specific PCI DSS control - ask for compliance best practices, common pitfalls, and assessment criteria
+                        2. READ the requirement file from requirement/ directory to understand the specific control requirements
+                        3. READ the evidence files from evidence/ directory to see actual AWS config rule results
+                        4. ANALYZE using BOTH the expert KB guidance AND the local file data to make informed compliance decisions
+                        5. CREATE audit_result/ directory if it doesn't exist
+                        6. SAVE compliance assessment as JSON in audit_result/ directory
+                        7. RETURN the JSON compliance assessment with expert-level precision""",
+            server_names=["filesystem", "bedrock_kb"],
         )
         
         async with auditor_agent:
-            llm = await auditor_agent.attach_llm(AnthropicAugmentedLLM)
+            llm = await auditor_agent.attach_llm(GoogleAugmentedLLM)
             
             print("🔍 Starting compliance audit...")
             await asyncio.sleep(5)
@@ -286,12 +306,14 @@ async def check_compliance():
             try:
                 # Ask agent to analyze compliance
                 audit_response = await llm.generate_str(
-                    """Perform PCI DSS compliance audit:
-                    1. Read the requirement file from requirement/ directory
-                    2. Read all evidence files from evidence/ directory  
-                    3. Compare evidence against requirement guidance
-                    4. Calculate compliance rate
-                    5. Return JSON with compliance results"""
+                    f"""Perform PCI DSS compliance audit for control {args.id}:
+                    1. First, query the bedrock knowledge base for expert guidance on PCI DSS control {args.id}
+                    2. Read the requirement file from requirement/ directory
+                    3. Read all evidence files from evidence/ directory  
+                    4. Combine KB expert guidance with file analysis
+                    5. Calculate compliance rate and provide detailed assessment
+                    6. Save results to audit_result/ directory as JSON
+                    7. Return the compliance assessment JSON"""
                 )
                 
                 compliance_result = clean_response(audit_response)
@@ -392,7 +414,7 @@ async def main():
                 
                 print("CLEANING UP FOR NEXT RUN")
                 print("=" * 50)
-                cleanup_result = cleanup_folders()
+                # cleanup_result = cleanup_folders()
                 return 0 if final_status else 1
                 
             else:

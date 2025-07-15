@@ -10,11 +10,14 @@ from mcp_agent.config import (
     MCPSettings,
     MCPServerSettings,
     BedrockSettings,
-    AnthropicSettings
+    AnthropicSettings,
+    GoogleSettings,
 )
 from mcp_agent.agents.agent import Agent
 from mcp_agent.workflows.llm.augmented_llm_bedrock import BedrockAugmentedLLM
 from mcp_agent.workflows.llm.augmented_llm_anthropic import AnthropicAugmentedLLM
+from mcp_agent.workflows.llm.augmented_llm_google import GoogleAugmentedLLM
+
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -47,6 +50,13 @@ settings = Settings(
         api_key=os.getenv("ANTHROPIC_API"),
         default_model="claude-3-haiku-20240307",
         # default_model="claude-sonnet-4-20250514",
+    ),
+    google=GoogleSettings(
+        api_key=os.getenv("GOOGLE_API"),
+        vertexai= False,
+    # project: str | None = None
+    # location: str | None = None
+        default_model="gemini-2.0-flash"        
     ),
 )
 
@@ -85,7 +95,7 @@ async def get_table_names():
         )
         
         async with agent:
-            llm = await agent.attach_llm(AnthropicAugmentedLLM)
+            llm = await agent.attach_llm(GoogleAugmentedLLM)
             
             print("🔍 Getting table names from database...")
             
@@ -96,7 +106,7 @@ async def get_table_names():
             try:
                 # Simple query to get table names
                 response = await llm.generate_str(
-                    "Execute: SELECT tablename FROM pg_tables WHERE schemaname = 'public';"
+                    "Execute: SELECT * FROM pci_dss_controls WHERE control_id='1.2.5';"
                 )
                 
                 print(f"🔍 Raw LLM Response:")
@@ -104,17 +114,9 @@ async def get_table_names():
                 print(f"   Length: {len(response)} characters")
                 
                 # Extract table names from response
-                table_names = extract_table_names(response)
+                if response:
                 
-                # Additional debug info
-                if not table_names:
-                    print(f"⚠️ No table names extracted from response")
-                    if "error" in response.lower():
-                        print(f"❌ Response contains error")
-                    if "Tool result:" not in response:
-                        print(f"❌ No tool result found in response")
-                
-                return table_names
+                    return True
                 
             except Exception as e:
                 print(f"❌ Failed to get table names: {str(e)}")
