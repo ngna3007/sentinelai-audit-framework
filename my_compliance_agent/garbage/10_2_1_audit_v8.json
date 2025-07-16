@@ -1,0 +1,69 @@
+{
+    "control_id": "10.2.1",
+    "requirement": "Audit logs are enabled and active for all system components and cardholder data.",
+    "compliance_assessment": {
+        "api-gw-xray-enabled": {
+            "status": "COMPLIANT",
+            "details": "X-Ray tracing is enabled on API Gateway. This provides detailed tracing information for API Gateway REST APIs, enabling comprehensive logging and audit tracking."
+        },
+        "api-gwv2-access-logs-enabled": {
+            "status": "COMPLIANT",
+            "details": "Access logging is enabled for Amazon API Gateway V2 stages, ensuring detailed request and response logging."
+        },
+        "appsync-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No evidence of AppSync logging configuration was found. Logging should be configured with fieldLogLevel set to ERROR or ALL."
+        },
+        "cloudfront-accesslogs-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No CloudFront distributions found or logging is not configured. CloudFront access logs should be delivered to an S3 bucket for audit trail."
+        },
+        "cloudtrail-enabled": {
+            "status": "COMPLIANT", 
+            "details": "AWS CloudTrail trail 'serverless-payment-trail' is enabled, with CloudTrail logs stored in S3 bucket 'serverless-payment-cloudtrail-logs-prod-405ql2gk'"
+        },
+        "ecs-task-definition-log-configuration": {
+            "status": "NON_COMPLIANT",
+            "details": "No ECS task definitions with log configuration were found. ECS task definitions should have logging configured."
+        },
+        "eks-cluster-logging-enabled": {
+            "status": "NON_COMPLIANT", 
+            "details": "No EKS cluster logging configuration was detected. EKS clusters should have logging enabled for all log types."
+        },
+        "elastic-beanstalk-logs-to-cloudwatch": {
+            "status": "NON_COMPLIANT",
+            "details": "No Elastic Beanstalk environments were found or log streaming to CloudWatch is not configured."
+        },
+        "mq-cloudwatch-audit-log-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No Amazon MQ brokers found or CloudWatch audit logging is not enabled."
+        },
+        "multi-region-cloudtrail-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "The existing CloudTrail trail is not a multi-region trail. Multi-region trail is recommended for comprehensive logging."
+        },
+        "neptune-cluster-cloudwatch-log-export-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No Amazon Neptune clusters found or CloudWatch log export for audit logs is not enabled."
+        },
+        "netfw-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No Network Firewall logging configuration was detected. Firewall logging should be enabled."
+        },
+        "step-functions-state-machine-logging-enabled": {
+            "status": "COMPLIANT",
+            "details": "AWS Step Functions state machine 'serverless-payment-workflow' is configured, indicating logging capabilities."
+        },
+        "waf-classic-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No WAF classic global web ACLs found or logging is not enabled."
+        }
+    },
+    "compliance_summary": {
+        "compliant_rules": 4,
+        "non_compliant_rules": 10,
+        "not_applicable_rules": 0,
+        "total_rules_in_scope": 14,
+        "compliance_rate": "28.57%"
+    }
+}

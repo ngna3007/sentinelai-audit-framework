@@ -1,0 +1,41 @@
+{
+    "control_id": "A1.1.2",
+    "requirement": "Controls are implemented such that each customer only has permission to access its own cardholder data and CDE.",
+    "compliance_assessment": {
+        "backup-recovery-point-manual-deletion-disabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No evidence of backup vault resource-based policies preventing recovery point deletion was found"
+        },
+        "docdb-cluster-snapshot-public-prohibited": {
+            "status": "NON_COMPLIANT", 
+            "details": "No evidence confirming Amazon DocumentDB manual cluster snapshots are private"
+        },
+        "emr-block-public-access": {
+            "status": "NON_COMPLIANT",
+            "details": "No evidence of EMR block public access settings being properly configured"
+        },
+        "neptune-cluster-snapshot-public-prohibited": {
+            "status": "NON_COMPLIANT", 
+            "details": "No evidence confirming Neptune cluster snapshots are private"
+        },
+        "s3-access-point-public-access-blocks": {
+            "status": "NON_COMPLIANT", 
+            "details": "No evidence of S3 access points having public access blocks enabled"
+        },
+        "s3-account-level-public-access-blocks": {
+            "status": "NON_COMPLIANT", 
+            "details": "No evidence of account-level public access blocks being properly configured"
+        },
+        "s3-bucket-mfa-delete-enabled": {
+            "status": "NON_COMPLIANT", 
+            "details": "No evidence of MFA Delete being enabled for S3 bucket versioning"
+        }
+    },
+    "compliance_summary": {
+        "compliant_rules": 0,
+        "non_compliant_rules": 7,
+        "not_applicable_rules": 0,
+        "total_rules_in_scope": 7,
+        "compliance_rate": "0.00%"
+    }
+}
