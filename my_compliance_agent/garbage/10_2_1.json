@@ -1,0 +1,66 @@
+{
+  "control_id": "10.2.1",
+  "requirement": "Audit logs are enabled and active for all system components and cardholder data.",
+  "config_rules": [
+    {
+      "guidance": "Ensure that AWS X-Ray tracing is enabled on Amazon API Gateway REST APIs. The rule is COMPLIANT if X-Ray tracing is enabled and NON_COMPLIANT otherwise.",
+      "rule_name": "api-gw-xray-enabled"
+    },
+    {
+      "guidance": "Ensure that Amazon API Gateway V2 stages have access logging enabled. The rule is NON_COMPLIANT if 'accessLogSettings' is not present in Stage conﬁguration.",
+      "rule_name": "api-gwv2-access-logs-enabled"
+    },
+    {
+      "guidance": "Ensure that an AWS AppSync API has logging enabled. The rule is NON_COMPLIANT if logging is not enabled, or 'ﬁeldLogLevel' is neither ERROR nor ALL.",
+      "rule_name": "appsync-logging-enabled"
+    },
+    {
+      "guidance": "Ensure that Amazon CloudFront distributions are conﬁgured to deliver access logs to an Amazon S3 bucket. The rule is NON_COMPLIANT if a CloudFront distribution does not have logging conﬁgured.",
+      "rule_name": "cloudfront-accesslogs-enabled"
+    },
+    {
+      "guidance": "Note: For this rule, the rule identiﬁer (CLOUD_TRAIL_ENABLED) and rule name (cloudtrail- enabled) are diﬀerent. Ensure that an AWS CloudTrail trail is enabled in your AWS account. The rule is NON_COMPLIANT if a trail is not enabled. Optionally, the rule checks a speciﬁc S3 bucket, Amazon Simple Notiﬁcation Service (Amazon SNS) topic, and CloudWatch log group.",
+      "rule_name": "cloudtrail-enabled"
+    },
+    {
+      "guidance": "Ensure that logConﬁguration is set on active ECS Task Deﬁnitions. This rule is NON_COMPLIANT if an active ECSTaskDeﬁnition does not have the logConﬁguration resource deﬁned or the value for logConﬁguration is null in at least one container deﬁnition.",
+      "rule_name": "ecs-task-deﬁnition-log-conﬁguration"
+    },
+    {
+      "guidance": "Ensure that an Amazon Elastic Kubernetes Service (Amazon EKS) cluster is conﬁgured with logging enabled. The rule is NON_COMPLIANT if logging for Amazon EKS clusters is not enabled for alllog types.",
+      "rule_name": "eks-cluster-logging-enabled"
+    },
+    {
+      "guidance": "Ensure that AWS Elastic Beanstalk environments are conﬁgured to send logs to Amazon CloudWatch Logs. The rule is NON_COMPLIANT if the valueof `StreamLogs` is false.",
+      "rule_name": "elastic-beanstalk-logs-to-cloudwatch"
+    },
+    {
+      "guidance": "Ensure that an Amazon MQ broker has CloudWatch audit logging enabled. The rule is NON_COMPLIANT if the broker does not have audit logging enabled.",
+      "rule_name": "mq-cloudwatch-audit-log-enabled"
+    },
+    {
+      "guidance": "Ensure that Amazon MQ brokers have Amazon CloudWatch audit logging enabled. The rule is NON_COMPLIANT if a broker does not have audit logging enabled.",
+      "rule_name": "mq-cloudwatch-audit-logging-enabled"
+    },
+    {
+      "guidance": "Note: for this rule, the rule identiﬁer (MULTI_REGION_CLOUD_TRAIL_ENABLED) and rule name (multi-region-clou dtrail-enabled) are diﬀerent. Ensure that there is at leastone multi-region AWS CloudTrail. The rule is NON_COMPLIANT if the trails do not match input parameters. The rule is NON_COMPLIANT if the ExcludeManagementEventSources ﬁeld is not empty or if AWS CloudTrail is conﬁgured to exclude management events such as AWS KMS events or Amazon RDS DataAPI events.",
+      "rule_name": "multi-region-cloudtrail-enabled"
+    },
+    {
+      "guidance": "Ensure that an Amazon Neptune cluster has CloudWatch log export enabled for audit logs. The rule is NON_COMPLIANT if a Neptune cluster does not have CloudWatch log export enabled for audit logs.",
+      "rule_name": "neptune-cluster-cloudwatch-log-export-enabled"
+    },
+    {
+      "guidance": "Ensure that AWS Network Firewall ﬁrewalls have logging enabled. The rule is NON_COMPLIANT if a logging type is not conﬁgured. You can specify which logging type you want the rule to check.",
+      "rule_name": "netfw-logging-enabled"
+    },
+    {
+      "guidance": "Ensure that AWS Step Functions machine has logging enabled. The rule is NON_COMPLIANT if a state machine does not have logging enabled or the logging conﬁguration is not at the minimum level provided.",
+      "rule_name": "step-functions-state-machine-logging-enabled"
+    },
+    {
+      "guidance": "Ensure that logging is enabled on AWS WAF classic global web access control lists (web ACLs). The rule is NON_COMPLIANT for a global web ACL, if it does not have logging enabled.",
+      "rule_name": "waf-classic-logging-enabled"
+    }
+  ]
+}

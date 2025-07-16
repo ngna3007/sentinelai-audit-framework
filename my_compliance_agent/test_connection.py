@@ -48,8 +48,8 @@ settings = Settings(
     ),
     anthropic=AnthropicSettings(
         api_key=os.getenv("ANTHROPIC_API"),
-        default_model="claude-3-haiku-20240307",
-        # default_model="claude-sonnet-4-20250514",
+        # default_model="claude-3-haiku-20240307",
+        default_model="claude-sonnet-4-20250514",
     ),
     google=GoogleSettings(
         api_key=os.getenv("GOOGLE_API"),
@@ -90,12 +90,12 @@ async def get_table_names():
         # Create simple agent
         agent = Agent(
             name="table_finder",
-            instruction="Execute SQL queries to find table names.",
+            instruction="Execute SQL queries to find table names. Just return the names, nothing else",
             server_names=["supabase"],
         )
         
         async with agent:
-            llm = await agent.attach_llm(GoogleAugmentedLLM)
+            llm = await agent.attach_llm(BedrockAugmentedLLM)
             
             print("🔍 Getting table names from database...")
             
@@ -106,7 +106,7 @@ async def get_table_names():
             try:
                 # Simple query to get table names
                 response = await llm.generate_str(
-                    "Execute: SELECT * FROM pci_dss_controls WHERE control_id='1.2.5';"
+                    "Execute: SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';"
                 )
                 
                 print(f"🔍 Raw LLM Response:")

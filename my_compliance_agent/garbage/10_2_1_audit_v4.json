@@ -1,0 +1,73 @@
+{
+    "control_id": "10.2.1",
+    "requirement": "Audit logs are enabled and active for all system components and cardholder data.",
+    "compliance_assessment": {
+        "api-gw-xray-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No evidence found to confirm X-Ray tracing is enabled on Amazon API Gateway REST APIs. Missing logs may indicate security and monitoring gaps."
+        },
+        "api-gwv2-access-logs-enabled": {
+            "status": "NON_COMPLIANT", 
+            "details": "No evidence of access logging configuration for Amazon API Gateway V2 stages. Lack of access logs prevents proper audit trail tracking."
+        },
+        "appsync-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No confirmation of AppSync API logging. Missing logging prevents comprehensive audit and monitoring capabilities."
+        },
+        "cloudfront-accesslogs-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "CloudFront distributions not verified to have access logs configured to S3 bucket. Missing logs create potential security visibility gaps."
+        },
+        "cloudtrail-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No evidence of AWS CloudTrail trail being enabled in the AWS account. Critical audit logging mechanism is missing."
+        },
+        "ecs-task-definition-log-configuration": {
+            "status": "NON_COMPLIANT",
+            "details": "ECS Task Definitions not verified to have log configuration. Lack of logging prevents tracking container activities."
+        },
+        "eks-cluster-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "EKS cluster logging not confirmed as enabled for all log types. Missing comprehensive cluster logging creates monitoring blind spots."
+        },
+        "elastic-beanstalk-logs-to-cloudwatch": {
+            "status": "NON_COMPLIANT",
+            "details": "No verification of Elastic Beanstalk environments sending logs to CloudWatch. Missing centralized logging prevents effective audit trails."
+        },
+        "mq-cloudwatch-audit-log-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "Amazon MQ broker CloudWatch audit logging not confirmed. Missing broker audit logs create potential security monitoring gaps."
+        },
+        "mq-cloudwatch-audit-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "Amazon MQ broker CloudWatch audit logging not confirmed. Duplicate rule suggests critical importance of logging verification."
+        },
+        "multi-region-cloudtrail-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No evidence of multi-region AWS CloudTrail configuration. Missing cross-region logging prevents comprehensive security monitoring."
+        },
+        "neptune-cluster-cloudwatch-log-export-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "Neptune cluster CloudWatch log export for audit logs not verified. Missing database audit logs create potential security traceability issues."
+        },
+        "netfw-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "Network Firewall logging configuration not confirmed. Missing firewall logs prevent tracking potential security events."
+        },
+        "step-functions-state-machine-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "Step Functions state machine logging not verified. Missing logging prevents tracking workflow and potential security events."
+        },
+        "waf-classic-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "WAF classic global web ACL logging not confirmed. Missing web access logs prevent comprehensive security monitoring."
+        }
+    },
+    "compliance_summary": {
+        "compliant_rules": 0,
+        "non_compliant_rules": 15,
+        "not_applicable_rules": 0,
+        "total_rules_in_scope": 15,
+        "compliance_rate": "0.00%"
+    }
+}

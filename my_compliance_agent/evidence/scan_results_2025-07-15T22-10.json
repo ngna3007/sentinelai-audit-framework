@@ -1,0 +1,1712 @@
+[
+  {
+    "inventory_name": "serverless-payment-comprehensive-inventory",
+    "account_results": [
+      {
+        "region": "ap-southeast-2",
+        "services": [
+          {
+            "service": "kms",
+            "function": "list_keys",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "KeyId": "3821e942-cb36-4fed-bc29-201d3daf333f",
+                "KeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/3821e942-cb36-4fed-bc29-201d3daf333f"
+              },
+              {
+                "KeyId": "758fa7c8-73f9-42b0-ab61-3e748d06a458",
+                "KeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/758fa7c8-73f9-42b0-ab61-3e748d06a458"
+              },
+              {
+                "KeyId": "a681a921-df01-4a77-bc82-a89f4612aa30",
+                "KeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/a681a921-df01-4a77-bc82-a89f4612aa30"
+              },
+              {
+                "KeyId": "cda5867b-2c50-473e-ac0d-f5b9cb666e7b",
+                "KeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/cda5867b-2c50-473e-ac0d-f5b9cb666e7b"
+              },
+              {
+                "KeyId": "e443bdc9-5f5f-42cf-8cae-113e000e2bd4",
+                "KeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/e443bdc9-5f5f-42cf-8cae-113e000e2bd4"
+              },
+              {
+                "KeyId": "f1c17f59-663d-420e-b631-40753c913e1e",
+                "KeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/f1c17f59-663d-420e-b631-40753c913e1e"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cognito-idp",
+            "function": "list_user_pools",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "Id": "ap-southeast-2_HX58CE64a",
+                "Name": "serverless-payment-user-pool",
+                "LambdaConfig": {},
+                "LastModifiedDate": "2025-07-15 18:27:03.208000+07:00",
+                "CreationDate": "2025-07-15 18:27:03.208000+07:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "sns",
+            "function": "list_topics",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "TopicArn": "arn:aws:sns:ap-southeast-2:123012555573:serverless-payment-notifications"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "apigateway",
+            "function": "get_rest_apis",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "id": "ifrctl2zyf",
+                "name": "serverless-payment-reporting-api",
+                "description": "Non-PCI reporting API",
+                "createdDate": "2025-07-15 18:27:12+07:00",
+                "apiKeySource": "HEADER",
+                "endpointConfiguration": {
+                  "types": [
+                    "REGIONAL"
+                  ],
+                  "ipAddressType": "ipv4"
+                },
+                "tags": {
+                  "Environment": "prod",
+                  "ManagedBy": "Terraform",
+                  "Project": "serverless-payment"
+                },
+                "disableExecuteApiEndpoint": false,
+                "rootResourceId": "azqobhwv6b"
+              },
+              {
+                "id": "n96q70vhuc",
+                "name": "serverless-payment-api",
+                "description": "Payment processing API",
+                "createdDate": "2025-07-15 18:27:07+07:00",
+                "apiKeySource": "HEADER",
+                "endpointConfiguration": {
+                  "types": [
+                    "REGIONAL"
+                  ],
+                  "ipAddressType": "ipv4"
+                },
+                "tags": {
+                  "Environment": "prod",
+                  "ManagedBy": "Terraform",
+                  "Project": "serverless-payment"
+                },
+                "disableExecuteApiEndpoint": false,
+                "rootResourceId": "lqnfoeky7c"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dynamodb",
+            "function": "list_tables",
+            "region": "ap-southeast-2",
+            "result": [
+              "serverless-payment-cache",
+              "serverless-payment-non-pci-data"
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudwatch",
+            "function": "describe_alarms",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "AlarmName": "serverless-payment-api-gateway-4xx-errors",
+                "AlarmArn": "arn:aws:cloudwatch:ap-southeast-2:123012555573:alarm:serverless-payment-api-gateway-4xx-errors",
+                "AlarmDescription": "This metric monitors API Gateway 4XX errors",
+                "AlarmConfigurationUpdatedTimestamp": "2025-07-15 11:27:18.984000+00:00",
+                "ActionsEnabled": true,
+                "OKActions": [],
+                "AlarmActions": [
+                  "arn:aws:sns:ap-southeast-2:123012555573:serverless-payment-notifications"
+                ],
+                "InsufficientDataActions": [],
+                "StateValue": "INSUFFICIENT_DATA",
+                "StateReason": "Unchecked: Initial alarm creation",
+                "StateUpdatedTimestamp": "2025-07-15 11:27:18.984000+00:00",
+                "MetricName": "4XXError",
+                "Namespace": "AWS/ApiGateway",
+                "Statistic": "Sum",
+                "Dimensions": [
+                  {
+                    "Name": "ApiName",
+                    "Value": "serverless-payment-api"
+                  }
+                ],
+                "Period": 300,
+                "EvaluationPeriods": 2,
+                "Threshold": 10.0,
+                "ComparisonOperator": "GreaterThanThreshold",
+                "TreatMissingData": "missing",
+                "StateTransitionedTimestamp": "2025-07-15 11:27:18.984000+00:00"
+              },
+              {
+                "AlarmName": "serverless-payment-lambda-error-rate",
+                "AlarmArn": "arn:aws:cloudwatch:ap-southeast-2:123012555573:alarm:serverless-payment-lambda-error-rate",
+                "AlarmDescription": "This metric monitors lambda error rate",
+                "AlarmConfigurationUpdatedTimestamp": "2025-07-15 12:26:02.173000+00:00",
+                "ActionsEnabled": true,
+                "OKActions": [],
+                "AlarmActions": [
+                  "arn:aws:sns:ap-southeast-2:123012555573:serverless-payment-notifications"
+                ],
+                "InsufficientDataActions": [],
+                "StateValue": "INSUFFICIENT_DATA",
+                "StateReason": "Unchecked: Initial alarm creation",
+                "StateUpdatedTimestamp": "2025-07-15 12:26:02.173000+00:00",
+                "MetricName": "Errors",
+                "Namespace": "AWS/Lambda",
+                "Statistic": "Sum",
+                "Dimensions": [
+                  {
+                    "Name": "FunctionName",
+                    "Value": "serverless-payment-transaction"
+                  }
+                ],
+                "Period": 300,
+                "EvaluationPeriods": 2,
+                "Threshold": 5.0,
+                "ComparisonOperator": "GreaterThanThreshold",
+                "TreatMissingData": "missing",
+                "StateTransitionedTimestamp": "2025-07-15 12:26:02.173000+00:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "wafv2",
+            "function": "list_web_acls",
+            "region": "ap-southeast-2",
+            "result": null,
+            "success": false,
+            "error": "AWS API error: An error occurred (WAFInvalidParameterException) when calling the ListWebACLs operation: Error reason: The scope is not valid., field: SCOPE_VALUE, parameter: CLOUDFRONT"
+          },
+          {
+            "service": "inspector2",
+            "function": "list_findings",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "awsAccountId": "123012555573",
+                "description": "On the instance i-06ed8daa923ca1c26, the port range 22-22 is reachable from the InternetGateway igw-09af68668be0ccab3 from an attached ENI eni-0e165d9e2553f71e9.",
+                "findingArn": "arn:aws:inspector2:ap-southeast-2:123012555573:finding/482fb0fcda00eb80b2533709133dfb91",
+                "firstObservedAt": "2025-07-15 18:28:19.196000+07:00",
+                "lastObservedAt": "2025-07-15 18:28:19.196000+07:00",
+                "networkReachabilityDetails": {
+                  "networkPath": {
+                    "steps": [
+                      {
+                        "componentArn": "arn:aws:ec2:ap-southeast-2:123012555573:internet-gateway/igw-09af68668be0ccab3",
+                        "componentId": "igw-09af68668be0ccab3",
+                        "componentType": "AWS::EC2::InternetGateway"
+                      },
+                      {
+                        "componentArn": "arn:aws:ec2:ap-southeast-2:123012555573:network-acl/acl-071cb31425fc7f270",
+                        "componentId": "acl-071cb31425fc7f270",
+                        "componentType": "AWS::EC2::NetworkAcl"
+                      },
+                      {
+                        "componentArn": "arn:aws:ec2:ap-southeast-2:123012555573:security-group/sg-052eb56579246b22a",
+                        "componentId": "sg-052eb56579246b22a",
+                        "componentType": "AWS::EC2::SecurityGroup"
+                      },
+                      {
+                        "componentArn": "arn:aws:ec2:ap-southeast-2:123012555573:network-interface/eni-0e165d9e2553f71e9",
+                        "componentId": "eni-0e165d9e2553f71e9",
+                        "componentType": "AWS::EC2::NetworkInterface"
+                      },
+                      {
+                        "componentArn": "arn:aws:ec2:ap-southeast-2:123012555573:instance/i-06ed8daa923ca1c26",
+                        "componentId": "i-06ed8daa923ca1c26",
+                        "componentType": "AWS::EC2::Instance"
+                      }
+                    ]
+                  },
+                  "openPortRange": {
+                    "begin": 22,
+                    "end": 22
+                  },
+                  "protocol": "TCP"
+                },
+                "remediation": {
+                  "recommendation": {
+                    "text": "You can restrict access to your instance by modifying the Security Groups or ACLs in the network path."
+                  }
+                },
+                "resources": [
+                  {
+                    "details": {
+                      "awsEc2Instance": {
+                        "imageId": "ami-00839deb72faa8a04",
+                        "ipV4Addresses": [
+                          "16.176.232.19",
+                          "172.31.0.238"
+                        ],
+                        "ipV6Addresses": [],
+                        "keyName": "mup",
+                        "launchedAt": "2025-07-14 09:42:48+07:00",
+                        "subnetId": "subnet-04138a6ed468a8458",
+                        "type": "t2.micro",
+                        "vpcId": "vpc-014849a1810d82c85"
+                      }
+                    },
+                    "id": "i-06ed8daa923ca1c26",
+                    "partition": "aws",
+                    "region": "ap-southeast-2",
+                    "tags": {},
+                    "type": "AWS_EC2_INSTANCE"
+                  }
+                ],
+                "severity": "MEDIUM",
+                "status": "ACTIVE",
+                "title": "Port 22 is reachable from an Internet Gateway - TCP",
+                "type": "NETWORK_REACHABILITY",
+                "updatedAt": "2025-07-15 18:28:19.196000+07:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "guardduty",
+            "function": "list_detectors",
+            "region": "ap-southeast-2",
+            "result": [
+              "4b43ecb81e584be1a9a2fbb22cddd9cc"
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudtrail",
+            "function": "describe_trails",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "Name": "serverless-payment-trail",
+                "S3BucketName": "serverless-payment-cloudtrail-logs-prod-405ql2gk",
+                "S3KeyPrefix": "cloudtrail-logs",
+                "IncludeGlobalServiceEvents": true,
+                "IsMultiRegionTrail": false,
+                "HomeRegion": "ap-southeast-2",
+                "TrailARN": "arn:aws:cloudtrail:ap-southeast-2:123012555573:trail/serverless-payment-trail",
+                "LogFileValidationEnabled": false,
+                "HasCustomEventSelectors": true,
+                "HasInsightSelectors": false,
+                "IsOrganizationTrail": false
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "stepfunctions",
+            "function": "list_state_machines",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "stateMachineArn": "arn:aws:states:ap-southeast-2:123012555573:stateMachine:serverless-payment-workflow",
+                "name": "serverless-payment-workflow",
+                "type": "STANDARD",
+                "creationDate": "2025-07-15 19:26:02.521000+07:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "lambda",
+            "function": "list_functions",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "FunctionName": "serverless-payment-transaction",
+                "FunctionArn": "arn:aws:lambda:ap-southeast-2:123012555573:function:serverless-payment-transaction",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::123012555573:role/serverless-payment-lambda-execution-role",
+                "Handler": "index.handler",
+                "CodeSize": 220,
+                "Description": "",
+                "Timeout": 30,
+                "MemorySize": 128,
+                "LastModified": "2025-07-15T12:25:54.777+0000",
+                "CodeSha256": "ZtNbVwggrvU/hzPhohXHkeYfQbxubHCgQF2ae9DehnE=",
+                "Version": "$LATEST",
+                "Environment": {
+                  "Variables": {
+                    "SNS_TOPIC_ARN": "arn:aws:sns:ap-southeast-2:123012555573:serverless-payment-notifications",
+                    "DYNAMODB_TABLE": "serverless-payment-cache",
+                    "KMS_KEY_ID": "arn:aws:kms:ap-southeast-2:123012555573:key/e443bdc9-5f5f-42cf-8cae-113e000e2bd4"
+                  }
+                },
+                "TracingConfig": {
+                  "Mode": "Active"
+                },
+                "RevisionId": "feb4af95-8f39-408b-9e3f-0f34b6025718",
+                "PackageType": "Zip",
+                "Architectures": [
+                  "x86_64"
+                ],
+                "EphemeralStorage": {
+                  "Size": 512
+                },
+                "SnapStart": {
+                  "ApplyOn": "None",
+                  "OptimizationStatus": "Off"
+                },
+                "LoggingConfig": {
+                  "LogFormat": "Text",
+                  "LogGroup": "/aws/lambda/serverless-payment-transaction"
+                }
+              },
+              {
+                "FunctionName": "serverless-payment-fee-calculation",
+                "FunctionArn": "arn:aws:lambda:ap-southeast-2:123012555573:function:serverless-payment-fee-calculation",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::123012555573:role/serverless-payment-lambda-execution-role",
+                "Handler": "index.handler",
+                "CodeSize": 220,
+                "Description": "",
+                "Timeout": 30,
+                "MemorySize": 128,
+                "LastModified": "2025-07-15T11:27:32.631+0000",
+                "CodeSha256": "ZtNbVwggrvU/hzPhohXHkeYfQbxubHCgQF2ae9DehnE=",
+                "Version": "$LATEST",
+                "Environment": {
+                  "Variables": {
+                    "DYNAMODB_TABLE": "serverless-payment-cache"
+                  }
+                },
+                "TracingConfig": {
+                  "Mode": "PassThrough"
+                },
+                "RevisionId": "7416caf8-4e35-4698-89ef-78983b1622eb",
+                "PackageType": "Zip",
+                "Architectures": [
+                  "x86_64"
+                ],
+                "EphemeralStorage": {
+                  "Size": 512
+                },
+                "SnapStart": {
+                  "ApplyOn": "None",
+                  "OptimizationStatus": "Off"
+                },
+                "LoggingConfig": {
+                  "LogFormat": "Text",
+                  "LogGroup": "/aws/lambda/serverless-payment-fee-calculation"
+                }
+              },
+              {
+                "FunctionName": "serverless-payment-update-ddb",
+                "FunctionArn": "arn:aws:lambda:ap-southeast-2:123012555573:function:serverless-payment-update-ddb",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::123012555573:role/serverless-payment-lambda-execution-role",
+                "Handler": "index.handler",
+                "CodeSize": 220,
+                "Description": "",
+                "Timeout": 30,
+                "MemorySize": 128,
+                "LastModified": "2025-07-15T11:27:39.116+0000",
+                "CodeSha256": "ZtNbVwggrvU/hzPhohXHkeYfQbxubHCgQF2ae9DehnE=",
+                "Version": "$LATEST",
+                "Environment": {
+                  "Variables": {
+                    "DYNAMODB_TABLE": "serverless-payment-cache"
+                  }
+                },
+                "TracingConfig": {
+                  "Mode": "PassThrough"
+                },
+                "RevisionId": "270c6e6b-a444-4c1c-b2ef-3fca3308a9b8",
+                "PackageType": "Zip",
+                "Architectures": [
+                  "x86_64"
+                ],
+                "EphemeralStorage": {
+                  "Size": 512
+                },
+                "SnapStart": {
+                  "ApplyOn": "None",
+                  "OptimizationStatus": "Off"
+                },
+                "LoggingConfig": {
+                  "LogFormat": "Text",
+                  "LogGroup": "/aws/lambda/serverless-payment-update-ddb"
+                }
+              },
+              {
+                "FunctionName": "serverless-payment-fetch-non-pci-data",
+                "FunctionArn": "arn:aws:lambda:ap-southeast-2:123012555573:function:serverless-payment-fetch-non-pci-data",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::123012555573:role/serverless-payment-reporting-lambda-role",
+                "Handler": "index.handler",
+                "CodeSize": 220,
+                "Description": "",
+                "Timeout": 30,
+                "MemorySize": 128,
+                "LastModified": "2025-07-15T11:27:19.263+0000",
+                "CodeSha256": "ZtNbVwggrvU/hzPhohXHkeYfQbxubHCgQF2ae9DehnE=",
+                "Version": "$LATEST",
+                "Environment": {
+                  "Variables": {
+                    "DYNAMODB_TABLE": "serverless-payment-non-pci-data",
+                    "CROSS_ACCOUNT_ROLE_ARN": "arn:aws:iam::123012555573:role/serverless-payment-cross-account-pci-access"
+                  }
+                },
+                "TracingConfig": {
+                  "Mode": "PassThrough"
+                },
+                "RevisionId": "7ec90e7c-eff4-4ef7-84d7-5a4469c1634a",
+                "PackageType": "Zip",
+                "Architectures": [
+                  "x86_64"
+                ],
+                "EphemeralStorage": {
+                  "Size": 512
+                },
+                "SnapStart": {
+                  "ApplyOn": "None",
+                  "OptimizationStatus": "Off"
+                },
+                "LoggingConfig": {
+                  "LogFormat": "Text",
+                  "LogGroup": "/aws/lambda/serverless-payment-fetch-non-pci-data"
+                }
+              },
+              {
+                "FunctionName": "serverless-payment-clear-cache",
+                "FunctionArn": "arn:aws:lambda:ap-southeast-2:123012555573:function:serverless-payment-clear-cache",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::123012555573:role/serverless-payment-lambda-execution-role",
+                "Handler": "index.handler",
+                "CodeSize": 220,
+                "Description": "",
+                "Timeout": 30,
+                "MemorySize": 128,
+                "LastModified": "2025-07-15T11:27:25.994+0000",
+                "CodeSha256": "ZtNbVwggrvU/hzPhohXHkeYfQbxubHCgQF2ae9DehnE=",
+                "Version": "$LATEST",
+                "Environment": {
+                  "Variables": {
+                    "DYNAMODB_TABLE": "serverless-payment-cache"
+                  }
+                },
+                "TracingConfig": {
+                  "Mode": "PassThrough"
+                },
+                "RevisionId": "6b7bd917-f3b3-4bd1-b817-b401a088ba41",
+                "PackageType": "Zip",
+                "Architectures": [
+                  "x86_64"
+                ],
+                "EphemeralStorage": {
+                  "Size": 512
+                },
+                "SnapStart": {
+                  "ApplyOn": "None",
+                  "OptimizationStatus": "Off"
+                },
+                "LoggingConfig": {
+                  "LogFormat": "Text",
+                  "LogGroup": "/aws/lambda/serverless-payment-clear-cache"
+                }
+              },
+              {
+                "FunctionName": "serverless-payment-payment-auth",
+                "FunctionArn": "arn:aws:lambda:ap-southeast-2:123012555573:function:serverless-payment-payment-auth",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::123012555573:role/serverless-payment-lambda-execution-role",
+                "Handler": "index.handler",
+                "CodeSize": 220,
+                "Description": "",
+                "Timeout": 30,
+                "MemorySize": 128,
+                "LastModified": "2025-07-15T12:25:41.349+0000",
+                "CodeSha256": "ZtNbVwggrvU/hzPhohXHkeYfQbxubHCgQF2ae9DehnE=",
+                "Version": "$LATEST",
+                "Environment": {
+                  "Variables": {
+                    "SNS_TOPIC_ARN": "arn:aws:sns:ap-southeast-2:123012555573:serverless-payment-notifications",
+                    "SQS_QUEUE_URL": "https://sqs.ap-southeast-2.amazonaws.com/123012555573/serverless-payment-dlq",
+                    "DYNAMODB_TABLE": "serverless-payment-cache"
+                  }
+                },
+                "TracingConfig": {
+                  "Mode": "Active"
+                },
+                "RevisionId": "a31ebdab-be9c-4642-a50f-c2b50169d3cb",
+                "PackageType": "Zip",
+                "Architectures": [
+                  "x86_64"
+                ],
+                "EphemeralStorage": {
+                  "Size": 512
+                },
+                "SnapStart": {
+                  "ApplyOn": "None",
+                  "OptimizationStatus": "Off"
+                },
+                "LoggingConfig": {
+                  "LogFormat": "Text",
+                  "LogGroup": "/aws/lambda/serverless-payment-payment-auth"
+                }
+              },
+              {
+                "FunctionName": "serverless-payment-validate",
+                "FunctionArn": "arn:aws:lambda:ap-southeast-2:123012555573:function:serverless-payment-validate",
+                "Runtime": "python3.9",
+                "Role": "arn:aws:iam::123012555573:role/serverless-payment-lambda-execution-role",
+                "Handler": "index.handler",
+                "CodeSize": 220,
+                "Description": "",
+                "Timeout": 30,
+                "MemorySize": 128,
+                "LastModified": "2025-07-15T12:25:47.901+0000",
+                "CodeSha256": "ZtNbVwggrvU/hzPhohXHkeYfQbxubHCgQF2ae9DehnE=",
+                "Version": "$LATEST",
+                "Environment": {
+                  "Variables": {
+                    "SNS_TOPIC_ARN": "arn:aws:sns:ap-southeast-2:123012555573:serverless-payment-notifications",
+                    "DYNAMODB_TABLE": "serverless-payment-cache"
+                  }
+                },
+                "TracingConfig": {
+                  "Mode": "Active"
+                },
+                "RevisionId": "29d56b7d-e909-48a0-bbb3-d4a765f24e42",
+                "PackageType": "Zip",
+                "Architectures": [
+                  "x86_64"
+                ],
+                "EphemeralStorage": {
+                  "Size": 512
+                },
+                "SnapStart": {
+                  "ApplyOn": "None",
+                  "OptimizationStatus": "Off"
+                },
+                "LoggingConfig": {
+                  "LogFormat": "Text",
+                  "LogGroup": "/aws/lambda/serverless-payment-validate"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "list_buckets",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "Name": "sentinel-ai-auto-auditor",
+                "CreationDate": "2025-07-15 10:50:11+00:00"
+              },
+              {
+                "Name": "serverless-payment-cloudtrail-logs-prod-405ql2gk",
+                "CreationDate": "2025-07-15 11:27:18+00:00"
+              },
+              {
+                "Name": "serverless-payment-config-prod-405ql2gk",
+                "CreationDate": "2025-07-15 12:25:42+00:00"
+              },
+              {
+                "Name": "serverless-payment-reporting-static-content-prod",
+                "CreationDate": "2025-07-15 12:31:47+00:00"
+              },
+              {
+                "Name": "serverless-payment-static-content-prod",
+                "CreationDate": "2025-07-15 12:31:47+00:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "sqs",
+            "function": "list_queues",
+            "region": "ap-southeast-2",
+            "result": [
+              "https://sqs.ap-southeast-2.amazonaws.com/123012555573/serverless-payment-dlq"
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "config",
+            "function": "describe_delivery_channels",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "name": "serverless-payment-config-delivery-channel",
+                "s3BucketName": "serverless-payment-config-prod-405ql2gk"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "securityhub",
+            "function": "get_enabled_standards",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "StandardsSubscriptionArn": "arn:aws:securityhub:ap-southeast-2:123012555573:subscription/cis-aws-foundations-benchmark/v/1.2.0",
+                "StandardsArn": "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0",
+                "StandardsInput": {},
+                "StandardsStatus": "INCOMPLETE",
+                "StandardsControlsUpdatable": "READY_FOR_UPDATES",
+                "StandardsStatusReason": {
+                  "StatusReasonCode": "NO_AVAILABLE_CONFIGURATION_RECORDER"
+                }
+              },
+              {
+                "StandardsSubscriptionArn": "arn:aws:securityhub:ap-southeast-2:123012555573:subscription/aws-foundational-security-best-practices/v/1.0.0",
+                "StandardsArn": "arn:aws:securityhub:ap-southeast-2::standards/aws-foundational-security-best-practices/v/1.0.0",
+                "StandardsInput": {},
+                "StandardsStatus": "INCOMPLETE",
+                "StandardsControlsUpdatable": "READY_FOR_UPDATES",
+                "StandardsStatusReason": {
+                  "StatusReasonCode": "NO_AVAILABLE_CONFIGURATION_RECORDER"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "config",
+            "function": "describe_configuration_recorders",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "arn": "arn:aws:config:ap-southeast-2:123012555573:configuration-recorder/serverless-payment-config-recorder/zuhpo9tgds7ckj1t",
+                "name": "serverless-payment-config-recorder",
+                "roleARN": "arn:aws:iam::123012555573:role/serverless-payment-config-role",
+                "recordingGroup": {
+                  "allSupported": true,
+                  "includeGlobalResourceTypes": true,
+                  "resourceTypes": [],
+                  "exclusionByResourceTypes": {
+                    "resourceTypes": []
+                  },
+                  "recordingStrategy": {
+                    "useOnly": "ALL_SUPPORTED_RESOURCE_TYPES"
+                  }
+                },
+                "recordingMode": {
+                  "recordingFrequency": "CONTINUOUS",
+                  "recordingModeOverrides": []
+                },
+                "recordingScope": "PAID"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudwatch",
+            "function": "list_dashboards",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "DashboardName": "serverless-payment-dashboard",
+                "DashboardArn": "arn:aws:cloudwatch::123012555573:dashboard/serverless-payment-dashboard",
+                "LastModified": "2025-07-15 12:26:03+00:00",
+                "Size": 680
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "iam",
+            "function": "list_roles",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "Path": "/service-role/",
+                "RoleName": "AmazonBedrockExecutionRoleForKnowledgeBase_6fv5l",
+                "RoleId": "AROARZJA6UM27P3H5B4OL",
+                "Arn": "arn:aws:iam::123012555573:role/service-role/AmazonBedrockExecutionRoleForKnowledgeBase_6fv5l",
+                "CreateDate": "2025-07-15 13:51:05+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Sid": "BedrockRDSInstanceStatementID",
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "bedrock.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole",
+                      "Condition": {
+                        "StringEquals": {
+                          "aws:SourceAccount": "123012555573"
+                        },
+                        "ArnLike": {
+                          "aws:SourceArn": "arn:aws:bedrock:ap-southeast-2:123012555573:knowledge-base/*"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "Description": "An execution role for Bedrock Knowledge base",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/guardduty.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForAmazonGuardDuty",
+                "RoleId": "AROARZJA6UM2VTN766KQ2",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
+                "CreateDate": "2025-07-15 11:27:03+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "guardduty.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "A service-linked role required for Amazon GuardDuty to access your resources. ",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/malware-protection.guardduty.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+                "RoleId": "AROARZJA6UM27YGEMZVVL",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/malware-protection.guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+                "CreateDate": "2025-07-15 11:27:04+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "malware-protection.guardduty.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "A service-linked role required for Amazon GuardDuty Malware Scan to access your resources. ",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/inspector2.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForAmazonInspector2",
+                "RoleId": "AROARZJA6UM23HGPL6AW3",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/inspector2.amazonaws.com/AWSServiceRoleForAmazonInspector2",
+                "CreateDate": "2025-07-15 11:27:05+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "inspector2.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Allowing Inspector to call AWS services on behalf of customers",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/agentless.inspector2.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForAmazonInspector2Agentless",
+                "RoleId": "AROARZJA6UM2S2HM4KRBT",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/agentless.inspector2.amazonaws.com/AWSServiceRoleForAmazonInspector2Agentless",
+                "CreateDate": "2025-07-15 11:27:06+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "agentless.inspector2.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Allowing Inspector to call AWS services on behalf of customers",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/macie.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForAmazonMacie",
+                "RoleId": "AROARZJA6UM2TCJHOJZ47",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/macie.amazonaws.com/AWSServiceRoleForAmazonMacie",
+                "CreateDate": "2025-07-15 11:27:10+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "macie.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/ops.apigateway.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForAPIGateway",
+                "RoleId": "AROARZJA6UM2Y7NVF5OPS",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/ops.apigateway.amazonaws.com/AWSServiceRoleForAPIGateway",
+                "CreateDate": "2025-07-15 11:27:07+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "ops.apigateway.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "The Service Linked Role is used by Amazon API Gateway.",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/rds.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForRDS",
+                "RoleId": "AROARZJA6UM2YTEFCQZAX",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+                "CreateDate": "2025-07-15 13:49:39+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "rds.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/securityhub.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForSecurityHub",
+                "RoleId": "AROARZJA6UM2UJU2NMKXH",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/securityhub.amazonaws.com/AWSServiceRoleForSecurityHub",
+                "CreateDate": "2025-07-15 11:27:09+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "securityhub.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "A service-linked role required for AWS Security Hub to access your resources.",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/support.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForSupport",
+                "RoleId": "AROARZJA6UM24JZOQLAZY",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+                "CreateDate": "2025-06-21 15:00:35+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "support.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForTrustedAdvisor",
+                "RoleId": "AROARZJA6UM2YYMPF25IM",
+                "Arn": "arn:aws:iam::123012555573:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+                "CreateDate": "2025-06-21 15:00:35+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "trustedadvisor.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/",
+                "RoleName": "serverless-payment-api-gateway-step-functions-role",
+                "RoleId": "AROARZJA6UM2TEAX5IML4",
+                "Arn": "arn:aws:iam::123012555573:role/serverless-payment-api-gateway-step-functions-role",
+                "CreateDate": "2025-07-15 11:27:05+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "apigateway.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/",
+                "RoleName": "serverless-payment-config-role",
+                "RoleId": "AROARZJA6UM2UP5RHYDSG",
+                "Arn": "arn:aws:iam::123012555573:role/serverless-payment-config-role",
+                "CreateDate": "2025-07-15 11:27:07+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "config.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/",
+                "RoleName": "serverless-payment-cross-account-pci-access",
+                "RoleId": "AROARZJA6UM2UTNRNX53Q",
+                "Arn": "arn:aws:iam::123012555573:role/serverless-payment-cross-account-pci-access",
+                "CreateDate": "2025-07-15 11:27:15+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "AWS": "arn:aws:iam::123012555573:role/serverless-payment-reporting-lambda-role"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/",
+                "RoleName": "serverless-payment-lambda-execution-role",
+                "RoleId": "AROARZJA6UM2RFRS2MQBD",
+                "Arn": "arn:aws:iam::123012555573:role/serverless-payment-lambda-execution-role",
+                "CreateDate": "2025-07-15 11:27:07+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "lambda.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/",
+                "RoleName": "serverless-payment-reporting-lambda-role",
+                "RoleId": "AROARZJA6UM23YEFXXJMQ",
+                "Arn": "arn:aws:iam::123012555573:role/serverless-payment-reporting-lambda-role",
+                "CreateDate": "2025-07-15 11:27:08+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "lambda.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/",
+                "RoleName": "serverless-payment-step-functions-role",
+                "RoleId": "AROARZJA6UM25DF6XGFWJ",
+                "Arn": "arn:aws:iam::123012555573:role/serverless-payment-step-functions-role",
+                "CreateDate": "2025-07-15 11:27:04+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "states.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "MaxSessionDuration": 3600
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudfront",
+            "function": "list_distributions",
+            "region": "ap-southeast-2",
+            "result": null,
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "detective",
+            "function": "list_graphs",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "Arn": "arn:aws:detective:ap-southeast-2:123012555573:graph:4c3c75ec6f5c47359c119f03ccc42759",
+                "CreatedTime": "2025-07-15 11:27:02.637000+00:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "macie2",
+            "function": "get_macie_session",
+            "region": "ap-southeast-2",
+            "result": {
+              "createdAt": "2025-07-15 11:27:10.553000+00:00",
+              "findingPublishingFrequency": "FIFTEEN_MINUTES",
+              "serviceRole": "arn:aws:iam::123012555573:role/aws-service-role/macie.amazonaws.com/AWSServiceRoleForAmazonMacie",
+              "status": "ENABLED",
+              "updatedAt": "2025-07-15 11:27:10.553000+00:00"
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cognito-idp",
+            "function": "list_user_pool_clients",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "ClientId": "1d3hi0ce0gomd5meqqludjp8gt",
+                "UserPoolId": "ap-southeast-2_HX58CE64a",
+                "ClientName": "serverless-payment-client"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dynamodb",
+            "function": "describe_table",
+            "region": "ap-southeast-2",
+            "result": {
+              "AttributeDefinitions": [
+                {
+                  "AttributeName": "transaction_id",
+                  "AttributeType": "S"
+                }
+              ],
+              "TableName": "serverless-payment-cache",
+              "KeySchema": [
+                {
+                  "AttributeName": "transaction_id",
+                  "KeyType": "HASH"
+                }
+              ],
+              "TableStatus": "ACTIVE",
+              "CreationDateTime": "2025-07-15 18:27:05.873000+07:00",
+              "ProvisionedThroughput": {
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+              },
+              "TableSizeBytes": 0,
+              "ItemCount": 0,
+              "TableArn": "arn:aws:dynamodb:ap-southeast-2:123012555573:table/serverless-payment-cache",
+              "TableId": "854bd623-82f6-42d6-9af0-0ca9139d2547",
+              "BillingModeSummary": {
+                "BillingMode": "PAY_PER_REQUEST",
+                "LastUpdateToPayPerRequestDateTime": "2025-07-15 18:27:05.873000+07:00"
+              },
+              "SSEDescription": {
+                "Status": "ENABLED",
+                "SSEType": "KMS",
+                "KMSMasterKeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/3821e942-cb36-4fed-bc29-201d3daf333f"
+              },
+              "DeletionProtectionEnabled": false,
+              "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+              }
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "xray",
+            "function": "get_encryption_config",
+            "region": "ap-southeast-2",
+            "result": {
+              "KeyId": "arn:aws:kms:ap-southeast-2:123012555573:key/e443bdc9-5f5f-42cf-8cae-113e000e2bd4",
+              "Status": "ACTIVE",
+              "Type": "KMS"
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dynamodb",
+            "function": "describe_table",
+            "region": "ap-southeast-2",
+            "result": {
+              "AttributeDefinitions": [
+                {
+                  "AttributeName": "report_id",
+                  "AttributeType": "S"
+                },
+                {
+                  "AttributeName": "timestamp",
+                  "AttributeType": "S"
+                }
+              ],
+              "TableName": "serverless-payment-non-pci-data",
+              "KeySchema": [
+                {
+                  "AttributeName": "report_id",
+                  "KeyType": "HASH"
+                },
+                {
+                  "AttributeName": "timestamp",
+                  "KeyType": "RANGE"
+                }
+              ],
+              "TableStatus": "ACTIVE",
+              "CreationDateTime": "2025-07-15 18:27:08.077000+07:00",
+              "ProvisionedThroughput": {
+                "NumberOfDecreasesToday": 0,
+                "ReadCapacityUnits": 0,
+                "WriteCapacityUnits": 0
+              },
+              "TableSizeBytes": 0,
+              "ItemCount": 0,
+              "TableArn": "arn:aws:dynamodb:ap-southeast-2:123012555573:table/serverless-payment-non-pci-data",
+              "TableId": "57cccdf8-0652-4905-aa69-8678f84cd1d5",
+              "BillingModeSummary": {
+                "BillingMode": "PAY_PER_REQUEST",
+                "LastUpdateToPayPerRequestDateTime": "2025-07-15 18:27:08.077000+07:00"
+              },
+              "SSEDescription": {
+                "Status": "ENABLED",
+                "SSEType": "KMS",
+                "KMSMasterKeyArn": "arn:aws:kms:ap-southeast-2:123012555573:key/3821e942-cb36-4fed-bc29-201d3daf333f"
+              },
+              "DeletionProtectionEnabled": false,
+              "WarmThroughput": {
+                "ReadUnitsPerSecond": 12000,
+                "WriteUnitsPerSecond": 4000,
+                "Status": "ACTIVE"
+              }
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_bucket_encryption",
+            "region": "ap-southeast-2",
+            "result": {
+              "Rules": [
+                {
+                  "ApplyServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256"
+                  },
+                  "BucketKeyEnabled": false
+                }
+              ]
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_bucket_encryption",
+            "region": "ap-southeast-2",
+            "result": {
+              "Rules": [
+                {
+                  "ApplyServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256"
+                  },
+                  "BucketKeyEnabled": false
+                }
+              ]
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_bucket_versioning",
+            "region": "ap-southeast-2",
+            "result": {
+              "Status": "Enabled"
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_bucket_versioning",
+            "region": "ap-southeast-2",
+            "result": {
+              "Status": "Enabled"
+            },
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "acm",
+            "function": "list_certificates",
+            "region": "ap-southeast-2",
+            "result": [],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "secretsmanager",
+            "function": "list_secrets",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "ARN": "arn:aws:secretsmanager:ap-southeast-2:123012555573:secret:BedrockUserSecret-M9F6uPQ9MP6s-mUtvzM",
+                "Name": "BedrockUserSecret-M9F6uPQ9MP6s",
+                "Description": "Secret required for Bedrock Knowledge Base to interact with Aurora Cluster",
+                "LastChangedDate": "2025-07-15 20:49:33.752000+07:00",
+                "LastAccessedDate": "2025-07-15 07:00:00+07:00",
+                "Tags": [
+                  {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646"
+                  },
+                  {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "BedrockUserSecret"
+                  },
+                  {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:ap-southeast-2:123012555573:stack/KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646/866034a0-6182-11f0-bb09-02120ad3e587"
+                  }
+                ],
+                "SecretVersionsToStages": {
+                  "75e57b75-7075-a960-b630-9e39f1283246": [
+                    "AWSCURRENT"
+                  ]
+                },
+                "CreatedDate": "2025-07-15 20:49:33.554000+07:00"
+              },
+              {
+                "ARN": "arn:aws:secretsmanager:ap-southeast-2:123012555573:secret:rds!cluster-0a66835c-8f1b-45e8-9f00-fbe5a86f6779-1AmJwD",
+                "Name": "rds!cluster-0a66835c-8f1b-45e8-9f00-fbe5a86f6779",
+                "Description": "The secret associated with the primary RDS DB cluster: arn:aws:rds:ap-southeast-2:123012555573:cluster:knowledgebasequickcreateaurora-d20-auroradbcluster-vm9adstrutbd",
+                "RotationEnabled": true,
+                "RotationRules": {
+                  "AutomaticallyAfterDays": 7
+                },
+                "LastRotatedDate": "2025-07-15 20:53:57.312000+07:00",
+                "LastChangedDate": "2025-07-15 20:53:57.318000+07:00",
+                "LastAccessedDate": "2025-07-15 07:00:00+07:00",
+                "NextRotationDate": "2025-07-23 06:59:59+07:00",
+                "Tags": [
+                  {
+                    "Key": "aws:rds:primaryDBClusterArn",
+                    "Value": "arn:aws:rds:ap-southeast-2:123012555573:cluster:knowledgebasequickcreateaurora-d20-auroradbcluster-vm9adstrutbd"
+                  },
+                  {
+                    "Key": "aws:secretsmanager:owningService",
+                    "Value": "rds"
+                  }
+                ],
+                "SecretVersionsToStages": {
+                  "0c54d0e7-1606-4e01-a1e2-7e9e229767ea": [
+                    "AWSCURRENT"
+                  ],
+                  "811398f8-a6c1-4664-907b-6504b4b67ffa": [
+                    "AWSPREVIOUS"
+                  ]
+                },
+                "OwningService": "rds",
+                "CreatedDate": "2025-07-15 20:49:41.813000+07:00"
+              },
+              {
+                "ARN": "arn:aws:secretsmanager:ap-southeast-2:123012555573:secret:rds-db-credentials/cluster-DFQRXCZMFDZ32CSBBZPBR5WBAI/skadi2910/1752591145678-BgQTRS",
+                "Name": "rds-db-credentials/cluster-DFQRXCZMFDZ32CSBBZPBR5WBAI/skadi2910/1752591145678",
+                "Description": "RDS database skadi2910 credentials for knowledgebasequickcreateaurora-d20-auroradbcluster-vm9adstrutbd",
+                "LastChangedDate": "2025-07-15 21:52:26.159000+07:00",
+                "LastAccessedDate": "2025-07-15 07:00:00+07:00",
+                "SecretVersionsToStages": {
+                  "88f3f2c2-b901-4350-86c6-684044ac4a05": [
+                    "AWSCURRENT"
+                  ]
+                },
+                "CreatedDate": "2025-07-15 21:52:26.130000+07:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_flow_logs",
+            "region": "ap-southeast-2",
+            "result": [],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ssm",
+            "function": "describe_parameters",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "Name": "/inspector-aws/service/inspector-linux-application-paths",
+                "ARN": "arn:aws:ssm:ap-southeast-2:123012555573:parameter/inspector-aws/service/inspector-linux-application-paths",
+                "Type": "StringList",
+                "LastModifiedDate": "2025-07-15 18:27:45.117000+07:00",
+                "LastModifiedUser": "arn:aws:sts::123012555573:assumed-role/AWSServiceRoleForAmazonInspector2/EC2_ORCHESTRATOR-102862306180905866",
+                "Version": 1,
+                "Tier": "Standard",
+                "Policies": [],
+                "DataType": "text"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_security_groups",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "GroupId": "sg-029266c338d932603",
+                "IpPermissionsEgress": [
+                  {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                      {
+                        "CidrIp": "0.0.0.0/0"
+                      }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                  }
+                ],
+                "Tags": [
+                  {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:ap-southeast-2:123012555573:stack/KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646/866034a0-6182-11f0-bb09-02120ad3e587"
+                  },
+                  {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "AuroraDBSecurityGroup"
+                  },
+                  {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646"
+                  }
+                ],
+                "VpcId": "vpc-014849a1810d82c85",
+                "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:123012555573:security-group/sg-029266c338d932603",
+                "OwnerId": "123012555573",
+                "GroupName": "KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646-AuroraDBSecurityGroup-W89LIPtlTTL7",
+                "Description": "Security Group associated with Aurora Cluster as part of Aurora Bedrock Quick Create",
+                "IpPermissions": [
+                  {
+                    "IpProtocol": "tcp",
+                    "FromPort": 0,
+                    "ToPort": 65535,
+                    "UserIdGroupPairs": [
+                      {
+                        "UserId": "123012555573",
+                        "GroupId": "sg-029266c338d932603"
+                      }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                  }
+                ]
+              },
+              {
+                "GroupId": "sg-052eb56579246b22a",
+                "IpPermissionsEgress": [
+                  {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                      {
+                        "CidrIp": "0.0.0.0/0"
+                      }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                  }
+                ],
+                "VpcId": "vpc-014849a1810d82c85",
+                "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:123012555573:security-group/sg-052eb56579246b22a",
+                "OwnerId": "123012555573",
+                "GroupName": "launch-wizard-1",
+                "Description": "launch-wizard-1 created 2025-07-14T02:41:37.438Z",
+                "IpPermissions": [
+                  {
+                    "IpProtocol": "tcp",
+                    "FromPort": 22,
+                    "ToPort": 22,
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                      {
+                        "CidrIp": "0.0.0.0/0"
+                      }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                  }
+                ]
+              },
+              {
+                "GroupId": "sg-0b19899a408a6bcda",
+                "IpPermissionsEgress": [
+                  {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                      {
+                        "CidrIp": "0.0.0.0/0"
+                      }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                  }
+                ],
+                "VpcId": "vpc-014849a1810d82c85",
+                "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:123012555573:security-group/sg-0b19899a408a6bcda",
+                "OwnerId": "123012555573",
+                "GroupName": "default",
+                "Description": "default VPC security group",
+                "IpPermissions": [
+                  {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [
+                      {
+                        "UserId": "123012555573",
+                        "GroupId": "sg-0b19899a408a6bcda"
+                      }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_vpcs",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "OwnerId": "123012555573",
+                "InstanceTenancy": "default",
+                "CidrBlockAssociationSet": [
+                  {
+                    "AssociationId": "vpc-cidr-assoc-0a36e8dc950360429",
+                    "CidrBlock": "172.31.0.0/16",
+                    "CidrBlockState": {
+                      "State": "associated"
+                    }
+                  }
+                ],
+                "IsDefault": true,
+                "BlockPublicAccessStates": {
+                  "InternetGatewayBlockMode": "off"
+                },
+                "VpcId": "vpc-014849a1810d82c85",
+                "State": "available",
+                "CidrBlock": "172.31.0.0/16",
+                "DhcpOptionsId": "dopt-037c4f9b9f3bd449c"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_network_acls",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "Associations": [
+                  {
+                    "NetworkAclAssociationId": "aclassoc-086d27a3346457cf6",
+                    "NetworkAclId": "acl-071cb31425fc7f270",
+                    "SubnetId": "subnet-04138a6ed468a8458"
+                  },
+                  {
+                    "NetworkAclAssociationId": "aclassoc-0cfbd4fb66f8c8969",
+                    "NetworkAclId": "acl-071cb31425fc7f270",
+                    "SubnetId": "subnet-06ac8d09f1ecab9e2"
+                  },
+                  {
+                    "NetworkAclAssociationId": "aclassoc-056d06d1864e19247",
+                    "NetworkAclId": "acl-071cb31425fc7f270",
+                    "SubnetId": "subnet-0c7c7365412c65b37"
+                  }
+                ],
+                "Entries": [
+                  {
+                    "CidrBlock": "0.0.0.0/0",
+                    "Egress": true,
+                    "Protocol": "-1",
+                    "RuleAction": "allow",
+                    "RuleNumber": 100
+                  },
+                  {
+                    "CidrBlock": "0.0.0.0/0",
+                    "Egress": true,
+                    "Protocol": "-1",
+                    "RuleAction": "deny",
+                    "RuleNumber": 32767
+                  },
+                  {
+                    "CidrBlock": "0.0.0.0/0",
+                    "Egress": false,
+                    "Protocol": "-1",
+                    "RuleAction": "allow",
+                    "RuleNumber": 100
+                  },
+                  {
+                    "CidrBlock": "0.0.0.0/0",
+                    "Egress": false,
+                    "Protocol": "-1",
+                    "RuleAction": "deny",
+                    "RuleNumber": 32767
+                  }
+                ],
+                "IsDefault": true,
+                "NetworkAclId": "acl-071cb31425fc7f270",
+                "Tags": [],
+                "VpcId": "vpc-014849a1810d82c85",
+                "OwnerId": "123012555573"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "iam",
+            "function": "list_policies",
+            "region": "ap-southeast-2",
+            "result": [
+              {
+                "PolicyName": "KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646-BedrockKnowledgeBaseRolePolicy-qZGLpagHCgfM",
+                "PolicyId": "ANPARZJA6UM233KMRLEL2",
+                "Arn": "arn:aws:iam::123012555573:policy/KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646-BedrockKnowledgeBaseRolePolicy-qZGLpagHCgfM",
+                "Path": "/",
+                "DefaultVersionId": "v1",
+                "AttachmentCount": 1,
+                "PermissionsBoundaryUsageCount": 0,
+                "IsAttachable": true,
+                "CreateDate": "2025-07-15 13:50:45+00:00",
+                "UpdateDate": "2025-07-15 13:50:45+00:00"
+              },
+              {
+                "PolicyName": "KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646-BedrockKBDataSourcePolicy-sMUpElmSr7R5",
+                "PolicyId": "ANPARZJA6UM235EVHVZNC",
+                "Arn": "arn:aws:iam::123012555573:policy/KnowledgeBaseQuickCreateAurora-d20e6dca-e67b-4a8c-bdbc-8f2874eaa646-BedrockKBDataSourcePolicy-sMUpElmSr7R5",
+                "Path": "/",
+                "DefaultVersionId": "v1",
+                "AttachmentCount": 1,
+                "PermissionsBoundaryUsageCount": 0,
+                "IsAttachable": true,
+                "CreateDate": "2025-07-15 13:51:23+00:00",
+                "UpdateDate": "2025-07-15 13:51:23+00:00"
+              }
+            ],
+            "success": true,
+            "error": null
+          }
+        ]
+      }
+    ]
+  }
+]

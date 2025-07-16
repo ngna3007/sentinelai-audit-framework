@@ -1,0 +1,22 @@
+{
+  "control_id": "3.3.1.3",
+  "requirement": "The personal identification number (PIN) and the PIN block are not stored upon completion of the authorization process.",
+  "config_rules": [
+    {
+      "rule_name": "cw-loggroup-retention-period-check",
+      "guidance": "Ensure that an Amazon CloudWatch LogGroup retention period is set to greater than 365 days or else a speciﬁed retention period. The rule is NON_COMPLIANT if the retention period is less than MinRetentionTime, if speciﬁed, or else 365 days."
+    },
+    {
+      "rule_name": "dynamodb-pitr-enabled",
+      "guidance": "Ensure that point- in-time recovery (PITR) is enabled for Amazon DynamoDB tables. The rule is NON_COMPLIANT if PITR is not enabled for DynamoDB tables."
+    },
+    {
+      "rule_name": "ec2-volume-inuse-check",
+      "guidance": "Ensure that EBS volumes are attached to EC2 instances. Optionally ensure that EBS volumes are marked for deletion when an instance is terminated."
+    },
+    {
+      "rule_name": "ecr-private-lifecycle-policy-conﬁgured",
+      "guidance": "Ensure that a private Amazon Elastic Container Registry (ECR) repository has at least one lifecycle policy conﬁgured. The rule is NON_COMPLIANT if no lifecycle policy is conﬁgured for the ECR private repository."
+    }
+  ]
+}

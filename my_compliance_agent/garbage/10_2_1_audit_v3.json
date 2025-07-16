@@ -1,0 +1,69 @@
+{
+    "control_id": "10.2.1",
+    "requirement": "Audit logs are enabled and active for all system components and cardholder data.",
+    "compliance_assessment": {
+        "api-gw-xray-enabled": {
+            "status": "COMPLIANT",
+            "details": "X-Ray tracing is enabled for serverless-payment-api and serverless-payment-reporting-api in AWS API Gateway"
+        },
+        "api-gwv2-access-logs-enabled": {
+            "status": "NON_COMPLIANT", 
+            "details": "No evidence of API Gateway V2 access logging configuration was found"
+        },
+        "appsync-logging-enabled": {
+            "status": "NOT_APPLICABLE",
+            "details": "No AppSync APIs detected in the infrastructure"
+        },
+        "cloudfront-accesslogs-enabled": {
+            "status": "NOT_APPLICABLE",
+            "details": "No CloudFront distributions found in the evidence"
+        },
+        "cloudtrail-enabled": {
+            "status": "COMPLIANT",
+            "details": "CloudTrail trail 'serverless-payment-trail' is enabled with S3 bucket logging for trail logs"
+        },
+        "ecs-task-definition-log-configuration": {
+            "status": "NOT_APPLICABLE",
+            "details": "No ECS task definitions found in the evidence"
+        },
+        "eks-cluster-logging-enabled": {
+            "status": "NOT_APPLICABLE",
+            "details": "No EKS clusters detected in the infrastructure"
+        },
+        "elastic-beanstalk-logs-to-cloudwatch": {
+            "status": "NOT_APPLICABLE",
+            "details": "No Elastic Beanstalk environments found in the evidence"
+        },
+        "mq-cloudwatch-audit-log-enabled": {
+            "status": "NOT_APPLICABLE",
+            "details": "No Amazon MQ brokers detected in the infrastructure"
+        },
+        "multi-region-cloudtrail-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "CloudTrail trail is configured for single region (ap-southeast-2), not multi-region"
+        },
+        "neptune-cluster-cloudwatch-log-export-enabled": {
+            "status": "NOT_APPLICABLE",
+            "details": "No Neptune clusters found in the infrastructure"
+        },
+        "netfw-logging-enabled": {
+            "status": "NOT_APPLICABLE",
+            "details": "No AWS Network Firewall resources detected"
+        },
+        "step-functions-state-machine-logging-enabled": {
+            "status": "NON_COMPLIANT",
+            "details": "No logging configuration detected for serverless-payment-workflow state machine"
+        },
+        "waf-classic-logging-enabled": {
+            "status": "NOT_APPLICABLE", 
+            "details": "No WAF classic global web ACLs found"
+        }
+    },
+    "compliance_summary": {
+        "compliant_rules": 2,
+        "non_compliant_rules": 3,
+        "not_applicable_rules": 7,
+        "total_rules_in_scope": 12,
+        "compliance_rate": "40.00%"
+    }
+}
