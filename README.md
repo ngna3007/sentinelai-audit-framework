@@ -8,7 +8,7 @@
 [![Aurora PostgreSQL](https://img.shields.io/badge/Aurora-PostgreSQL-blue?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/rds/aurora/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![PCI DSS](https://img.shields.io/badge/PCI%20DSS-v4.0-red?logo=security&logoColor=white)](https://www.pcisecuritystandards.org/)
-[![AI Powered](https://img.shields.io/badge/AI-Claude%203.5%20Sonnet-purple?logo=anthropic&logoColor=white)](https://www.anthropic.com)
+[![AI Powered](https://img.shields.io/badge/AI-Amazon%20Bedrock-orange?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
 
 > 🚀 **Winner of VPBank Hackathon 2025 - Team 152**  
 > An intelligent automation framework that revolutionizes PCI DSS compliance auditing using AI and cloud-native technologies.
