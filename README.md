@@ -113,23 +113,7 @@ Traditional PCI DSS auditing is:
 ## 🏗️ Architecture
 
 ### High-Level Architecture
-```mermaid
-graph TD
-    A[Frontend Portal] --> B[Agent Orchestrator]
-    B --> C[Evidence Collector]
-    B --> D[AI Audit Agent]
-    B --> E[Report Generator]
-    
-    C --> F[AWS Config]
-    C --> G[AWS CloudTrail]
-    C --> H[AWS Security Hub]
-    
-    D --> I[Amazon Bedrock]
-    D --> J[Vector Knowledge Base]
-    
-    K[Aurora PostgreSQL] --> B
-    L[S3 Storage] --> C
-```
+<img width="1529" height="1024" alt="image" src="https://github.com/user-attachments/assets/8d836e57-8dfb-4eaf-bfc0-29accaabc008" />
 
 ### 🔧 Core Components
 
