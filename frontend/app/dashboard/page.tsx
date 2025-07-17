@@ -3,9 +3,11 @@ import EvidenceTracker from '../components/EvidenceTracker'
 
 const DashboardHome = () => {
   return (
-    <div className='w-full bg-white'>
+    <main className='w-full flex flex-col items-center justify-center relative overflow-x-hidden'>
+      <div className="w-full">
         <EvidenceTracker/>
-    </div>
+      </div>
+    </main>
   )
 }
 

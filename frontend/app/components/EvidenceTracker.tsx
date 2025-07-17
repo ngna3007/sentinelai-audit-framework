@@ -241,9 +241,9 @@ const EvidenceTracker: React.FC = () => {
       case 'pending':
         return 'bg-yellow-100 text-yellow-800 border border-yellow-200';
       case 'not_applicable':
-        return 'bg-gray-100 text-gray-800 border border-gray-200';
+        return 'bg-secondary text-secondary-foreground border';
       default:
-        return 'bg-gray-100 text-gray-800 border border-gray-200';
+        return 'bg-secondary text-secondary-foreground border';
     }
   };
 
@@ -328,15 +328,15 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
   const uniqueAuditors = [...new Set(userAccounts.map(account => account.auditor_id))];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 w-full">
+    <div className="min-h-screen w-full">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 p-4 shadow-sm">
+      <div className="border-b p-4 shadow-sm">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold">
               PCI DSS Compliance Auditor
             </h1>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               PCI DSS ( v4.0.1 ) &gt;&gt; Requirements Audit Dashboard
             </p>
           </div>
@@ -354,15 +354,15 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
       </div>
 
       {/* Auditor and Account Selection */}
-      <div className="p-6 bg-white border-b border-gray-200">
+      <div className="p-6 border-b">
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-2">
-            <Users size={20} className="text-gray-500" />
-            <label className="text-sm font-medium text-gray-700">Auditor:</label>
+            <Users size={20} className="text-muted-foreground" />
+            <label className="text-sm font-medium">Auditor:</label>
             <select
               value={selectedAuditor}
               onChange={(e) => handleAuditorChange(e.target.value)}
-              className="px-3 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             >
               <option value="">Select Auditor</option>
               {uniqueAuditors.map(auditorId => (
@@ -374,13 +374,13 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <Building size={20} className="text-gray-500" />
-            <label className="text-sm font-medium text-gray-700">AWS Account:</label>
+            <Building size={20} className="text-muted-foreground" />
+            <label className="text-sm font-medium">AWS Account:</label>
             <select
               value={selectedAwsAccount}
               onChange={(e) => handleAwsAccountChange(e.target.value)}
               disabled={!selectedAuditor || auditorAccounts.length === 0}
-              className="px-3 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
+              className="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
             >
               <option value="">Select AWS Account</option>
               {auditorAccounts.map(account => (
@@ -400,73 +400,73 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
             title="Compliant"
             count={statusCounts.compliant}
             icon="✅"
-            color="bg-green-50 text-green-800"
+            color="bg-primary/10 text-primary border-primary/20"
           />
           <StatusCard
             title="Non-Compliant"
             count={statusCounts.non_compliant}
             icon="❌"
-            color="bg-red-50 text-red-800"
+            color="bg-primary/10 text-primary border-primary/20"
           />
           <StatusCard
             title="Pending"
             count={statusCounts.pending}
             icon="⏳"
-            color="bg-yellow-50 text-yellow-800"
+            color="bg-primary/10 text-primary border-primary/20"
           />
           <StatusCard
             title="Not Applicable"
             count={statusCounts.not_applicable}
             icon="➖"
-            color="bg-gray-50 text-gray-800"
+            color="bg-primary/10 text-primary border-primary/20"
           />
           <StatusCard
             title="Total Requirements"
             count={statusCounts.total}
             icon="📊"
-            color="bg-blue-50 text-blue-800"
+            color="bg-primary/10 text-primary border-primary/20"
           />
         </div>
 
         {/* Search and Filter */}
         <div className="flex items-center space-x-4 mb-6">
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+            <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search requirements..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
-          <button className="flex items-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-300 shadow-sm">
+          <button className="flex items-center space-x-2 hover:bg-accent px-4 py-2 rounded-lg border shadow-sm">
             <Filter size={16} />
             <span>Filter</span>
           </button>
         </div>
 
         {/* Requirements Table */}
-        <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200">
+        <div className="rounded-lg overflow-hidden border">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-muted/50 border-b">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                     Control ID
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                     Description
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="divide-y">
                 {loading ? (
                   <tr>
                     <td colSpan={4} className="px-6 py-4 text-center text-gray-500">
@@ -475,13 +475,13 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
                   </tr>
                 ) : !selectedAwsAccount ? (
                   <tr>
-                    <td colSpan={4} className="px-6 py-4 text-center text-gray-500">
+                    <td colSpan={4} className="px-6 py-4 text-center text-muted-foreground">
                       Please select an auditor and AWS account to view requirements
                     </td>
                   </tr>
                 ) : currentData.length === 0 ? (
                   <tr>
-                    <td colSpan={4} className="px-6 py-4 text-center text-gray-500">
+                    <td colSpan={4} className="px-6 py-4 text-center text-muted-foreground">
                       {searchTerm ? "No matching requirements found" : "No requirements data found"}
                     </td>
                   </tr>
