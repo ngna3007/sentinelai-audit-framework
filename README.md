@@ -16,7 +16,7 @@
 
 ---
 
-## � Development Stages
+## Development Stages
 
 ### 🔧 Stage 1 (MVP) - Foundation
 **Focus**: Evidence Collection & MCP Development
@@ -44,7 +44,7 @@
 
 ---
 
-## �📖 Table of Contents
+## 📖 Table of Contents
 
 - [🎯 Overview](#-overview)
 - [✨ Key Features](#-key-features)
