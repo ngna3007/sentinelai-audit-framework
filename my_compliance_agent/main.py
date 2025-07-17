@@ -1,3 +1,4 @@
+
 import asyncio
 import os
 import argparse
@@ -5,6 +6,8 @@ import re
 import json
 import shutil
 import glob
+import boto3
+from botocore.exceptions import ClientError
 from mcp_agent.app import MCPApp
 from mcp_agent.config import (
     Settings,
@@ -51,6 +54,7 @@ settings = Settings(
                     "AWS_PROFILE": "my-bedrock-profile",
                     "AWS_REGION": "ap-southeast-2",
                     "FASTMCP_LOG_LEVEL": "ERROR",
+                    "KB_INCLUSION_TAG_KEY": "mcp-multirag-kb",
                     "BEDROCK_KB_RERANKING_ENABLED": "true"
                 },
                 disabled=False,
@@ -71,7 +75,7 @@ settings = Settings(
     google=GoogleSettings(
         api_key=os.getenv("GOOGLE_API"),
         vertexai= False,
-        default_model="gemini-2.5-flash-lite-preview-06-17"        
+        default_model="gemini-2.0-flash-lite"        
     ),
 )
 
@@ -99,8 +103,8 @@ def cleanup_folders():
             print("📁 requirement/ folder doesn't exist")
         
         # Clean audit_result/ folder
-        if os.path.exists("audit_result"):
-            audit_files = glob.glob("audit_result/*")
+        if os.path.exists("evidence"):
+            audit_files = glob.glob("evidence/*")
             for file_path in audit_files:
                 if os.path.isfile(file_path):
                     os.remove(file_path)
@@ -109,13 +113,13 @@ def cleanup_folders():
                     shutil.rmtree(file_path)
                     deleted_files.append(f"{file_path}/ (directory)")
             
-            print(f"✅ Cleaned audit_result/ folder ({len([f for f in audit_files if not os.path.exists(f)])} items deleted)")
+            print(f"✅ Cleaned evidence/ folder ({len([f for f in audit_files if not os.path.exists(f)])} items deleted)")
         else:
-            print("📁 audit_result/ folder doesn't exist")
+            print("📁 evidence/ folder doesn't exist")
         
         # Create directories if they don't exist
         os.makedirs("requirement", exist_ok=True)
-        os.makedirs("audit_result", exist_ok=True)
+        os.makedirs("evidence", exist_ok=True)
         
         print(f"📋 Total files/folders deleted: {len(deleted_files)}")
         if deleted_files:
@@ -148,37 +152,33 @@ async def fetch_requirement_data(control_id):
     """Fetch requirement data with clean responses"""
     async with app.run() as agent_app:
         context = agent_app.context
+        
         context.config.mcp.servers["filesystem"].args.extend([os.getcwd()])
         
         print(f"🎯 Fetching data for control ID: {control_id}")
-        
+                        
         data_agent = Agent(
             name="data_fetcher_and_editor",
-            instruction="""You are a SQL executor and file editor. Your tasks:
-                        1. Create file name as requirement id with underscore between them, for example 1_2_5.json for requirement 1.2.5, in requirement/ directory
-                        2. Execute SQL queries to get data from database
-                        3. When saving to requirement/ directory:
-                        - If file already exists, READ it first and MERGE new data with existing data
-                        - If file doesn't exist, create new file
-                        - NEVER replace/overwrite existing data - always merge/combine
-                        4. The final JSON structure should contain ALL data:
-                        - Keep existing requirement text if already present
-                        - Add config_rules data to the same file
-                        - Merge data so we have ONE complete JSON file with both requirement and config_rules
-                        5. Fix any formatting issues:
-                        - Convert escaped JSON strings to proper JSON objects/arrays
-                        - Remove extra quotes around text values
-                        - Ensure config_rules is a proper JSON array, not a string
-                        6. Save the corrected file with clean, readable JSON formatting
-                        7. Return confirmation when file is properly formatted with ALL data preserved""",
+            instruction=f"""Create JSON file for control {control_id}.
+
+            1. Get requirement: SELECT requirement FROM pci_dss_controls WHERE control_id = '{control_id}';
+            2. Get config rules: SELECT config_rules FROM pci_aws_config_rule_mappings WHERE control_id = '{control_id}';
+            3. Save as requirement/{control_id.replace('.', '_')}.json with this structure:
+            {{
+                "control_id": "{control_id}",
+                "requirement": "<requirement_text>",
+                "config_rules": <config_rules_array>
+            }}
+            4. Return: "SUCCESS: Created file with X config rules" """,
             server_names=["supabase", "filesystem"],
         )
         
         async with data_agent:
-            llm = await data_agent.attach_llm(GoogleAugmentedLLM)
+            llm = await data_agent.attach_llm(AnthropicAugmentedLLM)
             
             print("📋 Getting requirement...")
-            
+            await asyncio.sleep(5)
+
             try:
                 req_response = await llm.generate_str(
                     f"Execute: SELECT requirement FROM pci_dss_controls WHERE control_id = '{control_id}';"
@@ -189,6 +189,8 @@ async def fetch_requirement_data(control_id):
                 return False
             
             print("🔧 Getting config rules...")
+            await asyncio.sleep(15)
+
             
             try:
                 rules_response = await llm.generate_str(
@@ -200,54 +202,168 @@ async def fetch_requirement_data(control_id):
                 return False
             
             return True
-
-async def fetch_evidence_data():
-    """Draft function that always returns True - placeholder for evidence fetching"""
-    print("📊 Fetching evidence data...")
-    await asyncio.sleep(2)
-    print("✅ Evidence data fetched (placeholder)")
-    return True
+        
+def fetch_evidence_data_direct(control_id):
+    """Direct Python evidence collection - Fast and reliable"""
+    print("🔧 Direct Evidence Collection (Fast & Reliable)")
+    print("=" * 50)
+    
+    # Build requirement file path
+    req_file_path = f"requirement/{control_id.replace('.', '_')}.json"
+    
+    # Read config rules from requirement file
+    try:
+        if not os.path.exists(req_file_path):
+            print(f"❌ Requirement file not found: {req_file_path}")
+            return False
+            
+        with open(req_file_path, 'r') as f:
+            data = json.load(f)
+        
+        config_rules = data.get('config_rules', [])
+        rule_names = []
+        
+        for rule in config_rules:
+            if isinstance(rule, dict) and 'rule_name' in rule:
+                rule_names.append(rule['rule_name'])
+        
+        print(f"📋 Found {len(rule_names)} config rules in {control_id}")
+        
+        if not rule_names:
+            print(f"❌ No config rules found in {req_file_path}")
+            return False
+        
+    except Exception as e:
+        print(f"❌ Error reading requirement file: {e}")
+        return False
+    
+    # Check AWS credentials
+    try:
+        session = boto3.Session()
+        sts = session.client('sts')
+        identity = sts.get_caller_identity()
+        print(f"✅ AWS credentials valid - Account: {identity['Account']}")
+    except Exception as e:
+        print(f"❌ AWS credentials issue: {e}")
+        return False
+    
+    # Connect to AWS Config
+    try:
+        config_client = session.client('config')
+        print("✅ Connected to AWS Config")
+        
+    except Exception as e:
+        print(f"❌ Failed to connect to AWS Config: {e}")
+        return False
+    
+    # Collect evidence for each rule
+    all_evidence = {}
+    success_count = 0
+    error_count = 0
+    
+    print(f"\n🔍 Querying {len(rule_names)} AWS Config rules...")
+    
+    for i, rule_name in enumerate(rule_names, 1):
+        try:
+            print(f"   {i}/{len(rule_names)}: {rule_name}...", end="")
+            
+            compliance_details = config_client.get_compliance_details_by_config_rule(
+                ConfigRuleName=rule_name
+            )
+            
+            all_evidence[rule_name] = compliance_details
+            success_count += 1
+            print(" ✅")
+            
+        except ClientError as e:
+            all_evidence[rule_name] = {"error": str(e)}
+            error_count += 1
+            if 'NoSuchConfigRuleException' in str(e):
+                print(" ❌ (rule not found)")
+            else:
+                print(f" ❌ ({str(e)[:50]}...)")
+        except Exception as e:
+            all_evidence[rule_name] = {"error": str(e)}
+            error_count += 1
+            print(f" ❌ ({str(e)[:50]}...)")
+    
+    # Save evidence
+    os.makedirs("evidence", exist_ok=True)
+    evidence_file = "evidence/all_evidence.json"
+    
+    try:
+        with open(evidence_file, 'w') as f:
+            json.dump(all_evidence, f, indent=2, default=str)
+        
+        print(f"\n📊 Evidence Collection Summary:")
+        print(f"   ✅ Successful: {success_count}")
+        print(f"   ❌ Failed: {error_count}")
+        print(f"   📈 Success rate: {(success_count/(success_count+error_count))*100:.1f}%")
+        print(f"   💾 Saved to: {evidence_file}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error saving evidence file: {e}")
+        return False
 
 async def check_compliance(control_id, aws_account_id='aws-account-001'):
-    """Perform audition and return compliance result - UPDATED"""
+    """Perform audition and return compliance result - UPDATED to process ALL rules"""
     
     async with app.run() as agent_app:
         context = agent_app.context
         context.config.mcp.servers["filesystem"].args.extend([os.getcwd()])
                 
-        # Create agent with very specific instructions - UNCHANGED
+        # Create agent with very specific instructions for COMPLETE analysis
         auditor_agent = Agent(
             name="pci_auditor",
-            instruction=f"""You are a PCI DSS compliance auditor. Your task is to generate a structured compliance assessment in EXACT JSON format.
+            instruction=f"""Expert PCI DSS compliance auditor. CRITICAL: You must analyze EVERY SINGLE config rule individually.
 
-                        REQUIRED OUTPUT FORMAT:
-                        {{
-                        "control_id": "{control_id}",
-                        "requirement": "<requirement text from requirement file>",
-                        "compliance_assessment": {{
-                            "<rule_name>": {{
-                            "status": "COMPLIANT|NON_COMPLIANT|NOT_APPLICABLE",
-                            "details": "<detailed explanation>"
-                            }}
-                        }},
-                        "compliance_summary": {{
-                            "compliant_rules": <number>,
-                            "non_compliant_rules": <number>, 
-                            "not_applicable_rules": <number>,
-                            "total_rules_in_scope": <number>,
-                            "compliance_rate": "<percentage>"
-                        }}
-                        }}
+        MANDATORY PROCESS:
+        1. Query KB for PCI DSS {control_id} requirements and implementation guidance
+        2. Read requirement/{control_id.replace('.', '_')}.json and evidence/all_evidence.json files
+        3. ANALYZE EACH AND EVERY config rule individually - DO NOT SKIP ANY
+        4. For EACH rule, determine COMPLIANT/NON_COMPLIANT/NOT_APPLICABLE with detailed reasoning
+        5. Save JSON to audit_result/{control_id.replace('.', '_')}_audit.json
 
-                        PROCESS:
-                        1. READ the requirement file from requirement/ directory
-                        2. READ all evidence files from evidence/ directory
-                        3. For EACH config rule, determine status based on evidence
-                        4. Calculate compliance metrics
-                        5. CREATE audit_result/ directory if needed
-                        6. SAVE the JSON assessment to audit_result/{control_id.replace('.', '_')}_audit.json
-                        7. RETURN ONLY the complete JSON object - no extra text""",
-            server_names=["filesystem"],
+        CRITICAL REQUIREMENTS:
+        - EVERY config rule from the requirement file MUST appear in compliance_assessment
+        - Do NOT summarize or group rules together
+        - Do NOT mark rules as "not applicable" unless you have specific evidence they don't apply
+        - Process rules individually, one by one
+        - If evidence shows "error" or "NoSuchConfigRuleException", mark as NOT_APPLICABLE
+        - If evidence shows actual compliance data, analyze it properly
+
+        OUTPUT JSON FORMAT (EVERY RULE MUST BE INCLUDED):
+        {{
+            "control_id": "{control_id}",
+            "requirement": "<from requirement file>",
+            "compliance_assessment": {{
+                "<rule_name_1>": {{
+                    "status": "COMPLIANT|NON_COMPLIANT|NOT_APPLICABLE",
+                    "evidence": "<specific technical findings for this rule>",
+                    "analysis": "<PCI DSS compliance reasoning for this specific rule>",
+                    "recommendations": "<specific remediation if needed>"
+                }},
+                "<rule_name_2>": {{
+                    "status": "COMPLIANT|NON_COMPLIANT|NOT_APPLICABLE",
+                    "evidence": "<specific technical findings for this rule>",
+                    "analysis": "<PCI DSS compliance reasoning for this specific rule>",
+                    "recommendations": "<specific remediation if needed>"
+                }},
+                "... CONTINUE FOR ALL RULES - DO NOT STOP EARLY ..."
+            }},
+            "compliance_summary": {{
+                "compliant_rules": <number>,
+                "non_compliant_rules": <number>,
+                "not_applicable_rules": <number>,
+                "total_rules_in_scope": <number>,
+                "compliance_rate": "<percentage>"
+            }}
+        }}
+
+        VERIFICATION: Count the rules in requirement file and ensure compliance_assessment has the SAME number of entries.""",
+            server_names=["filesystem", "bedrock_kb"],
         )
         
         async with auditor_agent:
@@ -257,19 +373,33 @@ async def check_compliance(control_id, aws_account_id='aws-account-001'):
             
             try:
                 audit_response = await llm.generate_str(
-                    f"""Perform PCI DSS compliance audit for control {control_id}:
+                    f"""Perform COMPLETE PCI DSS compliance audit for control {control_id}:
 
-                        1. Read requirement/{control_id.replace('.', '_')}.json to get requirement text and config_rules list
-                        2. Read all files in evidence/ directory to get AWS Config rule evaluation results
-                        3. For each config rule in the requirement file:
-                        - Analyze the corresponding evidence
-                        - Determine status: COMPLIANT/NON_COMPLIANT/NOT_APPLICABLE
-                        - Provide detailed explanation
-                        4. Calculate compliance metrics
-                        5. Save complete JSON assessment to audit_result/ directory
-                        6. Return the structured JSON assessment
-
-                        Return ONLY the JSON object - no additional text."""
+                        STEP 1: Read requirement/{control_id.replace('.', '_')}.json
+                        - Extract the complete list of config_rules
+                        - Count how many rules there are total
+                        
+                        STEP 2: Read evidence/all_evidence.json
+                        - Find evidence for each config rule
+                        
+                        
+                        STEP 3: ANALYZE EVERY SINGLE RULE (DO NOT SKIP ANY)
+                        For each config rule in the requirement file:
+                        a) Look up its evidence in all_evidence.json
+                        b) If evidence has "error" or "NoSuchConfigRuleException" → NOT_APPLICABLE
+                        c) If evidence has "EvaluationResults" → analyze ComplianceType
+                        d) Determine status and provide specific analysis
+                        e) Add to compliance_assessment with detailed reasoning
+                        
+                        STEP 4: Verify completeness
+                        - Ensure compliance_assessment contains ALL rules from requirement file
+                        - Calculate accurate compliance metrics
+                        
+                        STEP 5: Save complete JSON assessment to audit_result/ directory
+                        
+                        CRITICAL: The compliance_assessment section must contain an entry for EVERY config rule from the requirement file. Do not truncate or summarize.
+                        
+                        Return ONLY the complete JSON object - no additional text."""
                 )
                 
                 compliance_result = clean_response(audit_response)
@@ -278,12 +408,30 @@ async def check_compliance(control_id, aws_account_id='aws-account-001'):
                 audit_file_path = f"audit_result/{control_id.replace('.', '_')}_audit.json"
                 
                 if os.path.exists(audit_file_path):
-                    # Try to validate the JSON file
+                    # Validate the JSON file and check completeness
                     try:
                         with open(audit_file_path, 'r') as f:
-                            json.load(f)  # Just validate it's valid JSON
+                            audit_data = json.load(f)
+                        
+                        # Check if all rules were analyzed
+                        req_file_path = f"requirement/{control_id.replace('.', '_')}.json"
+                        if os.path.exists(req_file_path):
+                            with open(req_file_path, 'r') as f:
+                                req_data = json.load(f)
+                            
+                            total_rules = len(req_data.get('config_rules', []))
+                            analyzed_rules = len(audit_data.get('compliance_assessment', {}))
+                            
+                            print(f"📊 Rules analysis: {analyzed_rules}/{total_rules} rules processed")
+                            
+                            if analyzed_rules < total_rules:
+                                print(f"⚠️  Warning: Only {analyzed_rules} out of {total_rules} rules were analyzed")
+                            else:
+                                print(f"✅ All {total_rules} rules were analyzed")
+                        
                         print(f"✅ Valid audit result file created: {audit_file_path}")
                         return True
+                        
                     except json.JSONDecodeError:
                         print(f"❌ Invalid JSON in audit file: {audit_file_path}")
                         return False
@@ -296,102 +444,77 @@ async def check_compliance(control_id, aws_account_id='aws-account-001'):
                 return False
             
 async def upload_and_process_audit_result(control_id, aws_account_id='aws-account-001'):
-    """Upload audit_result.json and determine compliance status using MCP agent"""
-    
-    async with app.run() as agent_app:
-        context = agent_app.context
-        context.config.mcp.servers["filesystem"].args.extend([os.getcwd()])
-        
-        # Create specialized agent for processing audit results
-        audit_processor_agent = Agent(
-            name="audit_result_processor",
-            instruction=f"""You are an audit result processor and database updater. Your tasks:
-                        
-                        1. READ the audit result file from audit_result/ directory:
-                        - Look for file named {control_id.replace('.', '_')}_audit.json
-                        - Read the complete JSON content
-                        
-                        2. EXTRACT compliance information:
-                        - Get the compliance_summary section
-                        - Extract the compliance_rate value (like "100%" or "85%")
-                        
-                        3. DETERMINE compliance status:
-                        - If compliance_rate is exactly "100%" -> status = "compliant"
-                        - If compliance_rate is anything else (99%, 85%, 0%, etc.) -> status = "non_compliant"
-                        
-                        4. UPDATE the database using SQL:
-                        - Execute UPDATE statement on requirement_status table
-                        - Set audit_result column = the complete JSON object (properly escaped for SQL)
-                        - Set status column = determined status ("compliant" or "non_compliant")
-                        - Set last_evaluated = current timestamp
-                        - Set updated_at = current timestamp
-                        - WHERE control_id = '{control_id}' AND aws_account_id = '{aws_account_id}'
-                        
-                        5. EXAMPLE SQL UPDATE format:
-                        UPDATE requirement_status 
-                        SET 
-                            audit_result = '{{json content here}}',
-                            status = 'compliant',
-                            last_evaluated = NOW(),
-                            updated_at = NOW()
-                        WHERE control_id = '{control_id}' AND aws_account_id = '{aws_account_id}';
-                        
-                        6. RETURN status:
-                        - Return "SUCCESS: Updated status to [compliant/non_compliant]" if database update completed
-                        - Return "FAILED: [reason]" if any step failed
-                        
-                        IMPORTANT:
-                        - Only 100% compliance rate means "compliant"
-                        - Everything else means "non_compliant"
-                        - Properly escape JSON for SQL insertion
-                        - Use single quotes around JSON string in SQL
-                        - Always update timestamps to current time""",
-            server_names=["supabase", "filesystem"],
-        )
-        
-        async with audit_processor_agent:
-            llm = await audit_processor_agent.attach_llm(GoogleAugmentedLLM)
-            
-            print(f"📤 Processing audit result for control {control_id}...")
-            
-            try:
-                # Ask agent to process the audit result file and update database
-                process_response = await llm.generate_str(
-                    f"""Process audit result and update database for control {control_id}:
+   """Upload audit_result.json and determine compliance status using MCP agent"""
+   
+   async with app.run() as agent_app:
+       context = agent_app.context
+       context.config.mcp.servers["filesystem"].args.extend([os.getcwd()])
+       
+       # Detailed but action-focused agent
+       audit_processor_agent = Agent(
+           name="audit_result_processor",
+           instruction=f"""Database updater for audit results. Execute these specific actions:
 
-                        Step 1: Read audit_result/{control_id.replace('.', '_')}_audit.json file
-                        Step 2: Extract compliance_rate from compliance_summary section
-                        Step 3: Determine status:
-                        - compliance_rate = "100%" -> status = "compliant"  
-                        - compliance_rate = anything else -> status = "non_compliant"
-                        Step 4: Execute SQL UPDATE on requirement_status table:
-                        - Set audit_result = complete JSON (properly escaped)
-                        - Set status = determined status
-                        - Set last_evaluated = NOW()
-                        - Set updated_at = NOW()
-                        - WHERE control_id = '{control_id}' AND aws_account_id = '{aws_account_id}'
-                        
-                        Return "SUCCESS: Updated status to [status]" or "FAILED: [reason]" """
-                )
-                
-                result = clean_response(process_response)
-                print(f"📊 Audit result processing: {result}")
-                
-                # Check if agent reports success
-                if "SUCCESS" in result.upper():
-                    print(f"✅ Audit result uploaded and status updated for {control_id}")
-                    return True
-                else:
-                    print(f"❌ Audit result processing failed for {control_id}")
-                    print(f"   Response: {result}")
-                    return False
-                
-            except Exception as e:
-                print(f"❌ Audit result processing failed: {e}")
-                return False
-                
+                       REQUIRED ACTIONS:
+                       1. READ file: audit_result/{control_id.replace('.', '_')}_audit.json
+                       2. EXTRACT: compliance_rate from compliance_summary section
+                       3. DETERMINE status: compliance_rate="100%" → "compliant", otherwise → "non_compliant"
+                       4. EXECUTE SQL UPDATE on requirement_status table:
+                          - audit_result = complete JSON (escape quotes properly)
+                          - status = determined status
+                          - last_evaluated = NOW()
+                          - updated_at = NOW() 
+                          - WHERE control_id = '{control_id}' AND aws_account_id = '{aws_account_id}'
+                       5. RETURN: "SUCCESS: Updated status to [status]" or "FAILED: [error]"
+
+                       IMPORTANT REQUIREMENTS:
+                       - Only "100%" compliance_rate means "compliant"
+                       - All other values (99%, 62.5%, etc.) mean "non_compliant" 
+                       - Properly escape JSON content for SQL insertion
+                       - Use single quotes around JSON in SQL
+                       - Execute the UPDATE immediately - do not just describe it""",
+           server_names=["supabase", "filesystem"],
+       )
+       
+       async with audit_processor_agent:
+           llm = await audit_processor_agent.attach_llm(GoogleAugmentedLLM)
+           
+           print(f"📤 Processing audit result for control {control_id}...")
+           
+           try:
+               # Specific but direct instruction
+               process_response = await llm.generate_str(
+                   f"""Execute database update for control {control_id}:
+
+                       1. Read audit_result/{control_id.replace('.', '_')}_audit.json
+                       2. Extract compliance_rate from compliance_summary section
+                       3. Determine status: "100%" = "compliant", else = "non_compliant"
+                       4. Execute SQL UPDATE on requirement_status table:
+                          SET audit_result=JSON, status=determined_status, last_evaluated=NOW(), updated_at=NOW()
+                          WHERE control_id='{control_id}' AND aws_account_id='{aws_account_id}'
+                       5. Return SUCCESS or FAILED
+                       
+                       Execute the SQL UPDATE now - do not explain, just do it."""
+               )
+               
+               result = clean_response(process_response)
+               print(f"📊 Audit result processing: {result}")
+               
+               # Check if agent reports success
+               if "SUCCESS" in result.upper():
+                   print(f"✅ Audit result uploaded and status updated for {control_id}")
+                   return True
+               else:
+                   print(f"❌ Audit result processing failed for {control_id}")
+                   print(f"   Response: {result}")
+                   return False
+               
+           except Exception as e:
+               print(f"❌ Audit result processing failed: {e}")
+               return False
+           
 async def main():
-    print("🚀 PCI DSS Compliance Auditor\n")
+    print("🚀 PCI DSS Compliance Auditor (Updated with Direct Evidence Collection)\n")
     
     parser = argparse.ArgumentParser(description='Fetch requirement data and perform compliance audit')
     parser.add_argument('id', help='Control ID (e.g., 1.2.5)')
@@ -409,12 +532,12 @@ async def main():
         if req_fetch_result:
             print(f"✅ Requirement fetched successfully")
             
-            # Step 2: Fetch evidence data (placeholder)
+            # Step 2: Fetch evidence data using DIRECT approach (fast & reliable)
             print("\n" + "=" * 50)
-            print("STEP 2: FETCHING EVIDENCE DATA")
+            print("STEP 2: FETCHING EVIDENCE DATA (DIRECT METHOD)")
             print("=" * 50)
             
-            evidence_fetch_result = await fetch_evidence_data()
+            evidence_fetch_result = fetch_evidence_data_direct(args.id)
             
             if evidence_fetch_result:
                 print("✅ Evidence data ready")
@@ -429,7 +552,7 @@ async def main():
                 if compliance_result:
                     print("✅ Compliance audit completed - audit_result.json generated")
                     
-                    # Step 4: NEW - Upload audit result and update status
+                    # Step 4: Upload audit result and update status
                     print("\n" + "=" * 50)
                     print("STEP 4: UPLOADING AUDIT RESULT TO DATABASE")
                     print("=" * 50)
@@ -453,13 +576,7 @@ async def main():
                     print(f"✅ Complete audit workflow successful for control {args.id}")
                 else:
                     print(f"❌ Audit workflow failed for control {args.id}")
-                
-                # Step 5: Cleanup for next run
-                print("\n" + "=" * 50)
-                print("STEP 5: CLEANING UP FOR NEXT RUN")
-                print("=" * 50)
-                cleanup_result = cleanup_folders()
-                
+                # cleanup = cleanup_folders()
                 return 0 if final_status else 1
                 
             else:
