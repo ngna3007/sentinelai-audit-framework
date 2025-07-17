@@ -1,279 +1,351 @@
 {
-  "api-gw-xray-enabled": {
+  "api-gw-endpoint-type-check": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'api-gw-endpoint-type-check' provided in the request is invalid. Please check the configRule name."
+  },
+  "appsync-associated-with-waf": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "3e77d743-d1ca-4998-8555-5f060cff8805",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "3e77d743-d1ca-4998-8555-5f060cff8805",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:14 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "cloudfront-associated-with-waf": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'cloudfront-associated-with-waf' provided in the request is invalid. Please check the configRule name."
+  },
+  "cloudfront-custom-ssl-certi\ufb01cate": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'cloudfront-custom-ssl-certi\ufb01cate' provided in the request is invalid. Please check the configRule name."
+  },
+  "codebuild-project-source-repo-url-check": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "2fae8256-2689-4b15-9ad9-5899b35d79c1",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "2fae8256-2689-4b15-9ad9-5899b35d79c1",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:15 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "docdb-cluster-snapshot-public-prohibited": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "3143a887-a3db-41b7-a88a-6a321459e52e",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "3143a887-a3db-41b7-a88a-6a321459e52e",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:15 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "ec2-client-vpn-not-authorize-all": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "90da97a2-af3c-4bec-84bf-7540ab257a63",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "90da97a2-af3c-4bec-84bf-7540ab257a63",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:15 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "ec2-transit-gateway-auto-vpc-attach-disabled": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "8753c626-d801-48f4-9dd1-b724584518a2",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "8753c626-d801-48f4-9dd1-b724584518a2",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:15 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "eks-endpoint-no-public-access": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "e61fc11d-3752-46dd-9056-fcc55a422ecf",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "e61fc11d-3752-46dd-9056-fcc55a422ecf",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:15 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "elb-acm-certi\ufb01cate-required": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'elb-acm-certi\ufb01cate-required' provided in the request is invalid. Please check the configRule name."
+  },
+  "emr-block-public-access": {
     "EvaluationResults": [
       {
         "EvaluationResultIdentifier": {
           "EvaluationResultQualifier": {
-            "ConfigRuleName": "api-gw-xray-enabled",
-            "ResourceType": "AWS::ApiGateway::Stage",
-            "ResourceId": "arn:aws:apigateway:ap-southeast-2::/restapis/ifrctl2zyf/stages/prod",
-            "EvaluationMode": "DETECTIVE"
-          },
-          "OrderingTimestamp": "2025-07-17 19:33:43.456000+07:00"
-        },
-        "ComplianceType": "NON_COMPLIANT",
-        "ResultRecordedTime": "2025-07-17 19:33:49.593000+07:00",
-        "ConfigRuleInvokedTime": "2025-07-17 19:33:49.446000+07:00"
-      },
-      {
-        "EvaluationResultIdentifier": {
-          "EvaluationResultQualifier": {
-            "ConfigRuleName": "api-gw-xray-enabled",
-            "ResourceType": "AWS::ApiGateway::Stage",
-            "ResourceId": "arn:aws:apigateway:ap-southeast-2::/restapis/n96q70vhuc/stages/mup",
-            "EvaluationMode": "DETECTIVE"
-          },
-          "OrderingTimestamp": "2025-07-17 19:33:43.487000+07:00"
-        },
-        "ComplianceType": "NON_COMPLIANT",
-        "ResultRecordedTime": "2025-07-17 19:33:49.085000+07:00",
-        "ConfigRuleInvokedTime": "2025-07-17 19:33:48.327000+07:00"
-      },
-      {
-        "EvaluationResultIdentifier": {
-          "EvaluationResultQualifier": {
-            "ConfigRuleName": "api-gw-xray-enabled",
-            "ResourceType": "AWS::ApiGateway::Stage",
-            "ResourceId": "arn:aws:apigateway:ap-southeast-2::/restapis/n96q70vhuc/stages/prod",
-            "EvaluationMode": "DETECTIVE"
-          },
-          "OrderingTimestamp": "2025-07-17 19:33:43.513000+07:00"
-        },
-        "ComplianceType": "NON_COMPLIANT",
-        "ResultRecordedTime": "2025-07-17 19:33:49.648000+07:00",
-        "ConfigRuleInvokedTime": "2025-07-17 19:33:49.537000+07:00"
-      }
-    ],
-    "ResponseMetadata": {
-      "RequestId": "1a4fc9d1-59d0-4036-be58-5d0ea510e2b2",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "x-amzn-requestid": "1a4fc9d1-59d0-4036-be58-5d0ea510e2b2",
-        "strict-transport-security": "max-age=86400",
-        "content-type": "application/x-amz-json-1.1",
-        "content-length": "1231",
-        "date": "Thu, 17 Jul 2025 15:15:16 GMT"
-      },
-      "RetryAttempts": 0
-    }
-  },
-  "api-gwv2-access-logs-enabled": {
-    "EvaluationResults": [],
-    "ResponseMetadata": {
-      "RequestId": "cc17a0ad-048a-48ae-a664-86befc901ff5",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "x-amzn-requestid": "cc17a0ad-048a-48ae-a664-86befc901ff5",
-        "strict-transport-security": "max-age=86400",
-        "content-type": "application/x-amz-json-1.1",
-        "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:16 GMT"
-      },
-      "RetryAttempts": 0
-    }
-  },
-  "appsync-logging-enabled": {
-    "EvaluationResults": [],
-    "ResponseMetadata": {
-      "RequestId": "edf88a17-b915-46fc-b38c-787b68c15a31",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "x-amzn-requestid": "edf88a17-b915-46fc-b38c-787b68c15a31",
-        "strict-transport-security": "max-age=86400",
-        "content-type": "application/x-amz-json-1.1",
-        "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:17 GMT"
-      },
-      "RetryAttempts": 0
-    }
-  },
-  "cloudfront-accesslogs-enabled": {
-    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'cloudfront-accesslogs-enabled' provided in the request is invalid. Please check the configRule name."
-  },
-  "cloudtrail-enabled": {
-    "EvaluationResults": [
-      {
-        "EvaluationResultIdentifier": {
-          "EvaluationResultQualifier": {
-            "ConfigRuleName": "cloudtrail-enabled",
+            "ConfigRuleName": "emr-block-public-access",
             "ResourceType": "AWS::::Account",
             "ResourceId": "123012555573",
             "EvaluationMode": "DETECTIVE"
           },
-          "OrderingTimestamp": "2025-07-17 19:14:48.057000+07:00"
+          "OrderingTimestamp": "2025-07-17 19:29:31.139000+07:00"
         },
         "ComplianceType": "COMPLIANT",
-        "ResultRecordedTime": "2025-07-17 19:14:54.717000+07:00",
-        "ConfigRuleInvokedTime": "2025-07-17 19:14:54.394000+07:00"
+        "ResultRecordedTime": "2025-07-17 19:29:38.586000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 19:29:37.907000+07:00"
       }
     ],
     "ResponseMetadata": {
-      "RequestId": "5a7e2afb-d967-49d9-8c5a-a255002dc283",
+      "RequestId": "9004fb9e-810c-422e-873f-9881e299061d",
       "HTTPStatusCode": 200,
       "HTTPHeaders": {
-        "x-amzn-requestid": "5a7e2afb-d967-49d9-8c5a-a255002dc283",
+        "x-amzn-requestid": "9004fb9e-810c-422e-873f-9881e299061d",
         "strict-transport-security": "max-age=86400",
         "content-type": "application/x-amz-json-1.1",
-        "content-length": "358",
-        "date": "Thu, 17 Jul 2025 15:15:17 GMT"
+        "content-length": "363",
+        "date": "Thu, 17 Jul 2025 16:32:16 GMT"
       },
       "RetryAttempts": 0
     }
   },
-  "ecs-task-de\ufb01nition-log-con\ufb01guration": {
-    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'ecs-task-de\ufb01nition-log-con\ufb01guration' provided in the request is invalid. Please check the configRule name."
-  },
-  "eks-cluster-logging-enabled": {
-    "EvaluationResults": [],
-    "ResponseMetadata": {
-      "RequestId": "00f2f46e-9c46-4846-b299-67211a468a42",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "x-amzn-requestid": "00f2f46e-9c46-4846-b299-67211a468a42",
-        "strict-transport-security": "max-age=86400",
-        "content-type": "application/x-amz-json-1.1",
-        "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:18 GMT"
-      },
-      "RetryAttempts": 0
-    }
-  },
-  "elastic-beanstalk-logs-to-cloudwatch": {
-    "EvaluationResults": [],
-    "ResponseMetadata": {
-      "RequestId": "3f73c582-80e9-4e5f-9f72-986003849da8",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "x-amzn-requestid": "3f73c582-80e9-4e5f-9f72-986003849da8",
-        "strict-transport-security": "max-age=86400",
-        "content-type": "application/x-amz-json-1.1",
-        "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:18 GMT"
-      },
-      "RetryAttempts": 0
-    }
-  },
-  "mq-cloudwatch-audit-log-enabled": {
-    "EvaluationResults": [],
-    "ResponseMetadata": {
-      "RequestId": "5a642255-06d6-41b5-816e-adcc3ead218c",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "x-amzn-requestid": "5a642255-06d6-41b5-816e-adcc3ead218c",
-        "strict-transport-security": "max-age=86400",
-        "content-type": "application/x-amz-json-1.1",
-        "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:18 GMT"
-      },
-      "RetryAttempts": 0
-    }
-  },
-  "mq-cloudwatch-audit-logging-enabled": {
-    "EvaluationResults": [],
-    "ResponseMetadata": {
-      "RequestId": "7e061bca-cdba-47d3-b9fd-e042e746f19f",
-      "HTTPStatusCode": 200,
-      "HTTPHeaders": {
-        "x-amzn-requestid": "7e061bca-cdba-47d3-b9fd-e042e746f19f",
-        "strict-transport-security": "max-age=86400",
-        "content-type": "application/x-amz-json-1.1",
-        "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:18 GMT"
-      },
-      "RetryAttempts": 0
-    }
-  },
-  "multi-region-cloudtrail-enabled": {
+  "internet-gateway-authorized-vpc-only": {
     "EvaluationResults": [
       {
         "EvaluationResultIdentifier": {
           "EvaluationResultQualifier": {
-            "ConfigRuleName": "multi-region-cloudtrail-enabled",
-            "ResourceType": "AWS::::Account",
-            "ResourceId": "123012555573",
+            "ConfigRuleName": "internet-gateway-authorized-vpc-only",
+            "ResourceType": "AWS::EC2::InternetGateway",
+            "ResourceId": "igw-09af68668be0ccab3",
             "EvaluationMode": "DETECTIVE"
           },
-          "OrderingTimestamp": "2025-07-17 21:32:31.131000+07:00"
+          "OrderingTimestamp": "2025-07-17 19:13:40.353000+07:00"
         },
         "ComplianceType": "NON_COMPLIANT",
-        "ResultRecordedTime": "2025-07-17 21:32:35.119000+07:00",
-        "ConfigRuleInvokedTime": "2025-07-17 21:32:34.868000+07:00"
+        "ResultRecordedTime": "2025-07-17 19:29:36.698000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 19:29:36.172000+07:00",
+        "Annotation": "This IGW is attached to the following unauthorized VPC(s): vpc-014849a1810d82c85."
       }
     ],
     "ResponseMetadata": {
-      "RequestId": "37b2e309-e0e3-4871-8860-3436e40239b9",
+      "RequestId": "80712144-9ae2-4d84-8957-cb53b6412ae7",
       "HTTPStatusCode": 200,
       "HTTPHeaders": {
-        "x-amzn-requestid": "37b2e309-e0e3-4871-8860-3436e40239b9",
+        "x-amzn-requestid": "80712144-9ae2-4d84-8957-cb53b6412ae7",
         "strict-transport-security": "max-age=86400",
         "content-type": "application/x-amz-json-1.1",
-        "content-length": "375",
-        "date": "Thu, 17 Jul 2025 15:15:19 GMT"
+        "content-length": "497",
+        "date": "Thu, 17 Jul 2025 16:32:16 GMT"
       },
       "RetryAttempts": 0
     }
   },
-  "neptune-cluster-cloudwatch-log-export-enabled": {
+  "nacl-no-unrestricted-ssh-rdp": {
     "EvaluationResults": [],
     "ResponseMetadata": {
-      "RequestId": "1e86486b-f549-41bf-9ae0-c9268cb8f8b8",
+      "RequestId": "8e222b85-c211-4b55-9554-054f094b0de3",
       "HTTPStatusCode": 200,
       "HTTPHeaders": {
-        "x-amzn-requestid": "1e86486b-f549-41bf-9ae0-c9268cb8f8b8",
+        "x-amzn-requestid": "8e222b85-c211-4b55-9554-054f094b0de3",
         "strict-transport-security": "max-age=86400",
         "content-type": "application/x-amz-json-1.1",
         "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:19 GMT"
+        "date": "Thu, 17 Jul 2025 16:32:16 GMT"
       },
       "RetryAttempts": 0
     }
   },
-  "netfw-logging-enabled": {
+  "netfw-policy-default-action-fragment-packets": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'netfw-policy-default-action-fragment-packets' provided in the request is invalid. Please check the configRule name."
+  },
+  "rds-db-security-group-not-allowed": {
     "EvaluationResults": [],
     "ResponseMetadata": {
-      "RequestId": "649a695c-ec2a-4679-a1b3-3a9b28c160df",
+      "RequestId": "4417d24b-7755-4872-aec0-1d92804347c0",
       "HTTPStatusCode": 200,
       "HTTPHeaders": {
-        "x-amzn-requestid": "649a695c-ec2a-4679-a1b3-3a9b28c160df",
+        "x-amzn-requestid": "4417d24b-7755-4872-aec0-1d92804347c0",
         "strict-transport-security": "max-age=86400",
         "content-type": "application/x-amz-json-1.1",
         "content-length": "24",
-        "date": "Thu, 17 Jul 2025 15:15:19 GMT"
+        "date": "Thu, 17 Jul 2025 16:32:17 GMT"
       },
       "RetryAttempts": 0
     }
   },
-  "step-functions-state-machine-logging-enabled": {
+  "restricted-ssh": {
     "EvaluationResults": [
       {
         "EvaluationResultIdentifier": {
           "EvaluationResultQualifier": {
-            "ConfigRuleName": "step-functions-state-machine-logging-enabled",
-            "ResourceType": "AWS::StepFunctions::StateMachine",
-            "ResourceId": "arn:aws:states:ap-southeast-2:123012555573:stateMachine:serverless-payment-workflow",
+            "ConfigRuleName": "restricted-ssh",
+            "ResourceType": "AWS::EC2::SecurityGroup",
+            "ResourceId": "sg-0057c685755336df8",
             "EvaluationMode": "DETECTIVE"
           },
-          "OrderingTimestamp": "2025-07-17 19:33:41.914000+07:00"
+          "OrderingTimestamp": "2025-07-17 19:29:31.139000+07:00"
+        },
+        "ComplianceType": "COMPLIANT",
+        "ResultRecordedTime": "2025-07-17 19:29:38.315000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 19:29:37.930000+07:00"
+      },
+      {
+        "EvaluationResultIdentifier": {
+          "EvaluationResultQualifier": {
+            "ConfigRuleName": "restricted-ssh",
+            "ResourceType": "AWS::EC2::SecurityGroup",
+            "ResourceId": "sg-029266c338d932603",
+            "EvaluationMode": "DETECTIVE"
+          },
+          "OrderingTimestamp": "2025-07-17 19:29:31.139000+07:00"
+        },
+        "ComplianceType": "COMPLIANT",
+        "ResultRecordedTime": "2025-07-17 19:29:38.359000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 19:29:37.930000+07:00"
+      },
+      {
+        "EvaluationResultIdentifier": {
+          "EvaluationResultQualifier": {
+            "ConfigRuleName": "restricted-ssh",
+            "ResourceType": "AWS::EC2::SecurityGroup",
+            "ResourceId": "sg-0b19899a408a6bcda",
+            "EvaluationMode": "DETECTIVE"
+          },
+          "OrderingTimestamp": "2025-07-17 23:27:34.369000+07:00"
+        },
+        "ComplianceType": "COMPLIANT",
+        "ResultRecordedTime": "2025-07-17 23:29:26.594000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 23:29:26.387000+07:00"
+      },
+      {
+        "EvaluationResultIdentifier": {
+          "EvaluationResultQualifier": {
+            "ConfigRuleName": "restricted-ssh",
+            "ResourceType": "AWS::EC2::SecurityGroup",
+            "ResourceId": "sg-0d0c22d3578f29761",
+            "EvaluationMode": "DETECTIVE"
+          },
+          "OrderingTimestamp": "2025-07-17 19:29:31.139000+07:00"
+        },
+        "ComplianceType": "COMPLIANT",
+        "ResultRecordedTime": "2025-07-17 19:29:38.343000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 19:29:37.930000+07:00"
+      },
+      {
+        "EvaluationResultIdentifier": {
+          "EvaluationResultQualifier": {
+            "ConfigRuleName": "restricted-ssh",
+            "ResourceType": "AWS::EC2::SecurityGroup",
+            "ResourceId": "sg-0d559d48662a30729",
+            "EvaluationMode": "DETECTIVE"
+          },
+          "OrderingTimestamp": "2025-07-17 19:29:31.139000+07:00"
+        },
+        "ComplianceType": "COMPLIANT",
+        "ResultRecordedTime": "2025-07-17 19:29:38.351000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 19:29:37.930000+07:00"
+      },
+      {
+        "EvaluationResultIdentifier": {
+          "EvaluationResultQualifier": {
+            "ConfigRuleName": "restricted-ssh",
+            "ResourceType": "AWS::EC2::SecurityGroup",
+            "ResourceId": "sg-02e2a5c593fd1c964",
+            "EvaluationMode": "DETECTIVE"
+          },
+          "OrderingTimestamp": "2025-07-17 22:23:59.490000+07:00"
         },
         "ComplianceType": "NON_COMPLIANT",
-        "ResultRecordedTime": "2025-07-17 19:33:47.785000+07:00",
-        "ConfigRuleInvokedTime": "2025-07-17 19:33:45.557000+07:00"
+        "ResultRecordedTime": "2025-07-17 22:24:35.167000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 22:24:35.036000+07:00"
+      },
+      {
+        "EvaluationResultIdentifier": {
+          "EvaluationResultQualifier": {
+            "ConfigRuleName": "restricted-ssh",
+            "ResourceType": "AWS::EC2::SecurityGroup",
+            "ResourceId": "sg-052eb56579246b22a",
+            "EvaluationMode": "DETECTIVE"
+          },
+          "OrderingTimestamp": "2025-07-17 19:29:31.139000+07:00"
+        },
+        "ComplianceType": "NON_COMPLIANT",
+        "ResultRecordedTime": "2025-07-17 19:29:38.325000+07:00",
+        "ConfigRuleInvokedTime": "2025-07-17 19:29:37.930000+07:00"
       }
     ],
     "ResponseMetadata": {
-      "RequestId": "7cce2bb8-bdc4-4abe-966b-542ea8abe3e5",
+      "RequestId": "0ae0a47e-6216-47d3-a65c-a6546bc206fe",
       "HTTPStatusCode": 200,
       "HTTPHeaders": {
-        "x-amzn-requestid": "7cce2bb8-bdc4-4abe-966b-542ea8abe3e5",
+        "x-amzn-requestid": "0ae0a47e-6216-47d3-a65c-a6546bc206fe",
         "strict-transport-security": "max-age=86400",
         "content-type": "application/x-amz-json-1.1",
-        "content-length": "477",
-        "date": "Thu, 17 Jul 2025 15:15:19 GMT"
+        "content-length": "2461",
+        "date": "Thu, 17 Jul 2025 16:32:17 GMT"
       },
       "RetryAttempts": 0
     }
   },
-  "waf-classic-logging-enabled": {
-    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'waf-classic-logging-enabled' provided in the request is invalid. Please check the configRule name."
+  "s3-access-point-public-access-blocks": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "0a7209fc-4a69-4814-bd7f-6b4a920f0177",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "0a7209fc-4a69-4814-bd7f-6b4a920f0177",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:17 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "s3-account-level-public-access-blocks": {
+    "EvaluationResults": [],
+    "ResponseMetadata": {
+      "RequestId": "a4a3bc89-4cc3-4142-b8a5-521e5ef84a5f",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "x-amzn-requestid": "a4a3bc89-4cc3-4142-b8a5-521e5ef84a5f",
+        "strict-transport-security": "max-age=86400",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "24",
+        "date": "Thu, 17 Jul 2025 16:32:17 GMT"
+      },
+      "RetryAttempts": 0
+    }
+  },
+  "waf-global-rule-not-empty": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'waf-global-rule-not-empty' provided in the request is invalid. Please check the configRule name."
+  },
+  "waf-global-rulegroup-not-empty": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'waf-global-rulegroup-not-empty' provided in the request is invalid. Please check the configRule name."
+  },
+  "waf-global-webacl-not-empty": {
+    "error": "An error occurred (NoSuchConfigRuleException) when calling the GetComplianceDetailsByConfigRule operation: The ConfigRule 'waf-global-webacl-not-empty' provided in the request is invalid. Please check the configRule name."
   }
 }

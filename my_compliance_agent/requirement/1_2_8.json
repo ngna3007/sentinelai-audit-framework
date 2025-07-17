@@ -1,0 +1,90 @@
+{
+    "control_id": "1.2.8",
+    "requirement": "Configuration files for NSCs are: Secured from unauthorized access. Kept consistent with active network configurations.",
+    "config_rules": [
+        {
+            "rule_name": "api-gw-endpoint-type-check",
+            "guidance": "Ensure that Amazon API Gateway APIs are of the type speciﬁed in the rule parameter 'endpointConﬁgurationType'. The rule returns NON_COMPLIANT if the REST API does not match the endpoint type conﬁgured in the rule parameter."
+        },
+        {
+            "rule_name": "appsync-associated-with-waf",
+            "guidance": "Ensure that AWS AppSync APIs are associated with AWS WAFv2 web access control lists (ACLs). The rule is NON_COMPLIANT for an AWS AppSync API if it is not associated with a web ACL."
+        },
+        {
+            "rule_name": "cloudfront-associated-with-waf",
+            "guidance": "Ensure that Amazon CloudFront distributions are associated with either web application ﬁrewall (WAF) or WAFv2 web access control lists (ACLs). The rule is NON_COMPLIANT if a CloudFront distribution is not associated with a WAF web ACL."
+        },
+        {
+            "rule_name": "cloudfront-custom-ssl-certiﬁcate",
+            "guidance": "Ensure that the certiﬁcate associated with an Amazon CloudFront distribution is not the defaultSSL certiﬁcate. The rule is NON_COMPLIANT if a CloudFront distribution uses the default SSL certiﬁcate."
+        },
+        {
+            "rule_name": "codebuild-project-source-repo-url-check",
+            "guidance": "Ensure that the Bitbucket source repository URL DOES NOT contain sign-in credentials or not. The rule is NON_COMPLIANT if the URL contains any sign-in information and COMPLIANT if it doesn't."
+        },
+        {
+            "rule_name": "docdb-cluster-snapshot-public-prohibited",
+            "guidance": "Ensure that Amazon DocumentDB manual cluster snapshots are not public. The rule is NON_COMPLIANT if any Amazon DocumentDB manual cluster snapshots are public."
+        },
+        {
+            "rule_name": "ec2-client-vpn-not-authorize-all",
+            "guidance": "Ensure that the AWS Client VPN authorization rules does not authorize connection access for all clients. The rule is NON_COMPLIANT if 'AccessAll' is present and set to true."
+        },
+        {
+            "rule_name": "ec2-transit-gateway-auto-vpc-attach-disabled",
+            "guidance": "Ensure that Amazon Elastic Compute Cloud (Amazon EC2) Transit Gateways do not have 'AutoAcceptSharedAttachments' enabled. The rule is NON_COMPLIANT for a Transit Gateway if 'AutoAcceptSharedAttachments' is set to 'enable'."
+        },
+        {
+            "rule_name": "eks-endpoint-no-public-access",
+            "guidance": "Ensure that the Amazon Elastic Kubernetes Service (Amazon EKS) endpoint is not publicly accessible. The rule is NON_COMPLIANT if the endpoint is publicly accessible."
+        },
+        {
+            "rule_name": "elb-acm-certiﬁcate-required",
+            "guidance": "Ensure that the Classic Load Balancers use SSL certiﬁcates provided by AWS Certiﬁcate Manager. To use this rule, use an SSL or HTTPS listener with your Classic Load Balancer. Note- this rule is only applicable to Classic Load Balancers. This rule does not check Applicati on Load Balancers and Network Load Balancers."
+        },
+        {
+            "rule_name": "emr-block-public-access",
+            "guidance": "Ensure that an account with Amazon EMR has block public access settings enabled. The rule is NON_COMPLIANT if BlockPublicSecurityGroupRules is false, or if true, ports other than Port 22 are listed in Permitted PublicSecurityGroupRuleRanges."
+        },
+        {
+            "rule_name": "internet-gateway-authorized-vpc-only",
+            "guidance": "Ensure that internet gateways are attached to an authorized virtual private cloud (Amazon VPC). The rule is NON_COMPLIANT if internet gateways are attached to an unauthorized VPC."
+        },
+        {
+            "rule_name": "nacl-no-unrestricted-ssh-rdp",
+            "guidance": "Ensure that default ports for SSH/RDP ingress traﬃc for network access control lists (NACLs) are restricted. The rule is NON_COMPLIANT if a NACL inbound entry allowsa source TCP or UDP CIDR block for ports22 or 3389."
+        },
+        {
+            "rule_name": "netfw-policy-default-action-fragment-packets",
+            "guidance": "Ensure that an AWS Network Firewall policy is conﬁgured with a user deﬁned stateless default action for fragmented packets. The rule is NON_COMPLIANT if stateless default action for fragmented packets does not match with user deﬁned default action."
+        },
+        {
+            "rule_name": "rds-db-security-group-not-allowed",
+            "guidance": "Ensure that the Amazon Relational Database Service (Amazon RDS) DB security groups is the default one. The rule is NON_COMPLIANT if there are any DB security groups that are not the defaultDB security group."
+        },
+        {
+            "rule_name": "restricted-ssh",
+            "guidance": "Note: For this rule, the rule identiﬁer (INCOMING_SSH_DISABLED) and rule name (restricted-ssh) are diﬀerent. Ensure that the incomingSSH traﬃc for the security groups is accessible. The rule is COMPLIANT if the IP addresses of the incoming SSH traﬃc in the security groups are restricted (CIDR other than 0.0.0.0/0 or ::/0). Otherwise, NON_COMPLIANT."
+        },
+        {
+            "rule_name": "s3-access-point-public-access-blocks",
+            "guidance": "Ensure that Amazon S3 access points have block public access settings enabled. The rule is NON_COMPLIANT if block public access settings are not enabled for S3 access points."
+        },
+        {
+            "rule_name": "s3-account-level-public-access-blocks",
+            "guidance": "Ensure that the required public access block settings are conﬁgured from account level. The rule is only NON_COMPLIANT when the ﬁelds set below do not match the corresponding ﬁelds in the conﬁguration item."
+        },
+        {
+            "rule_name": "waf-global-rule-not-empty",
+            "guidance": "Ensure that an AWS WAF global rule contains some conditions. The rule is NON_COMPLIANT if no conditions are present within the WAF global rule."
+        },
+        {
+            "rule_name": "waf-global-rulegroup-not-empty",
+            "guidance": "Ensure that an AWS WAF Classic rule group contains some rules. The rule is NON_COMPLIANT if there are no rules present within a rule group."
+        },
+        {
+            "rule_name": "waf-global-webacl-not-empty",
+            "guidance": "Ensure that a WAF Global Web ACL contains someWAF rules or rule groups. This rule is NON_COMPLIANT if a Web ACL does not contain any WAF rule or rule group."
+        }
+    ]
+}

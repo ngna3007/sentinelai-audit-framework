@@ -63,8 +63,7 @@ def cleanup_folders():
             "error": str(e),
             "deleted_count": len(deleted_files)
         }
-
-
+        
 def main():
     print("🗑️ Cleanup Test\n")
     

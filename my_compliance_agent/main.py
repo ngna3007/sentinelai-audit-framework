@@ -477,7 +477,7 @@ async def upload_and_process_audit_result(control_id, aws_account_id='aws-accoun
        )
        
        async with audit_processor_agent:
-           llm = await audit_processor_agent.attach_llm(GoogleAugmentedLLM)
+           llm = await audit_processor_agent.attach_llm(AnthropicAugmentedLLM)
            
            print(f"📤 Processing audit result for control {control_id}...")
            
@@ -532,6 +532,10 @@ async def main():
         if req_fetch_result:
             print(f"✅ Requirement fetched successfully")
             
+            # Delay after Step 1
+            print("⏳ Waiting 10 seconds before evidence collection...")
+            await asyncio.sleep(10)
+            
             # Step 2: Fetch evidence data using DIRECT approach (fast & reliable)
             print("\n" + "=" * 50)
             print("STEP 2: FETCHING EVIDENCE DATA (DIRECT METHOD)")
@@ -542,6 +546,10 @@ async def main():
             if evidence_fetch_result:
                 print("✅ Evidence data ready")
                 
+                # Delay after Step 2
+                print("⏳ Waiting 10 seconds before compliance audit...")
+                await asyncio.sleep(10)
+                
                 # Step 3: Perform compliance audit (generates audit_result.json)
                 print("\n" + "=" * 50)
                 print("STEP 3: PERFORMING COMPLIANCE AUDIT")
@@ -551,6 +559,10 @@ async def main():
                 
                 if compliance_result:
                     print("✅ Compliance audit completed - audit_result.json generated")
+                    
+                    # Delay before Step 4
+                    print("⏳ Waiting 10 seconds before database upload...")
+                    await asyncio.sleep(10)
                     
                     # Step 4: Upload audit result and update status
                     print("\n" + "=" * 50)
@@ -592,4 +604,4 @@ async def main():
 
 if __name__ == "__main__":
     exit_code = asyncio.run(main())
-    exit(exit_code)
+    exit(exit_code) 
