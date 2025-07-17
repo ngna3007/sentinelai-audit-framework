@@ -6,16 +6,45 @@
 [![AWS](https://img.shields.io/badge/AWS-Config%20%7C%20Bedrock-orange?logo=amazon-aws&logoColor=white)](https://aws.amazon.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![Aurora PostgreSQL](https://img.shields.io/badge/Aurora-PostgreSQL-blue?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/rds/aurora/)
+[![MCP](https://img.shields.io/badge/MCP-Model%20Context%20Protocol-purple?logo=openai&logoColor=white)](https://modelcontextprotocol.io/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![PCI DSS](https://img.shields.io/badge/PCI%20DSS-v4.0-red?logo=security&logoColor=white)](https://www.pcisecuritystandards.org/)
-[![AI Powered](https://img.shields.io/badge/AI-Claude%203.5%20Sonnet-purple?logo=anthropic&logoColor=white)](https://www.anthropic.com)
+[![AI Powered](https://img.shields.io/badge/AI-Amazon%20Bedrock-green?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
 
-> 🚀 **Winner of VPBank Hackathon 2025 - Team 152**  
+> 🚀 **VPBank Hackathon 2025 - Team 152**  
 > An intelligent automation framework that revolutionizes PCI DSS compliance auditing using AI and cloud-native technologies.
 
 ---
 
-## 📖 Table of Contents
+## � Development Stages
+
+### 🔧 Stage 1 (MVP) - Foundation
+**Focus**: Evidence Collection & MCP Development
+- Core evidence collection from AWS services
+- Develop Model Context Protocol (MCP) integration
+- Build knowledge base with PCI DSS control mappings
+- Create usable version for internal testing
+- **Status**: Functional prototype, not yet industry-ready
+
+### 📈 Stage 2 (Scalability) - Enterprise Ready
+**Focus**: Multi-Account Support & AI Enhancement
+- Deploy AWS-Auto-Inventory MCP for 200+ account evidence collection
+- Implement concurrent multi-account scanning capabilities
+- Upgrade AI model for improved context understanding and logic handling
+- Enhanced performance optimization for enterprise workloads
+- **Target**: Production-ready for VPBank's infrastructure scale
+
+### 🎯 Stage 3 (Advanced Features) - Intelligence & Integration
+**Focus**: Risk-Based AI & Cross-Framework Compliance
+- **Smart Risk Prioritization**: AI agent prioritizes high-risk accounts based on roles and traffic logs (e.g., root, admin access patterns)
+- **Cross-Framework Mapping**: AI can compare and map PCI DSS requirements with other compliance frameworks (e.g., PCI DSS Req 1 = ISO 27001 Req 10)
+- **Evidence Reusability**: Reuse collected evidence across multiple compliance frameworks to avoid redundant audits
+- **Intelligent Gap Analysis**: For requirements unique to other frameworks (not in PCI DSS), train AI to automatically identify required evidence types
+- **Adaptive Learning**: AI learns to provide evidence recommendations even without explicit requirement mappings
+
+---
+
+## �📖 Table of Contents
 
 - [🎯 Overview](#-overview)
 - [✨ Key Features](#-key-features)
