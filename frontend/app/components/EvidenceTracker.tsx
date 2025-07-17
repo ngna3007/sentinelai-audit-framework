@@ -150,7 +150,7 @@ const EvidenceTracker: React.FC = () => {
       setUserAccounts(data);
       
       // Get unique auditors
-      const uniqueAuditors = [...new Set(data.map(account => account.auditor_id))];
+      const uniqueAuditors = [...new Set(data.map((account: UserAccount) => account.auditor_id))] as string[];
       if (uniqueAuditors.length > 0 && !selectedAuditor) {
         setSelectedAuditor(uniqueAuditors[0]);
         updateAuditorAccounts(uniqueAuditors[0], data);
@@ -358,15 +358,15 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-2">
             <Users size={20} className="text-muted-foreground" />
-            <label className="text-sm font-medium">Auditor:</label>
+            <label className="text-sm font-medium text-white">Auditor:</label>
             <select
               value={selectedAuditor}
               onChange={(e) => handleAuditorChange(e.target.value)}
-              className="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              className="px-3 py-2 bg-black border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
             >
-              <option value="">Select Auditor</option>
+              <option value="" className="bg-black text-white">Select Auditor</option>
               {uniqueAuditors.map(auditorId => (
-                <option key={auditorId} value={auditorId}>
+                <option key={auditorId} value={auditorId} className="bg-black text-white">
                   {auditorId}
                 </option>
               ))}
@@ -375,16 +375,16 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
 
           <div className="flex items-center space-x-2">
             <Building size={20} className="text-muted-foreground" />
-            <label className="text-sm font-medium">AWS Account:</label>
+            <label className="text-sm font-medium text-white">AWS Account:</label>
             <select
               value={selectedAwsAccount}
               onChange={(e) => handleAwsAccountChange(e.target.value)}
               disabled={!selectedAuditor || auditorAccounts.length === 0}
-              className="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
+              className="px-3 py-2 bg-black border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary disabled:opacity-50 disabled:bg-gray-900"
             >
-              <option value="">Select AWS Account</option>
+              <option value="" className="bg-black text-white">Select AWS Account</option>
               {auditorAccounts.map(account => (
-                <option key={account.aws_account_id} value={account.aws_account_id}>
+                <option key={account.aws_account_id} value={account.aws_account_id} className="bg-black text-white">
                   {account.account_name} ({account.aws_account_id})
                 </option>
               ))}
@@ -487,17 +487,17 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
                   </tr>
                 ) : (
                   currentData.map((item) => (
-                    <tr key={item.id} className="hover:bg-gray-50">
+                    <tr key={item.id} className="hover:bg-muted/50 transition-colors">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-1 h-8 bg-blue-500 rounded-full mr-3"></div>
-                          <div className="font-medium text-gray-900">
+                          <div className="font-bold text-white">
                             {item.control_id}
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <div className="text-sm text-gray-700 max-w-md">
+                        <div className="text-sm text-white max-w-md">
                           {item.requirement_description.length > 150
                             ? `${item.requirement_description.substring(0, 150)}...`
                             : item.requirement_description}

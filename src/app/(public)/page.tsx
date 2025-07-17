@@ -8,8 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { motion, useInView } from 'framer-motion'
-import { BarChart3, Check, ChevronRight, CloudLightning, Database, FileText, Globe, Shield, Users, Zap, Bot, Cpu, AlertTriangle, ArrowRight, Play } from 'lucide-react'
-import Image from 'next/image'
+import { BarChart3, Check, ChevronRight, CloudLightning, Database, Shield, Bot, Cpu, AlertTriangle, ArrowRight, Play } from 'lucide-react'
 import React, { useRef } from 'react'
 
 const features = [
@@ -575,7 +574,7 @@ export default function Home() {
               <motion.div key={index} variants={cardVariants}>
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="pt-8">
-                    <blockquote className="text-base lg:text-lg mb-6 leading-relaxed">"{testimonial.quote}"</blockquote>
+                    <blockquote className="text-base lg:text-lg mb-6 leading-relaxed">&quot;{testimonial.quote}&quot;</blockquote>
                     <footer>
                       <div className="font-semibold text-base">{testimonial.author}</div>
                       <div className="text-sm text-muted-foreground">{testimonial.role}</div>
@@ -651,7 +650,7 @@ export default function Home() {
       <motion.section className="py-16 sm:py-24 lg:py-32 bg-muted/30">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">What's Coming Next</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">What&apos;s Coming Next</h2>
             <p className="text-lg lg:text-xl text-muted-foreground">
               Advanced AI capabilities and expanded compliance coverage
             </p>

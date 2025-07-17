@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import { Timeline } from "./ui/timeline";
-import { Icon } from "./ui/plus-icon";
 
 export function About() {
   const data = [

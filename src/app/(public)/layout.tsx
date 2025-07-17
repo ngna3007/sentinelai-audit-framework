@@ -7,7 +7,6 @@ import { StarsBackground } from "@/components/st/bgr-stars";
 import WavyBackground from "@/components/st/bgr-wavy";
 import { AnimatePresence, motion } from 'framer-motion';
 import { Shield } from 'lucide-react';
-import Image from "next/image";
 import { useEffect, useState } from 'react';
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {

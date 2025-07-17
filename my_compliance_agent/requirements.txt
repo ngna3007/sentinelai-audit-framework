@@ -1,3 +1,5 @@
-# Additional dependencies specific to this example
 anthropic
-openai
+google-generativeai
+python-dotenv
+boto3
+mcp-agent

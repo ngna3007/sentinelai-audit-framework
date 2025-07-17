@@ -177,7 +177,7 @@ export default function Footer() {
                 <div className="mt-8 pt-8 border-t border-border/50">
                     <p className="text-xs text-muted-foreground text-center">
                         SentinelAI helps organizations achieve PCI DSS compliance through AI-powered automation. 
-                        This product is designed for VPBank's hackathon challenge and demonstrates advanced 
+                        This product is designed for VPBank&apos;s hackathon challenge and demonstrates advanced 
                         compliance automation capabilities for AWS environments.
                     </p>
                 </div>
