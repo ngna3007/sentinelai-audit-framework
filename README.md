@@ -382,20 +382,6 @@ pre-commit run --all-files
 - **💰 60% cost savings** in external audit fees
 - **🔄 24/7 monitoring** with real-time compliance updates
 
-## 🔮 Roadmap
-
-### Phase 2 (Q2 2025)
-- [ ] ISO 27001 compliance framework support
-- [ ] Vietnam Decree 13 integration
-- [ ] Multi-tenant architecture for VPBank subsidiaries
-- [ ] Advanced AI training with historical audit data
-
-### Phase 3 (Q3 2025)
-- [ ] SOC 2 Type II automation
-- [ ] Machine learning-based anomaly detection
-- [ ] Automated remediation workflows
-- [ ] Integration with ITSM tools
-
 ## 📄 License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
