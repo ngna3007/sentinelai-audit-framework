@@ -376,8 +376,8 @@ pre-commit run --all-files
 
 ## 📊 Metrics & Performance
 
-- **⚡ 95% faster** evidence collection compared to manual processes
-- **🎯 99.7% accuracy** in compliance determination
+- **⚡ 90% faster** evidence collection compared to manual processes
+- **🎯 99.9% accuracy** in compliance determination
 - **📉 80% reduction** in audit preparation time
 - **💰 60% cost savings** in external audit fees
 - **🔄 24/7 monitoring** with real-time compliance updates
