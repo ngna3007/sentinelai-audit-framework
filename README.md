@@ -5,7 +5,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15.4.1-black?logo=next.js&logoColor=white)](https://nextjs.org)
 [![AWS](https://img.shields.io/badge/AWS-Config%20%7C%20Bedrock-orange?logo=amazon-aws&logoColor=white)](https://aws.amazon.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![Supabase](https://img.shields.io/badge/Supabase-Database-green?logo=supabase&logoColor=white)](https://supabase.com)
+[![Aurora PostgreSQL](https://img.shields.io/badge/Aurora-PostgreSQL-blue?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/rds/aurora/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![PCI DSS](https://img.shields.io/badge/PCI%20DSS-v4.0-red?logo=security&logoColor=white)](https://www.pcisecuritystandards.org/)
 [![AI Powered](https://img.shields.io/badge/AI-Claude%203.5%20Sonnet-purple?logo=anthropic&logoColor=white)](https://www.anthropic.com)
@@ -98,7 +98,7 @@ graph TD
     D --> I[Amazon Bedrock]
     D --> J[Vector Knowledge Base]
     
-    K[Supabase DB] --> B
+    K[Aurora PostgreSQL] --> B
     L[S3 Storage] --> C
 ```
 
@@ -110,7 +110,7 @@ graph TD
 | **Agent Orchestrator** | Python + MCP | Coordinates multi-service compliance workflows |
 | **Evidence Collector** | boto3 + AWS SDK | Automated evidence gathering from AWS services |
 | **AI Engine** | Claude 3.5 Sonnet | Intelligent compliance analysis and recommendations |
-| **Database** | Supabase (PostgreSQL) | Secure data storage with role-based access |
+| **Database** | Aurora PostgreSQL | Secure data storage with role-based access |
 | **Storage** | AWS S3 | Organized evidence storage with lifecycle management |
 
 ## 🚀 Quick Start
@@ -119,7 +119,7 @@ graph TD
 - **Python 3.8+** with pip
 - **Node.js 18+** with npm
 - **AWS Account** with appropriate permissions
-- **Supabase Project** for database
+- **Aurora PostgreSQL** cluster for database
 - **Amazon Bedrock** access for AI features
 
 ### 1-Minute Setup
@@ -151,9 +151,12 @@ AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
 AWS_REGION=ap-southeast-2
 
-# Supabase Configuration
-SUPABASE_URL=your_supabase_url
-SUPABASE_ACCESS_TOKEN=your_supabase_token
+# Aurora PostgreSQL Configuration
+AURORA_HOST=your_aurora_cluster_endpoint
+AURORA_PORT=5432
+AURORA_DATABASE=audit_framework
+AURORA_USERNAME=your_db_username
+AURORA_PASSWORD=your_db_password
 
 # AI Model Configuration
 ANTHROPIC_API_KEY=your_anthropic_key
@@ -269,7 +272,7 @@ Use the web interface to generate and download audit reports in multiple formats
 - **☁️ Amazon Bedrock**: Managed AI inference
 - **🔧 boto3**: AWS SDK for Python
 - **📡 MCP Protocol**: Model Context Protocol integration
-- **🗃️ Supabase**: Managed PostgreSQL database
+- **🗃️ Aurora PostgreSQL**: AWS managed PostgreSQL database
 
 ### Frontend Stack
 - **⚛️ Next.js 15.4.1**: React-based web framework
@@ -283,7 +286,8 @@ Use the web interface to generate and download audit reports in multiple formats
 - **🔍 AWS CloudTrail**: API activity logging
 - **🛡️ AWS Security Hub**: Centralized security findings
 - **📦 AWS S3**: Evidence storage and archival
-- **🔐 AWS IAM**: Identity and access management
+- **�️ Aurora PostgreSQL**: Managed database with high availability
+- **�🔐 AWS IAM**: Identity and access management
 
 ## 📊 Use Cases
 
