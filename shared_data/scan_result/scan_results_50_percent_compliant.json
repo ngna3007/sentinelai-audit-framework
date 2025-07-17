@@ -1,0 +1,1510 @@
+[
+  {
+    "inventory_name": "pci-dss-compliance-inventory-50-percent-compliant",
+    "account_results": [
+      {
+        "region": "us-east-1",
+        "services": [
+          {
+            "service": "iam",
+            "function": "get_access_key_last_used",
+            "region": "us-east-1",
+            "result": [
+              {
+                "AccessKeyId": "AKIAEXAMPLE1234567890",
+                "LastUsedDate": "2025-04-05T00:00:00Z",
+                "Region": "us-east-1",
+                "ServiceName": "s3"
+              },
+              {
+                "AccessKeyId": "AKIAEXAMPLE9876543210",
+                "LastUsedDate": "2025-07-10T00:00:00Z",
+                "Region": "us-east-1",
+                "ServiceName": "ec2"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "acm",
+            "function": "describe_certificate",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Certificate": {
+                  "CertificateArn": "arn:aws:acm:us-east-1:000000000000:certificate/3d98a012-e6e8-42db-a756-77aceb839246",
+                  "DomainName": "*.pci-compliance.example.com",
+                  "Status": "ISSUED",
+                  "KeyAlgorithm": "RSA-2048",
+                  "KeyUsages": [
+                    {
+                      "Name": "DIGITAL_SIGNATURE"
+                    },
+                    {
+                      "Name": "KEY_ENCIPHERMENT"
+                    }
+                  ],
+                  "InUse": true
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "acm-pca",
+            "function": "describe_certificate_authority",
+            "region": "us-east-1",
+            "result": [
+              {
+                "CertificateAuthority": {
+                  "Arn": "arn:aws:acm-pca:us-east-1:000000000000:certificate-authority/12345678-1234-1234-1234-123456789012",
+                  "Type": "ROOT",
+                  "Status": "ACTIVE"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "apigateway",
+            "function": "get_stage",
+            "region": "us-east-1",
+            "result": [
+              {
+                "stageName": "prod",
+                "deploymentId": "deploy-123",
+                "methodSettings": {
+                  "cachingEnabled": true,
+                  "cacheDataEncrypted": true,
+                  "cacheKeyParameters": []
+                },
+                "tracingEnabled": true,
+                "accessLogSettings": {
+                  "destinationArn": "arn:aws:logs:us-east-1:000000000000:log-group:/aws/apigateway/access-logs",
+                  "format": "$requestId $ip $caller $user [$requestTime] \"$httpMethod $resourcePath $protocol\" $status $error.message $error.messageString"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "apigateway",
+            "function": "get_rest_api",
+            "region": "us-east-1",
+            "result": [
+              {
+                "id": "pci-api-gateway",
+                "name": "PCI-API",
+                "endpointConfiguration": {
+                  "types": ["EDGE"]
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "apigatewayv2",
+            "function": "get_stage",
+            "region": "us-east-1",
+            "result": [
+              {
+                "StageName": "prod",
+                "ApiId": "pci-api-v2",
+                "AccessLogSettings": null
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "appsync",
+            "function": "get_graphql_api",
+            "region": "us-east-1",
+            "result": [
+              {
+                "graphqlApi": {
+                  "name": "PCI-GraphQL-API",
+                  "apiId": "pci-graphql-123",
+                  "wafWebAclArn": "arn:aws:wafv2:us-east-1:000000000000:global/webacl/pci-waf-acl/12345678-1234-1234-1234-123456789012",
+                  "logConfig": {
+                    "fieldLogLevel": "ALL",
+                    "cloudWatchLogsRoleArn": "arn:aws:iam::000000000000:role/AppSyncLogsRole"
+                  }
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "athena",
+            "function": "get_work_group",
+            "region": "us-east-1",
+            "result": [
+              {
+                "WorkGroup": {
+                  "Name": "primary",
+                  "Configuration": {
+                    "ResultConfiguration": {
+                      "EncryptionConfiguration": null
+                    }
+                  }
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "rds",
+            "function": "describe_db_clusters",
+            "region": "us-east-1",
+            "result": [
+              {
+                "DBCluster": {
+                  "DBClusterIdentifier": "pci-aurora-cluster",
+                  "Engine": "aurora-mysql",
+                  "BackupRetentionPeriod": 30,
+                  "StorageEncrypted": true,
+                  "KmsKeyId": "arn:aws:kms:us-east-1:000000000000:key/3d7d70b1-079e-434e-873c-f65439524803"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "backup",
+            "function": "list_protected_resources",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Results": [
+                  {
+                    "ResourceType": "Aurora",
+                    "ResourceArn": "arn:aws:rds:us-east-1:000000000000:cluster:pci-aurora-cluster",
+                    "LastBackupTime": "2025-07-11T03:00:00Z"
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "autoscaling",
+            "function": "describe_launch_configuration",
+            "region": "us-east-1",
+            "result": [
+              {
+                "LaunchConfigurations": [
+                  {
+                    "LaunchConfigurationName": "pci-launch-config",
+                    "MetadataOptions": {
+                      "HttpTokens": "optional",
+                      "HttpEndpoint": "enabled"
+                    }
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "backup",
+            "function": "get_backup_vault_access_policy",
+            "region": "us-east-1",
+            "result": [
+              {
+                "BackupVaultName": "pci-backup-vault",
+                "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":[\"backup:*\"],\"Resource\":\"*\"}]}"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudformation",
+            "function": "describe_stacks",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Stacks": [
+                  {
+                    "StackId": "arn:aws:cloudformation:us-east-1:000000000000:stack/PCI-Infrastructure/c2c45dfd",
+                    "StackName": "PCI-Infrastructure",
+                    "NotificationARNs": [
+                      "arn:aws:sns:us-east-1:000000000000:stack-notifications"
+                    ],
+                    "StackStatus": "CREATE_COMPLETE",
+                    "EnableTerminationProtection": true
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudfront",
+            "function": "get_distribution",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Distribution": {
+                  "Id": "E123456789",
+                  "DistributionConfig": {
+                    "Logging": {
+                      "Enabled": false,
+                      "Bucket": ""
+                    },
+                    "WebACLId": "",
+                    "ViewerCertificate": {
+                      "ACMCertificateArn": "",
+                      "CloudFrontDefaultCertificate": true,
+                      "MinimumProtocolVersion": "TLSv1.1_2016",
+                      "SSLSupportMethod": "dedicated-ip"
+                    },
+                    "Origins": {
+                      "Items": [
+                        {
+                          "Id": "S3Origin",
+                          "DomainName": "pci-data-bucket.s3.amazonaws.com",
+                          "S3OriginConfig": {
+                            "OriginAccessIdentity": ""
+                          },
+                          "OriginAccessControlId": "",
+                          "CustomOriginConfig": {
+                            "OriginProtocolPolicy": "http-only",
+                            "OriginSslProtocols": {
+                              "Items": ["SSLv3", "TLSv1"]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "DefaultCacheBehavior": {
+                      "ViewerProtocolPolicy": "allow-all"
+                    },
+                    "CacheBehaviors": {
+                      "Items": [
+                        {
+                          "ViewerProtocolPolicy": "allow-all"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudtrail",
+            "function": "get_trail",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Trail": {
+                  "Name": "PCI-AuditTrail",
+                  "S3BucketName": "pci-compliance-logs-bucket",
+                  "IncludeGlobalServiceEvents": true,
+                  "IsMultiRegionTrail": true,
+                  "LogFileValidationEnabled": true,
+                  "KMSKeyId": "arn:aws:kms:us-east-1:000000000000:key/3d7d70b1-079e-434e-873c-f65439524803",
+                  "IsLogging": true
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudwatch",
+            "function": "describe_alarms",
+            "region": "us-east-1",
+            "result": [
+              {
+                "MetricAlarms": [
+                  {
+                    "AlarmName": "PCI-UnauthorizedAPIAccess",
+                    "AlarmActions": [
+                      "arn:aws:sns:us-east-1:000000000000:security-notifications"
+                    ],
+                    "InsufficientDataActions": [],
+                    "OKActions": [],
+                    "MetricName": "4XXError",
+                    "Dimensions": [
+                      {
+                        "Name": "ApiName",
+                        "Value": "PCI-API"
+                      }
+                    ],
+                    "ComparisonOperator": "GreaterThanThreshold",
+                    "Threshold": 10.0,
+                    "EvaluationPeriods": 1,
+                    "Period": 300
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "codebuild",
+            "function": "batch_get_projects",
+            "region": "us-east-1",
+            "result": [
+              {
+                "projects": [
+                  {
+                    "name": "pci-build-project",
+                    "artifacts": {
+                      "type": "S3",
+                      "encryptionDisabled": true
+                    },
+                    "secondaryArtifacts": [
+                      {
+                        "type": "S3",
+                        "encryptionDisabled": true
+                      }
+                    ],
+                    "environment": {
+                      "environmentVariables": [
+                        {
+                          "name": "AWS_ACCESS_KEY_ID",
+                          "value": "AKIAEXAMPLE1234567890"
+                        },
+                        {
+                          "name": "AWS_SECRET_ACCESS_KEY",
+                          "value": "secretkey123"
+                        }
+                      ]
+                    },
+                    "logsConfig": {
+                      "s3Logs": {
+                        "encryptionDisabled": true
+                      }
+                    },
+                    "source": {
+                      "type": "BITBUCKET",
+                      "location": "https://user:password@bitbucket.org/company/pci-project.git"
+                    }
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "codedeploy",
+            "function": "get_deployment_group",
+            "region": "us-east-1",
+            "result": [
+              {
+                "deploymentGroupInfo": {
+                  "deploymentGroupName": "pci-deployment-group",
+                  "deploymentConfigName": "CodeDeployDefault.LambdaAllAtOnce"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "codepipeline",
+            "function": "get_pipeline",
+            "region": "us-east-1",
+            "result": [
+              {
+                "pipeline": {
+                  "name": "pci-pipeline",
+                  "stages": [
+                    {
+                      "name": "Source",
+                      "actions": [
+                        {
+                          "name": "Source",
+                          "actionTypeId": {
+                            "category": "Source",
+                            "owner": "AWS",
+                            "provider": "S3"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "logs",
+            "function": "describe_log_groups",
+            "region": "us-east-1",
+            "result": [
+              {
+                "logGroups": [
+                  {
+                    "logGroupName": "/aws/apigateway/access-logs",
+                    "retentionInDays": 90,
+                    "kmsKeyId": null
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dax",
+            "function": "describe_clusters",
+            "region": "us-east-1",
+            "result": [
+              {
+                "clusters": [
+                  {
+                    "ClusterName": "pci-dax-cluster",
+                    "encryption": {
+                      "type": "NONE"
+                    },
+                    "clusterEndpointEncryptionType": "NONE"
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "rds",
+            "function": "describe_db_instances",
+            "region": "us-east-1",
+            "result": [
+              {
+                "DBInstances": [
+                  {
+                    "DBInstanceIdentifier": "pci-mysql-primary",
+                    "BackupRetentionPeriod": 0,
+                    "PreferredBackupWindow": "",
+                    "StorageEncrypted": false,
+                    "KmsKeyId": null,
+                    "IAMDatabaseAuthenticationEnabled": false,
+                    "DBSecurityGroups": [
+                      {
+                        "DBSecurityGroupName": "non-default-sg"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dms",
+            "function": "describe_endpoints",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Endpoints": [
+                  {
+                    "EndpointIdentifier": "pci-dms-endpoint",
+                    "SslMode": "none",
+                    "RedisSettings": {
+                      "SslSecurityProtocol": "plaintext"
+                    }
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "docdb",
+            "function": "describe_db_clusters",
+            "region": "us-east-1",
+            "result": [
+              {
+                "DBClusters": [
+                  {
+                    "DBClusterIdentifier": "pci-docdb-cluster",
+                    "StorageEncrypted": false,
+                    "KmsKeyId": null
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "docdb",
+            "function": "describe_db_cluster_snapshots",
+            "region": "us-east-1",
+            "result": [
+              {
+                "DBClusterSnapshots": [
+                  {
+                    "DBClusterSnapshotIdentifier": "pci-docdb-snapshot",
+                    "AttributeValueList": [
+                      {
+                        "AttributeName": "restore",
+                        "AttributeValues": ["all"]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dynamodb",
+            "function": "list_backup_selections",
+            "region": "us-east-1",
+            "result": [
+              {
+                "BackupSelections": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dynamodb",
+            "function": "describe_continuous_backups",
+            "region": "us-east-1",
+            "result": [
+              {
+                "ContinuousBackupsDescription": {
+                  "ContinuousBackupsStatus": "DISABLED",
+                  "PointInTimeRecoveryDescription": {
+                    "PointInTimeRecoveryStatus": "DISABLED"
+                  }
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dynamodb",
+            "function": "list_protected_resources",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Results": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "dynamodb",
+            "function": "describe_table",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Table": {
+                  "TableName": "PCI-TransactionLog",
+                  "SSEDescription": {
+                    "Status": "DISABLED"
+                  }
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "list_backup_selections",
+            "region": "us-east-1",
+            "result": [
+              {
+                "BackupSelections": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "list_protected_resources",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Results": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_client_vpn_authorization_rules",
+            "region": "us-east-1",
+            "result": [
+              {
+                "AuthorizationRules": [
+                  {
+                    "ClientVpnEndpointId": "cvpn-endpoint-123",
+                    "AccessAll": true,
+                    "GroupId": null
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_instances",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Reservations": [
+                  {
+                    "Instances": [
+                      {
+                        "InstanceId": "i-f652d215a957ffd8a",
+                        "MetadataOptions": {
+                          "HttpTokens": "optional",
+                          "HttpEndpoint": "enabled"
+                        },
+                        "Monitoring": {
+                          "State": "disabled"
+                        },
+                        "IamInstanceProfile": null,
+                        "KeyName": "my-key-pair"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_launch_template_versions",
+            "region": "us-east-1",
+            "result": [
+              {
+                "LaunchTemplateVersions": [
+                  {
+                    "LaunchTemplateId": "lt-123456789",
+                    "VersionNumber": 1,
+                    "LaunchTemplateData": {
+                      "NetworkInterfaces": [
+                        {
+                          "AssociatePublicIpAddress": true
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_volumes",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Volumes": [
+                  {
+                    "VolumeId": "vol-96d17f3654431eaa5",
+                    "Attachments": [
+                      {
+                        "InstanceId": "i-f652d215a957ffd8a",
+                        "DeleteOnTermination": false
+                      }
+                    ],
+                    "Encrypted": false,
+                    "KmsKeyId": null
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_transit_gateways",
+            "region": "us-east-1",
+            "result": [
+              {
+                "TransitGateways": [
+                  {
+                    "TransitGatewayId": "tgw-123456789",
+                    "Options": {
+                      "AutoAcceptSharedAttachments": "enable"
+                    }
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_internet_gateways",
+            "region": "us-east-1",
+            "result": [
+              {
+                "InternetGateways": [
+                  {
+                    "InternetGatewayId": "igw-123456789",
+                    "Attachments": [
+                      {
+                        "VpcId": "vpc-unauthorized-456"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_network_acls",
+            "region": "us-east-1",
+            "result": [
+              {
+                "NetworkAcls": [
+                  {
+                    "NetworkAclId": "acl-123456789",
+                    "Entries": [
+                      {
+                        "CidrBlock": "0.0.0.0/0",
+                        "Egress": false,
+                        "Protocol": "6",
+                        "PortRange": {
+                          "From": 22,
+                          "To": 22
+                        },
+                        "RuleAction": "allow"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_security_groups",
+            "region": "us-east-1",
+            "result": [
+              {
+                "SecurityGroups": [
+                  {
+                    "GroupId": "sg-123456789",
+                    "IpPermissions": [
+                      {
+                        "IpRanges": [
+                          {
+                            "CidrIp": "0.0.0.0/0"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ecr",
+            "function": "get_lifecycle_policy",
+            "region": "us-east-1",
+            "result": [
+              {
+                "repositoryName": "pci-ecr-repo",
+                "lifecyclePolicyText": null
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ecs",
+            "function": "describe_task_definition",
+            "region": "us-east-1",
+            "result": [
+              {
+                "taskDefinition": {
+                  "family": "pci-task",
+                  "containerDefinitions": [
+                    {
+                      "name": "pci-container",
+                      "logConfiguration": null
+                    }
+                  ],
+                  "pidMode": "host"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "eks",
+            "function": "describe_cluster",
+            "region": "us-east-1",
+            "result": [
+              {
+                "cluster": {
+                  "name": "pci-eks-cluster",
+                  "version": "1.19",
+                  "logging": {
+                    "clusterLogging": [
+                      {
+                        "enabled": false,
+                        "types": []
+                      }
+                    ]
+                  },
+                  "encryptionConfig": [],
+                  "resourcesVpcConfig": {
+                    "endpointPublicAccess": true
+                  }
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "elasticbeanstalk",
+            "function": "describe_configuration_settings",
+            "region": "us-east-1",
+            "result": [
+              {
+                "ConfigurationSettings": [
+                  {
+                    "ApplicationName": "pci-webapp",
+                    "EnvironmentName": "pci-env",
+                    "OptionSettings": [
+                      {
+                        "Namespace": "aws:elasticbeanstalk:cloudwatch:logs",
+                        "OptionName": "StreamLogs",
+                        "Value": "false"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "elasticache",
+            "function": "describe_cache_clusters",
+            "region": "us-east-1",
+            "result": [
+              {
+                "CacheClusters": [
+                  {
+                    "CacheClusterId": "pci-redis-cluster",
+                    "Engine": "redis",
+                    "SnapshotRetentionLimit": 5
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "elb",
+            "function": "describe_load_balancers",
+            "region": "us-east-1",
+            "result": [
+              {
+                "LoadBalancerDescriptions": [
+                  {
+                    "LoadBalancerName": "pci-elb",
+                    "ListenerDescriptions": [
+                      {
+                        "Listener": {
+                          "Protocol": "HTTP",
+                          "SSLCertificateId": null
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "emr",
+            "function": "get_block_public_access_configuration",
+            "region": "us-east-1",
+            "result": [
+              {
+                "BlockPublicAccessConfiguration": {
+                  "BlockPublicSecurityGroupRules": false,
+                  "PermittedPublicSecurityGroupRuleRanges": [
+                    {
+                      "MinRange": 80,
+                      "MaxRange": 443
+                    }
+                  ]
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "backup",
+            "function": "list_protected_resources",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Results": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "iam",
+            "function": "list_entities_for_policy",
+            "region": "us-east-1",
+            "result": [
+              {
+                "PolicyGroups": [],
+                "PolicyUsers": [],
+                "PolicyRoles": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "kinesis",
+            "function": "describe_stream_summary",
+            "region": "us-east-1",
+            "result": [
+              {
+                "StreamDescriptionSummary": {
+                  "StreamName": "pci-stream",
+                  "EncryptionType": "NONE",
+                  "KeyId": null
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "lambda",
+            "function": "get_function_configuration",
+            "region": "us-east-1",
+            "result": [
+              {
+                "FunctionName": "PCI-DataProcessor",
+                "Runtime": "python3.7",
+                "Role": "arn:aws:iam::000000000000:role/PCI-LambdaRole",
+                "Timeout": 900,
+                "MemorySize": 128,
+                "PackageType": "Zip",
+                "KMSKeyArn": null
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "macie2",
+            "function": "get_automated_discovery_configuration",
+            "region": "us-east-1",
+            "result": [
+              {
+                "status": "DISABLED"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "macie2",
+            "function": "get_macie_session",
+            "region": "us-east-1",
+            "result": [
+              {
+                "status": "DISABLED"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "mq",
+            "function": "describe_broker",
+            "region": "us-east-1",
+            "result": [
+              {
+                "BrokerName": "pci-mq-broker",
+                "Logs": {
+                  "Audit": false,
+                  "General": false
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "kafka",
+            "function": "describe_cluster",
+            "region": "us-east-1",
+            "result": [
+              {
+                "ClusterInfo": {
+                  "ClusterName": "pci-msk-cluster",
+                  "EncryptionInfo": {
+                    "EncryptionInTransit": {
+                      "InCluster": false
+                    }
+                  }
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "cloudtrail",
+            "function": "describe_trails",
+            "region": "us-east-1",
+            "result": [
+              {
+                "trailList": [
+                  {
+                    "Name": "PCI-MultiRegionTrail",
+                    "IsMultiRegionTrail": true,
+                    "IncludeGlobalServiceEvents": true,
+                    "IsLogging": true,
+                    "LogFileValidationEnabled": true,
+                    "KMSKeyId": "arn:aws:kms:us-east-1:000000000000:key/3d7d70b1-079e-434e-873c-f65439524803"
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "neptune",
+            "function": "describe_db_clusters",
+            "region": "us-east-1",
+            "result": [
+              {
+                "DBClusters": [
+                  {
+                    "DBClusterIdentifier": "pci-neptune-cluster",
+                    "BackupRetentionPeriod": 5,
+                    "EnabledCloudwatchLogsExports": [],
+                    "StorageEncrypted": false,
+                    "KmsKeyId": null,
+                    "IAMDatabaseAuthenticationEnabled": false
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "neptune",
+            "function": "describe_db_cluster_snapshots",
+            "region": "us-east-1",
+            "result": [
+              {
+                "DBClusterSnapshots": [
+                  {
+                    "DBClusterSnapshotIdentifier": "pci-neptune-snapshot",
+                    "StorageEncrypted": false,
+                    "KmsKeyId": null
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "network-firewall",
+            "function": "describe_logging_configuration",
+            "region": "us-east-1",
+            "result": [
+              {
+                "LoggingConfiguration": {
+                  "LogDestinationConfigs": []
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "network-firewall",
+            "function": "describe_firewall_policy",
+            "region": "us-east-1",
+            "result": [
+              {
+                "FirewallPolicy": {
+                  "StatelessFragmentDefaultActions": ["aws:drop"],
+                  "StatelessDefaultActions": ["aws:drop"]
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "redshift",
+            "function": "describe_clusters",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Clusters": [
+                  {
+                    "ClusterIdentifier": "pci-redshift-cluster",
+                    "AutomatedSnapshotRetentionPeriod": 0,
+                    "Encrypted": false,
+                    "KmsKeyId": null,
+                    "EnhancedVpcRouting": false
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_access_point_policy_status",
+            "region": "us-east-1",
+            "result": [
+              {
+                "PolicyStatus": {
+                  "IsPublic": true
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_public_access_block",
+            "region": "us-east-1",
+            "result": [
+              {
+                "PublicAccessBlockConfiguration": {
+                  "BlockPublicAcls": false,
+                  "IgnorePublicAcls": false,
+                  "BlockPublicPolicy": false,
+                  "RestrictPublicBuckets": false
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_bucket_policy",
+            "region": "us-east-1",
+            "result": [
+              {
+                "BucketName": "pci-compliance-data-bucket",
+                "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:*\",\"Resource\":\"arn:aws:s3:::pci-compliance-data-bucket/*\"}]}"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_object_lock_configuration",
+            "region": "us-east-1",
+            "result": [
+              {
+                "ObjectLockConfiguration": {
+                  "ObjectLockEnabled": "Disabled"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "s3",
+            "function": "get_bucket_versioning",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Status": "Suspended",
+                "MFADelete": "Disabled"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "backup",
+            "function": "list_protected_resources",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Results": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "secretsmanager",
+            "function": "describe_secret",
+            "region": "us-east-1",
+            "result": [
+              {
+                "ARN": "arn:aws:secretsmanager:us-east-1:000000000000:secret:pci-db-credentials",
+                "Name": "pci-db-credentials",
+                "RotationEnabled": false,
+                "LastRotatedDate": "2025-05-01T00:00:00Z",
+                "RotationRules": null,
+                "LastAccessedDate": "2025-05-10T00:00:00Z"
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "account",
+            "function": "get_contact_information",
+            "region": "us-east-1",
+            "result": [
+              {
+                "ContactInformation": {
+                  "AddressLine1": null,
+                  "FullName": null,
+                  "PhoneNumber": null
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "servicecatalog",
+            "function": "describe_portfolio_shares",
+            "region": "us-east-1",
+            "result": [
+              {
+                "PortfolioShareDetails": [
+                  {
+                    "Type": "ACCOUNT",
+                    "PrincipalId": "123456789012"
+                  }
+                ]
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "shield",
+            "function": "describe_subscription",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Subscription": {
+                  "ProactiveEngagementStatus": "DISABLED"
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "sns",
+            "function": "get_topic_attributes",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Attributes": {
+                  "DeliveryPolicy": null,
+                  "EffectiveDeliveryPolicy": null
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "stepfunctions",
+            "function": "describe_state_machine",
+            "region": "us-east-1",
+            "result": [
+              {
+                "stateMachineArn": "arn:aws:states:us-east-1:000000000000:stateMachine:pci-state-machine",
+                "name": "pci-state-machine",
+                "loggingConfiguration": {
+                  "level": "OFF",
+                  "includeExecutionData": false,
+                  "destinations": []
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "transfer",
+            "function": "describe_server",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Server": {
+                  "ServerId": "s-123456789",
+                  "Protocols": ["FTP", "FTPS"]
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "waf",
+            "function": "get_logging_configuration",
+            "region": "us-east-1",
+            "result": [
+              {
+                "LoggingConfiguration": null
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "waf",
+            "function": "get_rule",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Rule": {
+                  "RuleId": "rule-123456789",
+                  "Predicates": []
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "waf",
+            "function": "list_activated_rules_in_rule_group",
+            "region": "us-east-1",
+            "result": [
+              {
+                "ActivatedRules": []
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "waf",
+            "function": "get_web_acl",
+            "region": "us-east-1",
+            "result": [
+              {
+                "WebACL": {
+                  "WebACLId": "webacl-123456789",
+                  "Rules": []
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "wafv2",
+            "function": "get_rule_group",
+            "region": "us-east-1",
+            "result": [
+              {
+                "RuleGroup": {
+                  "Id": "rulegroup-123456789",
+                  "Name": "pci-rule-group",
+                  "VisibilityConfig": {
+                    "CloudWatchMetricsEnabled": false,
+                    "MetricName": "pci-rule-group"
+                  },
+                  "Rules": []
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "wafv2",
+            "function": "get_web_acl",
+            "region": "us-east-1",
+            "result": [
+              {
+                "WebACL": {
+                  "Id": "webacl-123456789",
+                  "Name": "pci-web-acl",
+                  "Rules": []
+                }
+              }
+            ],
+            "success": true,
+            "error": null
+          }
+        ]
+      }
+    ]
+  }
+] 

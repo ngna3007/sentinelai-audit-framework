@@ -1,0 +1,12 @@
+# PCI DSS Control Processing Service - Compatibility Layer
+# ========================================================
+# This service now provides backward compatibility through symlinks
+# to the centralized data_pipeline. Most dependencies are managed
+# by the centralized system.
+
+# Minimal dependencies for compatibility layer operation
+python-dotenv>=1.0.0
+PyYAML>=6.0
+
+# Note: For full extraction functionality, dependencies are managed
+# by the centralized data_pipeline at ../../data_pipeline/requirements.txt 

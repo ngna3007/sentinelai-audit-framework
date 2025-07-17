@@ -1,0 +1,105 @@
+<<<<<<< HEAD
+# SentinelAI Audit Framework - Root .gitignore
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large PDF files (download separately)
+*.pdf
+
+# Python cache (project-wide)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE files (project-wide)
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.example
+.env.local
+.env.production
+.env.development
+.venv
+env/
+venv/
+
+# Generated data directories at root level
+data/
+extracted_controls/
+ingest/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Claude AI specific files
+.claude/
+CLAUDE.md
+
+
+# Shared data directories
+shared_data/documents
+shared_data/outputs
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+>>>>>>> 6532736 (first init)

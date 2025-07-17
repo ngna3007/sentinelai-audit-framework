@@ -1,0 +1,251 @@
+[
+  {
+    "inventory_name": "my-aws-inventory",
+    "account_results": [
+      {
+        "region": "us-west-2",
+        "services": [
+          {
+            "service": "lambda",
+            "function": "list_functions",
+            "region": "us-west-2",
+            "result": null,
+            "success": false,
+            "error": "AWS API error: An error occurred (AccessDeniedException) when calling the ListFunctions operation: User: arn:aws:iam::851725599778:user/Na_mup is not authorized to perform: lambda:ListFunctions on resource: * because no identity-based policy allows the lambda:ListFunctions action"
+          },
+          {
+            "service": "s3",
+            "function": "list_buckets",
+            "region": "us-west-2",
+            "result": [],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_instances",
+            "region": "us-west-2",
+            "result": [],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "iam",
+            "function": "list_roles",
+            "region": "us-west-2",
+            "result": [
+              {
+                "Path": "/aws-service-role/organizations.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForOrganizations",
+                "RoleId": "AROA4MTWNIQREAYZUK2S7",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+                "CreateDate": "2025-07-07 18:01:14+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "organizations.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/sso.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForSSO",
+                "RoleId": "AROA4MTWNIQRGNI4UZ3C6",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+                "CreateDate": "2025-07-07 18:01:18+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "sso.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/support.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForSupport",
+                "RoleId": "AROA4MTWNIQRDBKKBGTZT",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+                "CreateDate": "2024-07-17 14:01:25+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "support.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForTrustedAdvisor",
+                "RoleId": "AROA4MTWNIQRNY45ZQOBS",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+                "CreateDate": "2024-07-17 14:01:25+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "trustedadvisor.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+                "MaxSessionDuration": 3600
+              }
+            ],
+            "success": true,
+            "error": null
+          }
+        ]
+      },
+      {
+        "region": "us-east-1",
+        "services": [
+          {
+            "service": "s3",
+            "function": "list_buckets",
+            "region": "us-east-1",
+            "result": [],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "lambda",
+            "function": "list_functions",
+            "region": "us-east-1",
+            "result": null,
+            "success": false,
+            "error": "AWS API error: An error occurred (AccessDeniedException) when calling the ListFunctions operation: User: arn:aws:iam::851725599778:user/Na_mup is not authorized to perform: lambda:ListFunctions on resource: * because no identity-based policy allows the lambda:ListFunctions action"
+          },
+          {
+            "service": "iam",
+            "function": "list_roles",
+            "region": "us-east-1",
+            "result": [
+              {
+                "Path": "/aws-service-role/organizations.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForOrganizations",
+                "RoleId": "AROA4MTWNIQREAYZUK2S7",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+                "CreateDate": "2025-07-07 18:01:14+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "organizations.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/sso.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForSSO",
+                "RoleId": "AROA4MTWNIQRGNI4UZ3C6",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+                "CreateDate": "2025-07-07 18:01:18+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "sso.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/support.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForSupport",
+                "RoleId": "AROA4MTWNIQRDBKKBGTZT",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+                "CreateDate": "2024-07-17 14:01:25+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "support.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+                "MaxSessionDuration": 3600
+              },
+              {
+                "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+                "RoleName": "AWSServiceRoleForTrustedAdvisor",
+                "RoleId": "AROA4MTWNIQRNY45ZQOBS",
+                "Arn": "arn:aws:iam::851725599778:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+                "CreateDate": "2024-07-17 14:01:25+00:00",
+                "AssumeRolePolicyDocument": {
+                  "Version": "2012-10-17",
+                  "Statement": [
+                    {
+                      "Effect": "Allow",
+                      "Principal": {
+                        "Service": "trustedadvisor.amazonaws.com"
+                      },
+                      "Action": "sts:AssumeRole"
+                    }
+                  ]
+                },
+                "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+                "MaxSessionDuration": 3600
+              }
+            ],
+            "success": true,
+            "error": null
+          },
+          {
+            "service": "ec2",
+            "function": "describe_instances",
+            "region": "us-east-1",
+            "result": [],
+            "success": true,
+            "error": null
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+# Development Dependencies - Compatibility Layer
+# ==============================================
+# Minimal development dependencies for the compatibility layer
+
+# Basic testing (for symlink validation)
+pytest>=7.4.0
+
+# Code quality (minimal)
+black>=23.9.0
+isort>=5.12.0
+
+# Note: Full development dependencies are managed by the centralized
+# data_pipeline at ../../data_pipeline/requirements-dev.txt 

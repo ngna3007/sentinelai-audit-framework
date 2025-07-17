@@ -1,0 +1,36 @@
+name: Hygiene
+
+on:
+  push:
+    branches:
+      - 'feat/**'
+      - 'fix/**'
+
+permissions:
+  contents: read
+
+jobs:
+  code-hygiene:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: python -m pip install --upgrade pip
+      - run: pip install pre-commit
+      - run: pre-commit run --all-files
+
+  # doc-hygiene:
+  #   needs: code-hygiene
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         submodules: "true"
+
+  #     - name: Build documentation
+  #       run: make doc/build
+
+  #     - name: Check documentation status
+  #       run: git diff --exit-code # exit 1 if there's a difference between what was pushed with what was produced by doc/build.

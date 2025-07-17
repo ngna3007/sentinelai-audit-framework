@@ -1,0 +1,24 @@
+name: Build
+on:
+  push:
+    branches:
+    - 'feat/**'
+    - 'fix/**'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: [3.10]
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - run: pip install -r requirements.txt
+    - run: pip install pyinstaller
+    - run: pyinstaller --name aws-auto-inventory --onefile scan.py

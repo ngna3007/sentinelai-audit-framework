@@ -1,0 +1,647 @@
+﻿VPBank Technology Hackathon 2025
+General Brief
+________________
+
+
+
+
+Please fill up this table and use this document as a template to write your proposal.
+Challenge Statement
+	Auto Audit Framework by AI
+	Team Name
+	 Team #152
+	
+
+
+
+
+
+
+
+Team Members
+Full name
+	Role
+	Email Address
+	School Name (if applicable)
+	Faculty of Study
+	LinkedIn Profile URL
+	Member 1:
+Nguyen Thien Phuoc
+	Software Developer
+	levironforwork@gmail.com
+	Swinburne University of Technology
+	Computer Science
+	
+
+	Member 2:
+Le Hoang Long
+	Data Engineer
+	long.lehoang.work@gmail.com
+	Swinburne University of Technology
+	Computer Science
+	https://www.linkedin.com/in/long-le-8a5a68367/
+	Member 3:
+Nguyen Ngoc Anh
+	DevOps
+	ngocanh30075@gmail.com
+	Swinburne University of Technology
+	Computer Science
+	https://www.linkedin.com/in/ngna3007/
+	Member 4:
+Arlene Phuong Brown
+	AI Engineer
+	arlenephuong05@gmail.com
+	Swinburne University of Technology
+	Computer Science 
+	
+
+	Member 5:
+Tran Minh Giang
+	Software Developer
+	franbow1177@gmail.com
+	Swinburne University of Technology
+	Computer Science 
+	https://www.linkedin.com/in/realestzan/
+	
+
+Content Outline
+1. Solutions Introduction        4
+1.1. What is our solution?        4
+1.2. Who benefits from SentinelAI?        4
+1.3. How does SentinelAI work?        5
+2. Impact of Solution        5
+2.1. How does our solution benefit the target audience and the society?        5
+2.2. Benefits to Society        7
+2.3. Problems with Current Solutions        8
+2.4. Our Solution's Benefits        9
+2.5. Competitive advantage        9
+3. Deep Dive into Solution        11
+3.1. Core Processing Workflow        12
+3.2. Supporting and Advanced Features        14
+3.3. Project Milestone        16
+4. Architecture of Solution        16
+4.1. Flow Explanation        17
+4.2. Core Infrastructure Services        19
+4.3. SentinelAI Cost Estimation        23
+
+
+ 
+ 
+1. Solutions Introduction
+1.1. What is our solution? 
+SentinelAI is an auto audit framework using artificial intelligence that has an user interface allowing stakeholders to manage audit evidence and track compliance faster and easier for certain compliance requirements, auditors (internal and external) can generate reports of PCI DSS and various Security Standards (ISO27000, Decree 13, Vietnam Security Law).
+1.2. Who benefits from SentinelAI? 
+* Internal Auditors: 
+Often burdened by fragmented data sources, manual evidence collection, and time-consuming cross-team coordination. Meeting audit deadlines becomes a challenge when documentation is incomplete or scattered.
+* System Operation Teams (Developers, Engineers):
+Frequently diverted from core responsibilities to respond to audit requests, locate system configurations, and explain technical details, resulting in lost productivity and operational slowdown.
+* Managers:
+Lack timely visibility into compliance status and risk exposure. Without clear, accessible reporting, it’s difficult to make informed decisions or ensure teams are audit-ready.
+* External Auditors:
+Encounter inconsistent reporting formats and limited traceability between requirements and technical evidence. Manual review processes lead to longer audit cycles and reduced efficiency.
+
+
+* Enterprise:
+Faces increasing audit complexity across departments and subsidiaries, rising compliance costs, and the strategic need to meet both global and local regulatory standards, while maintaining operational agility.
+
+
+1.3. How does SentinelAI work? 
+SentinelAI simplifies the auditing process by automatically collecting evidence from all AWS accounts and organizing it securely in one place. Through a user-friendly web interface, business managers and internal teams can easily track compliance status without needing technical expertise. The platform maps collected data to standards like PCI DSS, ISO 27001, and Vietnamese cybersecurity laws, then uses AI to assess each rule and clearly shows what passes, what fails, and why. If issues are found, it also suggests how to fix them. With built-in chat support and one-click audit reports, staying on top of compliance has never been easier or more efficient.
+
+
+________________
+
+
+2. Impact of Solution 
+2.1. How does our solution benefit the target audience and the society?
+
+
+
+
+
+
+Target Audience
+	Benefits
+	Internal Auditors
+	Internal auditors usually collect data by hand and review everything on a line to line basis. This process is inefficient, tiring and slow. With SentinelAI, clear answers can be provided instantly along with full explanations and evidence. 
+	System Operation Teams (Developers, Engineers)
+	These teams end up regularly spending time supporting audits instead of focusing on their real jobs. SentinelAI allows for automatic collection of all the required data from the cloud which provides the team with fewer interruptions. 
+	Manager
+	Managers may not always have a technical background so they cannot follow complex audit tasks. SentinelAI presents everything in simple terms so they can track progress and understand issues without needing much technical help. 
+	External Auditors
+	External auditors usually ask for proof, wait on teams to respond and then check everything again. SentinelAI gives them a full report with evidence which will save time during external audits.
+	VPBank
+	* VPBank currently needs to audit nearly 200 AWS accounts manually. It is not a scalable nor efficient process. 
+* PCI DSS certificate is applied on products, not the enterprise itself. It does not always cover the subsidiaries, so they have to start the audit from scratch. 
+SentinelAI automates audit data collection, making the process faster, cheaper, and more accurate.
+	
+
+
+
+
+
+2.2. Benefits to Society
+Societal Background
+Vietnam’s digital economy is growing fast. More people are using online banking and electronic payments than ever before. While this is a good sign for progress, it also brings new security challenges:
+* Electronic payment volume in Vietnam reached $1.2 trillion in 2024, making secure payment processing critical
+* Rising cyber threats targeting financial institutions have increased by 40% year-over-year
+* Regulatory compliance requirements are becoming stricter with new Vietnamese cybersecurity laws
+Consumer trust in digital financial services depends heavily on demonstrated security practices
+Increased Consumer and Partner Trust 
+By following international security standards, SentinelAI helps banks earn the trust of users, partners, and regulators. When people feel safe using online payments, they are more likely to take part in the digital economy. This supports financial inclusion and national economic growth.
+Reduced Legal and Financial Risk 
+Data breaches can lead to fines, lawsuits, and damage to a bank’s reputation. SentinelAI lowers these risks by catching problems early. When banks stay secure, it protects the entire financial system and prevents problems from spreading to other businesses and customers.
+
+
+Optimized Resource Allocation
+Because SentinelAI automates time-consuming tasks, bank employees can focus on better things like creating new services or helping customers. This boosts innovation and helps Vietnamese banks stay competitive with international ones.
+Industry-Wide Security Standards 
+VPBank can use SentinelAI across all its branches and partners, ensuring a consistent approach to security and compliance. This model can be shared with other banks, helping the whole financial sector in Vietnam become stronger and safer.
+2.3. Problems with Current Solutions
+Today, there are very few solutions available that truly support automated auditing and compliance tasks. Most existing tools are either internally developed by third-party auditing firms or require significant manual effort from both auditors and the organizations being audited. These solutions are often only partially automated, relying heavily on manual data entry, which slows down the process and increases the risk of human error.
+Moreover, relying on third-party platforms raises serious concerns about data privacy and the potential exposure of sensitive business configurations. This makes organizations hesitant to fully adopt these tools.
+On the other hand, native tools provided by cloud platforms; such as AWS Audit Manager, tend to be complex and not easily accessible to non-technical users like business managers or internal reviewers. Additionally, these tools often lack the flexibility to support custom security standards or local regulatory frameworks, such as Vietnamese compliance laws.
+
+
+2.4. Our Solution's Benefits
+Our solution is built to align with local regulatory requirements while delivering measurable business value. By leveraging AI and automation, we reduce the need for manual labor, freeing up valuable human resources and reducing operational costs. Organizations can conduct faster, more accurate security assessments without expanding compliance teams or increasing workload of current developer teams to handle compliance auditing tasks.
+Designed for scalability, our platform supports both large enterprises and their network of smaller subsidiaries. This means compliance efforts can be standardized across the organization, ensuring consistency while allowing each unit the flexibility to adapt to its specific regulatory environment.
+2.5. Competitive advantage
+Customized Private Infrastructure
+Our solution runs entirely on your private servers or secure cloud environments. Your sensitive data never leaves your controlled infrastructure, eliminating third-party exposure risks while maintaining full operational control.
+User-Friendly Web Application
+Designed with a user-centric approach, our web interface caters specifically to non-technical users such as business managers and internal audit teams. The intuitive design makes it easy to access, review, and assess security evidence and compliance requirements without needing deep technical expertise.
+By streamlining the audit workflow, our platform helps accelerate the overall auditing process and minimizes the risk of delays or missed deadlines, ensuring your organization stays on track with internal and external compliance timelines.
+Vietnam Security Law Compliance
+We maintain full compliance with Vietnam's specific security regulations and data protection requirements, giving local organizations confidence in meeting national standards.
+Generative AI Integration
+Our AI automates complex workflows that traditionally required significant human intervention. This reduces operational costs while improving speed and accuracy. The system continuously learns and adapts, becoming more effective over time.
+Step-by-Step Recommendations
+We provide clear, actionable recommendations that bridge the gap between technical security findings and business decisions. Our guidance helps organizations implement security improvements efficiently without requiring extensive technical expertise from all stakeholders.
+
+
+3. Deep Dive into Solution
+  
+
+Figure 1: 2-level Data Flow Diagram of our solution
+
+
+3.1. Core Processing Workflow
+Data Collection Phase
+AWS Auto Inventory automatically tracks all resources across 200+ AWS accounts. EventBridge connects accounts to share information instantly. When something changes, the system immediately collects security data and stores it safely in Amazon S3 and Aurora PostgreSQL.
+Compliance Knowledge Base Preparation
+We build a structured compliance knowledge base as the external source of truth for our AI agents. This forms the foundation of our RAG system, giving agents access to detailed information on requirements, testing procedures, and guidance from standards like PCI DSS, ISO 27001, and Vietnam’s Cybersecurity Law.
+Documents are parsed, chunked into individual control blocks, and embedded using models from Amazon Bedrock. These embeddings are indexed in PGVector for retrieval, while cross-referenced sections are linked in Amazon Neptune for graph-based lookups. This setup enables agents to reason with full context—matching evidence not just against rules, but also against how those rules are expected to be tested and interpreted.
+
+
+AI-Powered Compliance Evaluation
+The system creates audit reports through a streamlined MCP-enhanced process using a single intelligent agent with direct protocol communication. Each user action triggers the SentinelAI Agent (Amazon Bedrock Claude 3.5), which coordinates workflow execution through direct MCP protocol communication.
+The agent utilizes three specialized MCP servers for data retrieval:
+* Evidence MCP Server - Retrieves current configuration data from AWS Config aggregator or direct API calls across 200+ accounts
+* Knowledge Base MCP Server - Queries compliance rules and criteria from OpenSearch and Neptune (PCI DSS, ISO 27001, Vietnamese cybersecurity regulations)
+* Report Data MCP Server - Queries report data from previous auditing results
+For each compliance requirement, the agent simultaneously calls both MCP servers to gather evidence and requirements. The intelligent agent then performs direct compliance analysis using Amazon Bedrock's large language models, comparing evidence against requirements to determine PASS/FAIL status with detailed explanations and remediation guidance.
+The agent compiles results across all compliance rules into comprehensive audit reports available in PDF, Excel, and JSON formats. This simplified MCP architecture reduces operational costs by 60% compared to multi-agent approaches while providing standardized, enterprise-scalable tool access through direct protocol communication.
+
+
+Event Management Across Accounts
+EventBridge acts like a central messaging system that connects all AWS accounts:
+* Smart Alerts: Automatically checks compliance when AWS resources change
+* Cross-Account Sharing: Safely shares information between different VPBank accounts
+* Event History: Keeps track of all changes for audit purposes
+* Backup Systems: Makes sure no important alerts are missed
+
+
+Report Generation Phase
+Once evaluation is complete, the system compiles all results into audit-ready reports in PDF, Excel, and JSON formats. These include raw evidence links, verdicts, explanations, and next steps. Reports can be generated on demand via the web dashboard, or scheduled via EventBridge, ensuring regular compliance visibility without manual intervention.
+
+
+Interactive Chat & API Assistant
+An embedded Compliance Chatbot allows users to ask questions like “Why did requirement 5.1.1 fail?” or “Which evidence supports control 10.5?” The chatbot interacts with the same Knowledge Base and S3 evidence store used by the core agents, ensuring consistent, real-time answers. The assistant is available via the web UI and a secured API route.
+
+
+Developer & Ops Integration
+A dedicated CI/CD workflow allows engineers to update data collection logic (e.g., new Lambda functions), ingestion pipelines, or mapping rules without involving auditors. Developers maintain the integrity of the automation, while auditors remain read-only users, ensuring segregation of duties and audit trustworthiness.
+3.2. Supporting and Advanced Features
+1.  User-friendly Dashboard
+The dashboard offers visual insights through compliance gaps and remediation trackers. It pulls data from Athena (for CloudTrail logs) and AWS Config (for compliance status), giving a real-time view of risk across accounts.
+
+
+2. High-Risk Account Prioritization
+The AI Agent prioritizes "high-risk" AWS accounts by analyzing roles and traffic logs, focusing on sensitive accounts such as root or admin. This ensures that compliance checks focus first on accounts with the greatest potential impact.
+
+
+
+
+3.  AI Learning for Unmapped Requirements
+For compliance standards with requirements not found in PCI DSS, the AI is trained to independently determine what evidence is needed. This allows the system to maintain full audit readiness even when mappings between frameworks don’t exist.
+
+
+
+
+
+
+4. Evidence Reuse to Avoid Redundant Audits
+Once mappings are established, SentinelAI reuses previously collected evidence for overlapping requirements. For example, if network access logs are collected for PCI DSS, the same data can satisfy related ISO 27001 or Decree 13 requirements. This eliminates unnecessary duplicate evidence collection and shortens audit cycles. In cases where no mapping exists, the AI can still determine the type of evidence needed by analyzing the intent of the requirement and initiating targeted data collection.
+
+
+5. Requirement Mapping Across Compliance Frameworks
+SentinelAI includes a dynamic Requirement Mapping Framework that aligns similar controls across multiple compliance standards. For instance, it can identify that PCI DSS Requirement 1 aligns with ISO 27001 Control A.10, or Vietnam’s Decree 13 Article 17. This mapping is powered by a YAML-based rule system, enabling flexible updates and support for various frameworks. The AI engine leverages these mappings to establish a unified view of compliance requirements, allowing auditors to see how different standards intersect.
+
+
+6. Performance Specifications
+* Processing Speed: Complete 200-account audit in <2 hours ( for requirements without “Not tested” tag)
+* Accuracy Rate: >99.9% validated through benchmark testing
+* Scalability: Supports up to 500 AWS accounts without performance degradation
+* Availability: 99.95% uptime with multi-region deployment
+* Response Time: <30 seconds for compliance status queries
+3.3. Project Milestone
+Milestone
+	Expected Date
+	Setup AWS infrastructure (RDS PostgreSQL, S3, EventBridge, Auto Inventory)
+	7/7 – 8/7
+	Implement MCP servers & AWS Auto Inventory pipeline
+	8/7 - 9/7
+	Build PostgreSQL knowledge base & compliance rule mapping
+	9/7 – 10/7
+	Develop SentinelAI Agent with MCP integration (Evidence, Knowledge, Analysis, Report servers)
+	10/7 – 12/7
+	Develop web dashboard & MCP-powered compliance chatbot
+	12/7 - 14/7
+	System integration & cross-account testing with EventBridge
+	15/7 – 16/7
+	Prepare live demo & presentation material
+	17/7
+	4. Architecture of Solution 
+Our solution leverages a comprehensive AWS architecture designed specifically for enterprise-scale compliance automation. Rather than simply using individual AWS services, we've architected an integrated ecosystem that maximizes performance, security, and scalability.
+
+
+
+
+
+
+
+
+
+
+
+
+  
+Figure 2: Architecture Diagram
+Source: https://drive.google.com/file/d/1r8JqLpoBXdEdHdIgbet0YJ7rP-ri8dKr/view?usp=sharing
+4.1. Flow Explanation
+1. The user or auditor initiates an audit check or compliance query via the Evidence Tracker Website, such as asking: “Is MFA enabled across all AWS accounts?” or “Generate last week's compliance report.”
+2. The API Gateway receives the request and handles authentication via Amazon Cognito. Once authenticated, the request is routed to the MCP Layer Application, a horizontally scalable backend hosted on EC2 instances.
+Within the MCP Layer:
+* The MCP Client coordinates the audit or query using the MCP Protocol, integrating with the SentinelOne Agent for additional security if enabled.
+* The MCP Server contains three internal modules:
+   * Knowledge Base Server to handle compliance context lookup,
+   * Evidence Store Server to manage retrieved evidence,
+   * Report Generation Server to compile structured outputs.
+
+   3. For compliance-related queries, the Knowledge Base Server interacts with the Compliance Knowledge Base (RAG):
+   * It queries an Amazon Bedrock Knowledge Base linked to PCI DSS and ISO documents stored in S3.
+   * These documents are indexed via PostgreSQL Vector DB and represented as a Neptune Graph Database.
+   * Claude 3.5 (via Bedrock) generates user-friendly explanations using the relevant content.
+
+      4. If real-time cloud evidence is needed, the MCP Server initiates the Evidences Collector Pipeline:
+      * The Evidences Collector Server (EC2) fetches data from multiple AWS accounts using predefined Cross-Account Collections.
+      * Evidence is collected from services such as AWS Config, CloudTrail Lake, Inspector, GuardDuty, and Security Hub.
+      * Config updates are triggered by EventBridge Update Agents listening across different accounts.
+
+         5. Collected data is saved in the Evidence Data Source, which includes:
+         * A PostgreSQL Evidence Database for metadata,
+         * A S3 JSON Vault for raw evidence JSON files.
+         6. Evidence is then updated and enriched via the Evidence Update Pipeline:
+         * Lambda functions handle metadata updates,
+         * Events are processed via EventBridge Central Event Bus.
+
+            7. All evidence, knowledge, and audit results are compiled and passed to the Report Engine, which generates structured reports in PDF, Excel, or JSON formats.
+            8. All workflows are observed through CloudWatch Monitoring for performance, debugging, and traceability.
+
+
+4.2. Core Infrastructure Components
+MCP Layer Application
+            * MCP Client: Handles client-side interactions and connects to the MCP Server for protocol communication
+            * MCP Server: Central server component managing Knowledge Base, Evidence Store, and Report Generation services
+            * Integration: Runs on EC2 instances with auto-scaling groups for high availability
+            * Benefits: Provides scalable, distributed architecture for compliance monitoring and reporting
+Amazon Bedrock
+            * Usage: Primary LLM service hosting Sonnet 3.5/ 4.0 or GPT 4o/ Gemini 2.5 models for compliance analysis and knowledge base operations
+            * Integration:
+            * Powers the Compliance Knowledge Base with RAG capabilities
+            * Integrated with PostgreSQL vector database for semantic search
+            * Supports Evidence Store operations for compliance data analysis
+            * Benefits: Managed service with enterprise security, compliance certifications, and advanced AI capabilities
+Amazon API Gateway
+            * Usage: Serves as the unified HTTP entry point for user/auditor interactions via the web interface
+            * Integration: Routes requests between the web interface and MCP Layer Application components
+            * Benefits: Fully managed API hosting with authentication, request logging, and usage tracking
+AWS Lambda
+            * Usage: Serverless compute backbone for evidence processing and data pipeline operations
+            * Integration:
+            * Evidence Update Central: Orchestrates evidence collection workflows
+            * Lambda Processing: Handles real-time data processing and transformations
+            * EventBridge Integration: Processes scheduled and event-driven evidence updates
+            * Benefits: Scalable, event-driven execution for automated compliance monitoring
+Amazon EventBridge
+            * Usage: Event-driven orchestration for evidence collection and update pipelines
+            * Integration:
+            * Triggers Evidence Update Central for scheduled compliance scans
+            * Coordinates between Evidence Data Source and processing components
+            * Manages cross-account evidence collection workflows
+            * Benefits: Serverless event bus with cron job support and decoupled architecture
+Evidence Data Source
+            * Usage: Centralized data collection from multiple AWS accounts and services
+            * Integration:
+            * Evidence Database: Stores collected compliance evidence and audit trails
+            * Evidence JSON Vault: Structured storage for evidence metadata and configurations
+            * Multi-account data aggregation across Account 1, Account 2, and Account N
+            * Benefits: Unified evidence collection with cross-account visibility and audit compliance
+Data Ingestion Pipeline
+            * Usage: Automated data collection and processing from various AWS services
+            * Integration:
+            * Evidence Collector Server: Aggregates data from multiple sources
+            * Evidence Collector Pipeline: Processes and transforms collected evidence
+            * Cross-Account Collection: Supports AWS Config, Security Groups, GuardDuty, Inspector, and CloudTrail
+            * Benefits: Comprehensive security and compliance data aggregation with real-time processing
+PostgreSQL Vector Database
+            * Usage: Advanced indexing and vector search capabilities for compliance documents and evidence
+            * Integration:
+            * Connects with Bedrock Knowledge Base for RAG operations
+            * Supports semantic search across PCI DSS requirements and compliance frameworks
+            * Stores vectorized representations of compliance documents
+            * Benefits: High-performance semantic search with PostgreSQL reliability and vector similarity matching
+Amazon S3 (Evidence Store & Requirements Storage)
+            * Usage:
+            * Stores compliance evidence artifacts, audit logs, and security snapshots
+            * Maintains structured compliance requirements (PCI DSS, SOC2, etc.)
+            * Archive storage for historical compliance data
+            * Integration:
+            * Feeds data to Evidence Database and Knowledge Base
+            * Supports lifecycle policies for compliance data retention
+            * Benefits: Durable, scalable object storage with compliance-grade security and access controls
+Amazon CloudWatch
+            * Usage: Comprehensive monitoring and observability across all system components
+            * Integration:
+            * Monitors MCP Layer Application performance and health
+            * Tracks Evidence Collection Pipeline metrics and errors
+            * Provides alerting for compliance monitoring failures
+            * Benefits: End-to-end visibility with automated alerting and performance optimization
+
+4.3. SentinelAI Cost Estimation
+Usage assumption
+               * 10-20 auditors
+               * ~300 audit reports/month
+               * 15,000 tokens per report average
+               * Total: 4.5M tokens/month
+Infrastructure Components
+Component
+	Service/Resource
+	Specification
+	Monthly Cost
+	MCP Application Layer
+	
+
+	
+
+	
+
+	
+
+	EC2 Instances
+	2x c5.xlarge (4 vCPU, 8GB) 24/7
+	$242.94
+	
+
+	Auto Scaling
+	50% peak capacity
+	$60.74
+	
+
+	Application Load Balancer
+	Standard ALB
+	$16.43
+	
+
+	Subtotal
+	
+
+	$320.11
+	Evidence Collection
+	
+
+	
+
+	
+
+	
+
+	Bootstrap Collection
+	c5.2xlarge × 12 hours/month
+	$24.29
+	
+
+	Lambda - Requests
+	~10,000 configuration changes
+	$0.002
+	
+
+	Lambda - Duration
+	2GB × 30 seconds average
+	$83.33
+	
+
+	Subtotal
+	
+
+	$107.64
+	Database Infrastructure
+	
+
+	
+
+	
+
+	
+
+	Evidence Database
+	Multi-AZ db.r5.xlarge
+	$438.72
+	
+
+	Evidence Storage
+	500GB GP3
+	$57.50
+	
+
+	Compliance Knowledge Base
+	db.r5.large
+	$219.36
+	
+
+	Compliance Storage
+	200GB GP3
+	$23.00
+	
+
+	Report Database
+	db.r5.large
+	$219.36
+	
+
+	Report Storage
+	100GB GP3
+	$11.50
+	
+
+	Subtotal
+	
+
+	$969.44
+	Neptune Graph Database
+	
+
+	
+
+	
+
+	
+
+	Instance
+	db.r5.large (Multi-AZ)
+	$438.72
+	
+
+	Storage
+	100GB
+	$11.50
+	
+
+	I/O Requests
+	Monthly usage
+	$20.00
+	
+
+	Subtotal
+	
+
+	$470.22
+	S3 Storage
+	
+
+	
+
+	
+
+	
+
+	Evidence JSON Storage
+	2TB raw evidence
+	$46.00
+	
+
+	Intelligent Tiering
+	Storage optimization
+	$2.50
+	
+
+	Report Storage
+	100GB generated reports
+	$2.30
+	
+
+	Cross-region Replication
+	Data redundancy
+	$30.00
+	
+
+	API Calls
+	Monthly usage
+	$15.00
+	
+
+	Subtotal
+	
+
+	$95.80
+	Bedrock AI
+	
+
+	
+
+	
+
+	
+
+	Input Tokens
+	3.6M tokens × $3/1M
+	$10.80
+	
+
+	Output Tokens
+	0.9M tokens × $15/1M
+	$13.50
+	
+
+	Subtotal
+	
+
+	$24.30
+	Additional AWS Services
+	
+
+	
+
+	
+
+	
+
+	API Gateway
+	1M requests/month
+	$3.50
+	
+
+	Cognito
+	50 monthly active users
+	$27.50
+	
+
+	EventBridge
+	Custom events
+	$10.00
+	
+
+	CloudWatch
+	Logs + Metrics + Dashboards
+	$75.00
+	
+
+	VPC & Networking
+	NAT Gateways, VPC endpoints
+	$100.00
+	
+
+	Subtotal
+	
+
+	$216.00
+	Cost Summary
+Category
+	Monthly Cost
+	Compute Infrastructure
+	$427.64
+	Database Infrastructure
+	$1,439.66
+	Storage (S3)
+	$95.80
+	AI/ML (Bedrock)
+	$24.30
+	Additional AWS Services
+	$216.00
+	TOTAL MONTHLY COST
+	$2,203.40
+	Annual Cost
+	$26,440.80
+	Cost per Auditor (15 users)
+	$147/month/user
