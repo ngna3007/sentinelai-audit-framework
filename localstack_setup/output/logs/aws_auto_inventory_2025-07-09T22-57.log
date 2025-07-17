@@ -1,4 +1,0 @@
-2025-07-09 22:57:44,828 - aws_auto_inventory - INFO - Logging initialized at level INFO
-2025-07-09 22:57:44,830 - aws_auto_inventory - INFO - Log file: output\logs\aws_auto_inventory_2025-07-09T22-57.log
-2025-07-09 22:57:44,831 - aws_auto_inventory - INFO - Loading configuration from config_pci_dss_compliance_localstack.json
-2025-07-09 22:57:44,832 - aws_auto_inventory - ERROR - Error loading configuration: Configuration file not found: config_pci_dss_compliance_localstack.json

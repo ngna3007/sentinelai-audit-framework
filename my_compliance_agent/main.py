@@ -14,11 +14,13 @@ from mcp_agent.config import (
     BedrockSettings,
     AnthropicSettings,
     GoogleSettings,
+    GroqSettings,  # Add Groq settings import
 )
 from mcp_agent.agents.agent import Agent
 from mcp_agent.workflows.llm.augmented_llm_bedrock import BedrockAugmentedLLM
 from mcp_agent.workflows.llm.augmented_llm_anthropic import AnthropicAugmentedLLM
 from mcp_agent.workflows.llm.augmented_llm_google import GoogleAugmentedLLM
+from mcp_agent.workflows.llm.augmented_llm_groq import GroqAugmentedLLM  # Add Groq import
 from mcp_agent.workflows.parallel.parallel_llm import ParallelLLM
 
 from dotenv import load_dotenv
@@ -62,7 +64,7 @@ settings = Settings(
         aws_access_key_id=os.getenv("AWS_ACCESS_ID_KEY", ""),
         aws_secret_access_key=os.getenv("SECRET_ACCESS_KEY", ""),
         aws_region="ap-southeast-2",
-        default_model="arn:aws:bedrock:ap-southeast-2:123012555573:inference-profile/apac.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        default_model="arn:aws:bedrock:ap-southeast-2:123012555573:inference-profile/apac.anthropic.claude-3-7-sonnet-20250219-v1:0",
     ),
     anthropic=AnthropicSettings(
         api_key=os.getenv("ANTHROPIC_API"),
@@ -72,6 +74,10 @@ settings = Settings(
         api_key=os.getenv("GOOGLE_API"),
         vertexai= False,
         default_model="gemini-2.5-flash-lite-preview-06-17"        
+    ),
+    groq=GroqSettings(  # Add Groq settings
+        api_key=os.getenv("GROQ_API_KEY", ""),
+        default_model="mixtral-8x7b-32768",  # or "llama2-70b-4096"
     ),
 )
 
@@ -215,7 +221,7 @@ async def check_compliance(control_id, aws_account_id='aws-account-001'):
         context = agent_app.context
         context.config.mcp.servers["filesystem"].args.extend([os.getcwd()])
                 
-        # Create agent with very specific instructions - UNCHANGED
+        # Create agent with very specific instructions - UPDATED
         auditor_agent = Agent(
             name="pci_auditor",
             instruction=f"""You are a PCI DSS compliance auditor. Your task is to generate a structured compliance assessment in EXACT JSON format.
@@ -227,7 +233,9 @@ async def check_compliance(control_id, aws_account_id='aws-account-001'):
                         "compliance_assessment": {{
                             "<rule_name>": {{
                             "status": "COMPLIANT|NON_COMPLIANT|NOT_APPLICABLE",
-                            "details": "<detailed explanation>"
+                            "details": "<detailed explanation>",
+                            "fetched_evidences": ["<evidence_file_1>", "<evidence_file_2>", "..."],
+                            "remediation": "<specific remediation steps and recommendations>"
                             }}
                         }},
                         "compliance_summary": {{
@@ -243,15 +251,21 @@ async def check_compliance(control_id, aws_account_id='aws-account-001'):
                         1. READ the requirement file from requirement/ directory
                         2. READ all evidence files from evidence/ directory
                         3. For EACH config rule, determine status based on evidence
-                        4. Calculate compliance metrics
-                        5. CREATE audit_result/ directory if needed
-                        6. SAVE the JSON assessment to audit_result/{control_id.replace('.', '_')}_audit.json
-                        7. RETURN ONLY the complete JSON object - no extra text""",
+                        4. For EACH config rule, include:
+                           - status: COMPLIANT/NON_COMPLIANT/NOT_APPLICABLE
+                           - details: detailed explanation of the assessment
+                           - fetched_evidences: array of evidence file names that were analyzed
+                           - remediation: specific steps to fix non-compliant items or maintain compliance
+                        5. Calculate compliance metrics
+                        6. CREATE audit_result/ directory if needed
+                        7. SAVE the JSON assessment to audit_result/{control_id.replace('.', '_')}_audit.json
+                        8. RETURN ONLY the complete JSON object - no extra text""",
             server_names=["filesystem"],
         )
         
         async with auditor_agent:
-            llm = await auditor_agent.attach_llm(AnthropicAugmentedLLM)
+            # Use Groq for the audit process
+            llm = await auditor_agent.attach_llm(GroqAugmentedLLM)
             
             print("🔍 Starting compliance audit...")
             
@@ -265,9 +279,17 @@ async def check_compliance(control_id, aws_account_id='aws-account-001'):
                         - Analyze the corresponding evidence
                         - Determine status: COMPLIANT/NON_COMPLIANT/NOT_APPLICABLE
                         - Provide detailed explanation
+                        - List the evidence files that were analyzed for this rule
+                        - Provide specific remediation steps for non-compliant items or maintenance recommendations for compliant items
                         4. Calculate compliance metrics
                         5. Save complete JSON assessment to audit_result/ directory
                         6. Return the structured JSON assessment
+
+                        IMPORTANT: For each rule assessment, include:
+                        - status: compliance status
+                        - details: detailed explanation
+                        - fetched_evidences: array of evidence file names analyzed
+                        - remediation: specific remediation steps and recommendations
 
                         Return ONLY the JSON object - no additional text."""
                 )
@@ -350,7 +372,7 @@ async def upload_and_process_audit_result(control_id, aws_account_id='aws-accoun
         )
         
         async with audit_processor_agent:
-            llm = await audit_processor_agent.attach_llm(GoogleAugmentedLLM)
+            llm = await audit_processor_agent.attach_llm(BedrockAugmentedLLM)
             
             print(f"📤 Processing audit result for control {control_id}...")
             
