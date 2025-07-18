@@ -11,9 +11,9 @@
 [![PCI DSS](https://img.shields.io/badge/PCI%20DSS-v4.0-red?logo=security&logoColor=white)](https://www.pcisecuritystandards.org/)
 [![AI Powered](https://img.shields.io/badge/AI-Amazon%20Bedrock-green?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/bedrock/)
 
-> 🚀 **VPBank Hackathon 2025 - Team 152**  🚀
+> 🚀 **VPBank Hackathon 2025 - Team 152**  
 > An intelligent automation framework that revolutionizes PCI DSS compliance auditing using AI and cloud-native technologies.
-> Deployment link: http://ec2-16-176-229-177.ap-southeast-2.compute.amazonaws.com/
+ Deployment link: http://ec2-16-176-229-177.ap-southeast-2.compute.amazonaws.com/
 ---
 
 ## Development Stages
