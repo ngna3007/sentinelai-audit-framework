@@ -6,14 +6,9 @@ import { Search, Filter, Download, UserPlus, ChevronLeft, ChevronRight, Users, B
 import AuditButton from './AuditButton';
 
 // Supabase client setup
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-// Only create Supabase client if environment variables are available
-let supabase: any = null;
-if (supabaseUrl && supabaseKey && supabaseUrl !== 'https://your-project.supabase.co') {
-  supabase = createClient(supabaseUrl, supabaseKey);
-}
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Types
 interface RequirementStatusItem {
@@ -150,7 +145,7 @@ const EvidenceTracker: React.FC = () => {
       setUserAccounts(data);
       
       // Get unique auditors
-      const uniqueAuditors = [...new Set(data.map((account: UserAccount) => account.auditor_id))] as string[];
+      const uniqueAuditors = [...new Set(data.map(account => account.auditor_id))];
       if (uniqueAuditors.length > 0 && !selectedAuditor) {
         setSelectedAuditor(uniqueAuditors[0]);
         updateAuditorAccounts(uniqueAuditors[0], data);
@@ -241,9 +236,9 @@ const EvidenceTracker: React.FC = () => {
       case 'pending':
         return 'bg-yellow-100 text-yellow-800 border border-yellow-200';
       case 'not_applicable':
-        return 'bg-secondary text-secondary-foreground border';
+        return 'bg-gray-100 text-gray-800 border border-gray-200';
       default:
-        return 'bg-secondary text-secondary-foreground border';
+        return 'bg-gray-100 text-gray-800 border border-gray-200';
     }
   };
 
@@ -328,15 +323,15 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
   const uniqueAuditors = [...new Set(userAccounts.map(account => account.auditor_id))];
 
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen bg-gray-50 text-gray-900 w-full">
       {/* Header */}
-      <div className="border-b p-4 shadow-sm">
+      <div className="bg-white border-b border-gray-200 p-4 shadow-sm">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold">
+            <h1 className="text-2xl font-bold text-gray-900">
               PCI DSS Compliance Auditor
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-gray-600">
               PCI DSS ( v4.0.1 ) &gt;&gt; Requirements Audit Dashboard
             </p>
           </div>
@@ -354,19 +349,19 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
       </div>
 
       {/* Auditor and Account Selection */}
-      <div className="p-6 border-b">
+      <div className="p-6 bg-white border-b border-gray-200">
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-2">
-            <Users size={20} className="text-muted-foreground" />
-            <label className="text-sm font-medium text-white">Auditor:</label>
+            <Users size={20} className="text-gray-500" />
+            <label className="text-sm font-medium text-gray-700">Auditor:</label>
             <select
               value={selectedAuditor}
               onChange={(e) => handleAuditorChange(e.target.value)}
-              className="px-3 py-2 bg-black border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+              className="px-3 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              <option value="" className="bg-black text-white">Select Auditor</option>
+              <option value="">Select Auditor</option>
               {uniqueAuditors.map(auditorId => (
-                <option key={auditorId} value={auditorId} className="bg-black text-white">
+                <option key={auditorId} value={auditorId}>
                   {auditorId}
                 </option>
               ))}
@@ -374,17 +369,17 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <Building size={20} className="text-muted-foreground" />
-            <label className="text-sm font-medium text-white">AWS Account:</label>
+            <Building size={20} className="text-gray-500" />
+            <label className="text-sm font-medium text-gray-700">AWS Account:</label>
             <select
               value={selectedAwsAccount}
               onChange={(e) => handleAwsAccountChange(e.target.value)}
               disabled={!selectedAuditor || auditorAccounts.length === 0}
-              className="px-3 py-2 bg-black border border-gray-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary disabled:opacity-50 disabled:bg-gray-900"
+              className="px-3 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
             >
-              <option value="" className="bg-black text-white">Select AWS Account</option>
+              <option value="">Select AWS Account</option>
               {auditorAccounts.map(account => (
-                <option key={account.aws_account_id} value={account.aws_account_id} className="bg-black text-white">
+                <option key={account.aws_account_id} value={account.aws_account_id}>
                   {account.account_name} ({account.aws_account_id})
                 </option>
               ))}
@@ -400,73 +395,73 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
             title="Compliant"
             count={statusCounts.compliant}
             icon="✅"
-            color="bg-primary/10 text-primary border-primary/20"
+            color="bg-green-50 text-green-800"
           />
           <StatusCard
             title="Non-Compliant"
             count={statusCounts.non_compliant}
             icon="❌"
-            color="bg-primary/10 text-primary border-primary/20"
+            color="bg-red-50 text-red-800"
           />
           <StatusCard
             title="Pending"
             count={statusCounts.pending}
             icon="⏳"
-            color="bg-primary/10 text-primary border-primary/20"
+            color="bg-yellow-50 text-yellow-800"
           />
           <StatusCard
             title="Not Applicable"
             count={statusCounts.not_applicable}
             icon="➖"
-            color="bg-primary/10 text-primary border-primary/20"
+            color="bg-gray-50 text-gray-800"
           />
           <StatusCard
             title="Total Requirements"
             count={statusCounts.total}
             icon="📊"
-            color="bg-primary/10 text-primary border-primary/20"
+            color="bg-blue-50 text-blue-800"
           />
         </div>
 
         {/* Search and Filter */}
         <div className="flex items-center space-x-4 mb-6">
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+            <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
             <input
               type="text"
               placeholder="Search requirements..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full pl-10 pr-4 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
-          <button className="flex items-center space-x-2 hover:bg-accent px-4 py-2 rounded-lg border shadow-sm">
+          <button className="flex items-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-300 shadow-sm">
             <Filter size={16} />
             <span>Filter</span>
           </button>
         </div>
 
         {/* Requirements Table */}
-        <div className="rounded-lg overflow-hidden border">
+        <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-muted/50 border-b">
+              <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Control ID
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Description
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y">
+              <tbody className="bg-white divide-y divide-gray-200">
                 {loading ? (
                   <tr>
                     <td colSpan={4} className="px-6 py-4 text-center text-gray-500">
@@ -475,29 +470,29 @@ const handleAuditComplete = async (controlId: string, auditResult: any) => {
                   </tr>
                 ) : !selectedAwsAccount ? (
                   <tr>
-                    <td colSpan={4} className="px-6 py-4 text-center text-muted-foreground">
+                    <td colSpan={4} className="px-6 py-4 text-center text-gray-500">
                       Please select an auditor and AWS account to view requirements
                     </td>
                   </tr>
                 ) : currentData.length === 0 ? (
                   <tr>
-                    <td colSpan={4} className="px-6 py-4 text-center text-muted-foreground">
+                    <td colSpan={4} className="px-6 py-4 text-center text-gray-500">
                       {searchTerm ? "No matching requirements found" : "No requirements data found"}
                     </td>
                   </tr>
                 ) : (
                   currentData.map((item) => (
-                    <tr key={item.id} className="hover:bg-muted/50 transition-colors">
+                    <tr key={item.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="w-1 h-8 bg-blue-500 rounded-full mr-3"></div>
-                          <div className="font-bold text-white">
+                          <div className="font-medium text-gray-900">
                             {item.control_id}
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <div className="text-sm text-white max-w-md">
+                        <div className="text-sm text-gray-700 max-w-md">
                           {item.requirement_description.length > 150
                             ? `${item.requirement_description.substring(0, 150)}...`
                             : item.requirement_description}

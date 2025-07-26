@@ -1,16 +1,12 @@
-'use client'
+import React from 'react'
+import { EvidenceTracker } from './components/index'
 
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-
-const HomePage = () => {
-  const router = useRouter()
-
-  useEffect(() => {
-    router.replace('/landing')
-  }, [router])
-
-  return null
+const Home = () => {
+  return (
+    <div className='w-full bg-white'>
+        <EvidenceTracker/>
+    </div>
+  )
 }
 
-export default HomePage
+export default Home

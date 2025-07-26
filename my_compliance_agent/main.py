@@ -567,7 +567,7 @@ async def main():
                 print("STEP 3: PERFORMING COMPLIANCE AUDIT")
                 print("=" * 50)
                 
-                await asyncio.sleep(60)
+                await asyncio.sleep(20)
 
                 compliance_result = await check_compliance(args.id)
                 
