@@ -19,6 +19,7 @@ from database.auth.credentials import CredentialManager
 from database.migrations.migration_runner import MigrationRunner
 from database.importers import BulkImporter
 from database.repositories import AwsConfigRuleRepository, PciControlRepository, PciAwsConfigMappingRepository
+from database.prepare_knowledge_base_data import KnowledgeBaseDataPreparator
 
 # Load environment variables
 load_dotenv()
@@ -93,13 +94,14 @@ def data():
     """Data management operations"""
     pass
 
-@data.command()
-@click.argument('table', type=click.Choice(['pci_dss_controls', 'aws_config_rules_guidance', 'pci_aws_config_rule_mappings', 'all']))
+@data.command(name='list')
+@click.argument('table', type=click.Choice(['pci_dss_controls', 'aws_config_rules_guidance', 'pci_aws_config_rule_mappings', 'knowledge_base', 'all']))
 @click.option('--limit', type=int, default=10, help='Number of records to show')
 @click.option('--format', type=click.Choice(['table', 'json']), default='table', help='Output format')
-def list(table, limit, format):
+def list_data(table, limit, format):
     """List records from database tables"""
     from database.repositories import AwsConfigRuleRepository, PciControlRepository, PciAwsConfigMappingRepository
+    from database.auth.supabase_client import SupabaseClientWrapper
     
     repositories = {
         'pci_dss_controls': PciControlRepository(),
@@ -107,10 +109,13 @@ def list(table, limit, format):
         'pci_aws_config_rule_mappings': PciAwsConfigMappingRepository()
     }
     
-    if table == 'all':
+    if table == 'knowledge_base':
+        _display_knowledge_base_data(limit, format)
+    elif table == 'all':
         for table_name, repo in repositories.items():
             _display_table_data(table_name, repo, limit, format)
             click.echo()
+        _display_knowledge_base_data(limit, format)
     else:
         repo = repositories[table]
         _display_table_data(table, repo, limit, format)
@@ -217,6 +222,194 @@ def seed(sample_size):
     click.echo("🌱 Database seeding completed!")
 
 @data.command()
+@click.option('--data-dir', default='shared_data/outputs/knowledgebase/embeddings', help='Directory containing parquet and metadata files')
+@click.option('--batch-size', type=int, default=1000, help='Number of records per batch file')
+def prepare_kb(data_dir, batch_size):
+    """Prepare knowledge base data for insertion"""
+    click.echo("🔄 Preparing knowledge base data...")
+    click.echo(f"📁 Source directory: {data_dir}")
+    
+    try:
+        preparator = KnowledgeBaseDataPreparator(data_dir)
+        result = preparator.run(batch_size)
+        
+        click.echo("✅ Knowledge base data preparation completed!")
+        click.echo(f"   📁 Output directory: {result['output_dir']}")
+        click.echo(f"   📊 Total records: {result['stats']['total_records']}")
+        click.echo(f"   📦 Batch files: {len(result['batch_files'])}")
+        click.echo(f"   💾 SQL script: {result['sql_file']}")
+        click.echo(f"\n🚀 Next steps:")
+        click.echo(f"   1. Run the SQL table creation script in Supabase")
+        click.echo(f"   2. Use: python -m database.cli data import-kb")
+        
+    except Exception as e:
+        click.echo(f"❌ Failed to prepare knowledge base data: {e}")
+
+@data.command()
+@click.option('--batch-file', help='Specific batch file to import (if not provided, imports all)')
+@click.option('--prepared-data-dir', default='shared_data/outputs/knowledgebase/embeddings/prepared_data', help='Directory with prepared data files')
+@click.option('--dry-run', is_flag=True, help='Show what would be imported without making changes')
+def import_kb(batch_file, prepared_data_dir, dry_run):
+    """Import knowledge base data from prepared batch files"""
+    import json
+    from pathlib import Path
+    from database.auth.supabase_client import SupabaseClientWrapper
+    
+    click.echo("🔄 Importing knowledge base data...")
+    click.echo(f"📁 Prepared data directory: {prepared_data_dir}")
+    
+    try:
+        client = SupabaseClientWrapper().get_client()
+        
+        # Handle both relative and absolute paths
+        if Path(prepared_data_dir).is_absolute():
+            prepared_dir = Path(prepared_data_dir)
+        else:
+            # For relative paths, resolve from the project root
+            script_dir = Path(__file__).parent
+            project_root = script_dir.parent
+            prepared_dir = project_root / prepared_data_dir
+        
+        if not prepared_dir.exists():
+            click.echo(f"❌ Prepared data directory not found: {prepared_dir}")
+            click.echo("   Run: python -m database.cli data prepare-kb first")
+            return
+        
+        if batch_file:
+            batch_files_list = [prepared_dir / batch_file]
+        else:
+            batch_files_list = list(prepared_dir.glob("knowledge_base_batch_*.json"))
+        
+        if not batch_files_list:
+            click.echo("❌ No batch files found to import")
+            return
+        
+        total_imported = 0
+        
+        for batch_file_path in sorted(batch_files_list):
+            if not batch_file_path.exists():
+                click.echo(f"❌ Batch file not found: {batch_file_path}")
+                continue
+                
+            with open(batch_file_path, 'r') as f:
+                batch_data = json.load(f)
+            
+            if dry_run:
+                click.echo(f"🔍 Would import {len(batch_data)} records from {batch_file_path.name}")
+            else:
+                try:
+                    response = client.table('knowledge_base').insert(batch_data).execute()
+                    imported_count = len(response.data)
+                    total_imported += imported_count
+                    click.echo(f"✅ Imported {imported_count} records from {batch_file_path.name}")
+                except Exception as e:
+                    click.echo(f"❌ Failed to import {batch_file_path.name}: {e}")
+        
+        if not dry_run:
+            click.echo(f"\n🎉 Knowledge base import completed! Total records imported: {total_imported}")
+        else:
+            # Calculate total records that would be imported
+            total_would_import = 0
+            for f in batch_files_list:
+                try:
+                    with open(f, 'r') as file:
+                        data = json.load(file)
+                        total_would_import += len(data)
+                except Exception as e:
+                    click.echo(f"Warning: Could not read {f.name}: {e}")
+            click.echo(f"\n🔍 Dry run completed. Would import {total_would_import} total records")
+            
+    except Exception as e:
+        click.echo(f"❌ Failed to import knowledge base data: {e}")
+
+@data.command()
+@click.option('--query', help='Search query text')
+@click.option('--limit', type=int, default=5, help='Number of results to return')
+@click.option('--similarity-threshold', type=float, default=0.7, help='Minimum similarity threshold (0-1)')
+@click.option('--source-filter', help='Filter by source document')
+@click.option('--framework-filter', help='Filter by framework (e.g., PCI-DSS)')
+def search_kb(query, limit, similarity_threshold, source_filter, framework_filter):
+    """Search knowledge base using text similarity"""
+    from database.auth.supabase_client import SupabaseClientWrapper
+    
+    if not query:
+        click.echo("❌ Query text is required")
+        return
+    
+    try:
+        client = SupabaseClientWrapper().get_client()
+        
+        # Build the query
+        query_builder = client.table('knowledge_base').select('uuid, content, metadata')
+        
+        # Add filters
+        if source_filter:
+            query_builder = query_builder.eq('metadata->>source', source_filter)
+        if framework_filter:
+            query_builder = query_builder.eq('metadata->>framework', framework_filter)
+        
+        # Execute full-text search using tsvector (optimized for compliance/security domain)
+        # Using PostgreSQL's full-text search with ranking
+        search_query = f"""
+        SELECT uuid, content, metadata, ts_rank(content_tsvector, plainto_tsquery('english', %s)) as rank
+        FROM knowledge_base
+        WHERE content_tsvector @@ plainto_tsquery('english', %s)
+        ORDER BY rank DESC
+        LIMIT %s
+        """
+        
+        # Build filters
+        filters = []
+        params = [query, query, limit]
+        
+        if source_filter:
+            filters.append("metadata->>'source_document' = %s")
+            params.insert(-1, source_filter)
+        if framework_filter:
+            filters.append("metadata->>'framework' = %s")
+            params.insert(-1, framework_filter)
+        
+        if filters:
+            search_query = search_query.replace(
+                "WHERE content_tsvector", 
+                f"WHERE {' AND '.join(filters)} AND content_tsvector"
+            )
+        
+        # Execute the query using RPC (raw SQL)
+        try:
+            response = client.rpc('execute_sql', {'sql': search_query, 'params': params}).execute()
+            results = response.data if response.data else []
+        except:
+            # Fallback to simple text search if RPC fails
+            query_builder = client.table('knowledge_base').select('uuid, content, metadata')
+            if source_filter:
+                query_builder = query_builder.eq('metadata->>source_document', source_filter)
+            if framework_filter:
+                query_builder = query_builder.eq('metadata->>framework', framework_filter)
+            response = query_builder.ilike('content', f'%{query}%').limit(limit).execute()
+            results = response.data if response.data else []
+        
+        if not results:
+            click.echo("🔍 No results found")
+            return
+        
+        click.echo(f"🔍 Found {len(results)} results for: '{query}'")
+        click.echo("=" * 60)
+        
+        for i, result in enumerate(results, 1):
+            metadata = result['metadata']
+            rank = result.get('rank', 0)
+            click.echo(f"\n{i}. Document: {metadata.get('document_name', 'Unknown')}")
+            click.echo(f"   Source: {metadata.get('source_document', 'Unknown')}")
+            click.echo(f"   Framework: {metadata.get('framework', 'N/A')}")
+            if rank:
+                click.echo(f"   Relevance: {rank:.4f}")
+            click.echo(f"   Content: {result['content'][:200]}{'...' if len(result['content']) > 200 else ''}")
+            
+    except Exception as e:
+        click.echo(f"❌ Failed to search knowledge base: {e}")
+
+@data.command()
 def stats():
     """Show database statistics"""
     from database.repositories import AwsConfigRuleRepository, PciControlRepository, PciAwsConfigMappingRepository
@@ -252,6 +445,62 @@ def stats():
     click.echo(f"   Coverage: {coverage['coverage_percentage']}%")
     click.echo(f"   Controls with rules: {coverage['controls_with_rules']}")
     click.echo(f"   Controls without rules: {coverage['controls_without_rules']}")
+    
+    # Knowledge base stats
+    try:
+        from database.auth.supabase_client import SupabaseClientWrapper
+        client = SupabaseClientWrapper().get_client()
+        kb_response = client.table('knowledge_base').select('uuid', count='exact').execute()
+        kb_count = kb_response.count if kb_response.count else 0
+        
+        click.echo(f"\n💾 Knowledge Base:")
+        click.echo(f"   Total records: {kb_count}")
+        
+        # Get framework distribution
+        framework_response = client.table('knowledge_base').select('metadata').execute()
+        frameworks = {}
+        for record in framework_response.data:
+            framework = record['metadata'].get('framework', 'Unknown')
+            frameworks[framework] = frameworks.get(framework, 0) + 1
+        
+        click.echo(f"   Framework distribution:")
+        for framework, count in sorted(frameworks.items()):
+            click.echo(f"     {framework}: {count}")
+            
+    except Exception as e:
+        click.echo(f"\n💾 Knowledge Base: Error loading stats - {e}")
+
+def _display_knowledge_base_data(limit, format):
+    """Helper function to display knowledge base data"""
+    from database.auth.supabase_client import SupabaseClientWrapper
+    
+    click.echo(f"📋 KNOWLEDGE_BASE (showing {limit} records):")
+    
+    try:
+        client = SupabaseClientWrapper().get_client()
+        response = client.table('knowledge_base').select('uuid, content, metadata').limit(limit).execute()
+        
+        if not response.data:
+            click.echo("   No records found")
+            return
+        
+        if format == 'json':
+            for record in response.data:
+                click.echo(json.dumps(record, indent=2))
+        else:
+            for i, record in enumerate(response.data, 1):
+                metadata = record['metadata']
+                click.echo(f"   {i}. UUID: {record['uuid']}")
+                click.echo(f"      Source: {metadata.get('source_document', 'Unknown')}")
+                click.echo(f"      Framework: {metadata.get('framework', 'N/A')}")
+                click.echo(f"      Document: {metadata.get('document_name', 'Unknown')}")
+                click.echo(f"      Document Type: {metadata.get('document_type', 'Unknown')}")
+                content = record['content']
+                click.echo(f"      Content: {content[:100]}{'...' if len(content) > 100 else ''}")
+                click.echo()
+                
+    except Exception as e:
+        click.echo(f"   Error loading knowledge base data: {e}")
 
 def _display_table_data(table_name, repository, limit, format):
     """Helper function to display table data"""

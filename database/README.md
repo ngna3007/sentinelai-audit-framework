@@ -135,6 +135,24 @@ python cli.py data seed
 python cli.py data stats
 ```
 
+### Knowledge Base Operations
+
+```bash
+# Prepare knowledge base data from parquet files
+python cli.py data prepare-kb
+python cli.py data prepare-kb --data-dir /custom/path/to/embeddings
+
+# Import knowledge base data
+python cli.py data import-kb
+python cli.py data import-kb --batch-file knowledge_base_batch_001.json
+python cli.py data import-kb --dry-run
+
+# Search knowledge base
+python cli.py data search-kb --query "PCI DSS network segmentation"
+python cli.py data search-kb --query "AWS encryption" --framework-filter "PCI-DSS"
+python cli.py data search-kb --query "compliance" --limit 10
+```
+
 ### Data Import Operations
 
 ```bash
@@ -400,6 +418,30 @@ uuid,ec2-security-group-attached-to-eni,"Rule guidance","{\"compliance\": [\"PCI
 ```csv
 id,control_id,config_rules
 uuid,1.1.1,"[{\"rule\": \"ec2-security-group-attached-to-eni\", \"weight\": 0.8}]"
+```
+
+### Knowledge Base Data Format
+
+The knowledge base supports both parquet files with embeddings and JSON metadata files:
+
+#### Parquet Files (embeddings)
+- **chunk_id**: UUID identifier
+- **chunk_index**: Sequential chunk number
+- **text**: Content text (up to 2558 characters)
+- **token_count**: Token count for the text
+- **source**: Source document identifier
+- **embedding**: 1024-dimensional float64 vector
+
+#### Metadata JSON Files
+```json
+{
+  "metadataAttributes": {
+    "document_name": {"value": {"type": "STRING", "stringValue": "Document Title"}},
+    "framework": {"value": {"type": "STRING", "stringValue": "PCI-DSS"}},
+    "document_type": {"value": {"type": "STRING", "stringValue": "guidance"}},
+    "key_topics": {"value": {"type": "STRING_LIST", "stringListValue": ["topic1", "topic2"]}}
+  }
+}
 ```
 
 ### Data Validation

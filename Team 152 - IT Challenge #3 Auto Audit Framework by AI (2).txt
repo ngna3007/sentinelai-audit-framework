@@ -1,0 +1,327 @@
+﻿________________
+
+
+TABLE OF CONTENTS
+________________
+
+
+
+
+1. NON-TECHNICAL OVERVIEW        3
+1.1. Social and Business Context        3
+1.1.1. Social Context        3
+1.1.2. Business Context        3
+1.2. Problem Statement        4
+1.3. Solution Description        5
+1.4. Expected Value of the Solution        6
+1.5. Potential Improvement Points        7
+2. TECHNICAL SOLUTION - AI AUDIT FRAMEWORK        8
+2.1. High-Level Diagram        8
+2.2. Low-Level Diagram        8
+2.3. Data Flow Diagram        8
+2.4. Deep Dive into Solution Features        8
+2.4.1. Main Portal – Evidence Tracker        8
+2.4.2. Evidence Collection Status Summary Dashboard        10
+2.4.3. Live Compliance Report & Recommendation        11
+2.4.4. Audit Report Generator        12
+2.4.5. Audit Chatbot        13
+2.5. Common Use Cases        13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. NON-TECHNICAL OVERVIEW
+1.1. Social and Business Context
+________________
+
+
+1.1.1. Social Context
+The 21st century is the era of technology and artificial intelligence. Accompanying the rapid growth of technology is the increase in cybersecurity threats, both in number and in sophistication. Data is considered the heart of a business: the more data a business has, the higher its chances of success. There are various types of data in the world, and not all are evaluated as equally important. However, data related to human identity, financial statements, and money flow is especially critical, as these are the main components that determine the success of a business.
+In Vietnam, banking and insurance are considered two industries that collect and store most of the sensitive data mentioned above. Therefore, a bank like VPBank becomes an attractive target for attackers aiming to invade the center of the economy, due to the sensitive data it manages, from cardholder information to transaction records.
+From another perspective, the Vietnamese government is placing more emphasis on personal data protection to ensure that personally identifiable information (PII) of all Vietnamese citizens is protected when using services related to payments, banking, and more. PCI DSS certification and local regulations from the State Bank of Vietnam are non-negotiable. Failure to comply results not only in fines, but also in reputational damage, loss of customer trust, and legal consequences. 
+1.1.2. Business Context
+As a business trend in the digital-first era, VPBank is undergoing rapid digital transformation to gain competitive advantages in Vietnam’s dynamic fintech and banking industry. The bank has adopted a cloud-first approach, with a growing number of services now hosted on AWS. Currently, over 200 internal VPBank user accounts interact with this cloud environment. AWS is also a PCI DSS in-scope platform that must be integrated with an automated framework to enhance the efficiency of audit evidence collection.
+In general, VPBank is still a newcomer in applying high-level technologies and platforms to its business operations. As a result, there are ongoing challenges related to human resources, knowledge base, cybersecurity awareness, and auditing concepts. Integrating an AI-driven solution can potentially reduce the volume of manual work, allowing human resources to focus on areas that truly require critical thinking, analytical skills, and creativity.
+
+
+1.2. Problem Statement
+________________
+
+
+Although security certifications like PCI DSS are critical for business operations, the process of onboarding, preparation, and audit evidence collection remains manual, fragmented, and inefficient for most businesses, including VPBank.
+Problem 1: Manual, repetitive, ineffective, and time-consuming evidence collection
+Today, most organizations still rely on manual methods to prepare audit evidence. Teams must access various tools and platforms to collect logs, screenshots, and configuration details by hand. This evidence is then stored in unstructured formats such as Google Drive, OneDrive, ZIP files, or shared folders.
+While some forward-thinking organizations may use shared trackers or pages, these solutions often lack essential features, such as real-time evidence updates and automated synchronization from in-scope platforms or cloud services.
+Problem 2: Lack of audit knowledge among technical teams
+In most businesses, the personnel involved in interviews with assessment vendors or in the evidence preparation process are often DevOps engineers, developers, or system administrators. These individuals are skilled in delivering and maintaining infrastructure but typically lack knowledge of compliance and audit frameworks. They also often do not have the time or motivation to learn about audit processes.
+This results in a significant communication gap:
+When third-party assessment vendors request evidence or conduct interviews, technical teams may provide the wrong type of evidence or misinterpret the requirements. While some companies have a dedicated security audit team to help bridge this gap, the process remains inefficient. Audit teams often act merely as intermediaries between assessors and technical teams, which adds more layers without improving clarity.
+The situation is even more challenging for small and mid-sized businesses that lack the budget to hire a dedicated security audit team. In these cases, the gap widens, leading to more delays, confusion, and increased audit risk. True efficiency can only be achieved when both sides communicate directly and understand each other’s needs clearly.
+Problem 3: Incomplete or outdated evidence increases audit risk
+Another major challenge is that audit evidence can quickly become outdated. In dynamic environments like AWS, resources, configurations, and permissions change frequently. Without an automated synchronization mechanism, the evidence collected and uploaded may no longer accurately reflect the current state of the system at the time of the audit.
+This discrepancy introduces significant audit risk:
+Assessment vendors may raise additional questions, require further investigation, or even request rework and the implementation of compensating controls, which means increased workload, and more potential non-compliance findings.
+
+
+1.3. Solution Description
+________________
+
+
+This challenge will focus solely on developing a solution to support the PCI DSS v4.0 certification onboarding process for VPBank. While other certifications such as ISO/IEC 27001 or Vietnam’s Decree No. 13 on personal data protection are relevant and may be considered in the future, they are not mandatory requirements for this challenge. Instead, they will be evaluated as potential extensions of the core solution once the PCI DSS framework has been successfully implemented.
+For this challenge, our team will build an Auto PCI DSS Audit Tool, with the following main components:
+* A portal for evidence tracker
+* Audit button to sync latest evidence
+* Display compliance reports with detailed status of each requirement (Passed/Failed)
+* Recommendations to improve Failed evidence
+* A report generator (export to CSV/Excel/PDF files)
+* A chatbot to quickly ask about requirement status.
+
+
+1.4. Expected Value of the Solution
+________________
+
+
+To VPBank’s current business problems
+Business Problem
+	How the Solution Works
+	Technical Component(s)
+	Manual, repetitive evidence collection wastes time and effort
+	Automates evidence retrieval, reducing hundreds of man-hours
+	Evidence collector uses AWS APIs
+	Evidence is scattered across Google Drive, ZIP files, spreadsheets
+	Centralizes evidence storage and control tracking
+	Web portal + evidence Tracker
+	DevOps/Developers lack audit knowledge; misunderstand requirements
+	AI explains requirements and guides response preparation
+	AI audit agent (LLM)
+	Internal audit team acts only as an intermediary
+	Developer-friendly interface allows self-service evidence submission
+	Web portal + evidence Tracker
+	Evidence becomes outdated due to frequent infrastructure changes
+	Continuous sync ensures evidence reflects the current state
+	Scheduled evidence sync + AWS SDK
+	Limited visibility into overall compliance status
+	Real-time dashboard shows audit progress and risk areas
+	Status dashboard
+	Misunderstandings during external auditor interviews
+	AI-generated explanations and remediation guidance are consistent and accurate
+	AI audit chatbot + control mapper
+	Preparing audit packages takes too long
+	One-click export reduces turnaround time and improves response to findings
+	Report generator (PDF/CSV/Excel)
+	Need to prepare for PCI DSS, ISO, and Decree 13? More in-scope products/systems of VPBank need PCI DSS?
+	Scalable to multiple frameworks with the same data source
+Can be reused for other child entities of VPBank without additional fees for recruitment or training.
+
+
+	The whole solution
+	
+
+1.5. Potential Improvement Points
+________________
+
+
+Support other certification/decree auditing, periodic internal/external audit (SOC2, ISO27001, Vietnam’s decree 13...)
+Train the AI chatbot to simulate an auditor interview assistant that can guide DevOps or developers through audit questions interactively.
+Improve AI agent (this requires additional fees for training AI): 
+* Integrate contextual learning so the AI improves over time based on past audit results and remediations.
+* Use multi-agent orchestration, one agent handles evidence, another explains controls, a third proposes recommendations.
+
+
+2. TECHNICAL SOLUTION - AI AUDIT FRAMEWORK
+2.1. High-Level Diagram
+________________
+
+
+  
+
+
+
+2.2. Low-Level Diagram
+________________
+
+
+  
+
+  2.3. Architecture Diagram
+
+
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+
+
+2.4. Deep Dive into Solution Features
+________________
+
+
+2.4.1. Main Portal – Evidence Tracker
+The Evidence Tracker serves as the centralized compliance monitoring portal. It provides a comprehensive web interface that allows the management of audit evidence and tracking compliance across multiple AWS accounts. The portal is built on a microservice architecture that has dedicated services for the different compliance functions.
+
+
+  
+
+   Figure: Audit Dashboard (version 1)
+Core Architecture Components:
+* Agent Orchestrator Service: Coordinates the compliance workflows and manages multi-service interactions
+* Evidence Collector Service: Handles the automated collection from AWS Config, CloudTrail, and other services
+* MCP Gateway Service: Provides Model Context Protocol integration for the AI agent communication
+* RAG Service: Manages retrieval-augmented generation for compliance knowledge base queries
+* Report API Service: Generates and serves compliance reports in multiple formats
+
+
+Authentication and Access Control:
+The portal integrates with Supabase (managed PostgreSQL database) for secure authentication and role-based access control, ensuring the appropriate separation of duties between internal auditors, system operators, managers and external auditors.
+
+
+Key Features:
+* Real-time Compliance Dashboard: Visual representation of the compliance status across all monitored AWS accounts with detailed control-level tracking
+* Evidence Management Interface: Centralized view of collected evidence with advanced search, filtering, and categorization capabilities
+* Cross-Account Monitoring: Unified compliance view across multiple VPBank AWS accounts with account-specific drill-down functionality
+* Audit Trail Tracking: Complete history of evidence collection, updates, and compliance status changes with full traceability
+
+
+2.4.2. Evidence Collection Status Summary Dashboard
+The Evidence Collection Status Dashboard provides a comprehensive visibility into the automated evidence gathering process by using a sophisticated two-phase architecture that separates evidence collection from the compliance evaluation.
+Two-Phase Evidence Collection Strategy:
+Phase 1: Scheduled Evidence Collection: 
+* Runs on daily/weekly schedules to collect fresh evidence from AWS services
+* Stores structured evidence in S3 with organized account-specific hierarchies
+* Eliminates real-time boto3 API calls during audit queries for cost optimization
+
+
+        Phase 2: Real-time Compliance Queries
+* AI agents retrieve pre-collected evidence from S3 storage
+* Enables fast compliance evaluation without AWS API overhead
+* Provides immediate audit responses using cached evidence data
+
+
+Dashboard Components:
+* Evidence collection progress indicators for each monitored AWS account
+* Service-specific status tracking across AWS Config, Security Hub, GuardDuty, and Inspector
+* Data freshness indicators showing last successful collection timestamps
+* Error reporting and automated remediation guidance for failed collection attempts
+* Cost optimization metrics showing reduced API call overhead
+
+
+2.4.3. Live Compliance Report & Recommendation
+The Live Compliance Report feature leverages an intelligent AI-powered compliance engine that combines exact rule mappings with a dynamic AI reasoning for a more comprehensive compliance assessment.
+Technical Architecture:
+* Knowledge Base Integration: AI agent retrieves control requirements and AWS Config rule mappings from the vector knowledge base
+* Evidence Database Queries: Real-time evidence retrieval from Supabase database (managed PostgreSQL)
+* AI Analysis Engine: Amazon Bedrock with Claude 3.5 Sonnet model (inference profile: apac.anthropic.claude-3-sonnet-20240229-v1:0)
+* MCP Protocol: Standardized communication between AI agents and data sources
+
+
+Compliance Evaluation Process:
+* Control Lookup: AI agent queries knowledge base for specific PCI DSS control requirements and AWS Config rule mappings
+* Evidence Retrieval: System fetches relevant evidence from database based on control-to-service mappings
+* AI Assessment: Claude model analyzes evidence against compliance requirements and generates pass/fail determination
+* Recommendation Generation: AI provides specific remediation guidance for non-compliant configurations
+
+
+Live Reporting Capabilities:
+* Real-Time Status: On-demand compliance evaluation without scheduled audit cycles
+* Multi-Framework Support: PCI DSS v4.0, ISO 27001, and Vietnamese cybersecurity requirements
+* Evidence Traceability: Direct links to supporting evidence with compliance reasoning
+* Intelligent Prioritization: Risk-based ranking of compliance gaps with remediation complexity scoring
+
+
+2.4.4. Audit Report Generator
+The Audit Report Generator creates comprehensive compliance reports using a centralized data pipeline architecture that processes both pre-collected evidence and real-time compliance assessments.
+Data Pipeline Architecture:
+* Processors Directory: Contains specialized processors for different document types and evidence sources
+* Pipelines Directory: Manages evidence collection workflows and data processing pipelines
+* Schemas Directory: Defines structured data formats for evidence and compliance results
+* Sources/Evidence Collection: Handles multi-account AWS configuration gathering
+
+
+Report Generation Capabilities:
+* Multi-Format Output: PDF reports for executive presentation, Excel spreadsheets for detailed analysis, and JSON format for API integration
+* Evidence Linking: Each compliance finding includes direct links to supporting evidence with full traceability to source systems and S3 storage locations
+* Historical Trend Analysis: Comparative analysis showing compliance trajectory over time with risk indicators and improvement recommendations
+* Executive Summary: High-level compliance posture with key metrics, priority remediation items, and cost-benefit analysis
+
+
+Database Integration:
+* The system uses a sophisticated database architecture built on Supabase (managed PostgreSQL) with multiple specialized components:
+* Authentication Models: User management and role-based access control
+* Evidence Index: Optimized indexing for fast evidence retrieval
+* Migration System: Version-controlled database schema evolution
+* Repository Pattern: Abstracted data access layer for maintainable code
+
+
+Automated Processing:
+* Scheduled Generation: Automated report creation based on configurable schedules
+* On-Demand Reporting: Instant report generation for specific timeframes, controls, or account subsets
+* Cross-Account Aggregation: Unified reporting across multiple AWS accounts with drill-down capabilities
+
+
+
+
+
+
+
+
+2.5. Common Use Cases
+________________
+
+
+Use Case 1: VPBank's Quarterly PCI DSS Compliance Assessment
+1. VPBank's internal audit team initiates compliance scan through Evidence Tracker portal for their 200+ AWS accounts
+2. Agent Orchestrator coordinates evidence collection across VPBank's multi-account AWS infrastructure using automated collection processes
+3. AI agent analyzes VPBank's AWS configurations against PCI DSS requirements using knowledge base lookups and intelligent reasoning
+4. RAG Service provides compliance evaluation specific to VPBank's banking infrastructure with detailed gap analysis
+5. Report API generates comprehensive audit package for VPBank's compliance officers with evidence links and remediation recommendations tailored to their environment
+
+
+Use Case 2: VPBank Infrastructure Change Impact Assessment
+1. VPBank's DevOps team makes changes to AWS resources across their accounts for new banking services
+2. Evidence Collection Dashboard shows VPBank's compliance team real-time updates to affected compliance controls with change correlation
+3. AI agent automatically re-evaluates impacted PCI DSS requirements for VPBank's modified infrastructure using cached evidence and incremental updates
+4. System generates automated alerts for VPBank's security team about new compliance violations with severity classification
+5. GitHub MCP integration supports VPBank's development teams with compliance-aware development workflow processes
+
+
+Use Case 3: VPBank's External Audit Preparation
+1. VPBank's audit team uses Evidence Tracker to review current compliance posture across all monitored accounts before regulatory examination
+2. Report Generator creates comprehensive audit package for VPBank's external auditors with database query support and evidence documentation
+3. Compliance Chatbot assists VPBank staff in answering external auditor questions with consistent, documented responses and audit trails
+4. Historical trend analysis demonstrates VPBank's ongoing compliance efforts with improvement trajectory documentation for regulatory review
+5. Evidence export provides VPBank's external auditors with organized evidence packages and verification procedures specific to banking regulations
+
+
+2.6.  Current Stage and Future Plan
+________________
+
+
+Stage 1: MVP (Current)
+1. Evidence Collector:
+* Using boto3 MCP to fetch data
+
+
+
+
+
+
+VPBANK HACKATHON 2025 - TEAM 152                                                                                      PAGE

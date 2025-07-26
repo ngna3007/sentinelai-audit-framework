@@ -39,23 +39,27 @@ aws_guidance/
 - **Content Processing**: Combines rule descriptions and guidance into meaningful chunks
 - **Pipeline Integration**: Seamlessly integrates with the centralized data pipeline
 - **PCI DSS Mapping**: Processes PCI DSS control to AWS Config rule mappings
+- **Multiple PDF Conversion Engines**: Support for both pymupdf4llm and docling engines
+- **Advanced Document Processing**: Docling engine provides superior layout analysis and table detection
 
 ## Usage
 
 ### Command Line Interface
 
+**Note**: The CLI paths have been updated to use the centralized data pipeline CLI.
+
 ```bash
 # Process AWS Config rules with default settings
-python cli.py aws-guidance process --verbose
+python data_pipeline/cli.py aws-guidance process --verbose
 
 # Process custom input file
-python cli.py aws-guidance process --input-file custom.csv --output-dir custom/output
+python data_pipeline/cli.py aws-guidance process --input-file custom.csv --output-dir custom/output
 
 # Process PCI DSS to AWS Config rule mappings
-python cli.py aws-guidance pci-mappings --verbose
+python data_pipeline/cli.py aws-guidance pci-mappings --verbose
 
 # Process custom PCI mapping file
-python cli.py aws-guidance pci-mappings --input-file custom.json --output-dir custom/output
+python data_pipeline/cli.py aws-guidance pci-mappings --input-file custom.json --output-dir custom/output
 ```
 
 ### Python API
@@ -120,14 +124,66 @@ The PostgreSQL schema includes:
 - Efficient querying support
 - JSONB arrays for rule mappings
 
+## PDF Conversion Engines
+
+The system supports two PDF conversion engines for processing compliance documents:
+
+### PyMuPDF4LLM (Default)
+- **Speed**: Fast conversion (~2 minutes for large documents)
+- **Optimization**: Specifically designed for LLM applications
+- **Use Case**: Quick conversions and standard document processing
+- **Installation**: `pip install pymupdf4llm`
+
+### Docling (Advanced)
+- **Quality**: Superior layout analysis and table detection
+- **Features**: Advanced PDF understanding, reading order detection
+- **Performance**: Slower processing (~13 minutes for large documents)
+- **Use Case**: Complex compliance documents requiring high-quality extraction
+- **Installation**: `pip install docling`
+
+### Engine Selection
+
+You can choose the conversion engine when processing PCI DSS documents:
+
+```bash
+# Use pymupdf4llm (default, fast)
+python data_pipeline/processors/compliance_standards/pci_dss/main.py convert --engine pymupdf4llm
+
+# Use docling (advanced, higher quality)
+python data_pipeline/processors/compliance_standards/pci_dss/main.py convert --engine docling
+
+# Manual input with docling
+python data_pipeline/processors/compliance_standards/pci_dss/main.py convert --engine docling --source-path /path/to/document.pdf --output-file custom-name --output-folder /custom/output/
+```
+
+### Engine Comparison
+
+| Feature | PyMuPDF4LLM | Docling | Recommendation |
+|---------|-------------|---------|----------------|
+| **Speed** | ~2 minutes | ~13 minutes | PyMuPDF4LLM |
+| **Table Detection** | Basic | 6,161+ markers | **Docling** |
+| **Header Structure** | Good | Excellent (119+ headers) | **Docling** |
+| **Layout Analysis** | Standard | Advanced | **Docling** |
+| **Quality** | Good | Excellent | **Docling** |
+| **Resource Usage** | Low | High | PyMuPDF4LLM |
+| **Compliance Documents** | Suitable | **Optimal** | **Docling** |
+
+### Recommendations
+
+- **For Development/Testing**: Use PyMuPDF4LLM for quick iterations
+- **For Production/Compliance**: Use Docling for highest quality extraction
+- **For Batch Processing**: Use Docling when processing time is not critical
+- **For Real-time Processing**: Use PyMuPDF4LLM for speed requirements
+
 ## Development
 
 ### Adding New Features
 
 1. Add core processing logic in `core/` or `pci_mapping/`
 2. Update adapter.py for pipeline integration
-3. Add CLI commands in cli.py
+3. Add CLI commands in the centralized CLI (`data_pipeline/cli.py`)
 4. Update documentation
+5. Test with both PDF conversion engines
 
 ### Running Tests
 

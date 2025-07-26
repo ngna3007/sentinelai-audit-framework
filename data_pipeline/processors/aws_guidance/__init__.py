@@ -9,7 +9,7 @@ Key Components:
 - main: CLI entry point for conversion and processing operations
 - core.pdf_converter: PDF to Markdown conversion using pymupdf4llm
 - core.content_processor: AWS Config specific content processing
-- core.text_processors: Text cleaning and parsing utilities
+- text_processors.aws_guidance: Text cleaning and parsing utilities
 - core.metadata_generators: Quality scoring and metadata generation
 
 Usage:
@@ -26,11 +26,11 @@ Architecture Benefits:
 - Ready for integration with compliance pipeline
 """
 
-# Import core components for programmatic access
-from .core.pdf_converter import PDFConverter
-from .core.content_processor import ContentProcessor
-from .core.text_processors import TextProcessor
-from .core.metadata_generators import MetadataGenerator
+# Import components from new modular structure
+from ..pdf_converter import UniversalPDFConverter as PDFConverter
+from ..chunking.aws_guidance.content_processor import ContentProcessor
+from ..text_processors.aws_guidance.text_processor import TextProcessor
+from ..metadata_generators.aws_guidance.metadata_generator import MetadataGenerator
 
 __all__ = [
     'PDFConverter',
