@@ -66,16 +66,17 @@ settings = Settings(
         aws_access_key_id=os.getenv("AWS_ACCESS_ID_KEY", ""),
         aws_secret_access_key=os.getenv("SECRET_ACCESS_KEY", ""),
         aws_region="ap-southeast-2",
-        default_model="arn:aws:bedrock:ap-southeast-2:123012555573:inference-profile/apac.anthropic.claude-3-5-sonnet-20241022-v2:0",
+        default_model="arn:aws:bedrock:ap-southeast-2:123012555573:inference-profile/apac.anthropic.claude-3-7-sonnet-20250219-v1:0",
     ),
     anthropic=AnthropicSettings(
         api_key=os.getenv("ANTHROPIC_API"),
         default_model="claude-3-5-haiku-20241022",
+        # default_model="claude-3-7-sonnet-20250219",
     ),
     google=GoogleSettings(
         api_key=os.getenv("GOOGLE_API"),
         vertexai= False,
-        default_model="gemini-2.0-flash-lite"        
+        default_model="gemini-2.5-flash"        
     ),
 )
 
@@ -102,7 +103,7 @@ def cleanup_folders():
         else:
             print("📁 requirement/ folder doesn't exist")
         
-        # Clean audit_result/ folder
+        # Clean evidence/ folder
         if os.path.exists("evidence"):
             audit_files = glob.glob("evidence/*")
             for file_path in audit_files:
@@ -115,7 +116,21 @@ def cleanup_folders():
             
             print(f"✅ Cleaned evidence/ folder ({len([f for f in audit_files if not os.path.exists(f)])} items deleted)")
         else:
-            print("📁 evidence/ folder doesn't exist")
+            print("📁 evidence/ folder doesn't exist")        
+        #     # Clean audit_result/ folder
+        # if os.path.exists("audit_result"):
+        #     audit_files = glob.glob("audit_result/*")
+        #     for file_path in audit_files:
+        #         if os.path.isfile(file_path):
+        #             os.remove(file_path)
+        #             deleted_files.append(file_path)
+        #         elif os.path.isdir(file_path):
+        #             shutil.rmtree(file_path)
+        #             deleted_files.append(f"{file_path}/ (directory)")
+            
+        #     print(f"✅ Cleaned audit_result/ folder ({len([f for f in audit_files if not os.path.exists(f)])} items deleted)")
+        # else:
+        #     print("📁 audit_result/ folder doesn't exist")
         
         # Create directories if they don't exist
         os.makedirs("requirement", exist_ok=True)
@@ -189,9 +204,7 @@ async def fetch_requirement_data(control_id):
                 return False
             
             print("🔧 Getting config rules...")
-            await asyncio.sleep(15)
 
-            
             try:
                 rules_response = await llm.generate_str(
                     f"Execute: SELECT config_rules FROM pci_aws_config_rule_mappings WHERE control_id = '{control_id}';"
@@ -461,6 +474,7 @@ async def upload_and_process_audit_result(control_id, aws_account_id='aws-accoun
                        3. DETERMINE status: compliance_rate="100%" → "compliant", otherwise → "non_compliant"
                        4. EXECUTE SQL UPDATE on requirement_status table:
                           - audit_result = complete JSON (escape quotes properly)
+                          - evidence = complete JSON file named all_evidence.json in evidence/ directory
                           - status = determined status
                           - last_evaluated = NOW()
                           - updated_at = NOW() 
@@ -534,7 +548,6 @@ async def main():
             
             # Delay after Step 1
             print("⏳ Waiting 10 seconds before evidence collection...")
-            await asyncio.sleep(10)
             
             # Step 2: Fetch evidence data using DIRECT approach (fast & reliable)
             print("\n" + "=" * 50)
@@ -548,13 +561,14 @@ async def main():
                 
                 # Delay after Step 2
                 print("⏳ Waiting 10 seconds before compliance audit...")
-                await asyncio.sleep(10)
                 
                 # Step 3: Perform compliance audit (generates audit_result.json)
                 print("\n" + "=" * 50)
                 print("STEP 3: PERFORMING COMPLIANCE AUDIT")
                 print("=" * 50)
                 
+                await asyncio.sleep(20)
+
                 compliance_result = await check_compliance(args.id)
                 
                 if compliance_result:
@@ -562,7 +576,7 @@ async def main():
                     
                     # Delay before Step 4
                     print("⏳ Waiting 10 seconds before database upload...")
-                    await asyncio.sleep(10)
+                    await asyncio.sleep(20)
                     
                     # Step 4: Upload audit result and update status
                     print("\n" + "=" * 50)
@@ -588,7 +602,7 @@ async def main():
                     print(f"✅ Complete audit workflow successful for control {args.id}")
                 else:
                     print(f"❌ Audit workflow failed for control {args.id}")
-                # cleanup = cleanup_folders()
+                cleanup = cleanup_folders()
                 return 0 if final_status else 1
                 
             else:
@@ -604,4 +618,5 @@ async def main():
 
 if __name__ == "__main__":
     exit_code = asyncio.run(main())
-    exit(exit_code) 
+    exit(exit_code)
+    

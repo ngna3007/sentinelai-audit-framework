@@ -1,0 +1,139 @@
+{
+    "control_id": "1.2.8",
+    "requirement": "Configuration files for NSCs are: Secured from unauthorized access. Kept consistent with active network configurations.",
+    "compliance_assessment": {
+        "api-gw-endpoint-type-check": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Verify if this rule is relevant to your environment and configure if necessary"
+        },
+        "appsync-associated-with-waf": {
+            "status": "NOT_APPLICABLE", 
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No AppSync resources found or rule not actively evaluating resources",
+            "recommendations": "Validate AppSync configurations and WAF association if applicable"
+        },
+        "cloudfront-associated-with-waf": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Review CloudFront WAF association requirements and configure if needed"
+        },
+        "cloudfront-custom-ssl-certi\ufb01cate": {
+            "status": "NOT_APPLICABLE", 
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Verify SSL certificate configuration for CloudFront distributions"
+        },
+        "codebuild-project-source-repo-url-check": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No CodeBuild projects found or rule not actively evaluating resources",
+            "recommendations": "Review source repository URL security practices"
+        },
+        "docdb-cluster-snapshot-public-prohibited": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No DocumentDB cluster snapshots found or rule not actively evaluating resources",
+            "recommendations": "Ensure DocumentDB snapshots are not publicly accessible"
+        },
+        "ec2-client-vpn-not-authorize-all": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No Client VPN configurations found or rule not actively evaluating resources",
+            "recommendations": "Review Client VPN authorization rules"
+        },
+        "ec2-transit-gateway-auto-vpc-attach-disabled": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No Transit Gateway configurations found or rule not actively evaluating resources",
+            "recommendations": "Verify Transit Gateway attachment settings"
+        },
+        "eks-endpoint-no-public-access": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No EKS endpoints found or rule not actively evaluating resources",
+            "recommendations": "Ensure EKS endpoints are not publicly accessible"
+        },
+        "elb-acm-certi\ufb01cate-required": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Review Load Balancer SSL certificate requirements"
+        },
+        "emr-block-public-access": {
+            "status": "COMPLIANT",
+            "evidence": "Evaluation result shows ComplianceType: COMPLIANT",
+            "analysis": "EMR block public access settings are properly configured",
+            "recommendations": "Maintain current configuration"
+        },
+        "internet-gateway-authorized-vpc-only": {
+            "status": "NON_COMPLIANT",
+            "evidence": "Internet Gateway attached to unauthorized VPC: vpc-014849a1810d82c85",
+            "analysis": "Internet Gateway is not attached to an authorized VPC, posing potential security risks",
+            "recommendations": "Review and restrict Internet Gateway attachments to authorized VPCs only"
+        },
+        "nacl-no-unrestricted-ssh-rdp": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No Network ACL configurations found or rule not actively evaluating resources",
+            "recommendations": "Review Network ACL configurations for SSH/RDP restrictions"
+        },
+        "netfw-policy-default-action-fragment-packets": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Review Network Firewall policy configurations"
+        },
+        "rds-db-security-group-not-allowed": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No RDS DB security group configurations found or rule not actively evaluating resources",
+            "recommendations": "Review RDS security group configurations"
+        },
+        "restricted-ssh": {
+            "status": "PARTIALLY_COMPLIANT",
+            "evidence": "Multiple security groups evaluated. Some COMPLIANT, some NON_COMPLIANT.",
+            "analysis": "Some security groups have unrestricted SSH access",
+            "recommendations": "Review and restrict SSH access across all security groups. Specific non-compliant security groups: sg-02e2a5c593fd1c964, sg-052eb56579246b22a"
+        },
+        "s3-access-point-public-access-blocks": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No S3 access point configurations found or rule not actively evaluating resources",
+            "recommendations": "Review S3 access point public access settings"
+        },
+        "s3-account-level-public-access-blocks": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "Empty EvaluationResults",
+            "analysis": "No account-level S3 public access block configurations found",
+            "recommendations": "Implement S3 account-level public access blocks"
+        },
+        "waf-global-rule-not-empty": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Review WAF global rule configurations"
+        },
+        "waf-global-rulegroup-not-empty": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Review WAF global rule group configurations"
+        },
+        "waf-global-webacl-not-empty": {
+            "status": "NOT_APPLICABLE",
+            "evidence": "NoSuchConfigRuleException",
+            "analysis": "Config rule not found or not configured in the environment",
+            "recommendations": "Review WAF global web ACL configurations"
+        }
+    },
+    "compliance_summary": {
+        "compliant_rules": 1,
+        "non_compliant_rules": 1,
+        "not_applicable_rules": 22,
+        "total_rules_in_scope": 24,
+        "compliance_rate": "4.17%"
+    }
+}
